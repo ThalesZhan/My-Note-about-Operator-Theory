@@ -1,0 +1,77 @@
+\contentsline {chapter}{\numberline {1}Topological Vector Spaces and Banach Spaces}{4}{chapter.1}
+\contentsline {section}{\numberline {1.1}Topological Vector Spaces}{5}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Definition and Properties}{5}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Hausdorff TVS and Quotient TVS}{5}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}Continuous Linear Maps}{5}{subsection.1.1.3}
+\contentsline {subsection}{\numberline {1.1.4}Finite Dimensional TVS}{5}{subsection.1.1.4}
+\contentsline {section}{\numberline {1.2}Locally Convex Topological Vector Spaces}{5}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Seminorms and LCTVS}{5}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Hausdorff LCTVS and Direct Limits}{5}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Continuous Linear Maps}{5}{subsection.1.2.3}
+\contentsline {section}{\numberline {1.3}Hahn-Banach Theorem}{5}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Analytic Form and Geometric Form}{5}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Applications}{5}{subsection.1.3.2}
+\contentsline {section}{\numberline {1.4}Banach Spaces}{5}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Elementary Properties}{5}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Linear Operators and Functionals}{5}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}Weak Topology}{5}{subsection.1.4.3}
+\contentsline {section}{\numberline {1.5}Hilbert Spaces}{5}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}Properties and Orthogonality}{5}{subsection.1.5.1}
+\contentsline {subsection}{\numberline {1.5.2}The Riesz Representation Theorem}{5}{subsection.1.5.2}
+\contentsline {chapter}{\numberline {2}Banach Algebras and $C^*$-Algebras}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}Banach Algebras}{7}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Definition}{7}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}The Spectrum}{7}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}The Riesz Functional Calculus}{7}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Abelian Banach Algebras}{7}{subsection.2.1.4}
+\contentsline {section}{\numberline {2.2}$C^*$-Algebras}{7}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Properties}{7}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Ideals and Quotients}{7}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Abelian $C^*$-Algebras and Functional Calculus}{7}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Positive elements and Positive Maps}{7}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Approcimate Identities}{7}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.2.6}Representations and GNS Construction}{7}{subsection.2.2.6}
+\contentsline {subsection}{\numberline {2.2.7}von Neumann Algebras}{7}{subsection.2.2.7}
+\contentsline {section}{\numberline {2.3}Operators on Hilbert Spaces}{7}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Elementary Properties}{7}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}The Adjoint of an Operator}{7}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Projections}{7}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}The Spectrum of a Linear Operator}{7}{subsection.2.3.4}
+\contentsline {chapter}{\numberline {3}Some Important Operator Algebras}{8}{chapter.3}
+\contentsline {section}{\numberline {3.1}Normal Operators}{9}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Spectral Measures}{9}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Spetral Theorem for Normal Operators}{9}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Star-Cyclic Operators}{9}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Functional Calculus for Normal Operators}{9}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}Multiplity Theory}{9}{subsection.3.1.5}
+\contentsline {section}{\numberline {3.2}Compact Operators}{9}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Elementary Properties}{9}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Spectral Theorem for Compact Operators}{9}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}$C^*$-Algebras of Compact Operators}{9}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}Trace Class and Hilbert-Schmit Class}{9}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Definition and Properties}{9}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Dual Space and Weak$^*$ Topology}{9}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Inflation and Topologies}{9}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Fredholm Operators}{9}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Definition}{9}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}The Fredholm Index}{9}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}The Essential Spectrum}{9}{subsection.3.4.3}
+\contentsline {section}{\numberline {3.5}Isometries and Shifts}{9}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}The von Neumann-Wold Decomposition}{9}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Properties of Shifts}{9}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Toepliz Operators}{9}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}Cuntz Algebra and Its Classifications}{9}{subsection.3.5.4}
+\contentsline {chapter}{\numberline {4}Compact Perturbation}{10}{chapter.4}
+\contentsline {section}{\numberline {4.1}The Weyl-von Neumann Theorem}{10}{section.4.1}
+\contentsline {section}{\numberline {4.2}The Weyl-von Neumann-Berg Theorem}{10}{section.4.2}
+\contentsline {section}{\numberline {4.3}The Voiculesu's Theorem}{10}{section.4.3}
+\contentsline {section}{\numberline {4.4}Equivalent Representions and Approximately Equivalent Representations}{10}{section.4.4}
+\contentsline {chapter}{\numberline {5}Von Neumann Algebras}{11}{chapter.5}
+\contentsline {section}{\numberline {5.1}Elementary Properties}{11}{section.5.1}
+\contentsline {section}{\numberline {5.2}The Kaplansky Density Theorem}{11}{section.5.2}
+\contentsline {section}{\numberline {5.3}Normal Homomorphisms}{11}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}The Up-Down Theorem}{11}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Ideals}{11}{subsection.5.3.2}
+\contentsline {section}{\numberline {5.4}Projections}{11}{section.5.4}
+\contentsline {section}{\numberline {5.5}Classifications of von Neumann Algebras}{11}{section.5.5}
+\contentsline {section}{\numberline {5.6}The Structure of Type \uppercase {i} Algebras}{11}{section.5.6}
