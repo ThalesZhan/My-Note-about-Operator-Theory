@@ -222,6 +222,7 @@ Complete metric space is imporatant since it is "sufficiently large". Rigorously
 \begin{prop}
 	A complete metric space is a space of the second category.
 \end{prop}
+
 \vspace{0.2in}
 \rule{1mm}{1mm} \textbf{Filters:} For convenience, we define some terminologies.
 \begin{defn}
@@ -232,33 +233,248 @@ Complete metric space is imporatant since it is "sufficiently large". Rigorously
 		\item Any subset of $X$ containing a set in $\mathscr{F}$ belongs to $\mathscr{F}$.
 	\end{enumerate}
 \end{defn}
-\begin{exam}
+\begin{exam}\label{exam1}
 	For a topological space $X$ and $x \in X$, and let
 	\begin{equation*}
 		\mathscr{F}(x) ~=~ \{~\text{all neighbourhoods of x}~\}	
 	\end{equation*}
-	Then $\mathscr{F}(x)$ is a filter. And we can define the basis of $\mathscr{F}(x)$, noted by $\mathscr{B}(x)$. That is $\mathscr{B}(x) \subset \mathscr{F}(x)$ with the following properties:
+	Then $\mathscr{F}(x)$ is a filter and $\mathscr{F}(x)$ satisfies the following properties:
 	\begin{enumerate}[label=\arabic*)]
-		\item $\forall U \in \mathscr{B}(x),~ x \in U$
-		\item $\forall U_1 ~\&~ U_2 \in \mathscr{B}(x),~ \exists ~ U_3 \in \mathscr{B}(x),~ s.t.~ U_3 \subset U_1 \bigcap U_2$
+		\item $\forall~ U \in \mathscr{F}(x),~ x \in U$
+		\item $\forall~ U \in \mathscr{F}(x),~ \exists ~ V \in \mathscr{F}(x),~ s.t.~ \forall~ y \in V,~ U \in \mathscr{F}(y)$
+	\end{enumerate}
+	And conversely, if we can find $\mathscr{F}(x)$ for any $x \in X$ with above two properties, these can define a unique topology $\mathscr{T}$ s.t. $\mathscr{F}(x)$ is the filter of neighbourhoods of $x$ for any $x \in X$. In fact,
+	\begin{equation*}
+		\mathscr{T} = \{~ U \subset X \colon x \in U \Rightarrow U \in \mathscr{F}(x) ~\}
+	\end{equation*}
+	Also, we can define the basis of $\mathscr{F}(x)$, noted by $\mathscr{B}(x)$. That is $\mathscr{B}(x) \subset \mathscr{F}(x)$ with the following properties:
+	\begin{enumerate}[label=\arabic*)]
+		\item $\forall~ U \in \mathscr{B}(x),~ x \in U$
+		\item $\forall~ U_1 ~\&~ U_2 \in \mathscr{B}(x),~ \exists ~ U_3 \in \mathscr{B}(x),~ s.t.~ U_3 \subset U_1 \bigcap U_2$
 		\item If $y \in U \in \mathscr{B}(x),~ \exists ~ W \in \mathscr{B}(y),~ W \subset U$
 	\end{enumerate}
 \end{exam}
 
 \subsection{Definition and Properties}
+
 \rule{1mm}{1mm} \textbf{Definition:} Now, we need to endow the topological structure on a vector spaces. And the most important thing is that the topological structure should coincide with the algebraic structure.
 \begin{defn}
-	A vector space $X$ over a field $\K$ is called a topological vector space if $X$ is equiped with a topology $\mathscr{T}$ s.t. the addition and the scalar multiplication, i.e.
-	\begin{equation*}
-		(x,~y) \mapsto x+y \\
-		(\lambda,~ x) \mapsto \lambda x
-	\end{equation*}
+	A vector space $X$ over a field $\K$ is called a topological vector space if $X$ is equiped with a topology $\mathscr{T}$ s.t. the addition and the scalar multiplication, i.e. 
+	\begin{center}
+		\begin{tabular}{r @{$\mapsto$} l}
+			$(x,~y)~$ & $~x+y$ \\
+			$(\lambda,~ x)~$ & $~ \lambda x$
+		\end{tabular}
+	\end{center}
 	are continuous with respect to the topology $\mathscr{T}$.
 \end{defn}
 
+In this definition, the most important part is that the addition and the scalar multiplication are continuous. This condition provides some additional properties for the topology and also for the linear operations. First, it can simply the topology.
 
+\begin{prop}
+	Given a t.v.s. $X$, 
+	\begin{enumerate}[label=\arabic*)]
+		\item For any $x_0 \in X$, the map $x \mapsto x+x_0$ is a homeomorphism.
+		\item For any $\lambda \in \K$, then map $x \mapsto \lambda x$ is a homeomorphism.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	It is clearly, since by the definition, $x \mapsto x-x_0$ and $x \mapsto \frac{1}{\lambda}x$ are continuous.
+\end{proof}
 
-	
+Therefore, the topology of a t.v.s is completely determined by the filter of neighbourhoods of any point. Or, more rigorously,
+\begin{cor}
+	For a t.v.s $X$, the filter $\mathscr{F}(x)$ of neighbourhoods of $x \in X$ is as same as $\{~ U+x \colon U \in \mathscr{F}(e) ~\}$, where $e$ is the unit element in $X$.
+\end{cor}
+
+Thus, to research the topology of a t.v.s. $X$, we just need to research the filter $\mathscr{F}(e)$ of neighbourhoods of $e$. First, there are two special properties of some subsets of a t.v.s. $X$.
+\begin{defn}
+	For a subset $U$ of a t.v.s. $X$, 
+	\begin{enumerate}[label=\arabic*)]
+		\item $U$ is absorbing if $\forall ~ x \in X,~ \exists ~ \rho > 0 ~s.t.~ \forall~ \lambda \in \K$ with $ \abs{\lambda} \leqslant \rho$, we have $\lambda x \in U$.
+		\item $U$ is balanced if $\forall ~ x \in U,~ \forall \lambda \in \K$ with $\abs{\lambda} \leqslant 1$, we have $\lambda x \in U$.
+	\end{enumerate}
+\end{defn}
+
+Then, the following theorem reveals the essence of $\mathscr{F}(e)$.
+\begin{thm}
+	A filter $\mathscr{F}$ of a vector space $X$ over $\K$ is the filter of neighbourhoods of the unit element $e$ w.r.t. some topology compatible with the algebraic structure of $X$ if and only if 
+	\begin{enumerate}[label=\arabic*)]
+		\item $\forall ~ U \in \mathscr{F},~ e \in U$
+		\item $\forall ~ U \in \mathscr{F},~ \exists ~ V \in \mathscr{F} ~s.t.~ V+V \subset U$
+		\item $\forall ~ U \in \mathscr{F},~ \forall ~ \lambda \in \K$ with $\lambda \neq 0$, $\lambda U \in \mathscr{F}$
+		\item $\forall ~ U \in \mathscr{F},~ U$ is absorbing
+		\item $\forall ~ U \in \mathscr{F},~ \exists ~ V \in \mathscr{F} ~s.t.~ V \subset U$ is balanced
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	If $\mathscr{F} = \mathscr{F}(e)$, these statements clearly hold.\\
+	$1)$ is trivial.\\
+	$2)$ is true since the addition is continuous.\\
+	$3)$ and $4)$ hold since the scalar multiplication is continuous.\\
+	For $5)$, because the scalar multiplication is continuous, we can find a $W \in \mathscr{F} ~s.t.~ \lambda W \subset U$ for any $\abs{\lambda} \leqslant \rho$, then let $V = \bigcup_{\abs{\lambda} \leqslant \rho} \lambda W$. Clearly, $V \in \mathscr{F}$ and $V$ is balanced.\\
+	Conversely, We can define
+	\begin{equation*}
+		\mathscr{F}(x) = \{~ U+x \colon U \in \mathscr{F} ~\}
+	\end{equation*}
+	for any $x \in X$. It can be easily checked that $\mathscr{F}(x)$ satisfies the conditions in Example \ref{exam1} in last subsection. Therefore, these $\mathscr{F}(x)$ can determine a unique topology $\mathscr{T}$ on $X$.\\
+	Now, we just need to check the continuity of the addition and the scalar multiplication. The addition is continuous, since $\mathscr{F}$ satisfies $2)$.  Using conditions $2)$ and $4)$ and $5)$ to get a balanced absorbing open neighbourhood in $\mathscr{F}$, and this neighbourhood prove the continuity of the scalar multiplication.
+\end{proof}
+
+Here is some simple properties of a t.v.s. $X$. These properties are directly obtained by definition and above theorem.
+\begin{prop}
+	For a t.v.s. $X$,
+	\begin{enumerate}[label=\arabic*)]
+		\item proper subspaces of $X$ are never absorbing. In particular, if $M \subset X$ is a open subspace, then $M = X$.
+		\item each linear subspace of $X$, endowed with subspace topology, is also a t.v.s.
+		\item if $H$ is a linear subspace of $X$, then $\clo{H}$ is also a linear subspace of $X$.
+		\item if $Y$ is also a t.v.s. and $f \colon X \sto Y$ is a linear map, then $f$ is continuous if and only if $f$ is continuous at the unit element $e$.
+	\end{enumerate}
+\end{prop}
+
+\vspace{0.2in}
+\rule{1mm}{1mm} \textbf{Hausdorff t.v.s.~:} The Hausdorff Space is important since it can let the concept of limit make sense. And the topology of a t.v.s. can be simplified and has some additional properties, we can get a easier condition that make a t.v.s. become Hausdorff.
+
+\begin{prop}
+	A t.v.s $X$ is a Hausdorff space if and only if for any $x \in X$ with $x \neq e$ there exists a $U \in \mathscr{F}(e)$ s.t. $x \notin U$.
+\end{prop}
+\begin{proof}
+	Since the open neighbourhoods of any point in $X$ is completely determined by the open neighbourhoods of $e$, this proposition is equivalent to the statement that ($T_1$) implies Hausdorff.\\
+	The proof can be accomplished by obtaining a contradiction to the given condition that $x \neq e$, $\exists ~U \in \mathscr{F}(e)$ s.t. $x \notin U$. For that $U$, there is a balanced $V \in \mathscr{F}(e) ~s.t.~ V+V \subset U$ and the balance implies that $V-V \subset U$. Therefore, $(x+V) \bigcap V = \varnothing$. If not, $x+v_1 = v_2$ for $v_1,~ v_2 \in V$. This implies that $x = v_1 - v_2 \in V-V \subset U$. Thus it is a contradiction.
+\end{proof}
+The following theorem is more explicit.
+\begin{thm} \label{thm1}
+	For t.v.s. $X$ the following statements are equivalent.
+	\begin{enumerate}[label=\arabic*)]
+		\item $X$ is Hausdorff.
+		\item the intersection of all neighbourhoods of the unit element $e$ is \{e\}.
+		\item \{e\} is closed.
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	Before the rigorously proving, the intuition is clearly. Since in a t.v.s. ($T_1$) is equivalent to Hausdorff, the equivalence of $1)$ and $3)$ is clearly true.
+	\begin{enumerate}
+		\item[$1) \Rightarrow 2)$] It is because that elements in $\mathscr{F}(e)$ can separate $e$ and other points.
+		\item[$2) \Rightarrow 3)$] If $x \in \clo{\{e\}}$, i.e. $\forall V_x \in \mathscr{F}(x),~ V_x \bigcap \clo{\{e\}} \neq \varnothing \Rightarrow e \in V_x$, and $V_x = U + x$ for some $U \in \mathscr{F}(e)$, then $u + x = e$ for some $u \in U$. Thus, $x = -u \in -U$ for all $U \in \mathscr{F}(e)$. That implies $x = e$.
+		\item[$3) \Rightarrow 1)$] By above mentioned, it just needs to check that if for any topology space $Y$, $\{y\}$ is closed $\forall y \in Y$, $Y$ is ($T_1$). \\
+		Since $\{y_1\}$ is closed, $Y \backslash \{y_1\}$ is open. That means if $y_2 \neq y_1$, there exists a open neighbourhood $U$ of $y_2$ s.t. $y_1 \notin U$. Similarly, we can find a open neighbourhood $V$ of $y_1$ s.t. $y_2 \notin V$. Therefore, $Y$ is ($T_1$). \qedhere
+	\end{enumerate}	
+\end{proof}
+
+\vspace{0.2in}
+\rule{1mm}{1mm} \textbf{Quotient t.v.s.~:} For a linear subspace $M$ of a t.v.s. $X$, the quotient topology on $X/M$ can be obtained by the quotient map $\pi \colon X \sto X/M$. But because of the algebraic structure, it has more properties.
+\begin{prop}
+	For a linear subspace $M$ of a t.v.s. $X$, the quotient map $\pi \colon X \sto X/M$ is open.
+\end{prop}
+\begin{proof}
+	Let $V \subset X$ be open, then we have
+	\begin{equation*}
+		\pi^{-1}(\pi(V)) = V + M = \bigcup_{m \in M}(V+m)
+	\end{equation*}
+	Since $V$ is open, $V+m$ is open. Thus $\pi^{-1}(\pi(V))$ is open. And by the definition of the topology on $X/M$, $\pi(V)$ is open.
+\end{proof}
+\begin{cor}
+	For a linear subspace $M$ of a t.v.s. $X$, the quotient space $X/M$ endowed with the quotient topology is a t.v.s..
+\end{cor}
+\begin{proof}
+	We have the following commutative graph, where $f$ and $g$ are corresponding addition maps or scalar multiplication maps on $X$ and $X/M$.
+	\begin{center}
+		\begin{tikzcd}
+			X \times X \arrow[r, "f"] \arrow[d, "\pi \times \pi"]
+				& X \arrow[d, "\pi"] \\
+			X/M \times X/M \arrow[r, "g"]
+				& X/M
+		\end{tikzcd}
+	\end{center}
+	Then for an open set $V \subset X/M$, since $f$ and $\pi$ are continuous, and $\pi$ is open, $(\pi \times \pi) \circ f^{-1} \circ \pi^{-1}(V)$ is open. By above commutative graph, we have $g \circ (\pi \times \pi) = \pi \circ f$. Therefore, $g^{-1}(V)$ is open, i.e. $g$ is continuous.
+\end{proof}
+
+Also, we can find the condition that lets the quotient topological vector space be Hausdorff.
+\begin{prop}
+	Let $X$ be a t.v.s..
+	\begin{enumerate}[label=\arabic*)]
+		\item $M$ be a linear subspace of $X$. Then $X/M$ is Hausdorff if and only if $M$ is closed.
+		\item $X/\clo{\{e\}}$ is Hausdorff.
+	\end{enumerate}	 
+\end{prop}
+\begin{proof}
+	$2)$ is true because $1)$. And $1)$ clearly holds since $M$ is the unit element in $X/M$ and Theorem \ref{thm1} in this subsection.
+\end{proof}
+\begin{rem}
+	By this method, for any t.v.s., we can find a Hausdorff space w.r.t it.
+\end{rem}
+
+\subsection{Continuous Linear Maps}
+
+The interesting maps between two topological vector spaces not only preserve the algebraic structure, but also the topological structure, thus these are continuous linear maps.\\
+First, for a linear map $f \colon X \sto Y$ between vector spaces $X$ and $Y$, we have the commutative graph, where $\tilde{f}(x+\ker{f}) = f(x)$ is well-defined.
+\begin{center}
+	\begin{tikzcd}
+		X \arrow[r, "f"] \arrow[d, "\pi"]
+			& \Img{f} \arrow[r, "i"]
+			& Y \\
+		X/\ker{f} \arrow[ru, "\tilde{f}"]
+	\end{tikzcd}
+\end{center}
+
+\begin{prop}
+	Let $f \colon X \sto Y$ be a linear map between two t.v.s.'s $X$ and $Y$.
+	\begin{enumerate}[label=\arabic*)]
+		\item If $Y$ is Hausdorff and $f$ is continuous, then $\ker{f}$ is closed.
+		\item By above notation, $f$ is continuous if and only if $\tilde{f}$ is continous.
+	\end{enumerate}
+\end{prop}
+\begin{proof} 
+	$1)$ is because that $\ker{f} = f^{-1}(\{e\})$ and $Y$ is Hausdorff.\\
+	For $2)$, if $\tilde{f}$ is continuous, it is clearly that $f = i \circ \tilde{f} \circ \pi$ is continuous. Conversely, it is because of the universal property of quotient maps. And in this case, let $U \subset \Img{f}$ be open, then $f^{-1}(U)$ is open and $\tilde{f}^{-1}(U) = \pi(f^{-1}(U))$. Since $\pi$ is open, $\tilde{f}^{-1}(U)$ is open. Thus, $\tilde{f}$ is continuous.
+\end{proof}
+
+\subsection{Complete Topological Vector Spaces}
+
+We have just defined the completeness on a metric space by using sequence, but we know in metric spaces, the topology is so powerful that sequences can do any thing, but in general topology, or the topology in a t.v.s., we need an equivalent concept to describe the completeness.
+
+\begin{defn}
+	(Completeness)
+	\begin{enumerate}[label=\arabic*)]
+		\item A filter $\mathscr{F}$ on a subset $A$ of a t.v.s. $X$ is said to be a Cauchy filter if
+			\begin{equation*}
+				\forall~ U \in \mathscr{F}(0) \textbf{ in } X,~ \exists ~ M \subset A ~s.t.~ M \in \mathscr{F} ~\&~ M-M \subset U
+			\end{equation*}
+		\item A subset A of a t.v.s. X is said to be complete if every Cauchy filter on A converges to a point $x \in A$.
+	\end{enumerate}
+\end{defn}
+\begin{rem}
+	Said "the filter converges to a point" means that we can define a net on this filter, and this net converge a point. And this definition is also valid without the algebraic strucuture.
+\end{rem}
+
+By this definition, and using the factor that Hausdorff spaces let the limit point of a net uniquely exist, we have similar results comparing with the metric spaces.
+\begin{prop}
+	Let $X$ be a t.v.s..
+	\begin{enumerate}[label=\arabic*)]
+		\item If $X$ is Hausdorff, any complete set is closed.
+		\item If $X$ is complete, any closed set is complete.
+	\end{enumerate}
+\end{prop}
+
+We known any metric space can be completion. Similarly, the same result can obtained in any t.v.s..
+\begin{thm}
+	Let $X$ be a Hausdorff t.v.s., then there exists a complete Hausdorff t.v.s. $\hat{X}$ and a map $i \colon X \sto \hat{X}$ with the following properties.
+	\begin{enumerate}[label=\arabic*)]
+		\item $i$ is a topological monomorphism.
+		\item $\clo{i(X)} = \hat{X}$.
+		\item For any complete Hausdorff t.v.s. $Y$ and for every continuous linear map $f \colon X \sto Y$, there exsits a continuous map $\hat{f} \colon \hat{X} \sto Y$, s.t. the following graph is commutative
+		\begin{center}
+			\begin{tikzcd}
+				X \arrow[r, "f"] \arrow[d, "i"]
+					& Y \\
+				\hat{X} \arrow[ru, "\hat{f}"]
+			\end{tikzcd}
+		\end{center}
+	\end{enumerate}
+	And ($\hat{X}$, $\hat{f}$) is unique with respect to the isomorphism
+\end{thm}
+
+\subsection{Finite Dimensional Topological Vector Spaces}
 
 
 
