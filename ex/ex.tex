@@ -269,7 +269,7 @@ Complete metric space is imporatant since it is "sufficiently large". Rigorously
 
 \rule{1mm}{1mm} \textbf{Definition:} Now, we need to endow the topological structure on a vector spaces. And the most important thing is that the topological structure should coincide with the algebraic structure.
 \begin{defn}
-	A vector space $X$ over a field $\K$ is called a topological vector space if $X$ is equiped with a topology $\mathscr{T}$ s.t. the addition and the scalar multiplication, i.e. 
+	A vector space $X$ over a field $\K$ (where $ \K = \C$ or $\R$) is called a topological vector space if $X$ is equipped with a topology $\mathscr{T}$ s.t. the addition and the scalar multiplication, i.e. 
 	\begin{center}
 		\begin{tabular}{r @{$\mapsto$} l}
 			$(x,~y)~$ & $~x+y$ \\
@@ -441,21 +441,30 @@ First, for a linear map $f \colon X \sto Y$ between vector spaces $X$ and $Y$, w
 
 \subsection{Complete Topological Vector Spaces}
 
-We have just defined the completeness on a metric space by using sequence, but we know in metric spaces, the topology is so powerful that sequences can do any thing, but in general topology, or the topology in a t.v.s., we need an equivalent concept to describe the completeness.
+We have just defined the completeness on a metric space by using sequence, but in metric spaces, we know the topology is so powerful that sequences can do any thing, but in general topology, or the topology in a t.v.s., we need an equivalent concept to describe the completeness.
 
 \begin{defn}
 	(Completeness)
 	\begin{enumerate}[label=\arabic*)]
 		\item A filter $\mathscr{F}$ on a subset $A$ of a t.v.s. $X$ is said to be a Cauchy filter if
 			\begin{equation*}
-				\forall ~ U \in \mathscr{F}(0) \text{ in } X,~ \exists ~ M \subset A ~s.t.~ M \in \mathscr{F} ~\&~ M-M \subset U
+				\forall~ U \in \mathscr{F}(0) \textbf{ in } X,~ \exists ~ M \subset A ~s.t.~ M \in \mathscr{F} ~\&~ M-M \subset U
 			\end{equation*}
 		\item A subset A of a t.v.s. X is said to be complete if every Cauchy filter on A converges to a point $x \in A$.
 	\end{enumerate}
 \end{defn}
 \begin{rem}
-	Said "the filter converges to a point" means that we can define a net on this filter, and this net converge a point. And this definition is also valid without the algebraic strucuture.
+	Said "the filter converges to a point" means that we can define a net on this filter, and this net converge a point. And this definition is also valid without the algebraic structure.
 \end{rem}
+
+By this definition, and using the factor that Hausdorff spaces let the limit point of a net uniquely exist, we have similar results comparing with the metric spaces.
+\begin{prop}
+	Let $X$ be a t.v.s..
+	\begin{enumerate}[label=\arabic*)]
+		\item If $X$ is Hausdorff, any complete set is closed.
+		\item If $X$ is complete, any closed set is complete.
+	\end{enumerate}
+\end{prop}
 
 We known any metric space can be completion. Similarly, the same result can obtained in any t.v.s..
 \begin{thm}
@@ -463,7 +472,7 @@ We known any metric space can be completion. Similarly, the same result can obta
 	\begin{enumerate}[label=\arabic*)]
 		\item $i$ is a topological monomorphism.
 		\item $\clo{i(X)} = \hat{X}$.
-		\item For any complete Hausdorff t.v.s. $Y$ and for every continuous linear map $f \colon X \sto Y$, there exsits a continuous map $\hat{f} \colon \hat{X} \sto Y$, s.t. the following graph is commutative
+		\item For any complete Hausdorff t.v.s. $Y$ and for every continuous linear map $f \colon X \sto Y$, there exists a continuous map $\hat{f} \colon \hat{X} \sto Y$, s.t. the following graph is commutative
 		\begin{center}
 			\begin{tikzcd}
 				X \arrow[r, "f"] \arrow[d, "i"]
@@ -474,7 +483,126 @@ We known any metric space can be completion. Similarly, the same result can obta
 	\end{enumerate}
 	And ($\hat{X}$, $\hat{f}$) is unique with respect to the isomorphism
 \end{thm}
+\begin{proof}
+	The proof is similar as the proof of the completion of metric spaces, which contructs the $\hat{X}$ as a set of equivalent classes of Cauchy sequences. In a t.v.s., we just need to replace Cauchy sequences by Cauchy filters (in fact, Cauchy nets). Let 
+	\begin{center}
+		\begin{tabular}{r c l}
+			$\tilde{X}$ & $=$ & $\{~ \text{all Cauchy filters in } X ~\}$\\
+			$R $ & $\colon$ & $ \mathscr{F} ~R~ \mathscr{G} \Leftrightarrow \forall ~ U \in \mathscr{F}(e),~ \exists ~ A \in \mathscr{F} ~\&~ B \in \mathscr{G} ~s.t.~ A-B \subset U$\\
+			$\hat{X}$& $=$ & $\tilde{X} / R$
+		\end{tabular}
+	\end{center}
+	We can easily define linear operations and topology, s.t. $\hat{X}$ become a complete t.v.s.. Then we just need to check the statements in above theorem hold.
+\end{proof}
 
 \subsection{Finite Dimensional Topological Vector Spaces}
+
+For a finite dimensional topological vector space, the topology compatible with the algebraic structure has some properties coincided with the "finity". First, continuous linear functionals on a t.v.s. have some properties.
+
+\begin{lem}
+	Let $X$ be a t.v.s. over $\K$. Fixed $v \in X$, then the $\phi_{v} \colon \K \sto X$ by $\xi \mapsto \xi v$ is continuous,
+\end{lem}
+\begin{proof}
+	It is because that $\phi_{v} = f \circ \psi_{v}$ where $f$ is the multiplication map.
+	\begin{center}
+		\begin{tabular}{r l c l r}
+			$\K$ & $\stackrel{\psi_{v}}{\rightarrow}$ & $\K \times X$ & $\stackrel{f}{\rightarrow}$ & $X$ \\
+			$\xi$ & $\mapsto$ & ($\xi$, $v$) & $\mapsto$ & $\xi v$ 
+		\end{tabular} 
+	\end{center}
+\end{proof}
+
+\begin{lem}
+	For a non-zero linear functional $L \colon X \sto \K$, where $X$ is a t.v.s. over $\K$, the following statements are equivalent.
+	\begin{enumerate}[label=\arabic*)]
+		\item $L$ is continuous,
+		\item $\ker{L}$ is closed,
+		\item $\ker{L}$ is not dense in $X$,
+		\item $L$ is bounded in some neighbourhood of the origin in $X$.
+	\end{enumerate}
+\end{lem}
+\begin{proof}
+	The equivalence of $1)$ and $2)$ and $4)$ is clearly.
+	\begin{enumerate}
+		\item[$1) \Rightarrow 2)$] It is because that $\ker{L} = L^{-1}(\{0\})$.
+		\item[$2) \Rightarrow 3)$] Since $L$ is non-zero, it clearly holds.
+		\item[$3) \Rightarrow 4)$] By the assumption, there exists a balanced set $V \in \mathscr{F}(e)$ and a point $x \notin \clo{\ker{L}}$ s.t. $(x+V) \bigcap \ker{L} = \varnothing$. $L(V)$ is balanced on $\K$, therefore $L(V)$ is bounded or $L(V) = \K$. But since $(x+V) \bigcap \ker{L} = \varnothing$, $L(V) \neq \K$.
+		\item[$4) \Rightarrow 1)$] This implies that $L$ is continuous at $e$. But since $X$ is a t.v.s., $L$ is continuous at every point. \qedhere
+	\end{enumerate}
+\end{proof}
+
+\begin{thm}
+	Let $X$ be a finite dimensional Hausdorff t.v.s. over $\K$ (endowed with the standard topology), and $\dim{X}$ = $d$. Then we have: 
+	\begin{enumerate}[label=\arabic*)]
+		\item $X$ is topologically isomorphic to $\K^{d}$,
+		\item every linear  functional on $X$ is continuous,
+		\item every linear map from $X$ to any t.v.s. $Y$ is continuous
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	For $1)$, we just need to find a homeomorphic isomorphism from $\K^{d}$ to $X$, like the following map, where $\{e_i\}_{i=1}^{d}$ is the basis of $X$.
+	\begin{center}
+		\begin{tabular}{c c c}
+			$\K^{d}$ & $\stackrel{\phi}{\longrightarrow}$ & $X$ \\
+			$(\lambda_1,~ \lambda_2,~ \cdots,~ \lambda_d)$  & $\longmapsto$ & $\lambda_1 e_1 + \lambda_2 e_2 + \cdots + \lambda_d e_d$
+		\end{tabular} 
+	\end{center}
+	$\phi$ is clearly an algebraic isomorphism. Thus we just need to check $\phi$ is both continuous and open.\\
+	Check: $\phi$ is continuous.\\
+	When $d = 1$, it is continuous by above lemma. For the general case, since $d$ is finite, $\phi$ is continuous.\\
+	Check: $2)$ holds and $\phi$ is open.\\
+	When $d = 1$, it is clearly $1)$ and $2)$ are trued. And suppose $1)$ and $2)$ hold for $\dim{X} \leqslant d-1$, then when $\dim{X} = d$, let $L$ be a non-zero linear function on $X$. Then since $\iso{X/\ker{L}}{\Img{L}} \subset \K$, $\dim{\ker{L}} = d-1$. Therefore, $\iso{\ker{L}}{\K^{d-1}} \Rightarrow \ker{L}$ is complete $\Rightarrow \ker{L}$ is closed $\Rightarrow L$ is continuous by above lemma. And,  
+	\begin{center}
+		\begin{tabular}{c c c}
+			$X$ & $\stackrel{\phi^{-1}}{\longrightarrow}$ & $\K^{d}$ \\
+			$\lambda_1 e_1 + \lambda_2 e_2 + \cdots + \lambda_d e_d$  & $\longmapsto$ & $(\lambda_1,~ \lambda_2,~ \cdots,~ \lambda_d)$
+		\end{tabular} 
+	\end{center}
+	is continuous since each 
+	\begin{equation*}	
+			\lambda_1 e_1 + \lambda_2 e_2 + \cdots + \lambda_d e_d \longmapsto \lambda_i
+	\end{equation*}
+	is continuous.\\
+	Then for $3)$, it is clealy since $\dim{\Img{L}} < \infty$. 
+\end{proof}
+ 
+\begin{cor}
+	~
+	\begin{enumerate}[label=\arabic*)]
+		\item Every finite dimensional Hausdorff t.v.s. is complete.
+		\item Every finite dimensional subspace of a Hausdorff t.v.s. is closed.
+		\item For a finite dimensional vector space, there is only one topology w.r.t. homeomorphism that can make it be a Hausdorff t.v.s..
+		\item Every bounded subset on a finite dimensional Hausdorff t.v.s. is compact.
+	\end{enumerate}
+\end{cor}
+\begin{proof}
+	These properties can be easily obtained by regarding the t.v.s. as $\K^{d}$ endowed with the standard topology.
+\end{proof}
+
+Finally, the most important theorem in this subsection is that the converse of $4)$ in above corollary is also true.
+\begin{thm}
+	A Hausforff t.v.s. is locally compact if and only if it is finite dimensional.
+\end{thm}
+\begin{proof}
+	Let $X$ be a locally compact Hausdorff t.v.s. and K be a compact heighbourhood of $e$ in $X$, i.e.
+	\begin{equation*}
+		\exists ~ x_1,~ \cdots,~ x_r \in X ~s.t.~ K \subset \bigcup_{i=1}^{r}(x_i+\frac{1}{2}K)
+	\end{equation*}
+	Let $M = \spn{\{x_1,~ \cdots,~ x_r\}}$, and $M$ is closed. Therefore, $X/M$ is a Hausdorff t.v.s.. Let $\pi \colon X \sto X/M$ be the quotient map.\\
+	Since $K \subset M+\frac{1}{2}K$, $\pi(K) \subset \pi(\frac{1}{2}K)$. Thus, by iterating $\pi(2^{n}K) \subset \pi(K)$.\\
+	As $K$ is absorbing, $X = \bigcup_{n=1}^{\infty}2^{n}K$,
+	\begin{equation*}
+		X/M = \pi(X) = \bigcup_{n=1}^{\infty}\pi(2^{n}K) \subset \pi(K) \subset X/M
+	\end{equation*}
+	And since $\pi$ is continuous, $\pi(K)$ is compact, i.e. $X/M$ is compact.\\
+	claim: $\dim{X/M} = 0$ \\
+	Suppose $\dim{X/M} > 0$, then for some $\clo{x_0} \in X$ with $\clo{x_0} \neq \clo{e}$, $\R \clo{x_0} \subset X/M$. And since $X/M$ is Hausdorff compact and $\R \clo{x_0}$ is closed, $\R \clo{x_0}$ is compact, which is a contradiction.
+\end{proof}
+
+\section{Locally Convex Topological Vector Spaces}
+
+
+
+
 
 \end{document}
