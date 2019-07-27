@@ -8,3 +8,5 @@
 \contentsline {section}{\numberline {1.2}Locally Convex Topological Vector Spaces}{16}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}Definition by Convex Sets}{16}{subsection.1.2.1}
 \contentsline {subsection}{\numberline {1.2.2}Definition by Seminorms}{18}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Separability and Metrizability}{20}{subsection.1.2.3}
+\contentsline {subsection}{\numberline {1.2.4}Continuous Linear Maps on LCTVS}{21}{subsection.1.2.4}

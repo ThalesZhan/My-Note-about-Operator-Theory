@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.24)  27 JUL 2019 02:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.24)  28 JUL 2019 06:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -660,7 +660,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.11 \chapter
+l.10 \chapter
              {Topological Vector Spaces and Banach Spaces} [1
 
 ]
@@ -668,30 +668,30 @@ Chapter 1.
 [2
 
 ] [3] [4] [5] [6] [7] [8] [9]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 360.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 359.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 360.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 359.
  [10] [11]
-[12] [13] [14] [15] [16] [17] [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 703.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 703.
+[12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 877.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 877.
  (./ex.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 703.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 703.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 877.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 877.
 Package rerunfilecheck Info: File `ex.out' has not changed.
-(rerunfilecheck)             Checksum: 4F12A8319C0895EC0E044421BA7A6717;798.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 703.
+(rerunfilecheck)             Checksum: 6A9D5484C6743373A384C8D93078C324;967.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 877.
  ) 
 Here is how much of TeX's memory you used:
- 17385 strings out of 492649
- 336765 string characters out of 6129622
- 401148 words of memory out of 5000000
- 20806 multiletter control sequences out of 15000+600000
+ 17413 strings out of 492649
+ 337043 string characters out of 6129622
+ 401214 words of memory out of 5000000
+ 20812 multiletter control sequences out of 15000+600000
  14891 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,14n,86p,637b,1153s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -714,10 +714,10 @@ ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2
 018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texli
 ve/2018/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on ex.pdf (19 pages, 265857 bytes).
+Output written on ex.pdf (23 pages, 288902 bytes).
 PDF statistics:
- 401 PDF objects out of 1000 (max. 8388607)
- 357 compressed objects within 4 object streams
- 163 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 452 PDF objects out of 1000 (max. 8388607)
+ 403 compressed objects within 5 object streams
+ 185 named destinations out of 1000 (max. 500000)
+ 109 words of extra memory for PDF output out of 10000 (max. 10000000)
 
