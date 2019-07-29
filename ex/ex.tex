@@ -865,12 +865,84 @@ And this corollary can be easily extended to linear maps. And the proof is simil
 	\end{equation*}
 \end{thm}
 
+\section{The Hahn-Banach Theorem}
+\subsection{Two Forms of Hahn-Banach Theorem}
 
+\begin{thm}[Geometric form]
+	Let $X$ be a t.v.s. over $\K$, $N$ be a linear subspace of $X$ and $\Omega$ be a convex open subset of $X$ with $N \bigcap \Omega = \varnothing$. Then there is a closed hyperplane $H$ of $X$ s.t.
+	\begin{equation*}
+		N \subset H ~~\&~~ H \bigcap \Omega = \varnothing
+	\end{equation*}
+\end{thm}
+\begin{proof}
+	Assume that $\Omega \neq \varnothing$.\\
+    Let $\mathscr{F} = \{~ \text{all linear subspace } L \text{ of } X \text{ s.t. } N \subset L \text{ and } L \bigcap \Omega = \varnothing ~\}$. \\
+	Since $N \in \mathscr{F}$, $\mathscr{F} \neq \varnothing$. And $\mathscr{F}$ can be ordered by "$\subset$". Clearly, for every chain $\mathscr{C} = \{C_i\}_{i \in I} \in \mathscr{F}$, it has a maximal element $C = \bigcup_{i \in I} C_i \in \mathscr{F}$. Then by Zorn's Lemma, there exists a maximal $H \in \mathscr{F}$. And this $H$ is closed because the maximality of $H$.\\
+	In fact, we just need to check $\dim{X/H} = 1$. In the case $\K = \R$, if $\dim{X/H} \geqslant 2$, then we can find one dimensional subspace $L$ in $X$ s.t. $L \oplus H$ satisfies above condition. Then it is a contradiction to the maximality of $H$. And for $\K = \C$, using above process to get a real hyperplane $H_0$ and then $H = H_0 \bigcap iH_0$ is the hyperplane we need.\\
+	The main difficulty of this proof is to construct $L$. In fact, we just need to find a line $\tilde{L}$ in $X/H$ s.t. $\tilde{L} \bigcap A = \varnothing$, where$A = \bigcup_{\lambda > 0} \lambda \pi(\Omega)$ is a cone. This $\tilde{L}$ can easily be found because we can find $\clo{x}, -\clo{x} \in X/H \backslash A$ with $\clo{x} \neq \clo{0}$ by using the fact that $\dim{X/H} \geqslant 2$.
+\end{proof}
+\begin{rem}
+	In this theorem, if $N$ is an affine linear subspace, then the $H$ can be chosen as a affine hyperplane satisfying above condition. It is clear by using translation.
+\end{rem}
 
+\begin{thm}[Analytic form]
+	Let $p$ be a seminorm on a vector space $X$ over $\K$, $M$ is a linear space of $X$ and f is a linear functional on $M$ s.t. $\abs{f(x)} \leqslant p(x),~ \forall~ x \in M$. Then there is a linear function $\tilde{f}$ on $X$ s.t. $\tilde{f}(x) = f(x),~ \forall~ x \in M$ and $\abs{\tilde{f}(x)} \leqslant p(x),~ \forall~ x \in X$.
+\end{thm}
+\begin{proof}
+	Let $N = \{x \in M \colon f(x) = 1\}$(affine hyperplane) and $\Omega = \{x \in X \colon  p(x) < 1\}$(open convex set). Then since $N \bigcap \Omega = \varnothing$, we can find a closed affine hyperplane $H$ of $X$, s.t. $N \subset H$ and $H \bigcap \Omega = \varnothing$. Fixed $x_0 \in N \subset H$, $H-x_0$ is a hyperplane, thus it can generate a functional $\tilde{f}$ on $X$. Set $\tilde{f}(x_0) = 1$, then define
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$\tilde{f}~\colon$ & $X=(H-x_0) \oplus \K x_0$ & $\longrightarrow$ & $\K$ \\
+			$~$ & $(h-x_0)+\lambda x_0$ & $\longmapsto$ & $\lambda$
+		\end{tabular}
+	\end{center}
+	Since $M = (N-x_0) \oplus \K x_0$ and $f(x_0) = 1$ and $H \bigcap \Omega = \varnothing$, we can easily check that $\tilde{f}(x) = f(x),~ \forall~ x \in M$ and $\abs{\tilde{f}(x)} \leqslant p(x),~ \forall~ x \in X$.
+\end{proof}
 
+\subsection{Applications}
+By the geometric form of the Hahn-Banach Theorem, it says about hyperplanes can separate some non-intersecting subsets. And moreover, by the analytic form of the Hahn-Banach Theorem, since hyperplanes are linked with functionals, functionals can also separate some some non-intersecting subsets in a t.v.s. First, we can define this association more explicit.
 
+\begin{defn}
+	Let $X$ be a t.v.s. over $\R$ and $H$ is a closed affine hyperplane. For $A,~B \subset X$ and $A \bigcap B = \varnothing$, we say $A$ and $B$ separated by $H$, if
+	\begin{equation*}
+		\exists~ a \in \R,~ s.t.~ H = L^{-1}(\{a\}) \text{ for some } L \colon X \sto \R ~\&~ L(A) \geqslant a,~ L(B) \leqslant  a.
+	\end{equation*}
+\end{defn}
 
+\begin{thm}
+	Let $X$ be a t.v.s. over $\R$ and $A,~ B$ be two disjoint convex non-empty subsets of $X$, then we have:
+	\begin{enumerate}[label=\arabic*)]
+		\item if $A$ is open, then there exists a closed affine hyperplane $H$ of $X$ separating $A$ and $B$.
+		\item if $A, B$ are open, $H$ can strictly separate $A$ and $B$.
+		\item if $A$ is a cone and $B$ is open, then $H$ can be chosen as a hyperplane.
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	Let $U=A-B$. Clearly, U is open and convex and $N=\{0\} \bigcap H = \varnothing$. Therefore, there exists a continuous functional $f$ on $X$, s.t. $f(U) > 0$ i.e. $f(x) > f(y),~ \forall~ x \in A ~\&~ y \in B$. Since $B \neq \varnothing$, let $a = \inff_{x \in A} f(x) > -\infty$. And thus $1)$ and $2)$ can be obtained. \\
+	For $3)$, if $A$ is a cone, then $tf(x) = f(tx) \geqslant a,~ \forall~ t > 0 \Rightarrow f(x) \geqslant \frac{a}{t}$. Thus, $f(A) \geqslant 0$. $H$ can be chosen as a hyperplane. 
+\end{proof}
 
+For a locally convex t.v.s $X$, each point in $X$ has some convex heighbourhoods. Therefore, we have following corollaries.
+
+\begin{cor}
+	Let $X$ be a locally convex t.v.s over $\R$.
+	\begin{enumerate}[label=\arabic*)]
+		\item If $A$ and $B$ are two disjoint closed subsets and $B$ is compact, then $A$ and $B$ are strictly separated.
+		\item If A is a closed convex subset of $X$ and $x \notin A$, then x is strictly separated from $A$.
+		\item If $A$ is a subset of $X$, then $\clo{\spn{\{A\}}}$ is the intersection of all closed hyperplanes containing $A$.
+	\end{enumerate}
+\end{cor}
+
+And these consequences can be extended to $\C$.
+
+\begin{thm}
+	Let $X$ be a locally convex t.v.s over $\C$ and $A,B$ be two disjoint closed convex subsets of $X$. If $B$ is compact, then there is a continuous linear functional $f \colon X \sto \C$, and $\alpha \in \R$, and $\varepsilon > 0$ s.t.
+	\begin{equation*}
+		\Rea{f(x)} \leqslant \alpha < \alpha +\varepsilon \leqslant \Rea{f(y)},~ \forall~ x \in A,~ \forall~ y \in B
+	\end{equation*} 
+\end{thm}
+
+\section{Banach Spaces}
 
 
 
