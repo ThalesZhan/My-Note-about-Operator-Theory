@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.24)  2 AUG 2019 02:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.24)  3 AUG 2019 01:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -682,22 +682,22 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1012.
 
  [26]
-[27] [28] [29]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1117.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1117.
+[27] [28] [29] [30] [31] [32]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1257.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1257.
  (./ex.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1117.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1117.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1257.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1257.
 
 Package rerunfilecheck Info: File `ex.out' has not changed.
-(rerunfilecheck)             Checksum: B82A376970B1081AA759DE6701825D9E;1423.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1117.
+(rerunfilecheck)             Checksum: 5EE60F3AD92ABE1BB9435E10D1F1367A;1492.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1257.
  ) 
 Here is how much of TeX's memory you used:
- 17476 strings out of 492649
- 337662 string characters out of 6129622
- 401279 words of memory out of 5000000
- 20823 multiletter control sequences out of 15000+600000
+ 17547 strings out of 492649
+ 338955 string characters out of 6129622
+ 402409 words of memory out of 5000000
+ 20871 multiletter control sequences out of 15000+600000
  14891 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,14n,86p,672b,1153s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -720,10 +720,10 @@ ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2
 018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texli
 ve/2018/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on ex.pdf (30 pages, 325823 bytes).
+Output written on ex.pdf (33 pages, 339514 bytes).
 PDF statistics:
- 571 PDF objects out of 1000 (max. 8388607)
- 514 compressed objects within 6 object streams
- 237 named destinations out of 1000 (max. 500000)
- 157 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 620 PDF objects out of 1000 (max. 8388607)
+ 560 compressed objects within 6 object streams
+ 260 named destinations out of 1000 (max. 500000)
+ 165 words of extra memory for PDF output out of 10000 (max. 10000000)
 

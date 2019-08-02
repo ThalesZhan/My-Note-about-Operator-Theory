@@ -16,3 +16,4 @@
 \contentsline {section}{\numberline {1.4}Banach Spaces}{25}{section.1.4}
 \contentsline {subsection}{\numberline {1.4.1}Elementary Properties}{25}{subsection.1.4.1}
 \contentsline {subsection}{\numberline {1.4.2}Linear Transformations and Linear Functionals}{26}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}Weak Topologies}{30}{subsection.1.4.3}
