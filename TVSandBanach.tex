@@ -1259,7 +1259,7 @@ We have an imprtant theorem to discribe the $wk^{*}$-compactness in dual space.
 	For $2)$, $Y$ is $wk$-compact by above corollary. Since by the Hahn-Bnanch Theorem, for each $x$, we can find a $f \in X^{*}$ with $\norm{f}=1$ and $f(x)=x$. The map $x \mapsto \norm{x-x_0}$ is weakly lower semicontinuous. Therefore, there is a $y_0 \in Y$ s.t. $\norm{x_0-y_0} = \inff\{y-x_0 \colon y \in Y\}$.
 \end{proof}
 
-\subsection{Adjoint Operators}
+\subsection{Adjoint Operators} \label{sec1}
 
 \begin{defn}
 	Let $T \colon X \sto Y$ be a bounded linear map between two Banach spaces. Then the adjoint of operator of $T$ is defined as
@@ -1271,21 +1271,18 @@ We have an imprtant theorem to discribe the $wk^{*}$-compactness in dual space.
 		\end{center}	
 \end{defn}
 
-There are some easy properties of the adjoint operator.
-\begin{prop}
+There are some easy properties of the adjoint operator, which can be obtained by the definition.
+\begin{prop} \label{prop4}
 	Let $X$, $Y$ and $Z$ be three Banach spaces and\\ $T \in \fml{B}(X,Y), S \in \fml{B}(Y,Z)$. Then, we have
 	\begin{enumerate}[label=\arabic*)]
+		\item $T^{**}|_X = T$
 		\item the map $T \sto T^{*}$ is an isometric isomorphism.
-		\item $(ST)^{*} = T^{*}S^{*}$.
+		\item $(S \circ T)^{*} = T^{*} \circ S^{*}$.
 		\item $\ker{T^{*}} = (\ran{T})^{\bot}$ and $\ker{T}=(\ran{T^{*}})^{\bot}$.
 	\end{enumerate}
 \end{prop}
-\begin{proof}
-	$1)$ and $2)$ hold by the definition.\\
-	For $3)$, $\ker{T^{*}} = (\ran{T})^{\bot}$ and $\ker{T}=(\ran{T^{*}})^{\bot}$ can be obtained easily by the definition.
-\end{proof}
 
-Then for the $3)$ in above theorem, we can find dual consequences. Firstly, there is a useful lemma.
+Then for the $4)$ in above theorem, we can find dual consequences. Firstly, there is a useful lemma.
 
 \begin{lem}
 	Let $T \colon X \sto Y$ be a bounded linear map between two Banach spaces. Then $\ran{T}$ is closed if and only if there exists a constant $C>0$, for any $y \in \ran{T}$ there is a point $x \in X$ s.t. $\norm{y} \geqslant C \norm{x}$.
@@ -1356,28 +1353,28 @@ A Hilber space is a special Banach space, which is endowed with a inner product.
 \subsection{Projcetion Theorem and Riesz Theorem}
 
 \begin{defn}
-	On a vector space $\fml{H}$ over $\C$, an inner product is a map $<\cdot, \cdot> \colon \fml{H} \times \fml{H} \sto \K$ satisfies that for any $\alpha, \beta \in \K$ and $x,y,z \in \fml{H}$,
+	On a vector space $\fml{H}$ over $\C$, an inner product is a map $ \langle \cdot, \cdot \rangle \colon \fml{H} \times \fml{H} \sto \K$ satisfies that for any $\alpha, \beta \in \K$ and $x,y,z \in \fml{H}$,
 	\begin{enumerate}[label=\arabic*)]
-	 	\item $<\alpha x + \beta y,z> = \alpha <x,z> + \beta <y,z>$
-	 	\item $<x,y> = \clo<y,x>$
-	 	\item $<x,x> \geqslant 0$ and $<x,x> = 0 \Leftrightarrow x = 0$
+	 	\item $ \langle \alpha x + \beta y,z \rangle = \alpha  \langle x,z \rangle + \beta  \langle y,z \rangle$
+	 	\item $ \langle x,y \rangle = \clo{ \langle y,x \rangle}$
+	 	\item $ \langle x,x \rangle \geqslant 0$ and $ \langle x,x \rangle = 0 \Leftrightarrow x = 0$
 	\end{enumerate} 
 \end{defn}
 \begin{rem}
-	The vector space $\fml{H}$ with the inner product $<\cdot,\cdot>$ is called an inner product space. And the inner product can induce the CBS-Inequality, 
+	The vector space $\fml{H}$ with the inner product $ \langle \cdot,\cdot \rangle$ is called an inner product space. And the inner product can induce the CBS-Inequality, 
 	\begin{equation*}
-		\abs{<x,y>}^{2} \leqslant <x,x><y,y>
+		\abs{ \langle x,y \rangle}^{2} \leqslant  \langle x,x \rangle \langle y,y \rangle
 	\end{equation*}
-	by using the positivity of the inner product, $<x-\alpha y,x-\alpha y> \geqslant$0.
+	by using the positivity of the inner product, $ \langle x-\alpha y,x-\alpha y \rangle \geqslant$0.
 \end{rem}
 
-Then on the $\fml{H}$, a nature norm can be induced by the inner product, defined as $\norm{x}^{2}=<x,x>$ for any $x \in \fml{H}$. This definition is valid since the linearity, positivity and CBS-Inequality of the inner product. And there are two forms of the norm.
+Then on the $\fml{H}$, a nature norm can be induced by the inner product, defined as $\norm{x}^{2}= \langle x,x \rangle$ for any $x \in \fml{H}$. This definition is valid since the linearity, positivity and CBS-Inequality of the inner product. And there are two forms of the norm.
 
 \begin{prop}
-	Let $(\fml{H},<\cdot,\cdot>)$ be an inner product space, and $\norm{\cdot}$ be the coincided with this inner product. Then, we have the following identities.
+	Let $(\fml{H}, \langle \cdot,\cdot \rangle)$ be an inner product space, and $\norm{\cdot}$ be the coincided with this inner product. Then, we have the following identities.
 	\item Polarization identity: 
 	\begin{equation*}
-		<x,y> = \frac{1}{4}(\norm{x+y}^{2}-\norm{x-y}^{2}+i\norm{x-iy}^{2}-i\norm{x+iy}^{2})
+		 \langle x,y \rangle = \frac{1}{4}(\norm{x+y}^{2}-\norm{x-y}^{2}+i\norm{x-iy}^{2}-i\norm{x+iy}^{2})
 	\end{equation*}
 	\item Parallelogram law:
 	\begin{equation*}
@@ -1424,7 +1421,7 @@ Therefore, a Hilbert space is indeed a Banach space, whose norm can construct an
 	The main method of above proof is the parallelogram law, which is the most eesential property of the norm induced by the inner product.
 \end{rem}
 
-For $x,y \in \fml{H}$, if $<x,y>=0$, we say $x$ is orthogonal to $y$. Similarly, if $W$ is a subset of $\fml{H}$, we define $W^{\bot} = \{y \in \fml{H} \colon <x,y>=0 ~\forall~ x \in W\}$. Then we can use above theorem to obtain a important structure of a Hilbert space.
+For $x,y \in \fml{H}$, if $ \langle x,y \rangle=0$, we say $x$ is orthogonal to $y$. Similarly, if $W$ is a subset of $\fml{H}$, we define $W^{\bot} = \{y \in \fml{H} \colon  \langle x,y \rangle=0 ~\forall~ x \in W\}$. Then we can use above theorem to obtain a important structure of a Hilbert space.
 
 \begin{thm}[Projection Theorem]
 	Let $\fml{M}$ be a closed subspace of a Hilbert space $H$. Then $\fml{H} = \fml{M} \oplus \fml{M}^{\bot}$.
@@ -1435,18 +1432,26 @@ For $x,y \in \fml{H}$, if $<x,y>=0$, we say $x$ is orthogonal to $y$. Similarly,
 	For any $m \in \fml{M}$ and any $\lambda \in \C$, since $m_0+\lambda m \in \fml{M}$, we have
 	\begin{eqnarray*}
 		\norm{x-m_0}^{2} &\leqslant& \norm{x-m_0-\lambda m}^{2} \\
-		&=& \norm{x-m_0}^{2} -2\Rea{\lambda<m,x-m_0>} + \abs{\lambda}^{2}\norm{m}^{2}
+		&=& \norm{x-m_0}^{2} -2\Rea{\lambda \langle m,x-m_0 \rangle} + \abs{\lambda}^{2}\norm{m}^{2}
 	\end{eqnarray*}
-	Thus $-2\Rea{\lambda<m,x-m_0>} + \abs{\lambda}^{2}\norm{m}^{2} \geqslant 0$. Then taking the $\lambda = \varepsilon > 0$ and let $\varepsilon \sto 0$, therefore
+	Thus $-2\Rea{\lambda \langle m,x-m_0 \rangle} + \abs{\lambda}^{2}\norm{m}^{2} \geqslant 0$. Then taking the $\lambda = \varepsilon  > 0$ and let $\varepsilon \sto 0$, therefore
 	\begin{equation*}
-		\Rea{<m,x-m_0>} \leqslant 0
+		\Rea{ \langle m,x-m_0 \rangle} \leqslant 0
 	\end{equation*}
 	Similarly, taking $\lambda = -i \varepsilon$ and let $\varepsilon \sto 0$,
 	\begin{equation*}
-		\Img{<m,x-m_0>} \leqslant 0
+		\Img{ \langle m,x-m_0 \rangle} \leqslant 0
 	\end{equation*}
-	Also, these are true for $-m$. Therefore, $<m,x-m_0> = 0$ for any $m \in \fml{M}$, i.e. $x-m_0 \in \fml{M}^{\bot}$.
+	Also, these are true for $-m$. Therefore, $ \langle m,x-m_0 \rangle = 0$ for any $m \in \fml{M}$, i.e. $x-m_0 \in \fml{M}^{\bot}$.
 \end{proof}
+By the Projection Theorem, we can directly obtained the following corrolary.
+\begin{cor} \label{cor4}
+	Let $\fml{H}$ be a Hilbert space.
+	\begin{enumerate}[label=\arabic*)]
+		\item If $\fml{M}$ is a closed subsapce of $\fml{H}$, then $(\fml{M}^{\bot})^{\bot} = \fml{M}$.
+		\item If $A \subset \fml{H}$ is a subset, then $(A^{\bot})^{\bot} = \clo{\spn{A}}$.
+	\end{enumerate}
+\end{cor}
 
 Using the Projection Theorem, the dual space of a Hilbert space can be more explicit.
 \begin{thm}[Riesz Theorem]
@@ -1457,12 +1462,12 @@ Using the Projection Theorem, the dual space of a Hilbert space can be more expl
 			~ & $x$ & $\longmapsto$ & $L_x$
 		\end{tabular}
 	\end{center}
-	where $L_x(y)=<y,x>$. Then $\sigma$ is an isometric antilinear bijection, i.e. $\fml{H} \cong \fml{H}^{*}$.
+	where $L_x(y)= \langle y,x \rangle$. Then $\sigma$ is an isometric antilinear bijection, i.e. $\fml{H} \cong \fml{H}^{*}$.
 \end{thm}
 \begin{proof}
 	Clearly, $L_x$ is antilinear. And by the CBS-Inequality, $\norm{L_x} = \norm{x}$, thus $\sigma$ is definitely an isometry. Then we just need to prove $\sigma$ is surjective. If $L \in \fml{H}^{*}$ is nonzero, then there is a $x_0 \in (\ker{L})^{\bot}$. Thus we can assume $L(x_0) = 1$. If $y \in \fml{H}$, then $y-L(y)x_0 \in \ker{L}$. Therefore,
 	\begin{equation*}
-		0=<y-L(y)x_0,x_0>=<y,x_0>-L(y)\norm{x_0}^{2}
+		0= \langle y-L(y)x_0,x_0 \rangle= \langle y,x_0 \rangle-L(y)\norm{x_0}^{2}
 	\end{equation*}
 	Then let $x = \norm{x_0}^{-2} x_0$, $L_x=L$.
 \end{proof}
@@ -1483,7 +1488,7 @@ And the Riesz Theorem can extend to bounded sesquilinear forms.
 	\end{enumerate}
 \end{defn}
 \begin{rem}
-	If $f$ is continuous, then we know $\abs{f(x,y)} \leqslant C\norm{x}\norm{y}$ for some $C>0$. Also, the converse is ture. Then we can define the norm of $f$ as
+	If $f$ is continuous, then we know $\abs{f(x,y)} \leqslant C\norm{x}\norm{y}$ for some $C < 0$. Also, the converse is ture. Then we can define the norm of $f$ as
 	\begin{equation*}
 		\norm{f} =\sup_{x \in \fml{H}_1, y \in \fml{H}_2} \frac{\abs{f(x,y)}}{\norm{x}\norm{y}}
 	\end{equation*} 
@@ -1492,11 +1497,57 @@ And the Riesz Theorem can extend to bounded sesquilinear forms.
 \begin{thm}
 	Let $f \colon \fml{H}_1 \times \fml{H}_2 \sto \C$ be a bounded sesquilinear form of two Hilbert spaces $\fml{H}_1$ and $\fml{H}_2$. Then there is a unique bounded linear map with $\norm{S} = \norm{f}$
 	\begin{equation*}
-		S \colon \fml{H}_1 \sto \fml{H}_2 \text{ s.t. } f(x,y)=<Sx,y> ~\forall~ x \in \fml{H}_1 ~\forall~ y \in \fml{H}_2
+		S \colon \fml{H}_1 \sto \fml{H}_2 \text{ s.t. } f(x,y)= \langle Sx,y \rangle ~\forall~ x \in \fml{H}_1 ~\forall~ y \in \fml{H}_2
 	\end{equation*}
 \end{thm}
 
-\subsection{Orthonormal Sets}
+\subsection{Ajoint Operators}
+
+Let $T \colon \fml{H} \sto \fml{H}$ be a bounded linear operator on a Hilbert space $\fml{H}$. Since $\fml{H}$ is also a Banach space, we can define the adjoint operator of $T$ as 
+\begin{center}
+	\begin{tabular}{l r c l}
+		$T^{*} \colon$ & $\fml{H}^{*}$ & $\longrightarrow$ & $\fml{H}^{*}$ \\			~ & $f$ & $\longmapsto$ & $T^{*}f$
+	\end{tabular}
+\end{center}
+By the Riesz Theorem, each $f \in \fml{H}^{*}$ can be expressed as $f = \langle \cdot, x \rangle$ for some $x \in \fml{H}$. Then for any $y \in \fml{H}$ we have
+\begin{equation*}
+	T^{*}(\langle \cdot, x \rangle)(y) = (\langle \cdot, x \rangle)(Ty) =\langle Ty, x \rangle 
+\end{equation*}
+Clearly, $f(y) = \langle Ty, x \rangle  \in \fml{H}^{*}$, thus there is a unique $\tilde{x} \in \fml{H}$ s.t. $f(y) = \langle y, \tilde{x} \rangle$. Then, we have 
+\begin{equation*}
+	T^{*}(\langle \cdot, x \rangle)(y) = \langle Ty, x \rangle = \langle y, \tilde{x} \rangle = (\langle \cdot, \tilde{x} \rangle)(y)
+\end{equation*}
+Thus, we have 
+\begin{equation*}
+	T^{*}(\langle \cdot, x \rangle) = \langle \cdot, \tilde{x} \rangle
+\end{equation*}
+Since $\fml{H} \cong \fml{H}^{*}$, in fact $T^{*} \colon \fml{H} \sto \fml{H}$, and by above mention, $T^{*}(x) = \tilde{x}$, where $\tilde{x}$ is determined by the equation
+\begin{equation*}
+	\langle y, \tilde{x} \rangle = \langle Ty, x \rangle,~~ \forall~ y \in \fml{H}
+\end{equation*}
+
+Therefore, we can give the definition of the adjoint operator on a Hilbert space.
+\begin{defn}
+	Let $T \colon \fml{H} \sto \fml{H}$ be a bounded linear operator on a Hilbert space $\fml{H}$. Then the adjoint operator $T^{*} \colon \fml{H} \sto \fml{H}$ is defined as
+	\begin{equation*}
+		\langle y, T^{*}x \rangle = \langle Ty, x \rangle ~~ \forall~ y \in \fml{H}
+	\end{equation*}
+\end{defn}
+\begin{rem}
+	Equivalently, $\langle T^{*}x, y \rangle = \langle x, Ty \rangle ~ \forall~ y \in \fml{H}$. By above mention, this definition is well-defined and nature.
+\end{rem}
+
+Since this definition is induced by the definition of a Banach space, thus all results in the subsection \ref{sec1} also hold for the adjoint operators 0n a Hilbert space, except the $T \sto T^{*}$ is linear. In fact, on a Hilbert space, this map $T \sto T^{*}$ is antilinear, i.e. $((\alpha + \beta)T)^{*} = \clo{\alpha}T^{*}T^{*} + \clo{\beta}T^{*}$. Moreover, Since any Hilbert space is reflexive, the first result in \textbf{Proposition} \ref{prop4} in the subsection \textbf{1.4.4} can be $T^{**} = T$.\\
+And by the \textbf{Corollary} \ref{cor4} of the Projection Theorem and the last result in \textbf{Proposition} \ref{prop4} in the subsection \textbf{1.4.4}, we have the following proposition.
+\begin{prop}
+	Let $T \colon \fml{H} \sto \fml{H}$ be a bounded linear operator on a Hilbert space $\fml{H}$. Then, we have
+	\begin{eqnarray*}
+		\ker{T^{*}} = (\ran{T})^{\bot} &,& \ker{T}=(\ran{T^{*}})^{\bot} \\
+		\clo{\ran{T}} = (\ker{T^{*}})^{\bot} &,& \clo{\ran{T^{*}}} = (\ker{T})^{\bot}
+	\end{eqnarray*}
+\end{prop}
+
+\subsection{Orthonormal Sets and Schauder Basis}
 
 For a Hilbert space $\fml{H}$, subset $W \subset \fml{H}$ is called orthonormal if  elements in $W$ are pariwise orthogonal and each element has norm $1$. Then we can find a maximal orthonormal set, which is called a Schauder basis. Since the argebraic basis, Hamel basis, of a Hilbert space may be uncountable, we firstly need to define the uncountable summation.
 
@@ -1516,47 +1567,47 @@ For finite orthonormal set, the results can be obtained by the algebraic structu
 \begin{thm}[Bessel's Inequality]
 	If $\{e_n\}_{n=1}^{\infty}$ is an orthonormal set of a Hilbert space and $h \in \fml{H}$, then
 	\begin{equation*}
-		\sum_{n=1}^{\infty} \abs{<h,e_n>}^{2} \leqslant \norm{h}^{2}
+		\sum_{n=1}^{\infty} \abs{ \langle h,e_n \rangle}^{2} \leqslant \norm{h}^{2}
 	\end{equation*}
 \end{thm}
 \begin{proof}
-	Let $h_n=h-\sum_{k=1}^{n} <h,e_k>e_k$. Then $h_n$ is clearly orthogonal to $\{e_k\}_{k=1}^{n}$.
+	Let $h_n=h-\sum_{k=1}^{n}  \langle h,e_k \rangle e_k$. Then $h_n$ is clearly orthogonal to $\{e_k\}_{k=1}^{n}$.
 	\begin{eqnarray*}
-		\norm{h}^{2} &=& \norm{h_n}^{2} + \norm{\sum_{k=1}^{n} <h,e_k>e_k}^{2} \\
-		&=& \norm{h_n}^{2} + \sum_{k=1}^{n} \abs{<h,e_k>}^{2} \\
-		&\geqslant& \sum_{k=1}^{n} \abs{<h,e_k>}^{2}
+		\norm{h}^{2} &=& \norm{h_n}^{2} + \norm{\sum_{k=1}^{n}  \langle h,e_k \rangle e_k}^{2} \\
+		&=& \norm{h_n}^{2} + \sum_{k=1}^{n} \abs{ \langle h,e_k \rangle }^{2} \\
+		&\geqslant& \sum_{k=1}^{n} \abs{ \langle h,e_k \rangle }^{2}
 	\end{eqnarray*}	
 \end{proof}
 \begin{cor}
 	Let $\fml{H}$ be a Hilbert space and $\fml{E}$ be an orthonormal subset. 
 	\begin{enumerate}[label=\arabic*)]
-		\item For any $h \in \fml{H}$, $\abs{<h,e>} \neq 0$ for at most a countable many $e \in \fml{E}$.
-		\item $\sum_{e \in \fml{E}} \abs{<h,e>}^{2} \leqslant \norm{h}^{2}$.
-		\item $\sum \{<h,e>e \colon e \in \fml{E}\}$ is converges.
+		\item For any $h \in \fml{H}$, $\abs{ \langle h,e \rangle } \neq 0$ for at most a countable many $e \in \fml{E}$.
+		\item $\sum_{e \in \fml{E}} \abs{ \langle h,e \rangle }^{2} \leqslant \norm{h}^{2}$.
+		\item $\sum \{ \langle h,e \rangle e \colon e \in \fml{E}\}$ is converges.
 	\end{enumerate}
 \end{cor}
 \begin{proof}
-	For $1)$, let $\fml{E}_n=\{e \in \fml{E} \colon \abs{<h,e>} \geqslant \frac{1}{n}\}$, then $\fml{E}_n$ has to be finite. But 
+	For $1)$, let $\fml{E}_n=\{e \in \fml{E} \colon \abs{ \langle h,e \rangle } \geqslant \frac{1}{n}\}$, then $\fml{E}_n$ has to be finite. But 
 	\begin{equation*}
-		\bigcup_{n=1}^{\infty} \fml{E}_n = \{e \in \fml{E} \colon \abs{<h,e>} \neq 0\}
+		\bigcup_{n=1}^{\infty} \fml{E}_n = \{e \in \fml{E} \colon \abs{ \langle h,e \rangle } \neq 0\}
 	\end{equation*}
 	For $2)$, it is clearly by the Bessel's Inequality and above corollary.\\
-	For $3)$, it is because the net $h_F = \sum \{h_i \colon i \in F\}$, where $F \subset \fml{E}$ is finite, is Cauchy by using the fact that for any $\varepsilon > 0$ there is a $N \in \N$ s.t. 
+	For $3)$, it is because the net $h_F = \sum \{h_i \colon i \in F\}$, where $F \subset \fml{E}$ is finite, is Cauchy by using the fact that for any $\varepsilon  >  0$ there is a $N \in \N$ s.t. 
 	\begin{equation*}
-		\sum_{n=N}^{\infty} \abs{<h,e_n>} < \varepsilon
+		\sum_{n=N}^{\infty} \abs{ \langle h,e_n \rangle }  <  \varepsilon
 	\end{equation*}
 \end{proof}
 
 \begin{defn}[Schauder basis]
 	A orthonormal set $\fml{E}$ of a Hilbert space $\fml{H}$ is called a Schauder basis if for any $h \in \fml{H}$,
 	\begin{equation*}
-		h = \sum \{<h,e>e \colon e \in \fml{E}\}
+		h = \sum \{ \langle h,e \rangle e \colon e \in \fml{E}\}
 	\end{equation*}
 \end{defn}
 \begin{rem}
-	By above corollary, this definition is equivalent to that for any $h \in \fml{H}$, there exists $\{e_n\}_{n=1}^{\infty} \in \fml{E}$, s.t.
+	By above corollary, this definition is equivalent to that for any $h \in \fml{H}$, there exists $\{e_n\}_{n=1}^{\infty} \subset \fml{E}$, s.t.
 	\begin{equation*}
-		h = \sum_{n=1}^{\infty} <h,e_n>e_n
+		h = \sum_{n=1}^{\infty}  \langle h,e_n \rangle e_n
 	\end{equation*}
 	Moreover, by the Zorn's Lemma, every Hilbert space has a Schauder basis.
 \end{rem}
@@ -1569,11 +1620,11 @@ By the definition, and above theorem and corollaries, we can find the properties
 		\item $h \in \fml{H}$ with $h \bot \fml{E}$, then $h=0$.
 		\item $g,h \in \fml{H}$, then
 			\begin{equation*}
-				<g,h> = \sum \{<g,e><e,h> \colon e \in \fml{E}\}
+				 \langle g,h \rangle  = \sum \{ \langle g,e \rangle  \langle e,h \rangle  \colon e \in \fml{E}\}
 			\end{equation*}
 		\item (Parseval's Identity)$h \in \fml{H}$, then
 			\begin{equation*}
-				\norm{h}^{2} = \sum \{\abs{<h,e>}^{2} \colon e \in \fml{E}\}
+				\norm{h}^{2} = \sum \{\abs{ \langle h,e \rangle }^{2} \colon e \in \fml{E}\}
 			\end{equation*}
 	\end{enumerate}
 \end{thm}

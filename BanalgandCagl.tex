@@ -1,0 +1,109 @@
+\chapter{Banach Algebras and \texorpdfstring{$C^{*}$-Algebras}{C*-Algebras}}
+\section{Banach Algebras}
+
+Let $\fml{H}$ be a Hilbert space. Then $\oper$ is indeed a Banach space. But we have more sructure on it. Any two element $S,T \in \oper$ can do multiplication, defined as $ST = S \circ T$, then $ST \in \oper$ by the definition of norm, and moreover $\norm{ST} \leqslant \norm{S}\norm{T}$. Therefore, $\oper$ is an algebra with the extra property of the multiplication, called a Banach algebra.
+
+\subsection{Elementary Properties}
+
+\begin{defn}
+	A Banach algebra $\alg{A}$ is an algebra over $\C$ with a norm $\norm{\cdot}$ relative to which $\alg{A}$ is a Banach space and s.t. for all $a,b \in \alg{A}$,
+	\begin{equation*}
+		\norm{ab} \leqslant \norm{a}\norm{b}.
+	\end{equation*}
+\end{defn}
+\begin{rem}
+	The extra condition guarantees the multiplication is norm continuous. In fact, $\alg{A}$ with the multiplication and the norm is a topological semigroup.
+\end{rem}
+
+If $\alg{A}$ has an identity $1$, it assumes $\norm{1}=1$. But if $\alg{A}$ does not have an identity, we can add an identity to it.
+
+\begin{prop}
+	If $\alg{A}$ is a Banach algebra without the identity. The let $\tilde{\alg{A}}= \alg{A} \oplus \C$ be an induced vector space. Then we define a norm on $\tilde{\alg{A}}$ as
+	\begin{equation*}
+		\norm{(a,\lambda)} = \norm{a} + \abs{\lambda}
+	\end{equation*}
+	and define a multiplication on $\tilde{\alg{A}}$ as
+	\begin{equation*}
+		(a,\alpha)(b,\beta) = (ab+\alpha b + \beta a, \alpha \beta)
+	\end{equation*}
+	Then $\alg{A}$ is a Banach algebra with the identity $(0,1)$.
+\end{prop}
+
+Then $\alg{A}$ can be isometrically imbedded into $\tilde{\alg{A}}$. Therefore, we can always assume $\alg{A}$ has an identity. For a unit algebra, the invertibility of a element is important. 
+
+\begin{thm}
+	Let $\alg{A}$ be a Banach algebra and $a \in \alg{A}$. If $\norm{a-1} < 1$, then $a$ is invertible.
+\end{thm}
+\begin{proof}
+	For a nonzero real number $\lambda \in \R$ with $\abs{\lambda} < 1$, we know 
+	\begin{equation*}
+		(1-\lambda)^{-1} = \sum_{n=0}^{\infty} \lambda^{n}
+	\end{equation*}
+	Similar, for $a \in \alg{A}$ with $\norm{a-1} < 1$, set
+	\begin{equation*}
+		b= \sum_{n=0}^{\infty} (1-a)^{n}
+	\end{equation*}
+	Firstly, since $\norm{(1-a)^{n}} \leqslant \norm{(1-a)}^{n}$, $b$ is well-defined. Then we can prove $b = (1-(1-a))^{-1} = a^{-1}$.
+\end{proof}
+\begin{rem}
+	This result is important. It says a small perturbation of an invertible element is also invertible. It is because that the multiplication is norm continuous. And by the continuity of multiplication, this result can be true at any point other than 1.
+\end{rem}
+
+\begin{cor}
+	Let $\alg{A}$ be a Banach algebra and 
+	\begin{eqnarray*}
+		G_l &=& \{~a \in \alg{A} \colon a \text{ is left invertible}~\}
+		G_r &=& \{~a \in \alg{A} \colon a \text{ is right invertible}~\}
+		G &=& G_l \bigcap G_r = \{~a \in \alg{A} \colon a \text{ is invertible}~\}
+	\end{eqnarray*}
+	Then $G_l$ and $G_r$ and $G$ are open. Moreover, the map $a \sto a^{-1}$ from $G$ to $G$ is continuous.
+\end{cor}
+\begin{proof}
+	$G_l$ and $G_r$ and $G$ are open by above theorem. \\
+	We just need to check this map is continuous at $1$ because of the continuity of multiplication. For $\{a_n\} \subset G$ with $a_n \sto 1$, thus $\norm{1-a_n}<\delta<1$. Since
+	\begin{equation*}
+		a_n^{-1} = (1-(1-a_n))^{-1} = \sum_{k=0}^{\infty} (1-a_n)^{k} = 1+ \sum_{k=1}^{\infty} (1-a_n)^{k}
+	\end{equation*}
+	Therefore,we have
+	\begin{eqnarray*}
+		\norm{1-a_n^{-1}} &=& \norm{\sum_{k=1}^{\infty} (1-a_n)^{k}}\\
+		&\leqslant&  \sum_{k=1}^{\infty} \norm{1-a_n}^{k}
+		&<& \frac{\delta}{1+\delta} < \delta = \norm{1-a_n}
+	\end{eqnarray*}
+	i.e. $\lim a_n = 1$.
+\end{proof}
+
+\begin{cor}
+	Let $\alg{A}$ be a Banach algebra.
+	\begin{enumerate}[label=\arabic*)]
+		\item The closure of a proper ideal is a proper ideal.
+		\item A maximal ideal is closed.
+		\item every ideal contained in a maximal ideal.
+	\end{enumerate}
+\end{cor}
+
+If $\alg{B}$ is a closed ideal of a Banach algebra $\alg{A}$, then then quotient algbra $\alg{A}/\alg{B}$ with the induced norm is also a Banach algebra since 
+\begin{equation*}
+	\norm{(a+\alg{B})(b+\alg{B})} = \norm{ab+\alg{B}} \leqslant \norm{(a+b_1)(b+b_2)} \leqslant \norm{(a+b_1)}\norm{(b+b_2)}
+\end{equation*}
+for any $b_1, b_2 \in \alg{B}$.
+
+\subsection{Spectrum}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
