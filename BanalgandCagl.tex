@@ -90,15 +90,120 @@ for any $b_1, b_2 \in \alg{B}$.
 
 \subsection{Spectrum}
 
+\begin{defn}
+	Let $\alg{A}$ be a Banach algebra and $a \in \alg{A}$. The spectrum of $a$, denoted by $\sigma(a)$ defined as
+	\begin{equation*}
+		\sigma(a) = \{~ \lambda \in \C \colon a-\lambda \text{ is invertible}~\}
+	\end{equation*}	
+	And the resolvents of $a$, $\rho(a) = \C \backslash \sigma(a)$.\\
+	Moreover, we can define the spectral radius of $a$ as
+	\begin{equation*}
+		r(a) = \sup{\{~\abs{\lambda} \colon \lambda \in \sigma(a)~\}}
+	\end{equation*}
+\end{defn}
 
+Firstly, there are some elementary properties of the spectrum.
 
+\begin{thm}
+	Let $\alg{A}$ be a Banach algebra and $a \in \alg{A}$.
+	\begin{enumerate}[label=\arabic*)]
+		\item If $\abs{\lambda} > \norm{a}$, then $\lambda \notin \sigma(a)$.
+		\item $\sigma(a)$ is a compact subset of $\C$.
+		\item the map $\lambda \mapsto (a-\lambda)^{-1}$ from $\rho(a)$ to $\alg{A}$ is analytic and $\sigma(a)$ is nonempty.
+		\item $r(a)=\lim_{n \sto \infty} \norm{a^{n}}^{\frac{1}{n}}$.
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	$1)$ holds by above theorem. \\
+	For $2)$, since $\lambda \sto a-\lambda$ is continuous from $\C$ to $\alg{A}$ and $G$ is open, $\rho(a)$ is open i.e. $\sigma(a)=\C \backslash \rho(a)$ is closed. Then by $1)$, $\sigma(a)$ is compact.\\
+	For $3)$, by the identity $a^{-1} - b^{-1} = a^{-1}(b-a)b^{-1}$ and the continuity of $a \sto a^{-1}$, we can compute the derivative of $F(\lambda) = (a-\lambda)^{-1}$,
+	\begin{equation*}
+		F^{'}(\lambda) = (a-\lambda)^{-2}
+	\end{equation*}
+	And clearly, $F^{'}(\lambda)$ is continuous. Thus it is analytic and it vanishes at $\infty$. By the Liouville's Theorem, if $\rho(a) = \C$, $F$ is constant. Therefore, $\rho(a) \notin \C$ i.e. $\sigma(a) \neq \varnothing$.\\
+	For $4)$, let $U=\{\lambda \in \C \colon \lambda = 0 \text{ or } \lambda^{-1} \in \rho(a)\}$ and 
+	\begin{equation*}
+		f(\lambda) = 
+		\begin{cases}
+			(\lambda^{-1}-a)^{-1} & x \neq 0,\\
+			0,& x = 0
+		\end{cases}
+	\end{equation*}
+	Then $f$ is analytic on $U$, i.e $f(\lambda)=\lambda\sum_{n=0}^{\infty} \lambda^{n} a^{n}$ is well-defined. Therefore, the convergent radius $R = r(a)^{-1}$
+	\begin{equation*}
+		R^{-1} = \limsup_{n \sto \infty} \norm{a^{n}}^{\frac{1}{n}} = r(a)
+	\end{equation*}
+	Conversely, by the identity $(a^{n}-\lambda^{n}) = (a-\lambda)(a^{n-1}+\lambda a^{n-2}+\lambda^{2} a^{n-3} + \cdots + \lambda^{n-1})$. Then, if $(a^{n}-\lambda^{n})$ is invertible, then $(a-\lambda)$ is invertible, i.e. $\sigma(a) \subset \sigma(a^{n})$. Thus $\abs{\lambda}^{n} \leqslant \norm{a^{n}}$ for any $\lambda \in \sigma{a}$. $r(a)=\liminf_{n \sto \infty}\norm{a^{n}}^{\frac{1}{n}}$. Therefore, $r(a)=\lim_{n \sto \infty} \norm{a^{n}}^{\frac{1}{n}}$.
+\end{proof}
 
+If $\alg{B} \subset \alg{A}$ is a subalgebra with the same identity of a Banach algebra $\alg{A}$, then we know for any element $b \in \alg{B}$, $\sigma_{\alg{A}}(b) \subset \sigma_{\alg{B}}(b)$. Then we can have more results other than it. Since the spectrum is a subset of $\C$, we need some topological properties results of $\C$.
 
+\begin{lem}
+	If $K$ is any compact subset of $\C$, then $\C \backslash K$ has a countable components, only one of which is unbounded. And the boundary of each component is in $K$.
+\end{lem}
+\begin{proof}
+	Let $\tilde{K} = \C \backslash K$, then $\tilde{K}$ is open.
+	\item Firstly, the connected component of open set in $\C$ is open. \\
+		  Let $U$ be an connected component in $\tilde{K}$ and $x \in U$. For any point $x \in U$, Since any open neighbourhood of $x$ is connected, and $K$ is open, there is a open neighbourhood $V$ of $x$ s.t. $V \subset U$.
+	\item Secondly, $\C$ has just at most countable many open sets, which are pairwise disjoint.\\
+		  This result is because any open set in $\C$ contains a rational point.
+	\item For any two disjoint open sets $A$ and $B$ in $\C$, $\partial A \bigcap B = \varnothing$. Thus the boundary of some compoment of $\tilde{K}$ can not intersect in any component of $\tilde{K}$, i.e. it is contained $K$.
+	\item Finally, since $K$ is bounded, there is a closed ball $B$ containing $K$. But the complement of $B$ is connected, thus there is only one component of $\tilde{K}$ containing $B$. Thus the other components of $\tilde{K}$ are bounded.
+\end{proof}
+\begin{rem}
+	The bounded component of $\C \backslash K$ is called a hole of $K$.
+\end{rem}
 
+\begin{defn}
+	If $f \colon A \sto \C$, where $A$ is a set, then the norm of $f$ on $A$ is defined as
+	\begin{equation*}
+		\norm{f}_A = \sup{\{\abs{f(x)} \colon x \in A\}}
+	\end{equation*}
+	For a compact set $K \in \C$, the polynomially convex hull of $K$ is defined as
+	\begin{equation*}
+		\hat{K} = \{~z \in \C \colon \abs{p(z)} \leqslant \norm{p}_K \text{ for any polynomial } p ~\}
+	\end{equation*}
+	If $K = \hat{K}$, $K$ is called polynomially convex.
+\end{defn}
 
+\begin{prop}
+	Let $K$ be a compact subset of $\C$. Then $\C \backslash \hat{K}$ is the unbounded component of $\C \backslash K$. Therefore, $K$ is polynomially convex if and only if $\C \backslash K$ is connected.
+\end{prop}
+\begin{proof}
+	Let $L$ be the set containing $K$ and all bounded component of $\C \backslash K$. Then by the Maximal Principle, $L \subset \hat{K}$. Conversely, if $\alpha \notin L$, then $(z-\alpha)^{-1}$ is analytic in a neighbourhood of $L$. Therefore, there is a sequence of polynomials $\{p_n\}$ s.t. $p_n \sto (z-\alpha)^{-1}$. Let $q_n=(z-\alpha)p_n$. Then $q_n \sto 1$, i.e. $\norm{q_n-1} < \frac{1}{2}$ for some $n$. But $\abs{q_n(\alpha)-1}=1$, this implies $\alpha \notin \hat{K}$, i.e. $\hat{K} \subset L$.
+\end{proof}
 
+By above results, now we can provide the relationships betweem $\sigma_{\alg{A}}(b)$ and $\sigma_{\alg{B}}(b)$.
 
+\begin{thm}
+	If $\alg{A}$ and $\alg{B}$ are Banach algebras with same identity s.t. $\alg{B} \subset \alg{A}$ and $b \in \alg{B}$, then
+	\begin{enumerate}[label=\arabic*)]
+		\item $\sigma_{\alg{A}}(b) \subset \sigma_{\alg{B}}(b)$ and $\partial\sigma_{\alg{B}}(b) \subset \partial\sigma_{\alg{A}}(b)$
+		\item $\hat{\sigma_{\alg{A}}(b)} = \hat{\sigma_{\alg{B}}(b)}$
+		\item if $G$ is a hole of $\sigma_{\alg{A}}(b)$, then $G \subset \sigma_{\alg{B}}(b)$ or $G \bigcap \sigma_{\alg{B}}(b) = \varnothing$
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	\item For $1)$, let $\lambda \in \partial\sigma_{\alg{B}}(b)$. Since $\inte{\sigma_{\alg{A}}(b)} \subset \inte{\sigma_{\alg{B}}(b)}$, it is sufficient to show $\lambda \in \sigma_{\alg{A}}(b)$. Suppose $\lambda \notin \sigma_{\alg{A}}(b)$, i.e. $(b-\lambda)$ is invertible in $\alg{A}$. But since $\lambda \in \partial\sigma_{\alg{B}}(b)$, there are $\lambda_n \in \C \backslash \alg{B}$ with $\lambda_n \sto \lambda$. Thus $(b-\lambda_n)^{-1} \in \alg{B}$. But $(b-\lambda_n)^{-1} \sto (b-\lambda)^{-1} \in \sigma_{\alg{B}}(b)$, contradicting to $\lambda \in \sigma_{\alg{A}}(b)$.
+	\item $2)$ holds because of the result of $1)$ and the Maxiamal Principle.
+	\item For $3)$, let $G_1 = G \bigcap \sigma_{\alg{B}}(b)$ and $G_2 = G \backslash \sigma_{\alg{B}}(b)$. Since $\partial\sigma_{\alg{B}}(b) \subset \sigma_{\alg{A}}(b)$ and $G \bigcap \sigma_{\alg{A}}(b) = \varnothing$, $G_1 = G \bigcap \inte{\sigma_{\alg{B}}(b)}$ is open. By the facts that $G_2$ is clearly open and $G = G_1 \bigcup G_2$ and $G_1 \bigcap G_2 = \varnothing$, either $G_1$ or $G_2$ is empty.
+\end{proof}
 
+Then we can have some useful corollaries.
+
+\begin{cor}
+	Let $\alg{A}$ and $\alg{B}$ be Banach algebras with same identity s.t. $\alg{B} \subset \alg{A}$ and $b \in \alg{B}$.
+	\begin{enumerate}[label=\arabic*)]
+		\item If $\sigma_{\alg{A}}(b)$ has no holes, then $\sigma_{\alg{A}}(b)=\sigma_{\alg{B}}(b)$.
+		\item If $\sigma_{\alg{B}}(b) \subset \R$, then $\sigma_{\alg{A}}(b)=\sigma_{\alg{B}}(b)$.
+		\item $\sigma_{\alg{A}}(b)=\sigma_{\alg{B}}(b)$ if and only if $\rho_{\alg{A}}(b)$ is connected.
+	\end{enumerate}
+\end{cor}
+\begin{proof}
+	$1)$ is clearly true since ubbouded component does not intersect $\sigma_{\alg{B}}(b)$. $2)$ is because $\C \backslash \sigma_{\alg{A}}(b)$ has no holes. $3)$ is similar as $2)$.
+\end{proof}
+
+\subsection{Riesz Functional Calculus}
 
 
 
