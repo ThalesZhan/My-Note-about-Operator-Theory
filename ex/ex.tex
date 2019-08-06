@@ -1854,7 +1854,328 @@ Then we can have some useful corollaries.
 
 \subsection{Riesz Functional Calculus}
 
+For any polynomial $p$ with complex coefficients,  
+\begin{equation*}
+	p(z) = \sum_{k=0}^{n} \alpha_k z^{k}
+\end{equation*}
+we can define $p(a)$ for some $a \in \alg{A}$, where $\alg{A}$ is a Banach algebra
+\begin{equation*}
+	p(a) = \sum_{k=0}^{n} \alpha_k a^{k}
+\end{equation*}
+Clearly, $p(a)$ is well-defined. But we can do more. If $f$ is an analytic funcion on $A \subset \C$, then $f$ can be approximated by a sequence of polynomials
+\begin{equation*}
+	f(z) = \sum_{n=0}^{\infty} \alpha_n z^{n}
+\end{equation*}
+Similarly, we can define $f(a)$ for $a \in \alg{A}$ as
+\begin{equation*}
+	f(a) = \sum_{n=0}^{\infty} \alpha_n a^{n}
+\end{equation*}
+If the radius of convergence of this sequence is $R$, then it can be well-defined for $\norm{a} \leqslant R$. By the fact that $r(a) \leqslant \norm{a}$, for the analytic function $f$, if $\sigma(a) \subset A$, $f(a)$ can be well-defined.\\
+Let $\hol{(a)}$ denote all functions that are analytic in a neighbourhood of $\sigma(a)$. Then there is a map from $\hol{(a)}$ to $\alg{A}$ defined as $f \mapsto f(a)$. Now, we can find more properties of this map. Firstly, we can give another formula of $f(a)$.\\
+If $f \in \hol{(a)}$, then for any closed curve $\gamma$ which encloses $\hol{(a)}$ and any point $z_0 \in \hol{(a)}$, 
+\begin{equation*}
+	f(z_0) = \frac{1}{2 \pi i}\int_{\gamma} f(z) (z-z_0)^{-1} dz
+\end{equation*}
+Therefore, replacing $z_0$ by $a \in \alg{A}$, then we have 
+\begin{equation*}
+	f(a) = \frac{1}{2 \pi i}\int_{\gamma} f(z) (z-a)^{-1} dz
+\end{equation*}
+Clearly, by the Cauchy's Integral Formula, this definition is well-defined and is coincided with above definition. But this definition can provide us a conivient method to research the map $f \mapsto f(a)$.
 
+\begin{thm}[Riesz Functional Calculus]
+	Let $\alg{A}$ be a Banach algebra and $a \in \alg{A}$ and the map
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$\rho \colon$ & $\hol{(a)}$ & $\longrightarrow$ & $\alg{A}$ \\
+			~ & $f$ & $\longmapsto$ & $f(a)=\frac{1}{2 \pi i}\int_{\gamma} f(z) (z-a)^{-1} dz$
+		\end{tabular}
+	\end{center}
+	has the following properties.
+	\begin{enumerate}[label=\arabic*)]
+		\item $\rho$ is an algebra homomorphism.
+		\item $\rho(1) = 1$ and $\rho(z)=a$.
+		\item If $\{f_n\} \subset \hol{(a)}$ and $f \in \alg{A}$ with $f_n \sto f$ uniformly on a compact set of $\hol{(a)}$, then $\rho(f_n) \sto \rho(f)$ in norm.
+	\end{enumerate}
+	Moreover, if any map $\tau \colon \hol{(a)} \sto \alg{A}$ satifies above conditions, then $\tau = \rho$. 
+\end{thm}
+\begin{proof}
+	For $1)$, $\rho$ is clearly linear. And
+		\begin{eqnarray*}
+			f(a)g(a)&=& -\frac{1}{4 \pi^{2}}\int_{\gamma_1} f(z) (z-a)^{-1} dz\int_{\gamma_2} g(\zeta) (\zeta-a)^{-1} d\zeta \\
+			&=& -\frac{1}{4 \pi^{2}}\int_{\gamma_1}\int_{\gamma_2} f(z)g(\zeta) \frac{(z-a)^{-1}-(\zeta-a)^{-1}}{\zeta-z} d\zeta dz \\
+			&=& -\frac{1}{4 \pi^{2}}\int_{\gamma_1}f(z) \int_{\gamma_2} \frac{g(\zeta)}{\zeta-z} d\zeta (z-a)^{-1} dz \\
+		    && \negmedspace{} + \frac{1}{4 \pi^{2}}\int_{\gamma_2}g(\zeta) \int_{\gamma_1} \frac{f(z)}{\zeta-z} dz (\zeta-a)^{-1} d\zeta
+		\end{eqnarray*}
+		We can choose $\gamma_2$ to enclose $\gamma_1$, thus 
+		\begin{equation*}
+			\int_{\gamma_1} \frac{f(z)}{\zeta-z} dz =0,~ \int_{\gamma_2} \frac{g(\zeta)}{\zeta-z} d\zeta] = 2\pi i g(z)
+		\end{equation*}
+		Therefore, 
+		\begin{equation*}
+			f(a)g(a) = {2 \pi i}\int_{\gamma_1} f(z)g(z)(z-a)^{-1} dz = (fg)(a)
+		\end{equation*}
+	\item For $2)$, let $f(z) = z^k$ and $\gamma = R e^{2 \pi i t}$, where $R>\norm{a}$ and $t \in [0,1]$, then
+	\begin{eqnarray*}
+		f(a) &=& \frac{1}{2 \pi i}\int_{\gamma} z^k (z-a)^{-1} dz \\
+		&=& \frac{1}{2 \pi i}\int_{\gamma} z^{k-1} (1-\frac{a}{z})^{-1} dz \\
+		&=& \frac{1}{2 \pi i}\int_{\gamma} z^{k-1} \sum_{n=0}^{\infty} \frac{a^{n}}{z^{n}}dz \\
+		&=& \sum_{n=0}^{\infty} (\frac{1}{2 \pi i}\int_{\gamma} \frac{1}{z^{n-k+1}}) a^{n} \\
+		&=& a^{k}
+	\end{eqnarray*}
+	\item For $3)$, 
+	\begin{eqnarray*}
+		\lefteqn { \norm{\int_{\gamma} f_n(z) (z-a)^{-1} dz - \int_{\gamma} f(z) (z-a)^{-1} dz} }\\
+		&=& \norm{\int_{0}^{1}(f_n(\gamma(t))-f(\gamma(t)))(\gamma(t)-a)^{-1}d\gamma(t)}\\
+		&\leqslant& \int_{0}^{1} \abs{f_n(\gamma(t))-f(\gamma(t))}\norm{(\gamma(t)-a)^{-1}}d\abs{\gamma}(t) \\
+		&\leqslant& M \norm{\gamma} \sup{\{\abs{f_n(z)-f(z)} \colon z \in \gamma(t)\}}
+	\end{eqnarray*}
+	where $M$ is the bound of $\norm{(\gamma(t)-a)^{-1}}$ since $t \mapsto \norm{(\gamma(t)-a)^{-1}}$ is continuous on $\gamma(t)$. Therefore, by the fact that $f_n \sto f$ uniformly,
+	\begin{equation*}
+		\norm{f_n(a)-f(a)} \sto 0
+	\end{equation*}
+	\item Finally, the uniquness is because any $f \in \hol{(a)}$ can be approximated uniformly by a sequence of polynomials. Thus, $1)$ and $2)$ means $\tau(p) = \rho(p)$ for any polynomial $p$, and $3)$ provides the fact that $\tau(f) = \rho(f)$ for any $f \in \hol{(a)}$.
+\end{proof}
+\begin{rem}
+	we have mentioned that the integral definition is coincided with the convergent difinition. In fact, by $2)$, this statement can be proved rigorously.
+\end{rem}
+
+\begin{thm}[Spectral Mapping Theorem]
+	If $a \in \alg{A}$ and $f \in \hol{(a)}$, then
+	\begin{equation*}
+		\sigma(f(a)) = f(\sigma(a))
+	\end{equation*}
+\end{thm}
+\begin{proof}
+	Firstly, there is a $g \in \hol{(a)}$ s.t. for $\alpha \in \sigma(a)$, $f(z)-f(\alpha) = (z-\alpha)g(z)$, that means $f(\sigma(a)) \subset \sigma(f(a))$.
+	\item Conversely, if $\alpha \notin f(\sigma(a))$, $g(z)=(f(z)-\alpha)^{-1} \in \hol{(a)}$. Thus, $g(a)(f(a)-\alpha) = 1$. Therefore, $\alpha \notin \sigma(f(a))$.
+\end{proof}
+
+\begin{prop}
+	Let $\alg{A}$ be a Banach algebra and $a \in \alg{A}$. $\sigma(a) = F_1 \bigcup F_2$, where $F_1$ and $F_2$ are disjoint nonempty closed sets. Then there is a nontrial idempotent $e$, i.e. $e^{2}=e$, s.t.
+	\begin{enumerate}[label=\arabic*)]
+		\item if $ab=ba$, then $eb=be$.
+		\item if $a_1=ae$ and $a_2=a(1-e)$, then $a_1a_2=a_2a_1=0$.
+		\item $\sigma(a_1)=F_1 \bigcup \{0\}$ and $\sigma(a_2)=F_2 \bigcup \{0\}$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	Since $F_1$ and $F_2$ are disjoint closed set, there are two disjoint open sets $G_1$ and $G_2$ separating $F_1$ and $F_2$. Let $f$ be the characteristic function of $G_1$ and $e=f(a)$. Thus $e^{2}=e$ by $f^{2}=f$.
+	\item For $1)$, there is a more genera result, $f(a)b=bf(a)$ for any $f \in \hol{(a)}$. It is because by extending the fact $p(a)b=bp(a)$ for any polynomial $p$.
+	\item $2)$ is clearly true.
+	\item Let $f_1(z)=zf(z)$ and $f_2(z)=z(1-f(z))$. Then $a_j = f_j(a)$ for $j=1,2$. Then by the Spectral Mapping Theorem $\sigma(a_j) = f_j(\sigma(a_j)) = F_j \bigcup \{0\}$.
+\end{proof}
+
+\subsection{Abelian Banach Algebras}
+ 
+ \begin{thm}[Gelfand-Mazur Theorem]
+	If $\alg{A}$ is a Banach algebra and a division ring, then $\alg{A} = \C$.
+\end{thm}
+\begin{proof}
+	It is because that for any $a \in \alg{A}$, $\sigma(a) \neq \varnothing$.
+\end{proof}
+
+Next, we reach the structure of an abelian Banach algebra. The structure of abelian Banach algebras can be explicit by constructing a map from an abelian Banach algebra to a continuous function space on a compact space. Firstly, we can find this compact space. Let 
+\begin{eqnarray*}
+	\Sigma(\alg{A}) &=& \{ \text{all algebra homomorphism } h \colon \alg{A} \sto \C\}\\
+	\fml{M} &=& \{\text{all maximal ideals of } \alg{A}\}
+\end{eqnarray*}
+for an abelian Banach algebra $\alg{A}$. Then we can find the relationship between $\Sigma(\alg{A})$ and $\fml{M}$.
+
+\begin{thm}
+	Let $\alg{A}$ be an abelian Banach algebra. Define a map
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$\gamma \colon$ & $\Sigma(\alg{A})$ & $\longrightarrow$ & $\fml{M}$ \\
+			~ & $h$ & $\longmapsto$ & $\ker{h}$
+		\end{tabular}
+	\end{center}
+	Then $\gamma$ is a bijection.
+\end{thm}
+\begin{proof}
+	Since $\alg{A} / \ker{h} \cong \C$, $\ker{h} \in \fml{M}$, i.e. $\gamma$ is well-defined.
+	\item Check: $\alg{A} / M \cong \C$ for any $M \in \fml{M}$\\
+		Let $\pi \colon \alg{A} \sto \alg{A} / M$. If $\pi(a)$ is not invertible, then $\pi(a\alg{A})$ is a proper ideal in $\alg{A} / M$. Thus $I = \pi^{-1}(\pi(a\alg{A}))$ is a proper ideal in $\alg{A}$ and $M \subset I$. Then by the maximality of $M$, $I=M$, i.e. $\pi(a)=0$. In fact, for any commutative ring, this result is true. Therefore, by Gelfand-Mazur Theorem, $\alg{A} / M \cong \C$.
+	\item Check: $\gamma$ is surjective.
+		Let $M \in \fml{M}$. Define $\tilde{h} \colon \alg{A} / M \sto \C$ as the algebraic isomorphism. Then $h=\pi \circ \tilde{h} \in \Sigma(\alg{A})$ with $\ker{h} = M$.
+	\item Check: $\gamma$ is injective.
+		If $\ker{h} = \ker{h^{'}}$ for $h,h^{'} \in \Sigma(\alg{A})$, then by the \textbf{Propostion} \ref{prop2} in the subsection \textbf{1.4.2}, $h = \alpha h^{'}$. And since $h(1) = h^{'}(1)=1$, $h=h^{'}$.
+\end{proof}
+
+Then we have some properties of $h \in \Sigma(\alg{A})$.
+
+\begin{prop}
+	Let $\alg{A}$ be an abelian Banach algebra and $h \in \Sigma(\alg{A})$.
+	\begin{enumerate}[label=\arabic*)]
+		\item $h$ is continuous.
+		\item $\norm{h}=1$ for $h \neq 0$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	$1)$ holds since $\ker{h}$ is maximal, thus it is closed.
+	\item Let $\lambda = h(a)$. Suppose $\abs{\lambda} > \norm{a}$. Then $1-\frac{1}{\lambda}$ is invertible. Set $b = (1-\frac{1}{\lambda})^{-1}$, then 
+	\begin{equation*}
+		1=h(b(1-\frac{1}{\lambda})) = h(b) - \frac{h(b)h(a)}{\lambda} =0
+	\end{equation*}
+	Therefore, $\abs{h(a)} \leqslant \norm{a}$ i.e $\norm{n} \leqslant 1$. Since $h(1) = 1$, $\norm{h}=1$.
+\end{proof}
+
+\begin{defn}
+	Let $\alg{A}$ be an abelian Banach algebra. Then $\Sigma(\alg{A}) \subset \alg{A}^{*}$ endowed with the induced $wk^{*}$-topology, is called the maximal ideal space of $\alg{A}$.
+\end{defn}
+
+\begin{prop}
+	If $\alg{A}$ is an abelian Banach algebra, then $\Sigma(\alg{A})$ is a compact Hausdorff space. Moreover, if $a \in \alg{A}$, then
+	\begin{equation*}
+		\sigma(a) = \Sigma(a) = \{~ h(a) \colon h \in \Sigma(\alg{A}) ~\}
+	\end{equation*}
+\end{prop}
+\begin{proof}
+	Since $\Sigma(\alg{A}) \subset \alg{A}^{*}$, we just need to show $\Sigma(\alg{A})$ is $wk^{*}$-closed. Let $\{h_i\}$ be a net in $\Sigma(\alg{A})$ s.t. $h_i \sto h$ $wk^{*}$ for some $h$ in the unit closed ball of $\alg{A}^{*}$. Then for $a,b \in \alg{A}$,
+	\begin{equation*}
+		h(ab) = \lim_{i} h_i(ab) = \lim_{i} h_i(a)h_i(b) = h(a)h(b)
+	\end{equation*}
+	and $h(1)=\lim_{i}h_i(1)=1$, thus $h \in \Sigma(\alg{A})$. $\Sigma(\alg{A})$ is compact.
+	\item If $h\in \Sigma(\alg{A})$ and $h-h(a) \in \ker{h} \in \fml{M}$, then $h-h(a)$ is not invertible, i.e. $\Sigma(a) \subset \sigma(a)$. Conversely, if $a-\lambda$ is not invertible, $(a-\lambda)\alg{A}$ is a proper ideal, which can be contained in a maximal ideal. Then $(a-\lambda) \in \ker{h}$ with some $h \in \Sigma(\alg{A})$, $\lambda = h(a) \in \Sigma(a)$.
+\end{proof}
+
+Therefore, $\Sigma(\alg{A})$ is the compact space we need. Then we define the map from $\alg{A}$ to $C(\Sigma(\alg{A}))$.
+
+\begin{thm}
+	If $\alg{A}$ is an abelian Banach algebra, the Gelfand transform is defined as
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$\Gamma \colon$ & $\alg{A}$ & $\longrightarrow$ & $C(\Sigma(\alg{A}))$ \\
+			~ & $a$ & $\longmapsto$ & $\hat{a} = \Gamma(a)$
+		\end{tabular}
+	\end{center}
+	where $\hat{a}(h)=h(a)$.
+	\begin{enumerate}[label=\arabic*)]
+		\item $\Gamma$ is a continuous homomorphsim.
+		\item $\norm{\Gamma}=1$.
+		\item $\ker{\Gamma}=\bigcap\{M \colon M \in \fml{M}\}$.
+		\item $\norm{\hat{a}}_{\infty}=r(a)$.
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	Firstly, for $1)$ if $h_i \sto h$ in $wk^{*}$, $\hat{a}(h_i) = h_i(a) \sto h(a) = \hat{a}(h)$. Thus $\Gamma$ is well-defined. And
+	\begin{equation*}
+		\Gamma(ab)(h) = h(ab) = h(a)h(b) = \Gamma(a)(h)\Gamma(b)(h)
+	\end{equation*}
+	Thus $\Gamma$ is a homormophsim.
+	\item For $2)$, since $\abs{\hat{a}(h)} = \abs{h(a)} \leqslant \norm{a}$, $\norm{\hat{a}}_{\infty} \leqslant \norm{a}$. Then $\norm{\Gamma} \leqslant 1$. By $\Gamma(1) = 1$, $\norm{\Gamma} = 1$.
+	\item For $3)$, $a \in \ker{\Gamma}$ if and only if $h(a) = 0$ for any $h \in \Sigma(\alg{A})$, i.e. $a \in \bigcap\{M \colon M \in \fml{M}\}$. 
+	\item For $4)$, it holds since $\sigma(a) = \{~ h(a) \colon h \in \Sigma(\alg{A}) ~\}$.
+\end{proof}
+
+If $a \in \alg{A}$ s.t. $\clo{\{p(a) \colon p \text{ is any polynomial}\}} = \alg{A}$, then $a$ is called a generator of $\alg{A}$. Clearly, this $\alg{A}$ is commutative. Then we can find an extral property of this special algebra.
+
+\begin{prop}
+	If $\alg{A}$ is an abelian Banach algebra with a generator $a$, then there is a homeomorphism $\tau \colon \Sigma(\alg{A}) \sto \sigma(a)$ s.t. $\Gamma(p(a)) = p \circ \tau$.
+\end{prop}
+\begin{proof}
+	In fact, $\tau$ can be defined as $\tau(h)=h(a)$. By above mention, $\tau$ is continuous and surjective. If $\tau{h_1}=\tau{h_2}$, then $ h_1(a) = h_2(a)$. By the fact that $h_1,h_2 \in \alg{A}$ and $a$ is a generator of $\alg{A}$, $h_1=h_2$. Thus $\tau$ is a bijection. And because $\Sigma(\alg{A})$ is compact, $f$ is a closed map, i.e. $f$ is a homeomorphism.
+	\begin{equation*}
+		\Gamma(p(a)(h) = p(\Gamma(a))(h) = p(\Gamma(a)(h)) = p(\tau(h))
+	\end{equation*}
+\end{proof}
+\begin{rem}
+	If $\alg{A}$ is generate by $a$, then $\Gamma \colon \alg{A} \sto C(\sigma(a))$ can be defined as $\Gamma(p(a)) = p$. 
+\end{rem}
+
+In fact, above proposition can extends to $n$ generators. If $\{a_i\}_{i=1}^{n}$ are generators of $\alg{A}$, i.e $\clo{\{p(a_1,\cdots,a_n) \colon p \text{ is any } n \text{ variables polynomial}\}} = \alg{A}$, then we have similar results as above proposition.
+
+
+\section{\texorpdfstring{$C^{*}$-Algebras}{C*-Algebras}}
+
+Now, we have known $\oper$ is a Banach algebra. But there is another algebraic operation on $\oper$, which let $\oper$ be more interesting than the general Banach algebra. This operation is a map $T \sto T^{*}$ on $\oper$, called an involution, and moreover, it satisfies the condition $\norm{T} = \norm{T^{*}}$. This identity provides a strong relation between the topological structure and the algebraic structure on $\oper$. In fact, the topology is completely determined by the algebraic structure on $\oper$. In order to research this structure, we firstly define an general algebra satisfying above condition, called a $C^{*}$-algebra. By digging its topological structures and algebraic structures, we can embed it into $\oper$ for some Hilbert space $\fml{H}$. Therefore, any $C^{*}$-algebra can be regarded as a subalgebra of $\oper$.
+
+\subsection{Elementary Properties}
+\begin{defn}
+	If $\alg{A}$ is a Banach algebra, an involution is a map $a \sto a^{*}$ from $\alg{A}$ to $\alg{A}$ satisfying for any $a,b \in \alg{A}$ and any $\alpha \in \C$, 
+	\begin{enumerate}[label=\arabic*)]
+		\item $(a^{*})^{*}=a$,
+		\item $(ab)^{*}=b^{*}a^{*}$,
+		\item $(\alpha a+b)^{*} = \clo{\alpha} a^{*}+b^{*}$.
+	\end{enumerate}
+\end{defn}
+
+\begin{defn}
+	A $C^{*}$-algebra is a Banach algebra $\alg{A}$ with an involution s.t. for every $a \in \alg{A}$,
+	\begin{equation*}
+		\norm{\st{a}a} = \norm{a}^{2}
+	\end{equation*}
+\end{defn}
+
+Then we can get some easy properties for the norm and the involution.
+
+\begin{prop}
+	Let $\A$ be a \Cs and $a \in \A$.
+	\begin{enumerate}[label=\arabic*)]
+		\item $\norm{\st{a}} = \norm{a}$.
+		\item $\norm{a\st{a}}=\norm{a}^{2}$.
+		\item $\norm{a}=\sup{\{\norm{ax} \colon \norm{x} \leqslant 1\}} = \sup{\{\norm{xa} \colon \norm{x} \leqslant 1\}}$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	For $1)$, $\norm{a}^{2} = \norm{\st{a}a} \leqslant \norm{\st{a}}\norm{a}$, thus $\norm{a} \leqslant \norm{\st{a}}$. Taking the involution, $\norm{\st{a}} \leqslant \norm{a}$.
+	\item $2)$, $\norm{a\st{a}} = \norm{\st{(\st{a})}} = \norm{\st{a}}^{2} = \norm{a}^{2}$.
+	\item For $3)$, let $\alpha$ be the supremum, then $\alpha \leqslant \norm{a}$. $a = 0$ is clearly true. For $a \neq 0$, let $x = \st{a} / \norm{a}$. Thus $\alpha \geqslant \norm{a}$.
+\end{proof}
+
+If a \Cs $\A$ is without the identity, we can use same method of the Banach algebra to extend it to a unit \Cs $\tilde{\A}$. The only thing we need to prove is the identity. And this can be obtained the result in above proposition. Therefore, we always assume a \Cs is with the identity.
+
+
+\begin{defn}
+	Let $\A$ be a \Cs and $a \in \A$.
+	\begin{enumerate}[label=\arabic*)]
+		\item $a$ is self-adjoint if $a = \st{a}$.
+		\item $a$ is normal if $a\st{a} = \st{a}a$.
+		\item $a$ is unitary if $a\st{a}=\st{a}a=1$.
+		\item $a$ is a projection if $a$ is self-adjoint and $a=a^{2}$.
+	\end{enumerate}
+\end{defn}
+
+Then we can see the algebraic structure on a \Cs completely determine its norm topology.
+
+\begin{thm}
+	Let $\A$ be a \Cs and $a \in \A$. If $a$ is self-adjoint, then
+	\begin{equation*}
+		r(a) = \norm{a}
+	\end{equation*}
+\end{thm}
+\begin{proof}
+	Since $a$ is sef-sdjoint,
+	\begin{equation*}
+		\norm{a}^{2} = \norm{\st{a}a} = \norm{a^{2}}
+	\end{equation*}
+	Thus by induction, we have $\norm{a}^{2n} = \norm{a^{2n}}$. Then
+	\begin{equation*}
+		r(a) = \lim_{n \sto \infty} \norm{a^{n}}^{\frac{1}{n}} = \lim_{n \sto \infty} \norm{a^{2n}}^{\frac{1}{2n}} = \norm{a}
+	\end{equation*}
+\end{proof}
+\begin{rem}
+	For any $b \in \A$, we know $\st{b}b$ is self-adjoint,
+	\begin{equation*}
+		r(\st{b}b) = \norm{\st{b}b} = \norm{b}^{2}
+	\end{equation*}
+	Thus, the norm in a \Cs is completely determined by the spectral radius, which is totally an algebraic trait.
+\end{rem}
+
+Now, we can see how the algebraic property influences the topological structure.
+
+\begin{prop}
+	Let $\rho \colon \A \sto \B$ be a *-homomorphsim between two $C^{*}$-algebras.
+	\begin{enumerate}[label=\arabic*)]
+		\item $\rho$ is continuous, and moreover $\norm{\rho(a)} \leqslant \norm{a}$.
+		\item If $\rho$ is a *-isomorphism, then $\rho$ is an isometry.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	$2)$ is the direct corollary from $1)$. For $1)$, clearly $\sigma(\rho(a)) \subset \sigma(a)$, thus
+	\begin{equation*}
+		\norm{\rho(a)}^{2} = r(\rho(\st{a}a)) \leqslant r(\st{a}a) = \norm{a}^{2}
+	\end{equation*}
+\end{proof}
 
 
 \end{document}
