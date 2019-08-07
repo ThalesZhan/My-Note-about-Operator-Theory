@@ -191,7 +191,7 @@ By above results, now we can provide the relationships betweem $\sigma_{\alg{A}}
 
 Then we can have some useful corollaries.
 
-\begin{cor}
+\begin{cor} \label{cor5}
 	Let $\alg{A}$ and $\alg{B}$ be Banach algebras with same identity s.t. $\alg{B} \subset \alg{A}$ and $b \in \alg{B}$.
 	\begin{enumerate}[label=\arabic*)]
 		\item If $\sigma_{\alg{A}}(b)$ has no holes, then $\sigma_{\alg{A}}(b)=\sigma_{\alg{B}}(b)$.
@@ -313,7 +313,7 @@ Clearly, by the Cauchy's Integral Formula, this definition is well-defined and i
 	\item Let $f_1(z)=zf(z)$ and $f_2(z)=z(1-f(z))$. Then $a_j = f_j(a)$ for $j=1,2$. Then by the Spectral Mapping Theorem $\sigma(a_j) = f_j(\sigma(a_j)) = F_j \bigcup \{0\}$.
 \end{proof}
 
-\subsection{Abelian Banach Algebras}
+\subsection{Abelian Banach Algebras} \label{sec2}
 
 \begin{thm}[Gelfand-Mazur Theorem]
 	If $\alg{A}$ is a Banach algebra and a division ring, then $\alg{A} = \C$.
@@ -351,7 +351,7 @@ for an abelian Banach algebra $\alg{A}$. Then we can find the relationship betwe
 
 Then we have some porperties of $h \in \Sigma(\alg{A})$.
 
-\begin{prop}
+\begin{prop} \label{prop5}
 	Let $\alg{A}$ be an abelian Banach algebra and $h \in \Sigma(\alg{A})$.
 	\begin{enumerate}[label=\arabic*)]
 		\item $h$ is continuous.
@@ -371,7 +371,7 @@ Then we have some porperties of $h \in \Sigma(\alg{A})$.
 	Let $\alg{A}$ be an abelian Banach algebra. Then $\Sigma(\alg{A}) \subset \alg{A}^{*}$ endowed with the induced $wk^{*}$-topology, is called the maximal ideal space of $\alg{A}$.
 \end{defn}
 
-\begin{prop}
+\begin{prop} \label{prop6}
 	If $\alg{A}$ is an abelian Banach algebra, then $\Sigma(\alg{A})$ is a compact Hausdorff space. Moreover, if $a \in \alg{A}$, then
 	\begin{equation*}
 		\sigma(a) = \Sigma(a) = \{~ h(a) \colon h \in \Sigma(\alg{A}) ~\}
@@ -388,7 +388,7 @@ Then we have some porperties of $h \in \Sigma(\alg{A})$.
 
 Therefore, $\Sigma(\alg{A})$ is the compact space we need. Then we define the map from $\alg{A}$ to $C(\Sigma(\alg{A}))$.
 
-\begin{thm}
+\begin{thm} \label{thm5}
 	If $\alg{A}$ is an abelian Banach algebra, the Gelfand transform is defined as
 	\begin{center}
 		\begin{tabular}{l c c l}
@@ -415,7 +415,11 @@ Therefore, $\Sigma(\alg{A})$ is the compact space we need. Then we define the ma
 	\item For $4)$, it holds since $\sigma(a) = \{~ h(a) \colon h \in \Sigma(\alg{A}) ~\}$.
 \end{proof}
 
-If $a \in \alg{A}$ s.t.  
+If $a \in \alg{A}$ s.t. $\clo{\{p(a) \colon p \text{ is any polynomial}\}} = \alg{A}$, then $a$ is called a generator of $\alg{A}$. Clearly, this $\alg{A}$ is commutative. Then we can find an extral property of this special algebra.
+
+\begin{prop} \label{prop7}
+	If $\alg{A}$ is an abelian Banach algebra with a generator $a$, then there is a homeomorphism $\tau \colon \Sigma(\alg{A}) \sto \sigma(a)$ s.t. $\Gamma(p(a)) = p \circ \tau$.
+\end{prop}
 \begin{proof}
 	In fact, $\tau$ can be defined as $\tau(h)=h(a)$. By above mention, $\tau$ is continuous and surjective. If $\tau{h_1}=\tau{h_2}$, then $ h_1(a) = h_2(a)$. By the fact that $h_1,h_2 \in \alg{A}$ and $a$ is a generator of $\alg{A}$, $h_1=h_2$. Thus $\tau$ is a bijection. And because $\Sigma(\alg{A})$ is compact, $f$ is a closed map, i.e. $f$ is a homeomorphism.
 	\begin{equation*}
@@ -427,9 +431,6 @@ If $a \in \alg{A}$ s.t.
 \end{rem}
 
 In fact, above proposition can extends to $n$ generators. If $\{a_i\}_{i=1}^{n}$ are generators of $\alg{A}$, i.e $\clo{\{p(a_1,\cdots,a_n) \colon p \text{ is any } n \text{ variables polynomial}\}} = \alg{A}$, then we have similar results as above proposition.
-
-
-
 
 \section{\texorpdfstring{$C^{*}$-Algebras}{C*-Algebras}}
 
@@ -468,7 +469,7 @@ Then we can get some easy properties for the norm and the involution.
 	\item For $3)$, let $\alpha$ be the supremum, then $\alpha \leqslant \norm{a}$. $a = 0$ is clearly true. For $a \neq 0$, let $x = \st{a} / \norm{a}$. Thus $\alpha \geqslant \norm{a}$.
 \end{proof}
 
-If a \Cs $\A$ is without the identity, we can use same method of the Banach algebra to extend it to a unit \Cs $\tilde{\A}$. The only thing we need to prove is the identity. And this can be obtained the result in above proposition. Therefore, we always assume a \Cs is with the identity.
+If a \Cs $\A$ is without the identity, we can use same method of the Banach algebra to extend it to a unit \Cs $\tilde{\A}$. The only thing we need to prove is the identity. And this can be obtained the result in above proposition. Therefore, we always assume a \Cs is with the identity.\\
 
 \begin{defn}
 	Let $\A$ be a \Cs and $a \in \A$.
@@ -495,7 +496,7 @@ Then we can see the algebraic strucuture on a \Cs completely determine its norm 
 	\end{equation*}
 	Thus by induction, we have $\norm{a}^{2n} = \norm{a^{2n}}$. Then
 	\begin{equation*}
-		r(a) = \lim_{n \sto \infty} \norm{a^{n}}^{\frac{1}{n}} = \lim_{n \sto \infty} \norm{a^{2n}}^{\frac{1}{2n}} = \norm{a}
+		r(a) = \lim_{n \sto \infty} \norm{a^{n}}^{\frac{1}{n}} = \lim_{n \sto \infty} \norm{a^{2n}}^{\frac{1}{2n}} = \norm{a} \qedhere
 	\end{equation*}
 \end{proof}
 \begin{rem}
@@ -509,18 +510,333 @@ Then we can see the algebraic strucuture on a \Cs completely determine its norm 
 Now, we can see how the algebraic property influences the topological structure.
 
 \begin{prop}
-	Let $\rho \colon \A \sto \B$ be a *-homomorphsim between two $C^{*}$-algebras.
+	Let $\rho \colon \A \sto \B$ be a $*$-homomorphsim between two $C^{*}$-algebras.
 	\begin{enumerate}[label=\arabic*)]
 		\item $\rho$ is continuous, and moreover $\norm{\rho(a)} \leqslant \norm{a}$.
-		\item If $\rho$ is a *-isomorphism, then $\rho$ is an isometry.
+		\item If $\rho$ is a $*$-isomorphism, then $\rho$ is an isometry.
 	\end{enumerate}
 \end{prop}
 \begin{proof}
 	$2)$ is the direct corollary from $1)$. For $1)$, clearly $\sigma(\rho(a)) \subset \sigma(a)$, thus
 	\begin{equation*}
-		\norm{\rho(a)}^{2} = r(\rho(\st{a}a)) \leqslant r(\st{a}a) = \norm{a}^{2}
+		\norm{\rho(a)}^{2} = r(\rho(\st{a}a)) \leqslant r(\st{a}a) = \norm{a}^{2} \qedhere
 	\end{equation*}
 \end{proof}
+
+Let $\Rea{\A}$ denote the set of all self-adjoint elements in a \Cs $\A$. Then, for any $a \in \A$, there are $x,y \in \Rea{\A}$, s.t.
+\begin{equation*}
+	a = x + iy, \text{ where } x = \frac{a + \st{a}}{2}, y = \frac{a-\st{a}}{2i}
+\end{equation*}
+Therefore, any element in a \Cs $\A$ can be combined by two self-adjoint elements. And the self-adjoint element play a important role in the algebraic structure of a \Cs. 
+
+\begin{prop}
+	If $h \colon \A \sto \C$ is an algebraic homomorphis on a \Cs $\A$. 
+	\begin{enumerate}[label=\arabic*)]
+		\item If $a \in \Rea{\A}$, $h(a) \in \R$.
+		\item For any $a \in \A$, $h(\st{a})=\clo{h(a)}$.
+		\item $h(\st(a)a) \geqslant 0$ $\forall~ a \in \A$.
+		\item If $u \in \A$ is a unitary, then $\abs{u} = 1$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	For $1)$, let $h(a) = \alpha +i \beta$ for $\alpha,\beta \in \R$ and $\Cg{a+it}$ be the \Cs generated by $a+it$ and $1$, which is abelian. Therefore, $\norm{h}_{\Cg{a+it}} = 1$ by \textbf{Proposition} \ref{prop5} in the subsection \textbf{2.1.4}. Then we have
+	\begin{eqnarray*}
+		\abs{h(a+it)} &\leqslant& \norm{a+it}^{2} \\
+		&=& \norm{\st{(a+it)}(a+it)} \\
+		&=& \norm{a^{2}+t^{2}} \\
+		&\leqslant& \norm{a}^{2}+t^2
+	\end{eqnarray*}
+	i.e.
+	\begin{eqnarray*}
+		\norm{a}^{2}+t^2 &\geqslant& \abs{\alpha +i(t+\beta)}^2 \\
+		&=& \alpha^2 + (\beta+t)^2 \\
+		&=& \alpha^2 + \beta^2 +2 \beta t + t^2
+	\end{eqnarray*}
+	Therefore, for any $t \in \R$, $\norm{a}^2 \geqslant \alpha^2 + \beta^2 +2 \beta t$. Thus, $\beta = 0$. \\
+	$2)$ and $3)$ and $4)$ is the direct results from $1)$.
+\end{proof}
+
+\begin{cor}
+	If $a \in \Rea{A}$, then $\sigma(a) \subset \R$.
+\end{cor}
+\begin{proof}
+	Let $\Cg(a)$ be the \Cs generated by $1$ and $a$. Thus $\Cg(a)$ is abelian. Then by \textbf{Proposition} \ref{prop6} in the subsection \textbf{2.1.4}, 
+	\begin{equation*}
+		\sigma_{\Cg{a}}(a) = \{~ h(a) \colon h \in \Sigma(\alg{A}) ~\} \subset \R
+	\end{equation*} 
+	And by the $Corollary$ \ref{cor5} in the subsection \textbf{2.1.2},
+	\begin{equation*}
+		\sigma(a) = \sigma_{\Cg{a}}(a) \subset \R
+	\end{equation*}
+\end{proof}
+
+And the spectrum of a element in a \Cs has better property.
+
+\begin{thm}
+	If $\B$ is a $C^{*}$-subalgebra of a \Cs $\A$ and $b \in \B$, then
+	\begin{equation*}
+		\sigma_{\B}(b) = \sigma_{\A}(b)
+	\end{equation*}
+\end{thm} 
+\begin{proof}
+	It suffices to show that if $b$ is invertible in $\A$ with the inverse $x$, then $x \in \B$. Then $(a^{*}a)(xx^{*})=1$. Since $a^{*}a \in \B$ and by above corollary, we know $xx^{*} \in \B$. But $x = (x\st{x})\st{a}$, thus $x \in \B$.
+\end{proof}
+
+\subsection{Abelian \texorpdfstring{$C^{*}$-Algebras}{C*-Algebras}}
+
+The abelian \Cs is firstly an ablian Banach algebra, thus all results in the subsection \ref{sec2} can be applied to it. But since the involution and the related norm provide more information, we can have better results than the general abelian Banach algebra has. Firsly, we strengthen the \textbf{Theorem} \ref{thm5} in subsection \textbf{2.1.4}.
+
+\begin{thm}
+	If $\A$ is an abelian \Cs, then the Gelfand transform $\Gamma \colon \A \sto C(\Sigma(\A))$ is an isometric $*$-isomorphism.
+\end{thm}
+\begin{proof}
+	Firstly, $\Gamma$ is a $*$-homormophism, since the result in \textbf{Theorem} \ref{thm5} and
+	\begin{equation*}
+		\Gamma(\st(a))(h) = h(\st(a)) = \clo{h(a)} = \clo{\Gamma(a)}(h)
+	\end{equation*}
+	Now, we can easily see $\Gamma$ is an isometry by $4)$ in the \textbf{Theorem} \ref{thm5},
+	\begin{equation*}
+		\norm{\hat{a}}_{\infty}^{2} = \norm{\hat{\st{a}a}}_{\infty} = r(\st(a)a) = \norm{a}^2
+	\end{equation*}
+	Finally, we need to check $\Gamma$ is surjective. It is because $\Gamma(\A)$ is a closed subalgebra of $C(\Sigma(\A))$, which is closed under the complex conjugate and separates points in $\Sigma(\A)$. Then by the Stone-Weierstrass Theorem $\Gamma(\A)=C(\Sigma(\A))$
+\end{proof}
+
+We know if $\A = \Cg{a}$ for some normal element $a$, then $\A$ is an abelian \Cs. In fact, 
+\begin{equation*}
+	\A = \clo{\{~p(a,\st{a}) \colon p(z,\clo{z}) \text{ is a polynomial} ~\}}
+\end{equation*}
+
+Then, we can modify the result in the \textbf{Propostion} \ref{prop7} in subsection \textbf{2.1.4}.
+
+\begin{thm}
+	Let $\A = \Cg{a}$ for some normal element $a$. Then there is a unique isometric $*$-isomorphism $\rho \colon \A \sto C(\sigma(a))$.
+\end{thm}
+\begin{proof}
+	Firstly, we have a similar homeomorphism
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$\tau \colon$ & $\Sigma(\A)$ & $\longrightarrow$ & $\sigma(a)$ \\
+			~ & $h$ & $\longmapsto$ & $h(a)$
+		\end{tabular}
+	\end{center}
+	Then $\rho(x) = \Gamma(x) \circ \tau^{-1}$ is indeed an isometric $*$-isomorphism by the property of Gelfand transform. And moreover, by the result of \textbf{Propostion} \ref{prop7}, for any $z \in \sigma(a)$, $z = h(a)$ for some $h \in \Sigma(\A)$
+	\begin{eqnarray*}
+		\rho(p(a,\st{a}))(z) &=& \rho(p(a,\st{a}))(h(a)) = \Gamma(p(a,\st{a})) \circ \tau^{-1} (h(a)) \\
+		&=& \Gamma(p(a,\st{a}))(h) = h(p(a,\st{a})) \\
+		&=& p(h(a), h(\st{a})) = p(h(a), \clo{h(a)}) \\
+		&=& p(z,\clo(z))
+	\end{eqnarray*}
+	That means that $\rho$ maps the polynomials in $\A$ to polynomails in $\sigma(a)$. Therefore, $\rho$ is unique.
+\end{proof}
+
+By the Riesz Functional Calculus, we have the map $f \mapsto f(a)$ from $\hol{(a)}$ to $\A$ for a \Cs $\A$ and any element $a \in \A$. Now, we can extend this definition a $C(\sigma(a))$ by above $\rho$, but we need $a$ is normal, then
+\begin{center}
+	\begin{tabular}{l c c l}
+		$\rho^{-1} \colon$ & $C(\sigma(a))$ & $\longrightarrow$ & $\Cg{a}$ \\
+		~ & $f$ & $\longmapsto$ & $f(a)$
+	\end{tabular}
+\end{center}
+defined above is an isometric isomorphism and $\rho^{-1}$ maps
+\begin{center}
+	\begin{tabular}{r @{$~\longmapsto$~} l}
+		$1$ & $1$ \\
+		$z$ & $a$ \\
+		$\clo{z}$ & $\st{a}$ \\
+		$z^{-1}$ & $a^{-1}$\\
+		$p(z,\clo{z})$ & $p(a,\st{a})$ 
+	\end{tabular}
+\end{center}
+
+Therefore, this map is unique and it is clearly the extension of the Riesz Functional Calculus, called Continuous Functional Calculus. Like the Riesz Functional Calculus, there is also a Spectral Theorem.
+\begin{thm}[Spectral Theorem]
+	Let $\A$ be a \Cs and $a \in \A$ be a normal element, then for $f \in C(\sigma(a))$, 
+	\begin{equation*}
+		\sigma(f(a)) = f(\sigma(a))
+	\end{equation*}
+\end{thm}
+\begin{proof}
+	For some compact space $X$ and $f \in C(X)$, then $C(X)$ with the supremum norm is a \Cs and $\sigma(f) = \ran{f}$. Then since $f \mapsto f(a)$ is a $*$-isomorphism, 
+	\begin{equation*}
+		\sigma(f(a)) = \sigma_{C(\sigma(a))}(f) = \ran{f} = f(\sigma(a)) \qedhere
+	\end{equation*}
+\end{proof}
+
+
+There is an important example.
+\begin{exam} 
+	Let $\mu$ be a compactly supported, regular Borel measure on $\C$ and ($X,\Omega,\mu$) be the measure space. For each $\pi \in \lfs{\infty}(\mu)$, we define the map
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$M_{\phi} \colon$ & $\lfs{2}(\mu)$ & $\longrightarrow$ & $\lfs{2}(\mu)$ \\
+			~ & $f(z)$ & $\longmapsto$ & $\phi(z)f(z)$
+		\end{tabular} 
+	\end{center}
+	Then clearly $M_{\phi}$ is in $\fml{B}(\lfs{2}(\mu))$.
+	\begin{enumerate}[label=\arabic*)]
+		\item $\st{(M_{\phi})} = M_{\clo{\phi}}$ and $M_{\phi}$ is a normal element in $\fml{B}(\lfs{2}(\mu))$.
+		\item $\phi \mapsto M_{\phi}$ is a $*$-homomorphism from $\lfs{\infty}(\mu)$ to $\lfs{2}(\mu)$.
+		\item $\norm{M_{\phi}} = \norm{\phi}_{\infty}$.
+		\item $\sigma(M_{\phi})= \bigcap\{\clo{\phi(U)} \colon U \in \Omega ~&~ \mu(X \backslash U) = 0\}$.
+		\item If $f \in C(\sigma(M_{\phi}))$, then $f(M_{\phi}) = M_{f \circ \phi}$.
+	\end{enumerate}
+	If $\phi(z) = z$, we set denote $N_{\mu} = M_{\phi}$ and in fact, $\sigma(N_{\mu}) = \supp{\mu}$.
+\end{exam}
+
+
+\subsection{Positive Elements and Postive Functionals}
+
+We have known that self-adjoint elements play a important role in a \Cs $\A$. The self-adjoint element $a$ in $\A$ is like the real number in $\C$, and the relationship between them can be revealed by the fact $a \in \Rea{\A}$ if and only if $\sigma(a) \subset \R$. The converse is obtained by the Continuous Functional Calculus. In fact, Continuous functional calculus can provide more relation between the element in $\A$ and the elment in $\C$, like positivity.
+
+\begin{defn}
+	Let $\A$ be a \Cs and $a \in \Rea{\A}$. Then $a$ is called a positive element if and only if $\sigma(a) \subset \R^{+}$, denoted by $a \geqslant 0$. And let $\A_{+}$ be the set of all positive elements.
+\end{defn}
+
+This definition is nature by above mention, but it may not be very explicit. So we need to show more direct equivalent definitions of positive elements.
+
+\begin{thm}
+	Let $\A$ be a \Cs. Then the following statements are equivalent.
+	\begin{enumerate}[label=\arabic*)]
+		\item $a \geqslant 0$.
+		\item $a = b^2$ for some $b \geqslant 0$.
+		\item $a \in \Rea{\A}$ and $\norm{t - a} \leqslant 0$ for all $t \geqslant \norm{a}$.
+		\item $a \in \Rea{\A}$ and $\norm{t - a} \leqslant 0$ for some $t \geqslant \norm{a}$
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	All of these can be done by the functional calculus. And our goal is to find some vilid functions in $C(\sigma(a))$ to complete these.
+	\item $1) \Rightarrow 2)$ Let $f(x) = \sqrt{x}$ in $C(\sigma(a))$ and since $\sigma(a) \subset \R^{+}$, $f$ is well-defined. Let $b = f(a)$. Then, we have $a = b^{2}$. And by Spectral Theorem, $\sigma(b) = \sigma(f(a)) \subset \R{+}$.
+	\item $2) \Rightarrow 3)$ Let $f(x) = x^2$ defined on $\sigma(b)$, then $a = f(b)$ and $\norm{a} = \norm{f}_{\infty}$. By this condition, $f(x) \geqslant 0$. Thus $\sigma(a) = f(\sigma(b)) \subset \R^{+}$.
+	\item $3) \Rightarrow 4)$ It is trivial.
+	\item $4) \Rightarrow 1)$ Let $f(x) = x$ defined on $\sigma(a) \subset \R$. Then this condition means 
+	\begin{equation*}
+		\norm{t-f}_{\infty} = \norm{t-f(a)} =\norm{t-a} \leqslant t
+	\end{equation*}
+	for some $t \geqslant \norm{a} = \norm{f}_{\infty}$. Therefore, $f(x) \geqslant 0$ for all $x \in \sigma(a)$. Thus $\sigma(a) = f(\sigma(a)) \subset \R^{+}$.
+\end{proof}
+
+Like the fact that any element in a \Cs can be combined by two self-ajoint elements, any self-adjoint element can be combined by two positive elements.
+
+\begin{prop}
+	Let $\A$ be a \Cs. If $a \in \Rea{\A}$, then there are unique $u,v \in \R^{+}$, s.t.
+	\begin{equation*}
+		a = u - v ~~\&~~ uv = vu = 0
+	\end{equation*}
+\end{prop}
+\begin{proof}
+	Let $f(x) = \max{x,0}$ and $g(x) = - \min{x,0}$. Then $f,g \in C(\sigma(a))$ and $f(x)-g(x)=x$ and $f(x)g(x)=0$. Then $u = f(a)$ and $v = g(a)$ satisfy above conditions.\\
+	If $a=u_1-v_1$, then we can know $\Cg(a,u,v,u_1,v_1)$ is an abelian \Cs, thus for some compact space $X$, $\Cg(a,u,v,u_1,v_1) \cong C(X)$. And this uniqueness can be proved in a continuous function space.
+\end{proof}
+
+\begin{cor}
+	Let $\A$ be a \Cs. Then $\A_{+}$ is a cone.
+\end{cor}
+\begin{proof}
+	Let $\{a_n\} \subset \A_{+}$ be a sequence s.t. $a_n \sto a$. Then by above proposition, $\norm{a_n-\norm{a_n}} \leqslant \norm{a_n}$. Taking norm limit, 
+	$\norm{a-\norm{a}} \leqslant \norm{a}$, thus $a \in \A_{+}$.\\
+	Clearly, $\alpha \A_{+} \subset \A_{+}$ for any $\alpha >0$. For $a, b \in \A$, we can assume that $\norm{a} \leqslant 1$ and $\norm{b} \leqslant 1$, then
+	\begin{equation*}
+		\norm{1-\frac{1}{2}(a+b)} = \frac{1}{2}\norm{(1-a)+(1-b)} \leqslant 1
+	\end{equation*}
+	Thus $\frac{1}{2}(a+b) \in \A_{+}$, i.e. $a+b \in \A_{+}$.
+\end{proof}
+
+Then, we can build an order on $\Rea{\A}$ by defining $a \leqslant b \Leftrightarrow b-a \in \A_{+}$. And moreover, let $\A_{-} = - \A_{+}$, then $\A_{-} \bigcap \A_{+} = \{0\}$. There are other properties of positivity.
+
+\begin{prop}
+	Let $\A$ be a \Cs.
+	\begin{enumerate}[label=\arabic*)]
+		\item If $a \geqslant 0$, then there is a unique $b \geqslant 0$ s.t. $a = b^n$.
+		\item If $a \in \A$, then $\st{a}a \in \A_{+}$.
+		\item If $a \leqslant b$ in $\Rea{\A}$, then $\st{c}ac \leqslant \st{c}bc$ for any $c \in \A$.
+		\item For any $a \in \Rea{\A}$, $-\norm{a} \leqslant a \leqslant \norm{a}$ and if $a \in \A$, $0 \leqslant \st{a}a \leqslant \norm{a}^2$.
+		\item If $0 \leqslant a \leqslant b$, then $b^{-1} \leqslant a^{-1}$.
+		\item For any $a \in \A$, we define $\abs{a} = \sqrt{\st{a}a}$, then $\abs{a} = a_{+}+a_{-}$.
+		\item If $0 \leqslant a \leqslant b \in \A$, then $\norm{a} \leqslant \norm{b}$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	For $1)$, let $f(x)= \sqrt[n]{x}$ defined on $\sigma(a) \subset \R$, then $b=f(a)$ sastisfying $ a = b^{n}$.
+	\item For $2)$, let $b = \st{a}a = b_{+} - b_{-}$ and $c = \sqrt{b_{+}}$  and $d=ac$. Since $-\st(d)d = b_{-}^2 \in \A_{+}$, $\st{d}d \in \A_{-}$. Let $d = x + iy$, then $d\st{d} + \st{d}d = 2(x^2+y^2) \in \A_{+}$. Thus
+	\begin{equation*}
+		d\st{d} = d\st{d} + \st{d}d -\st{d}d \in \A_{+}
+	\end{equation*}
+	By the fact that $\sigma(d\st{d})\bigcup\{0\} = \sigma(\st{d}d)\bigcup\{0\}$, $b_{-}^2 = -\st(d)d =0$. Therefore, $b = \st{a}a \in \A_{+}$.
+	\item For $3)$, let $d = \sqrt{b-a}$, then 
+	\begin{equation*}
+		\st{c}bc - \st{c}ac = \st{c}(b-a)c = \st{c}\st{d}dc = \st{(dc)}dc \in \A_{+}
+ 	\end{equation*}
+ 	\item For $4)$, if $x \in \sigma(a)$, $\abs{x} \leqslant \norm{a}$. Therefore, $f(x) = \norm{a}-x$ and $g(x) = \norm{a}+x$ are positive on $\sigma(a)$.
+ 	\item For $5)$, since $0 \leqslant a \leqslant b$,
+ 	\begin{equation*}
+ 		1-b^{-\frac{1}{2}}ab^{-\frac{1}{2}} = b^{-\frac{1}{2}}(b-a)b^{-\frac{1}{2}} \geqslant 0
+ 	\end{equation*}
+ 	i.e. $\st{(a^{\frac{1}{2}} b^{-\frac{1}{2}})}(a^{\frac{1}{2}} b^{-\frac{1}{2}}) \leqslant 1$, therefore $\norm{a^{\frac{1}{2}} b^{-\frac{1}{2}}} \leqslant 1$ by functional calculus as similar as $4)$. And thus $1 \geqslant (a^{\frac{1}{2}} b^{-\frac{1}{2}})\st{(a^{\frac{1}{2}} b^{-\frac{1}{2}})} = a^{\frac{1}{2}}b^{-1}a^{\frac{1}{2}}$. Therefore, $a^{-1}=a^{-\frac{1}{2}}1a^{-\frac{1}{2}} \geqslant b^{-1}$.
+ 	\item $6)$ holds by the functional calculus and the uniqueness is by $1)$.
+ 	\item For $7)$, $\sigma(a) = \{h(a) \colon h \in \Sigma(\A)\} \subset \R^{+}$ and $\sigma(b) = \{h(b) \colon h \in \Sigma(\A)\} \subset \R^{+}$ and $\sigma(b-a) = \{h(b-a) \colon h \in \Sigma(\A)\} \subset \R^{+}$, therefore $h(b) \geqslant h(a) \geqslant 0$ for any $h \in \Sigma(\A)$. That means $r(b) \geqslant r(a)$, i.e. $\norm{b} \geqslant \norm{a}$.
+\end{proof}
+
+\subsection{Approximate Identities}
+
+When we research the proper ideal of an algebra, this ideal does not contain the identity. So for the ideal of a $\st{C}$-algebra, we want to find some element has similar property as the identity has in the ideal.
+
+\begin{defn}
+	Let $\A$ be a \Cs and $\{e_i\}$ be a net in $\A$ s.t.
+	\begin{enumerate}[label=\arabic*)]
+		\item $0 \leqslant e_i \leqslant 1$ for all $i$,
+		\item $e_i \leqslant e_j$ for $i \leqslant j$,
+		\item $\lim_{i} ae_i = \lim_{i} e_ia = a$ for any $a \in \A$,
+	\end{enumerate}
+	Then $\{e_i\}$ is called an approximate identity for $\A$.
+\end{defn}
+
+\begin{thm}
+	Every \Cs $\A$ has an approximate identity.
+\end{thm}
+\begin{proof}
+	Firstly, let $\Lambda = \{e \in \A_{+} \colon e < 1\}$. We can check $\Lambda$ is indeed a direct set with respect to $\leqslant$. Define two functions as
+	\begin{eqnarray*}
+		f(t) &=& \frac{t}{1-t},~ \forall~ t \in [0,1),\\
+		g(t) &=& \frac{t}{1+t} = 1 - \frac{1}{1+t},~ \forall~ t \in [0,\infty).
+	\end{eqnarray*}
+	In fact, $g(f(t))=t$. Then for any $a,b \in \Lambda$, let $y=f(a)+f(b)$ and $c = g(y)$. And since $\norm{g}_{\infty} < 1$, $c \in \Lambda$. The fact that $x=f(a) \leqslant y$ implies $1+x \leqslant 1+y$. Then $(1+x)^{-1} \geqslant (1+y)^{-1}$.
+	\begin{equation*}
+		a = g(f(a)) = g(x) = 1 - (1+x)^{-1} \leqslant 1-(1+y)^{-1} =c
+	\end{equation*}
+	Similarly, $b \leqslant c$. Therefore, $\Lambda$ is direct.
+	\item If $a \in \A_{+}$, let $e_n=g(na) \in \Lambda$. Define
+	\begin{equation*}
+		h(t) = t^2(1-g(nt)) = \frac{t^2}{1+nt} \leqslant \frac{t}{n}
+	\end{equation*}
+	Thus $h(a)= a^2(1-g(na)) = a(1-e_n)a$, that means
+	\begin{equation*}
+		\norm{a(1-e_n)a} = \norm{h}_{\infty} \leqslant \frac{\norm{a}}{n}
+	\end{equation*}
+	For any $\varepsilon > 0$, we can choose a $N$, s.t. for $n > N$, $\norm{a(1-e_n)a} < \varepsilon$. Moreover, since for $0 \leqslant d \leqslant b \leqslant 1 \in \A$, $\st{c}(1-b)c \leqslant \st{c}(1-d)c$ for any $c \in \A$. Therefore, 
+	\begin{equation*}
+		\norm{\st{c}(1-b)c} \leqslant \norm{\st{c}(1-d)c}
+	\end{equation*}
+	And combining above mention and the fact for $0 \leqslant d \leqslant b \leqslant 1 \in \A$,
+	\begin{eqnarray*}
+		\norm{c-dc}^2 &\leqslant& \norm{\st{c}(1-d)c} \\
+		\norm{c-cd}^2 &\leqslant& \norm{\st{c}(1-d)c}
+	\end{eqnarray*}
+	implies for $e \geqslant e_N$, 
+	\begin{eqnarray*}
+		\norm{a-ea}^2 &<& \varepsilon \\
+		\norm{a-ae}^2 &<& \varepsilon
+	\end{eqnarray*}
+	Therefore, 
+	\begin{equation*}
+		\lim_{i} ae_i = \lim_{i} e_ia = a,~~\forall~~a \in \A \qedhere
+	\end{equation*}
+\end{proof}
+\begin{rem}
+	The result that $\Lambda$ is direct is also true for $\A$ without the identity, since $g(0)=f(0)=0$, which means $x, y, c \in \A$.
+\end{rem}
+
+Then we can use the approximate identity to get some interesting results.
+
+
 
 
 
