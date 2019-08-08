@@ -2124,7 +2124,6 @@ Then we can get some easy properties for the norm and the involution.
 
 If a \Cs $\A$ is without the identity, we can use same method of the Banach algebra to extend it to a unit \Cs $\tilde{\A}$. The only thing we need to prove is the identity. And this can be obtained the result in above proposition. Therefore, we always assume a \Cs is with the identity.
 
-
 \begin{defn}
 	Let $\A$ be a \Cs and $a \in \A$.
 	\begin{enumerate}[label=\arabic*)]
@@ -2135,7 +2134,7 @@ If a \Cs $\A$ is without the identity, we can use same method of the Banach alge
 	\end{enumerate}
 \end{defn}
 
-Then we can see the algebraic structure on a \Cs completely determine its norm topology.
+Then we can see the algebraic strucuture on a \Cs completely determine its norm topology.
 
 \begin{thm}
 	Let $\A$ be a \Cs and $a \in \A$. If $a$ is self-adjoint, then
@@ -2156,14 +2155,14 @@ Then we can see the algebraic structure on a \Cs completely determine its norm t
 \begin{rem}
 	For any $b \in \A$, we know $\st{b}b$ is self-adjoint,
 	\begin{equation*}
-		r(\st{b}b) = \norm{\st{b}b} = \norm{b}^{2} 
+		r(\st{b}b) = \norm{\st{b}b} = \norm{b}^{2}
 	\end{equation*}
 	Thus, the norm in a \Cs is completely determined by the spectral radius, which is totally an algebraic trait.
 \end{rem}
 
 Now, we can see how the algebraic property influences the topological structure.
 
-\begin{prop}
+\begin{prop} \label{prop8}
 	Let $\rho \colon \A \sto \B$ be a $*$-homomorphsim between two $C^{*}$-algebras.
 	\begin{enumerate}[label=\arabic*)]
 		\item $\rho$ is continuous, and moreover $\norm{\rho(a)} \leqslant \norm{a}$.
@@ -2188,7 +2187,7 @@ Therefore, any element in a \Cs $\A$ can be combined by two self-adjoint element
 	\begin{enumerate}[label=\arabic*)]
 		\item If $a \in \Rea{\A}$, $h(a) \in \R$.
 		\item For any $a \in \A$, $h(\st{a})=\clo{h(a)}$.
-		\item $h(\st(a)a) \geqslant 0$ $\forall~ a \in \A$.
+		\item $h(\st{a}a) \geqslant 0$ $\forall~ a \in \A$.
 		\item If $u \in \A$ is a unitary, then $\abs{u} = 1$.
 	\end{enumerate}
 \end{prop}
@@ -2204,7 +2203,7 @@ Therefore, any element in a \Cs $\A$ can be combined by two self-adjoint element
 	\begin{eqnarray*}
 		\norm{a}^{2}+t^2 &\geqslant& \abs{\alpha +i(t+\beta)}^2 \\
 		&=& \alpha^2 + (\beta+t)^2 \\
-		&=& \alpha^2 + \beta^2 +2 \beta t + t^2 
+		&=& \alpha^2 + \beta^2 +2 \beta t + t^2
 	\end{eqnarray*}
 	Therefore, for any $t \in \R$, $\norm{a}^2 \geqslant \alpha^2 + \beta^2 +2 \beta t$. Thus, $\beta = 0$. \\
 	$2)$ and $3)$ and $4)$ is the direct results from $1)$.
@@ -2233,12 +2232,12 @@ And the spectrum of a element in a \Cs has better property.
 	\end{equation*}
 \end{thm} 
 \begin{proof}
-	It suffices to show that if $b$ is invertible in $\A$ with the inverse $x$, then $x \in \B$. Because $(a^{*}a)(xx^{*})=1$. Since $a^{*}a \in \B$ and by above corollary, we know $xx^{*} \in \B$. But $x = (x\st{x})\st{a}$, thus $x \in \B$.
+	It suffices to show that if $b$ is invertible in $\A$ with the inverse $x$, then $x \in \B$. Then $(a^{*}a)(xx^{*})=1$. Since $a^{*}a \in \B$ and by above corollary, we know $xx^{*} \in \B$. But $x = (x\st{x})\st{a}$, thus $x \in \B$.
 \end{proof}
 
 \subsection{Abelian \texorpdfstring{$C^{*}$-Algebras}{C*-Algebras}}
 
-The abelian \Cs is firstly an ablian Banach algebra, thus all results in the subsection \ref{sec2} can be applied to it. But since the involution and the related norm provide more information, we can have better results than the general abelian Banach algebra has. Firstly, we strengthen the \textbf{Theorem} \ref{thm5} in subsection \textbf{2.1.4}.
+The abelian \Cs is firstly an ablian Banach algebra, thus all results in the subsection \ref{sec2} can be applied to it. But since the involution and the related norm provide more information, we can have better results than the general abelian Banach algebra has. Firsly, we strengthen the \textbf{Theorem} \ref{thm5} in subsection \textbf{2.1.4}.
 
 \begin{thm}
 	If $\A$ is an abelian \Cs, then the Gelfand transform $\Gamma \colon \A \sto C(\Sigma(\A))$ is an isometric $*$-isomorphism.
@@ -2246,13 +2245,13 @@ The abelian \Cs is firstly an ablian Banach algebra, thus all results in the sub
 \begin{proof}
 	Firstly, $\Gamma$ is a $*$-homormophism, since the result in \textbf{Theorem} \ref{thm5} and
 	\begin{equation*}
-		\Gamma(\st(a))(h) = h(\st(a)) = \clo{h(a)} = \clo{\Gamma(a)}(h)
+		\Gamma(\st{a})(h) = h(\st{a}) = \clo{h(a)} = \clo{\Gamma(a)}(h)
 	\end{equation*}
 	Now, we can easily see $\Gamma$ is an isometry by $4)$ in the \textbf{Theorem} \ref{thm5},
 	\begin{equation*}
-		\norm{\hat{a}}_{\infty}^{2} = \norm{\hat{\st{a}a}}_{\infty} = r(\st(a)a) = \norm{a}^2
+		\norm{\hat{a}}_{\infty}^{2} = \norm{\hat{\st{a}a}}_{\infty} = r(\st{a}a) = \norm{a}^2
 	\end{equation*}
-	Finally, we need to check $\Gamma$ is surjective. It is because $\Gamma(\A)$ is a closed subalgebra of $C(\Sigma(\A))$, which is closed under the complex conjugate and separates points in $\Sigma(\A)$. Then by the Stone-Weierstrass Theorem $\Gamma(\A)=C(\Sigma(\A))$.
+	Finally, we need to check $\Gamma$ is surjective. It is because $\Gamma(\A)$ is a closed subalgebra of $C(\Sigma(\A))$, which is closed under the complex conjugate and separates points in $\Sigma(\A)$. Then by the Stone-Weierstrass Theorem $\Gamma(\A)=C(\Sigma(\A))$
 \end{proof}
 
 We know if $\A = \Cg{a}$ for some normal element $a$, then $\A$ is an abelian \Cs. In fact, 
@@ -2260,7 +2259,7 @@ We know if $\A = \Cg{a}$ for some normal element $a$, then $\A$ is an abelian \C
 	\A = \clo{\{~p(a,\st{a}) \colon p(z,\clo{z}) \text{ is a polynomial} ~\}}
 \end{equation*}
 
-Then, we can modify the result in the \textbf{Proposition} \ref{prop7} in subsection \textbf{2.1.4}.
+Then, we can modify the result in the \textbf{Propostion} \ref{prop7} in subsection \textbf{2.1.4}.
 
 \begin{thm}
 	Let $\A = \Cg{a}$ for some normal element $a$. Then there is a unique isometric $*$-isomorphism $\rho \colon \A \sto C(\sigma(a))$.
@@ -2315,6 +2314,7 @@ Therefore, this map is unique and it is clearly the extension of the Riesz Funct
 	\end{equation*}
 \end{proof}
 
+
 There is an important example.
 \begin{exam} 
 	Let $\mu$ be a compactly supported, regular Borel measure on $\C$ and ($X,\Omega,\mu$) be the measure space. For each $\pi \in \lfs{\infty}(\mu)$, we define the map
@@ -2335,7 +2335,8 @@ There is an important example.
 	If $\phi(z) = z$, we set denote $N_{\mu} = M_{\phi}$ and in fact, $\sigma(N_{\mu}) = \supp{\mu}$.
 \end{exam}
 
-\subsection{Positive Elements and Positive Functionals}
+
+\subsection{Positive Elements and Postive Functionals}
 
 We have known that self-adjoint elements play a important role in a \Cs $\A$. The self-adjoint element $a$ in $\A$ is like the real number in $\C$, and the relationship between them can be revealed by the fact $a \in \Rea{\A}$ if and only if $\sigma(a) \subset \R$. The converse is obtained by the Continuous Functional Calculus. In fact, Continuous functional calculus can provide more relation between the element in $\A$ and the elment in $\C$, like positivity.
 
@@ -2408,11 +2409,11 @@ Then, we can build an order on $\Rea{\A}$ by defining $a \leqslant b \Leftrighta
 \end{prop}
 \begin{proof}
 	For $1)$, let $f(x)= \sqrt[n]{x}$ defined on $\sigma(a) \subset \R$, then $b=f(a)$ sastisfying $ a = b^{n}$.
-	\item For $2)$, let $b = \st{a}a = b_{+} - b_{-}$ and $c = \sqrt{b_{+}}$  and $d=ac$. Since $-\st(d)d = b_{-}^2 \in \A_{+}$, $\st{d}d \in \A_{-}$. Let $d = x + iy$, then $d\st{d} + \st{d}d = 2(x^2+y^2) \in \A_{+}$. Thus
+	\item For $2)$, let $b = \st{a}a = b_{+} - b_{-}$ and $c = \sqrt{b_{+}}$  and $d=ac$. Since $\st{d}d = b_{-}^2 \in \A_{+}$, $\st{d}d \in \A_{-}$. Let $d = x + iy$, then $d\st{d} + \st{d}d = 2(x^2+y^2) \in \A_{+}$. Thus
 	\begin{equation*}
 		d\st{d} = d\st{d} + \st{d}d -\st{d}d \in \A_{+}
 	\end{equation*}
-	By the fact that $\sigma(d\st{d})\bigcup\{0\} = \sigma(\st{d}d)\bigcup\{0\}$, $b_{-}^2 = -\st(d)d =0$. Therefore, $b = \st{a}a \in \A_{+}$.
+	By the fact that $\sigma(d\st{d})\bigcup\{0\} = \sigma(\st{d}d)\bigcup\{0\}$, $b_{-}^2 = -\st{d}d =0$. Therefore, $b = \st{a}a \in \A_{+}$.
 	\item For $3)$, let $d = \sqrt{b-a}$, then 
 	\begin{equation*}
 		\st{c}bc - \st{c}ac = \st{c}(b-a)c = \st{c}\st{d}dc = \st{(dc)}dc \in \A_{+}
@@ -2479,14 +2480,230 @@ When we research the proper ideal of an algebra, this ideal does not contain the
 	\end{eqnarray*}
 	Therefore, 
 	\begin{equation*}
-		\lim_{i} ae_i = \lim_{i} e_ia = a,~~\forall~~a \in \A \qedhere
+		\lim_{i} ae_i = \lim_{i} e_ia = a,~~\forall~~a \in \A 
 	\end{equation*}
+	For arbitrary $a \in \A$, $a$ can be write as the linear combination of four positive elements.
 \end{proof}
 \begin{rem}
-	The result that $\Lambda$ is direct is also true for $\A$ without the identity, since $g(0)=f(0)=0$, which means $x, y, c \in \A$.
+	The result that $\Lambda$ is direct is also true for $\A$ without the identity, since $g(0)=f(0)=0$, which means $x, y, c \in \A$. And if $\A$ is separable, we can find a sequential approximate identity in its countable dense subset. Moreover, this sequential approximate identity can apply in whole $\A$.
 \end{rem}
 
-Then we can use the approximate identity to get some interesting results.
+Then we can use the approximate identity to get some interesting results. First, we need a lemma.
+
+\begin{lem}
+	If $\A$ is a \Cs and $x,y \in \A$, $a \in \A_{+}$ s.t. $\st{x}x \leqslant a^{\alpha}$ and $\st{y}y \leqslant a^{\beta}$ for some positive scalars $\alpha$ and $\beta$ with $\alpha + \beta > 1$, then the sequence $u_n = x(n^{-1}+a)^{-\frac{1}{2}}$y converges to a $u \in \A$ with $\norm{u} \leqslant \norm{a^{\frac{1}{2}(\alpha+\beta-1)}}$.
+\end{lem}
+\begin{proof}
+	Let $d_nm = (n^{-1}+a)^{-\frac{1}{2}}-(m^{-1}+a)^{-\frac{1}{2}}$.
+	\begin{eqnarray*}
+		\norm{u_n-u_m}^2 &=& \norm{xd_nmy}^2 = \norm{\st{y}d_nm\st{x}xd_nmy} \\
+		&\leqslant& \norm{a^{\frac{\alpha}{2}}d_nmy}^2 = \norm{a^{\frac{\alpha}{2}}d_nm\st{y}yd_nma^{\frac{\alpha}{2}}} \\
+		&\leqslant& \norm{a^{\frac{\alpha}{2}}d_nm a^{\beta} d_nma^{\frac{\alpha}{2}}} \\
+		&=& \norm{d_nm a^{\frac{\alpha+\beta}{2}}}^2
+	\end{eqnarray*}
+	Since $f_n(t) = (n^{-1}+t)t^{\frac{\alpha+\beta}{2}}$ is an increasing positive sequence, $d_n=(n^{-1}+a)a^{\frac{\alpha+\beta}{2}}$ is an increasing positive sequence in $\A_{+}$. By Dini's Theorem, since $\sigma(a)$ is compact, there is a continuous fuction $f$ s.t. $f_n \sto f$ uniformly. Let $d = f(a)$, thus $d_n \sto d$ in norm. Thus $\{u_n\}$ is Cauchy and there exists $u = \lim_{n \sto \infty} u_n$.
+	\begin{equation*}
+		\norm{u_n} = \norm{x(n^{-1}+a)^{-\frac{1}{2}}} \leqslant \norm{(n^{-1}+a)a^{\frac{\alpha+\beta}{2}}} \leqslant \norm{a^{\frac{1}{2}(\alpha+\beta-1)}} \qedhere
+	\end{equation*}
+\end{proof}
+
+\begin{prop}
+	If $\A$ is a \Cs and $a \in \A{+}$ and $x \in \A$ with $\st{x}x \leqslant a$, and $0<\alpha<\frac{1}{2}$, then there exists $u \in \A$ with $\norm{u} \leqslant \norm{a^{\frac{1}{2}-\alpha}}$ and $x=ua^{\alpha}$.
+\end{prop}
+\begin{proof}
+	Let $u_n=x(n^{-1}+a)^{-\frac{1}{2}}a^{\frac{1}{2}-\alpha}$. By above lemma, $u_n \sto u$ with $\norm{u} \leqslant \norm{a^{\frac{1}{2}-\alpha}}$. We use similar prove as above lemma, 
+	\begin{eqnarray*}
+		\norm{x-u_na^{\alpha}}^2 &=& \norm{x(1-(n^{-1}+a)^{-\frac{1}{2}}a^{\frac{1}{2}})}^2 \\
+		&\leqslant& \norm{(1-(n^{-1}+a)^{-\frac{1}{2}}a^{\frac{1}{2}})a(1-(n^{-1}+a)^{-\frac{1}{2}}a^{\frac{1}{2}})} \\ 
+		&=& \norm{a^{\frac{1}{2}}(1-(n^{-1}+a)^{-\frac{1}{2}}a^{\frac{1}{2}})}^2 \\
+		&=& \norm{a^{\frac{1}{2}}-(n^{-1}+a)^{-\frac{1}{2}}a}
+	\end{eqnarray*}
+	By the Dini's Theorem, $(n^{-1}+a)^{-\frac{1}{2}}a \sto a$ in norm. Therefore, $u_na^{\alpha} \sto a$ i.e. $a = ua^{\alpha}$.
+\end{proof}
+\begin{cor}
+	If $\A$ is a \Cs and $x \in \A$ and $0 < \beta <1$, then there is a $u \in \A$ s.t.
+	\begin{equation*}
+		x = u\abs{x}^{\beta}	
+	\end{equation*}
+\end{cor}
+
+\subsection{Ideals and Quotients}
+
+Firstly, there are two easy results of closed ideal in a $\st{C}$-algebra.
+
+\begin{prop}
+	Let $\A$ be a $\st{C}$-algebra.
+	\begin{enumerate}[label=\arabic*)]
+		\item If $\I$ is a closed left or right ideal of $\A$, $a \in \I$ with $a=\st{a}$, then for $f \in C(\sigma(a))$ with $f(0)=0$, $f(a) \in \A$.
+		\item If $\I$ is a closed ideal, then $a \in \I$ implies $\st{a} \in \A$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	For $1)$, if $\I$ is proper, $0 \in \sigma(a)$. Then $f(0) = 0 and \sigma(a) \subset \R$, $f$ can be approximated by a sequence of polynomials $p_n$ with $p_n(0) = 0$. Therefore, $p_n(a) \in \I$ and by the fact that $\I$ is closed, $f(a) \in \I$.
+	\item For $a \in \I$, by the corollary in above subsection, we know there is a $u \in \A$ s.t. $a=u\abs{a}^{\frac{1}{2}}$. By $1)$, $\abs{a}^{\frac{1}{2}} \in \I$. Therefor,
+	\begin{equation*}
+		\st{a} = \abs{a}^{\frac{1}{2}} u \in \I \qedhere
+	\end{equation*}
+\end{proof}
+
+\begin{defn}
+	If $\A$ is a \Cs and $\B$ is a $*$-subalgebra of $\A$, then $\B$ is called hereditary if for any $b \in \B_{+}$ and $x \in \A$ with $0 \leqslant x \leqslant b$, $x \in \B$.
+\end{defn}
+
+Now, we can give more profound properties of the closed left ideals.
+
+\begin{thm}
+	Let $\A$ be a $\st{C}$-algebra.
+	\begin{enumerate}[label=\arabic*)]
+		\item If $\I$ is a closed left ideal of $\A$ and $\B = \I \bigcap \st{\I}$, then $\B$ is a hereditary subalgebra of $\A$.
+		\item If $\B$ is a hereditary subalgebra of $\A$ and $\I = \{x\in \A \colon \st{x}x \in \B\}$, then $\I$ is a closed left ideal of $\A$.
+		\item If $\I$ is a closed left ideal of $\A$ and $\B = \I \bigcap \st{\I}$, then $\I = \{x\in \A \colon \st{x}x \in \B\}$.
+		\item If $\B$ is a hereditary subalgebra of $\A$ and $\I = \{x\in \A \colon \st{x}x \in \B\}$, then $\B = \I \bigcap \st{\I}$.
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	For $1)$, clearly, $\B$ is a $\st{C}$-algebra. Let $0 \leqslant x \leqslant b$ for some $b \in \B_{+}$. Since $x^{\frac{1}{2}}x^{\frac{1}{2}} \leqslant b$ there is a $u \in \A$, s.t. $x^{\frac{1}{2}} = u b^{\frac{1}{3}}$. But $b^{\frac{1}{3}} \in \B_{+} \subset \I$. Therefore, $x^{\frac{1}{2}} \in \I$ and thus $x \in \I$. Since $x$ is self-adjoint, $x \in \B$.
+	\item For $2)$, if $x \in \I$ and $a \in \A$, then 
+	\begin{equation*}
+		\st{(ax)}ax = \st{x}\st{a}ax \leqslant \norm{a}^2 \st{x}x \in \B.
+	\end{equation*}
+	Therefore, $\st{(ax)}ax \in \B$, i.e. $ax \in \I$. If $x,y \in I$, then 
+	\begin{equation*}
+		\st{(x+y)}x+y \leqslant \st{(x+y)}(x+y)+\st{(x-y)}(x-y) = 2 (\st{x}x+\st{y}y) \in \B
+	\end{equation*}
+	Thus, $\I$ is a closed left ideal.
+	\item For $3)$, if $x \in \A$ and $\st{x}x \in \B$, $\st{x}x \in \I$. Thus $\abs{x}^{\frac{1}{2}} \in \I$ since $\I$ is a closed left ideal. Therefore, $x = u \abs{x}^{\frac{1}{2}} \in \I$. The converse is clearly true.
+	\item For $4)$, if $x \in \I_{+}$, then $x^2 \in \B$. So $x = \sqrt{x^2} \in \B_{+}$. Conversely, $x \in \B_{+}$ means $\st{(x^{\frac{1}{2}})}(x^{\frac{1}{2}}) = x \in \B$, $x^{\frac{1}{2}} \in \I_{+}$. Therefore, $\B_{+} = \I_{+}$. Thus, $\B = \I \bigcap \st{\I}$. 
+\end{proof}
+
+\begin{thm}
+	If $\I$ is a closed ideal of a \Cs $\A$, then the quotient algebra $\A / \I$ with the induced norm and the induced involution, i.e. $\st{a+\I} = \st{a}+\I$ is also a \Cs and the norm can be
+	\begin{equation*}
+		\norm{a+\I} = \inf{\{~\norm{a-ax} \colon x \in \I_{+}, \norm{x} \leqslant 1~\}}
+	\end{equation*}
+\end{thm}
+\begin{proof}
+	Firstly, let $\{e_i\}$ be an approximate identity for $\I$. Since $0 \leqslant e_i \leqslant 1$, if $a \in \A$ and $y \in \I$, $\norm{(a+y)(1-e_i)} \leqslant \norm{a+y}$.
+	\begin{eqnarray*}
+		\norm{a+y} &\geqslant& \liminf_{i} \norm{(a+y)(1-e_i)} \\
+		&=& \liminf_{i} \norm{(a-ae_i)+(y-ye_i)} \\
+		&=& \liminf_{i} \norm{(a-ae_i)}
+	\end{eqnarray*}
+	The converse is clearly true.
+	\item The involution defined on the quotient algebra is well-defined and satifies the conditions since $\I$ is self-adjoint. We just need to show the induced norm satisfies the $\st{C}$-identity. For $a \in \A$, we have $\norm{\st{a}+\I} = \norm{a+\I}$, and 
+	\begin{eqnarray*}
+		\norm{a+\I}^2 &=& \norm{(\st{a}+\I)(a+\I)} \\
+		&\leqslant& \norm{\st{a}+\I}\norm{a+\I} \\
+		&=& \norm{a+\I}^2
+	\end{eqnarray*}
+	Conversely,
+	\begin{eqnarray*}
+		\norm{a+\I}^2 &=& \inf{\{~\norm{a-ax}^2 \colon x \in \I_{+}, \norm{x} \leqslant 1~\}}\\
+		&=& \inf{\{~\norm{(1-x)\st{a}a(1-x)} \colon x \in \I_{+}, \norm{x} \leqslant 1~\}}\\
+		&\leqslant& \inf{\{~\norm{\st{a}a(1-x)} \colon x \in \I_{+}, \norm{x} \leqslant 1~\}}\\
+		&=& \norm{\st{a}a+\I}
+	\end{eqnarray*}
+	Therefore, $\A / \I$ is indeed a $\st{C}$-algebra.
+\end{proof}
+
+Then it can provide a \Cs with some similar results as general rings have. These results can also show us how the algebraic structure in a \Cs affect the topological structure. In my oppion, for researching a \Cs, researching the algebraic structure may be more important.
+
+\begin{cor}
+	Let $\A$ and $\mathfrak{C}$ be two $\st{C}$-algebras.
+	\begin{enumerate}[label=\arabic*)]
+		\item If $\rho \colon \A \sto \mathfrak{C}$ is a $*$-homomorphism, then $\ran{\rho}$ is a \Cs and the induced map $\tilde{\rho} \colon \A / \ker{\rho} \sto \ran{\rho}$ is an $*$-isomorphism.
+		\item If $\I$ is a closed ideal of $\A$ and $\B$ is a subalgebra of $\A$, then there is a $*$-isomorphism
+		\begin{equation*}
+			 \B / (\B \cap \I) \cong (\B+\I) / \I
+		\end{equation*}
+	\end{enumerate}
+\end{cor}
+\begin{proof}
+	For $1)$, we just need to show $\ran{\rho}$ is closed.\\ Since $\tilde{\rho}$ is a $*$-monomorphism from $\A / \ker{\rho}$ to $\C$, by the result in \textbf{Proposition} \ref{prop8} in the subsection \textbf{2.1.1}, $\rho$ is an isometry. Thus $\ran{\rho}=\rho(\A)$ is closed.
+	\item For $2)$, there is a commutative graph like
+	\begin{center}
+		\begin{tikzcd}
+			\B \arrow[r, "i"] \arrow[d, "Q"]
+				& \A \arrow[ld, "\pi"] \\
+			\A / \I
+		\end{tikzcd}
+	\end{center}
+	$Q=\pi \circ i \colon \B \sto \B / \I$ and thus $\pi^{-1}(Q(\B)) = \B + \I$. By restricting $\pi$ on $\B + \I$, then we have
+	\begin{equation*}
+		(\B+\I) / \I \cong Q(\B) \cong \B / (\B \cap \I) \qedhere
+	\end{equation*}
+\end{proof}
+
+\subsection{Positive Functionals and GNS Construction}
+
+We have known that $\oper$ is a $\st{C}$-algebra. In fact, defining the general \Cs is to research the operator algebra. Moreover, by the properties, we can see any \Cs is a $*$-subalgebra of $\oper$ for some $\Hs$. To prove that, we just need to find a faithful representation of the fixed $\st{C}$-algebra. Therefore, the main idea is to construct a representation $(\pi,\Hs)$. How to construct it is a question. But, fortunately, some special functionals can provide us a method.
+
+\begin{defn}
+	Let $\A$ be \Cs and $\phi$ is a linear functional on $\A$. $\phi$ is called positive if for any $a \in \A_{+}$, $\phi(a) \leqslant 0$. A positive linear functional $\phi$ is called a state if $\phi(1) = 1$.
+\end{defn}
+\begin{rem}
+	Let $\St_{\A}$ denote the set of all states on $\A$.
+\end{rem}
+
+Then there are some properties of positive functionals.
+
+\begin{prop}
+	Let $\A$ be a \Cs and $\phi$ be a positive functional.
+	\begin{enumerate}[label=\arabic*)]
+		\item For any $x,y \in \A$, then
+		\begin{equation*}
+			\abs{\phi(\st{y}x)} \leqslant \phi(\st{x}x)\phi(\st{y}y)
+		\end{equation*}
+		\item $\phi$ is bounded and if $\{e_i\}$ is an approximate identity of $\A$, then
+		\begin{equation*}
+			\norm{\phi} = \lim_{i} \phi(e_i)
+		\end{equation*}
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	For $1)$, it can easily check that $<x,y> = \phi(\st{y}x)$ is a semi-inner product, thus by the CBS inequality, above inequality is true.
+	\item Assume $\A$ without identity.  If $\phi$ is unbounded, then there is a sequence $\{a_k\} \in \A_{+}$ with $\norm{a_k} \leqslant 1$ s.t. $\phi(a_k) > 2^k$. Let $a = \sum_{k=1}^{\infty} 2^{-k} a_k$. Then
+	\begin{equation*}
+		\phi(a) \geqslant \phi(\sum_{k=1}^{n} 2^{-k} a_k) > n
+	\end{equation*}
+	which is a contradiction.
+	\begin{equation*}
+		\alpha = \sup{\{~\phi(a) \colon a \in \A_{+}, \norm{a} \leqslant 1~\}} < \infty
+	\end{equation*} 
+	Since any element in $\A$ can be a linear combination of four positive elements, $\norm{\phi} \leqslant 4\alpha$. Therefore, $\phi$ is bounded.\\
+	Let $\beta = \lim_{i}\phi(e_i)$. Clearly, $\beta \leqslant \norm{\phi}$. And since for $a \in \A$ with $\norm{a} \leqslant 1$ then $0 \leqslant \st{a}a \leqslant 1$
+	\begin{equation*}
+		\abs{\phi(a)}^2 = \lim_{i} \abs{\phi(e_ia)}^2 \leqslant \lim_{i}\phi(e_i)\phi(\st{a}a) \leqslant \beta \norm{\phi}
+	\end{equation*}	
+	\begin{equation*}
+		\norm{\phi}^2 \leqslant \beta \norm{\phi}
+	\end{equation*}
+	i.e. $\norm{\phi} \leqslant \beta$.
+\end{proof}
+\begin{rem}
+	For $2)$, if $\A$ has an identity, then $\norm{\phi} = \phi(1)$. It is because for $a \in \A$ with $\norm{a} \leqslant 1$
+	\begin{equation*}
+		\abs{\phi(a)}^2 \leqslant \phi(\st{a}a)\phi(1) \leqslant \phi(1)^2
+	\end{equation*}
+	i.e. $\abs{\phi(a)} \leqslant \phi(1)$.
+\end{rem}
+
+In fact, the converse of $2)$ in above proposition is also true.
+\begin{prop}
+	Let $\A$ be \Cs and $\phi$ is a bounded linear functional with $\norm{\phi} = \phi(1)$, then $\phi \leqslant 0$.
+\end{prop}
+\begin{proof}
+	If $\A=C(X)$ for some compact space $X$, $\phi$ is a measure $\mu$ with $\mu(X)=\norm{\mu}$, then $\mu \geqslant 0$, i.e. $\phi$ is positive. Then for any $\A$, if $a \in \A_{+}$, $\B=\Cg{a} \cong C(\sigma(a))$. Then $\phi|_\B(1) \leqslant \norm{\phi} = \phi(1) = \phi|_\B(1)$, thus $\phi|_\B(a) = \phi(a) \geqslant 0$.
+\end{proof}
+Using above proposition and the Hahn-Banach Theorem, we can get the corollary.
+\begin{cor}
+	If $\A$ is a \Cs and $\B$ is a $\st{C}$-subalgebra of $\A$, then every state on $\B$ can extend to $\A$.
+\end{cor}	
+
+Now, we can construct the faithful representation of any $\st{C}$-algebra.
+
+
+
 
 
 

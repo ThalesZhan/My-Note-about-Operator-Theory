@@ -31,5 +31,7 @@
 \contentsline {section}{\numberline {2.2}$C^{*}$-Algebras}{54}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Elementary Properties}{54}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Abelian $C^{*}$-Algebras}{57}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Positive Elements and Positive Functionals}{59}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.3}Positive Elements and Postive Functionals}{59}{subsection.2.2.3}
 \contentsline {subsection}{\numberline {2.2.4}Approximate Identities}{61}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Ideals and Quotients}{64}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.2.6}Positive Functionals and GNS Construction}{66}{subsection.2.2.6}
