@@ -683,7 +683,7 @@ There is an important example.
 \end{exam}
 
 
-\subsection{Positive Elements and Postive Functionals}
+\subsection{Positive Elements and Positive Functionals}
 
 We have known that self-adjoint elements play a important role in a \Cs $\A$. The self-adjoint element $a$ in $\A$ is like the real number in $\C$, and the relationship between them can be revealed by the fact $a \in \Rea{\A}$ if and only if $\sigma(a) \subset \R$. The converse is obtained by the Continuous Functional Calculus. In fact, Continuous functional calculus can provide more relation between the element in $\A$ and the elment in $\C$, like positivity.
 
@@ -899,7 +899,7 @@ Firstly, there are two easy results of closed ideal in a $\st{C}$-algebra.
 
 Now, we can give more profound properties of the closed left ideals.
 
-\begin{thm}
+\begin{thm} \label{thm6}
 	Let $\A$ be a $\st{C}$-algebra.
 	\begin{enumerate}[label=\arabic*)]
 		\item If $\I$ is a closed left ideal of $\A$ and $\B = \I \bigcap \st{\I}$, then $\B$ is a hereditary subalgebra of $\A$.
@@ -1047,7 +1047,173 @@ Using above proposition and the Hahn-Banach Theorem, we can get the corollary.
 	If $\A$ is a \Cs and $\B$ is a $\st{C}$-subalgebra of $\A$, then every state on $\B$ can extend to $\A$.
 \end{cor}	
 
-Now, we can construct the faithful representation of any $st{C}$-algebra.
+Now, we can construct the a representation of a $\st{C}$-algebra. A representation $(\pi,\Hs)$ of a \Cs $\A$ is called cyclic if there is a unit cyclic vector $e$ s.t. $\clo{\pi(\A)e} = \Hs$.
+
+\begin{thm}[Gelfand-Naimark-Segal Construction]
+	Let $\A$ be a \Cs and $\St_{\A}$ be the coincided state space.
+	\begin{enumerate}[label=\arabic*)]
+		\item If $\phi \in \St_{\A}$, then there is a cyclic representation $(\pi_{\phi},\Hs_{\phi})$ with the unit cyclic vector $e_{\phi}$ s.t.
+		\begin{equation*}
+			\phi(a) = \langle \pi_{\phi}(a)e_{\phi},e_{\phi} \rangle ,~~\forall~ a \in \A
+		\end{equation*}
+		\item If $(\pi,\Hs)$ is a cyclic representation with the unit cyclic vector $e$, then there is a $\phi \in \St_{\A}$ defined as 
+		\begin{equation*}
+			\phi(a) = \langle \pi(a)e, e \rangle,~~ \text{for}~ a \in \A
+		\end{equation*}
+		And for the $(\pi_{\phi},\Hs_{\phi})$ defined as above mention, $\pi_{\phi} \cong \pi$.
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	For $1)$, the prove can be completed by several nature steps.
+	\begin{enumerate}[label=\arabic*)]
+		\item Constructing semi-inner product: Define a semi-inner product $\langle \cdot, \cdot \rangle$ on $\A$ like
+		\begin{equation*}
+			\langle x,y \rangle = \phi(\st{y}x),~~ \text{for}~ x,y \in \A
+		\end{equation*}
+		\item Constructing $\Hs_{\phi}$: $\langle \cdot, \cdot \rangle$ is just a semi-inner product on $\A$, thus we need to make it be nondegenerate. The nature method is a equilaten relation or a closed ideal, and then inducing a quotient space. Naturally, we define
+		\begin{equation*}
+			\B = \{~x \in \A \colon \phi(x) = 0~\}
+		\end{equation*}
+		Clearly, $\B$ is a hereditary subalgebra. Then by the \textbf{Theorem} \ref{thm6} in the subsection \textbf{2.2.5}, $\B$ can induced a closed left ideal
+		\begin{equation*}
+			\I = \{~x \in \A \colon \st{x}x \in \B~\} = \{~x \in \A \colon \phi(\st{x}x) = 0~\}
+		\end{equation*}
+		And define the inner product on $\A / \I$ as
+		\begin{equation*}
+			\langle x+\I,y+\I \rangle = \phi(\st{y}x)
+		\end{equation*}
+		Therefore, we can easily check that $\A / \I$ is a inner product space. Then let $\Hs_{\phi}$ be the completion of $\A / \I$.
+		\item Constructing $\pi_{\phi}$: Firstly, let $\pi_{\phi}(a)$ be defined on $\A / \I$ for $a \in \A$.
+		\begin{center}
+		\begin{tabular}{l c c l}
+			$\pi_{\phi}(a) \colon$ & $\A / \I$ & $\longrightarrow$ & $\A / \I$ \\
+			~ & $x+\I$ & $\longmapsto$ & $ax+\I$
+		\end{tabular}
+		\end{center}
+		But since
+		\begin{eqnarray*}
+			\norm{ax+\I}^2 &=& \langle ax+\I,ax+\I \rangle = \phi(\st{ax}ax) \\
+		 	&\leqslant& \norm{a}^2 \phi(\st{x}x) = \norm{a}^2\norm{x+\I}^2
+		\end{eqnarray*}
+		$\norm{\pi_{\phi}(a)} \leqslant \norm{a}$. Therefore, $\pi_{\phi}(a)$ can extend to $\Hs_{\phi}$ for any $a \in \A$. $\pi_{\phi} \colon \A \sto \fml{B}(\Hs_{\phi})$ is a representation.
+		\item Check the conditions: Let $e_{\phi} = 1+\I$. Then
+		\begin{equation*}
+			\pi_{\phi}(\A)e_{\phi} = \{~a+\I \colon a \in \A~\} = \A / \I
+		\end{equation*}
+		Therefore, $\pi_{\phi}$ with $e_{\phi}$ is indeed a cyclic representation of $\A$. And clearly,
+		\begin{equation*}
+			\langle \pi_{\phi}(a)e_{\phi}, e_{\phi} \rangle = \phi(a)
+		\end{equation*}
+	\end{enumerate}
+	For $2)$, we just need to construct a unitary from $\Hs_{\phi}$ to $\Hs$. By observation, 
+	\begin{equation*}
+		\langle \pi_{\phi}(a)e_{\phi}, e_{\phi} \rangle =\langle \pi(a)e, e \rangle
+	\end{equation*}
+	and the facts that $\Hs_{\phi}=\clo{\pi_{\phi}(\A)e_{\phi}}$ and $\Hs=\clo{\pi(\A)e}$, we can find the unitary $U$. Firstly, let $U$ be defined on $\pi_{\phi}(\A)e_{\phi}$ 
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$U \colon$ & $pi_{\phi}(\A)e_{\phi}$ & $\longrightarrow$ & $\pi(\A)e$ \\
+			~ & $\pi_{\phi}(a)e_{\phi}$ & $\longmapsto$ & $\pi(a)e$
+		\end{tabular}
+	\end{center}
+	Since
+	\begin{equation*}
+		\norm{\pi(a)e}^2 = \langle \pi(a)e, \pi(a)e \rangle = \phi(\st{a}a) = \norm{\pi_{\phi}(a)e_{\phi}}^2
+	\end{equation*}
+	$U$ can extend to an unitary from $\Hs_{\phi}$ to $\Hs$. And
+	\begin{equation*}
+		U\pi_{\phi}(a)(\pi_{\phi}(x)e_{\phi}) = U\pi_{\phi}(ax)e_{\phi}=\pi(ax)e = \pi(a)(\pi(x)e) = \pi(a)U(\pi_{\phi}(x)e_{\phi})
+	\end{equation*}
+	Then $U\pi_{\phi}\st{U} = \pi$, $\pi_{\phi} \cong \pi$.
+\end{proof}
+\begin{rem}
+	In fact, in above theorem, if $\phi$ is a positive functional, the results is also true.
+\end{rem}
+
+By above theorem, our faithful representation of a \Cs can not be constructed by a state, since $\pi_{\phi}$ is not injective. But we may choose enough many states to construct a faithful representation. Therefore, we need more properties of states.
+
+\begin{prop}
+	If $\A$ is \Cs and $a \in \A$ is self-adjoint, let $\alpha = \min{\sigma(a)}$ and $\alpha = \max{\sigma(a)}$, then
+	\begin{equation*}
+		[\alpha,\beta]= \{~\phi(a) \colon \phi \in \St_{\A}~\}
+	\end{equation*}
+\end{prop}
+\begin{proof}
+	Let $\B = \Cg{a}$. Then $\B = \{f(a) \colon f \in C(\sigma(a))\}$. For $\phi \in \St_{\A}$ and $\phi_0 =\phi|_{\B}$, then there is a measure $\mu$ s.t.
+	\begin{equation*}
+		\phi(f(a))=\phi_0(f(a)) = \int_{\sigma(a)} f d \mu,~~ \forall~ f \in C(\sigma)
+	\end{equation*}
+	In particular, $\phi(a) = \int_{\sigma(a)} t d \mu \in [\alpha, \beta]$.\\
+	Conversely, if $\alpha \leqslant t_0 \leqslant \beta$, define $\phi_0 \in \St_{\B}$ as
+	\begin{equation*}
+		\phi_0(f(a)) = \frac{t_0 - \alpha}{\beta-\alpha}f(\alpha)+\frac{\beta - t_0}{\beta-\alpha}f(\alpha)
+	\end{equation*}
+	Then $\phi_0$ can extend to $\A$, and $t_0 = \phi(\alpha)$.
+\end{proof}
+
+By this proposition, we can get an important corollary.
+
+\begin{cor}
+	If $\A$ is a \Cs and $a \in \A$ and $\St_{}$ is $wk^{*}$-dense subset of $\St_{\A}$, then
+	\begin{equation*}
+		\norm{a}^2 = \sup{\{~\phi(\st{a}a) \colon \phi \in \St_{}~\}}
+	\end{equation*}
+\end{cor}
+\begin{rem}
+	In fact, we can easily check that $\St_{\A} \subset \st{\A}$ is a $wk^{*}$-compact convex subset. And this corollary is equivalent to saying that $\St_{}$ can seperate the points in $\A_{+}$.
+\end{rem}
+
+Now, using this corollary, we can finally construct a faithful representation.
+
+\begin{thm}[Gelfand-Naimark Theorem]
+	Every \Cs $\A$ has a faithful representation $(\pi,\Hs)$. Moreover, $\Hs$ is separable if and only if there are countable number of states on $\A$ that can separates points in $\A_{+}$, each of which defines a separable representation. In particular, each separable \Cs has a faithful, separable representation.
+\end{thm}
+\begin{proof}
+	Let $\St_{}$ be $wk^{*}$-dense subset of $\St_{\A}$. Define
+	\begin{equation*}
+		\Hs = \oplus \{~\Hs_{\phi} \colon \phi \in \St_{}~\}
+	\end{equation*} 
+	\begin{equation*}
+		\pi = \oplus \{~\pi_{\phi} \colon \phi \in \St_{}~\}
+	\end{equation*}
+	Then we can see
+	\begin{eqnarray*}
+		\norm{a}^2 &=& \sup \{~\phi(\st{a}a) \colon \phi \in \St_{}~\}\\ 
+		&=& \sup \{~\langle \pi_{\phi}(a)e_{\phi},\pi_{\phi}(a)e_{\phi} \rangle \colon \phi \in \St_{}~\} \\
+		&=& \sup \{~\norm{\pi_{\phi}(a)e_{\phi}}^2 \colon \phi \in \St_{}~\} \\
+		&=&	\norm{\pi(a)e}^2\\
+		&\leqslant& \norm{\pi(a)}^2
+	\end{eqnarray*}
+	And in the GNS Construction, we have seen $\norm{\pi_{\phi}(a)} \leqslant \norm{a}$ for any $\phi \in \St_{\A}$. Therefore,
+	\begin{equation*}
+		\norm{a} \geqslant \norm{\pi(a)}
+	\end{equation*}
+	Thus $\norm{\pi(a)} = \norm{a}$ i.e. $(\pi,\Hs)$ is indeed a faithful representation.
+	\item If $\Hs$ is separable, let $\{e_n\}$ be the dense subset of $\{h \in \Hs \colon \norm{h} =1\}$. Define $\Hs_n = \clo{\pi(\A)e_n}$ and $\pi_n = \pi|_{\Hs_n}$. Therefore, in above construction,
+	\begin{equation*}
+		\{(\pi_{\phi},\Hs_{\phi},e_{\phi}) \colon \phi \in \St_{}\}
+	\end{equation*}
+	can be replaced by
+	\begin{equation*}
+		\{(\pi_n,\Hs_n,e_n) \colon n \in \N\}
+	\end{equation*}
+	Then for $a \in \A_{+}$, there exists $b \in \A$ s.t. $a = \st{b}b$, if for $n \in \N$
+	\begin{equation}
+		0=\phi_n(a) = \langle \pi_n(\st{b}b)e_n,e_n \rangle = \norm{\pi(b)e_n}^2 \tag{$*$}
+	\end{equation}
+	But $\norm{b} = \sup_{n} \norm{\pi(b)e_n}$, thus implies $a = 0$.\\
+	Conversely, if $\{\phi_n\}$ is these states, we can use the GNS Construction to get $\{(\pi_n,\Hs_n,e_n) \colon n \in \N\}$. Similarly, we can use direct sum to get the representation $(\pi,\Hs)$. Then by using the $(*)$, we can know this representation is definitely faithful.
+	\item Finally, if $\A$ is separable, then the closed unit ball in $\A^{*}$ is $wk^{*}$-compactly metrizable. Therefore, there is a countable $wk^{*}$-dense subset of $\St_{\A}$. Thus by above corollary, this subset can separate the points in $\A_{+}$
+\end{proof}
+\begin{rem}
+	Therefore, any \Cs can be isometrically imbedded in a operator algebra on some Hilbert space. Researching a abstract \Cs is actually researching the $\st{C}$-subalgebra of an operator algebra on some Hilbert space.
+\end{rem}
+
+
+
+
+
+
 
 
 

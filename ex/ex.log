@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.24)  9 AUG 2019 01:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.24)  10 AUG 2019 04:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -656,7 +656,7 @@ ocpdfTeX warning (ext4): destination with the same identifier (name{page.1}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.34 ...Postive Functionals}{59}{subsection.2.2.3}
+l.34 ...an $C^{*}$-Algebras}{60}{subsection.2.2.2}
                                                    [1
 
 ])
@@ -683,30 +683,31 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 
  [27]
 [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42]
+[43] [44] [45]
 Chapter 2.
-LaTeX Font Info:    Try loading font information for U+euf on input line 1657.
+LaTeX Font Info:    Try loading font information for U+euf on input line 1793.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [43
+) [46
 
-] [44]
-[45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59]
-[60] [61] [62] [63] [64] [65] [66] [67]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2711.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2711.
+] [47]
+[48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62]
+[63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3006.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3006.
  (./ex.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2711.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2711.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3006.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3006.
 
 Package rerunfilecheck Info: File `ex.out' has not changed.
-(rerunfilecheck)             Checksum: 833EBDB2D255436CCEC0D38F19A3731A;2841.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2711.
+(rerunfilecheck)             Checksum: 6D4CB0CCCB83033A64A678A4E8E361DF;2922.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3006.
  ) 
 Here is how much of TeX's memory you used:
- 17889 strings out of 492649
- 343035 string characters out of 6129622
- 403808 words of memory out of 5000000
- 20981 multiletter control sequences out of 15000+600000
+ 17931 strings out of 492649
+ 343415 string characters out of 6129622
+ 403877 words of memory out of 5000000
+ 20985 multiletter control sequences out of 15000+600000
  23576 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,14n,86p,871b,1153s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -730,10 +731,10 @@ texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/201
 8/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive
 /2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/tex
 live/2018/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on ex.pdf (68 pages, 469932 bytes).
+Output written on ex.pdf (75 pages, 491794 bytes).
 PDF statistics:
- 1118 PDF objects out of 1200 (max. 8388607)
- 1017 compressed objects within 11 object streams
- 486 named destinations out of 1000 (max. 500000)
- 309 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1195 PDF objects out of 1200 (max. 8388607)
+ 1087 compressed objects within 11 object streams
+ 524 named destinations out of 1000 (max. 500000)
+ 317 words of extra memory for PDF output out of 10000 (max. 10000000)
 
