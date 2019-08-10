@@ -683,7 +683,7 @@ There is an important example.
 \end{exam}
 
 
-\subsection{Positive Elements and Positive Functionals}
+\subsection{Positive Elements}
 
 We have known that self-adjoint elements play a important role in a \Cs $\A$. The self-adjoint element $a$ in $\A$ is like the real number in $\C$, and the relationship between them can be revealed by the fact $a \in \Rea{\A}$ if and only if $\sigma(a) \subset \R$. The converse is obtained by the Continuous Functional Calculus. In fact, Continuous functional calculus can provide more relation between the element in $\A$ and the elment in $\C$, like positivity.
 
@@ -1070,7 +1070,7 @@ Now, we can construct the a representation of a $\st{C}$-algebra. A representati
 		\begin{equation*}
 			\langle x,y \rangle = \phi(\st{y}x),~~ \text{for}~ x,y \in \A
 		\end{equation*}
-		\item Constructing $\Hs_{\phi}$: $\langle \cdot, \cdot \rangle$ is just a semi-inner product on $\A$, thus we need to make it be nondegenerate. The nature method is a equilaten relation or a closed ideal, and then inducing a quotient space. Naturally, we define
+		\item Constructing $\Hs_{\phi}$: $\langle \cdot, \cdot \rangle$ is just a semi-inner product on $\A$, thus we need to make it be non-degenerate. The nature method is a equilaten relation or a closed ideal, and then inducing a quotient space. Naturally, we define
 		\begin{equation*}
 			\B = \{~x \in \A \colon \phi(x) = 0~\}
 		\end{equation*}
@@ -1208,6 +1208,140 @@ Now, using this corollary, we can finally construct a faithful representation.
 \begin{rem}
 	Therefore, any \Cs can be isometrically imbedded in a operator algebra on some Hilbert space. Researching a abstract \Cs is actually researching the $\st{C}$-subalgebra of an operator algebra on some Hilbert space.
 \end{rem}
+
+Now, we can see the importance of states or positive funtionals. Thus, we want to find the relation between general linear functionals and the positive linear functionals. Firstly, we observe that for a positive functional $\phi$, $\phi(\st{a})=\clo{\phi(a)}$ for all $a$. 
+\begin{defn}
+	If $\A$ is a \Cs and $L$ is a linear functional, $L$ is called self-adjoint if 
+	\begin{equation*}
+		L(\st{a})=\clo{L(a)},~~ \forall~ a \in \A
+	\end{equation*}
+	Or equivalently, $L(a) \in \R$ for all $a \in \Rea{\A}$.
+\end{defn}
+
+The bounded self-adjoint linear functional in $\st{\A}$ is like the self-adjoint element in $\A$. So by the fact that any self-adjoint element can be a linear combination of two positive element, we want to find similar result of bounded linear functionals. There is a clearly lemma of bounded self-adjoint linear functional.
+
+\begin{lem}
+	If $\A$ is a \Cs and $L$ is a bounded self-adjoint linear functional, then
+	\begin{equation*}
+		\norm{L} = \sup{\{~L(a) \colon a \in \Rea{\A},~\norm{a} \leqslant 1~\}}
+	\end{equation*}
+\end{lem}
+
+\begin{thm} [Jordan Decomposition]
+	If $\A$ is a \Cs and $L$ is a bounded self-adjoint linear functional, then there are positive linear functionals $\phi_{+}$ and $\phi_{-}$ s.t. 
+	\begin{equation*}
+		L = \phi_{+} - \phi_{-} ~~\text{and}~~ \norm{L} = \norm{\phi_{+}}+\norm{\phi_{-}}
+	\end{equation*}
+\end{thm}
+\begin{proof}
+	Let $\Omega$ be the set of all bounded self-adjoint linear functional in the unit ball of $\st{\A}$ and $\tilde{\Omega}$ be the $wk^{*}$-closed convex hull of $\St_{\A}\cup (-\St_{\A})$.
+	\begin{enumerate}[label=\arabic*)]
+		\item Claim: $\Omega = \tilde{\Omega}$ \\
+		Clearly, $\tilde{\Omega} \subset \Omega$. If there is a $L_0 \in \Omega \backslash \tilde{\Omega}$, then there exists a $x_0 \in \A$ separating $L_0$ and $\tilde{\Omega}$, and let $a_0 = \Rea{x_0}$, we have
+		\begin{equation*}
+			L(a_0) \leqslant \alpha < L_0(a_0),~~\forall~L \in \tilde{\Omega}
+		\end{equation*}
+		That means 
+		\begin{equation*}
+			\norm{a_0}=\sup{\{\abs{\phi(a_0)} \colon \phi \in \St_{\A}\}} \leqslant \alpha < L_0(a_0)
+		\end{equation*}
+		but $\norm{L_0} \leqslant 1$, which is a contradiction.
+		\item Claim: $\Omega = \{ s\phi-t\psi \colon \phi,\psi \in \St_{\A},~s+t = 1 ~\&~ s,t \geqslant 0\}$ \\
+		By the fact that $(s,t,\phi,\psi) \sto s\phi-t\psi$ is continuous and $\St_{\A}$ is $\st{wk}$-compact, above claim is clearly true.
+		\item Existence: Therefore, for any self-adjoint linear functional $L$ with $\norm{L} = 1$, there are two $\phi,\psi \in \St_{\A}$, and positive real numbers $s,t$ with $s+t=1$ s.t. $L=s\phi-t\psi$. Then let $\phi_{+} = s\phi$ and $\phi_{-}=t\phi$, then $L = \phi_{+} - \phi_{-}$ and
+		\begin{equation*}
+			\norm{\phi_{+}}+\norm{\phi_{-}}= s+t = 1 = \norm{L}
+		\end{equation*}
+	For general $L$, just let $L / \norm{L}$ for $L \neq 0$, the statements are true. \qedhere
+	\end{enumerate}
+\end{proof}
+
+In fact, for any $f \in \st{\A}$, $f = \phi + i \psi$ for some self-adjoint linear funtional $\phi, \psi$, where
+\begin{equation*}
+	\phi(a) = \frac{f(a) + \clo{f(\st{a})}}{2} ~\&~ \psi(a) =\frac{f(a) - \clo{f(\st{a})}}{2i}
+\end{equation*}
+By combining this and the Jordan Decomposition Theorem, we can have the following corollaries.
+
+\begin{cor}
+	Let $\A$ be a \Cs and $\pi \colon \A \sto \oper$ be the faithful representation constructed in the Gelfand-Naimark Theorem.
+	\begin{enumerate}[label=\arabic*)]
+		\item Any bounded linear functional can be a linear combination of four positive linear functionals.
+		\item If $L \in \st{\A}$, then there are $g,h \in \Hs$, s.t. for any $a \in \A$
+		\begin{equation*}
+			L(a) = \langle \pi(a)g,h \rangle
+		\end{equation*}
+	\end{enumerate}
+\end{cor}
+
+\subsection{Representations}
+
+\begin{defn}
+	Let $\pi \colon \A \sto \oper$ be a representation of a \Cs $\A$.
+	\begin{enumerate}[label=\arabic*)]
+		\item If there is no invariant subspace for $\pi(\A)$, $\pi$ is called algebraically irreducible. If there is no invariant closed subspace, $\pi$ is called topologically irreducible.
+		\item If $\clo{\pi(\A)e} = \Hs$ for some $e \in \Hs$, $\pi$ is called cyclic and $e$ is called a cyclic vector for $\pi$.
+		\item If $\clo{\pi(\A)\Hs} = \Hs$, $\pi$ is called non-degenerate.
+	\end{enumerate}
+\end{defn}
+\begin{rem}
+	Since $\pi$ is $*$-homomorphism and $\A$ is $*$-closed, the definition of irreducibily of $\pi$ is valid. In fact, if $\pi$ is algebraically irreducible, then $\pi$ is clearly topologically irreducible. But the converse is also true. Then we have,
+	\begin{center}
+		$\pi$ irreducible $\Rightarrow$ $\pi$ cyclic $\Rightarrow$ $\pi$ is non-degenerate
+	\end{center}
+\end{rem}
+
+\begin{thm}
+	Every representation of a \Cs is equivalent to the direct sum of cyclic representations.
+\end{thm}
+\begin{proof}
+	Let $\pi \colon \A \sto \oper$ be a representation and $e \in \Hs$ be any unit element. Then $\M = \clo{\pi(\A)e}$ is clearly a invariant space for $\pi$. If $\M \neq \Hs$, then $\Hs = \M \oplus \M^{\bot}$. We have another unit vector $e^{'} \in \M^{\bot}$, then let $\M^{'} = \clo{\pi(\A)e^{'}}$ and $\M^{'} \bot \M$. If $\M^{'} \neq \M^{\bot}$, we can continue above process again. By induction and the Zorn's Lemma, the theorem can be obtained.
+\end{proof}
+
+\begin{thm}
+	If $\A$ is a \Cs and $\I$ is an ideal of $\A$, then every representation $\rho \colon \I \sto \oper$ can be extended to a representation $\tilde{\rho} \colon \A \sto \oper$. Moreover, if $\rho$ is non-degenerate, then $\tilde{\rho}$ is unique.
+\end{thm}
+\begin{proof}
+	Firstly, assume $\rho$ is non-degenerate and by above theorem we can also assume $\rho$ is cyclic with the cyclic vector $e$. Then for any $a \in \A$, we define
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$\tilde{\rho(a)} \colon$ & $\rho(\I)e$ & $\longrightarrow$ & $\Hs$ \\
+			~ & $\rho(x)e$ & $\longmapsto$ & $\rho(ax)e$
+		\end{tabular}
+	\end{center}
+	And since for an approximate identity $\{e_i\}$ for $\I$, we have
+	\begin{eqnarray*}
+		\norm{\rho(ax)e} &=& \lim_{i} \norm{\rho(ae_ix)e} \\
+		&\leqslant& \lim_{i} \norm{\rho(ae_i)\rho(x)e} \\
+		&\leqslant& \sup_{i} \norm{ae_i} \norm{\rho(x)e} \\
+		&\leqslant& \norm{a} \norm{\rho(x)e}
+	\end{eqnarray*}
+	i.e. $\norm{\tilde{\rho}(a)} \leqslant \norm{a}$, $\tilde{\rho}(a)$ can extend to $\Hs$. Then, we can check that $\tilde{\rho} \colon \A \sto \oper$ is indeed a representation. \\
+	If $T \in \oper$ s.t. for any $x \in \I$, $T\rho(x) = \rho(ax)$, then
+	\begin{equation*}
+		T\rho(x)h = \tilde{\rho}\rho(x)h,~~ \forall~ x \in \I ~\&~ \forall~ h \in \Hs
+	\end{equation*}
+	Since $\rho$ is non-degenerate, $T=\tilde{\rho}(a)$.\\
+	Now, if $\rho$ is degenerate, let $\Hs_0 = \clo{\rho{\I}}$, and $\rho_0(x) = \rho(x)|_{\Hs_0}$, then $\rho_0 \colon \I \sto \fml{B}(\Hs_0)$ is a non-degenerate representation. Therefore, it can extend to $\tilde{\rho_0} \colon \A \sto \fml{B}(\Hs_0)$. Let $\kappa \colon \A \sto \fml{B}(\Hs_0^{\bot})$ be any representation. Then $\tilde{\rho} = \tilde{\rho_0} \oplus \kappa$ is the extension.
+\end{proof}
+
+\begin{cor}
+	If $\A$ is a \Cs and $\I$ is an ideal of $\A$, and $(\rho,\Hs)$ and $(\kappa,\fml{K})$ are two representations of $\A$ s.t.
+	\begin{enumerate}[label=\arabic*)]
+		\item $\rho|_{\I}$ is a non-degenerate representation of $\I$.
+		\item $\rho|_{\I} \cong \kappa|_{\I}$.
+	\end{enumerate}
+	then $\rho \cong \kappa$
+\end{cor}
+
+We know the irreducible representation play a important role i  n the representation theory. Therefore, we want to find the necessary and sufficient conditions make a representation be irreducible.
+
+\begin{defn}
+	
+\end{defn} 
+
+
+
+
 
 
 
