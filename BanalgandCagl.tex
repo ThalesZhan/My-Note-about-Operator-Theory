@@ -52,8 +52,8 @@ Then $\alg{A}$ can be isometrically imbedded into $\tilde{\alg{A}}$. Therefore, 
 \begin{cor}
 	Let $\alg{A}$ be a Banach algebra and 
 	\begin{eqnarray*}
-		G_l &=& \{~a \in \alg{A} \colon a \text{ is left invertible}~\}
-		G_r &=& \{~a \in \alg{A} \colon a \text{ is right invertible}~\}
+		G_l &=& \{~a \in \alg{A} \colon a \text{ is left invertible}~\}\\
+		G_r &=& \{~a \in \alg{A} \colon a \text{ is right invertible}~\}\\
 		G &=& G_l \bigcap G_r = \{~a \in \alg{A} \colon a \text{ is invertible}~\}
 	\end{eqnarray*}
 	Then $G_l$ and $G_r$ and $G$ are open. Moreover, the map $a \sto a^{-1}$ from $G$ to $G$ is continuous.
@@ -67,7 +67,7 @@ Then $\alg{A}$ can be isometrically imbedded into $\tilde{\alg{A}}$. Therefore, 
 	Therefore,we have
 	\begin{eqnarray*}
 		\norm{1-a_n^{-1}} &=& \norm{\sum_{k=1}^{\infty} (1-a_n)^{k}}\\
-		&\leqslant&  \sum_{k=1}^{\infty} \norm{1-a_n}^{k}
+		&\leqslant&  \sum_{k=1}^{\infty} \norm{1-a_n}^{k}\\
 		&<& \frac{\delta}{1+\delta} < \delta = \norm{1-a_n}
 	\end{eqnarray*}
 	i.e. $\lim a_n = 1$.
@@ -89,6 +89,7 @@ If $\alg{B}$ is a closed ideal of a Banach algebra $\alg{A}$, then then quotient
 for any $b_1, b_2 \in \alg{B}$.
 
 \subsection{Spectrum}
+
 
 \begin{defn}
 	Let $\alg{A}$ be a Banach algebra and $a \in \alg{A}$. The spectrum of $a$, denoted by $\sigma(a)$ defined as
@@ -120,7 +121,7 @@ Firstly, there are some elementary properties of the spectrum.
 	\begin{equation*}
 		F^{'}(\lambda) = (a-\lambda)^{-2}
 	\end{equation*}
-	And clearly, $F^{'}(\lambda)$ is continuous. Thus it is analytic and it vanishes at $\infty$. By the Liouville's Theorem, if $\rho(a) = \C$, $F$ is constant. Therefore, $\rho(a) \notin \C$ i.e. $\sigma(a) \neq \varnothing$.\\
+	And clearly, $F^{'}(\lambda)$ is continuous. Thus it is analytic and it vanishes at $\infty$. By the Liouville's Theorem, if $\rho(a) = \C$, $F$ is constant. Therefore, $\rho(a) \neq \C$ i.e. $\sigma(a) \neq \varnothing$.\\
 	For $4)$, let $U=\{\lambda \in \C \colon \lambda = 0 \text{ or } \lambda^{-1} \in \rho(a)\}$ and 
 	\begin{equation*}
 		f(\lambda) = 
@@ -147,7 +148,7 @@ If $\alg{B} \subset \alg{A}$ is a subalgebra with the same identity of a Banach 
 		  Let $U$ be an connected component in $\tilde{K}$ and $x \in U$. For any point $x \in U$, Since any open neighbourhood of $x$ is connected, and $K$ is open, there is a open neighbourhood $V$ of $x$ s.t. $V \subset U$.
 	\item Secondly, $\C$ has just at most countable many open sets, which are pairwise disjoint.\\
 		  This result is because any open set in $\C$ contains a rational point.
-	\item For any two disjoint open sets $A$ and $B$ in $\C$, $\partial A \bigcap B = \varnothing$. Thus the boundary of some compoment of $\tilde{K}$ can not intersect in any component of $\tilde{K}$, i.e. it is contained $K$.
+	\item For any two disjoint open sets $A$ and $B$ in $\C$, $\partial A \bigcap B = \varnothing$. Thus the boundary of some compoment of $\tilde{K}$ can not be contained in any component of $\tilde{K}$, i.e. it is contained $K$.
 	\item Finally, since $K$ is bounded, there is a closed ball $B$ containing $K$. But the complement of $B$ is connected, thus there is only one component of $\tilde{K}$ containing $B$. Thus the other components of $\tilde{K}$ are bounded.
 \end{proof}
 \begin{rem}
@@ -204,7 +205,7 @@ Then we can have some useful corollaries.
 \end{proof}
 
 \subsection{Riesz Functional Calculus}
- 
+
 For any polynomial $p$ with complex coefficients,  
 \begin{equation*}
 	p(z) = \sum_{k=0}^{n} \alpha_k z^{k}
@@ -245,16 +246,17 @@ Clearly, by the Cauchy's Integral Formula, this definition is well-defined and i
 	\begin{enumerate}[label=\arabic*)]
 		\item $\rho$ is an algebra homomorphism.
 		\item $\rho(1) = 1$ and $\rho(z)=a$.
-		\item If $\{f_n\} \subset \hol{(a)}$ and $f \in \alg{A}$ with $f_n \sto f$ uniformly on a compact set of $\hol{(a)}$, then $\rho(f_n) \sto \rho(a)$ in norm.
+		\item If $\{f_n\} \subset \hol{(a)}$ and $f \in \alg{A}$ with $f_n \sto f$ uniformly on a compact set of $\hol{(a)}$, then $\rho(f_n) \sto \rho(f)$ in norm.
 	\end{enumerate}
 	Moreover, if any map $\tau \colon \hol{(a)} \sto \alg{A}$ satifies above conditions, then $\tau = \rho$. 
 \end{thm}
 \begin{proof}
-	\item For $1)$, $\rho$ is clearly linear. And
+	For $1)$, $\rho$ is clearly linear. And
 		\begin{eqnarray*}
 			f(a)g(a)&=& -\frac{1}{4 \pi^{2}}\int_{\gamma_1} f(z) (z-a)^{-1} dz\int_{\gamma_2} g(\zeta) (\zeta-a)^{-1} d\zeta \\
-			&=& -\frac{1}{4 \pi^{2}}\int_{\gamma_1}\int_{\gamma_2} f(z)g(\zeta) \frac{(z-a)^{-1}-(\zeta-a)^{-1}}{\zeta-z} d\zeta dz
-			&=& -\frac{1}{4 \pi^{2}}\int_{\gamma_1}f(z) \int_{\gamma_2} \frac{g(\zeta)}{\zeta-z} d\zeta (z-a)^{-1} dz + \frac{1}{4 \pi^{2}}\int_{\gamma_2}g(\zeta) \int_{\gamma_1} \frac{f(z)}{\zeta-z} dz (\zeta-a)^{-1} d\zeta
+			&=& -\frac{1}{4 \pi^{2}}\int_{\gamma_1}\int_{\gamma_2} f(z)g(\zeta) \frac{(z-a)^{-1}-(\zeta-a)^{-1}}{\zeta-z} d\zeta dz \\
+			&=& -\frac{1}{4 \pi^{2}}\int_{\gamma_1}f(z) \int_{\gamma_2} \frac{g(\zeta)}{\zeta-z} d\zeta (z-a)^{-1} dz \\
+		    && \negmedspace{} + \frac{1}{4 \pi^{2}}\int_{\gamma_2}g(\zeta) \int_{\gamma_1} \frac{f(z)}{\zeta-z} dz (\zeta-a)^{-1} d\zeta
 		\end{eqnarray*}
 		We can choose $\gamma_2$ to enclose $\gamma_1$, thus 
 		\begin{equation*}
@@ -274,13 +276,15 @@ Clearly, by the Cauchy's Integral Formula, this definition is well-defined and i
 	\end{eqnarray*}
 	\item For $3)$, 
 	\begin{eqnarray*}
-		\norm{\int_{\gamma} f_n(z) (z-a)^{-1} dz - \int_{\gamma} f(z) (z-a)^{-1} dz} \\
+		\lefteqn { \norm{\int_{\gamma} f_n(z) (z-a)^{-1} dz - \int_{\gamma} f(z) (z-a)^{-1} dz} }\\
 		&=& \norm{\int_{0}^{1}(f_n(\gamma(t))-f(\gamma(t)))(\gamma(t)-a)^{-1}d\gamma(t)}\\
 		&\leqslant& \int_{0}^{1} \abs{f_n(\gamma(t))-f(\gamma(t))}\norm{(\gamma(t)-a)^{-1}}d\abs{\gamma}(t) \\
 		&\leqslant& M \norm{\gamma} \sup{\{\abs{f_n(z)-f(z)} \colon z \in \gamma(t)\}}
 	\end{eqnarray*}
-	where $M$ is the bound of $\norm{(\gamma(t)-a)^{-1}}$ since $t \mapsto \norm{(\gamma(t)-a)^{-1}}$ is continuous on $\gamma(t)$.\\
-	Therefore, by the fact that $f_n \sto f$ uniformly, $\norm{f_n(a)-f(a)} \sto 0$.
+	where $M$ is the bound of $\norm{(\gamma(t)-a)^{-1}}$ since $t \mapsto \norm{(\gamma(t)-a)^{-1}}$ is continuous on $\gamma(t)$. Therefore, by the fact that $f_n \sto f$ uniformly,
+	\begin{equation*}
+		\norm{f_n(a)-f(a)} \sto 0
+	\end{equation*}
 	\item Finally, the uniquness is because any $f \in \hol{(a)}$ can be approximated uniformly by a sequence of polynomials. Thus, $1)$ and $2)$ means $\tau(p) = \rho(p)$ for any polynomial $p$, and $3)$ provides the fact that $\tau(f) = \rho(f)$ for any $f \in \hol{(a)}$.
 \end{proof}
 \begin{rem}
@@ -300,11 +304,11 @@ Clearly, by the Cauchy's Integral Formula, this definition is well-defined and i
 
 \begin{prop}
 	Let $\alg{A}$ be a Banach algebra and $a \in \alg{A}$. $\sigma(a) = F_1 \bigcup F_2$, where $F_1$ and $F_2$ are disjoint nonempty closed sets. Then there is a nontrial idempotent $e$, i.e. $e^{2}=e$, s.t.
-	\begin{enumerata}[label=\arabic*)]
+	\begin{enumerate}[label=\arabic*)]
 		\item if $ab=ba$, then $eb=be$.
 		\item if $a_1=ae$ and $a_2=a(1-e)$, then $a_1a_2=a_2a_1=0$.
 		\item $\sigma(a_1)=F_1 \bigcup \{0\}$ and $\sigma(a_2)=F_2 \bigcup \{0\}$.
-	\end{enumerata}
+	\end{enumerate}
 \end{prop}
 \begin{proof}
 	Since $F_1$ and $F_2$ are disjoint closed set, there are two disjoint open sets $G_1$ and $G_2$ separating $F_1$ and $F_2$. Let $f$ be the characteristic function of $G_1$ and $e=f(a)$. Thus $e^{2}=e$ by $f^{2}=f$.
@@ -314,8 +318,8 @@ Clearly, by the Cauchy's Integral Formula, this definition is well-defined and i
 \end{proof}
 
 \subsection{Abelian Banach Algebras} \label{sec2}
-
-\begin{thm}[Gelfand-Mazur Theorem]
+ 
+ \begin{thm}[Gelfand-Mazur Theorem]
 	If $\alg{A}$ is a Banach algebra and a division ring, then $\alg{A} = \C$.
 \end{thm}
 \begin{proof}
@@ -349,7 +353,7 @@ for an abelian Banach algebra $\alg{A}$. Then we can find the relationship betwe
 		If $\ker{h} = \ker{h^{'}}$ for $h,h^{'} \in \Sigma(\alg{A})$, then by the \textbf{Propostion} \ref{prop2} in the subsection \textbf{1.4.2}, $h = \alpha h^{'}$. And since $h(1) = h^{'}(1)=1$, $h=h^{'}$.
 \end{proof}
 
-Then we have some porperties of $h \in \Sigma(\alg{A})$.
+Then we have some properties of $h \in \Sigma(\alg{A})$.
 
 \begin{prop} \label{prop5}
 	Let $\alg{A}$ be an abelian Banach algebra and $h \in \Sigma(\alg{A})$.
@@ -423,7 +427,7 @@ If $a \in \alg{A}$ s.t. $\clo{\{p(a) \colon p \text{ is any polynomial}\}} = \al
 \begin{proof}
 	In fact, $\tau$ can be defined as $\tau(h)=h(a)$. By above mention, $\tau$ is continuous and surjective. If $\tau{h_1}=\tau{h_2}$, then $ h_1(a) = h_2(a)$. By the fact that $h_1,h_2 \in \alg{A}$ and $a$ is a generator of $\alg{A}$, $h_1=h_2$. Thus $\tau$ is a bijection. And because $\Sigma(\alg{A})$ is compact, $f$ is a closed map, i.e. $f$ is a homeomorphism.
 	\begin{equation*}
-		\Gamma(p(a)(h) = p(\Gamma(a))(h) = p(\Gamma(a)(h)) = p(\tau(h))
+		\Gamma(p(a))(h) = p(\Gamma(a))(h) = p(\Gamma(a)(h)) = p(\tau(h))
 	\end{equation*}
 \end{proof}
 \begin{rem}
@@ -432,9 +436,10 @@ If $a \in \alg{A}$ s.t. $\clo{\{p(a) \colon p \text{ is any polynomial}\}} = \al
 
 In fact, above proposition can extends to $n$ generators. If $\{a_i\}_{i=1}^{n}$ are generators of $\alg{A}$, i.e $\clo{\{p(a_1,\cdots,a_n) \colon p \text{ is any } n \text{ variables polynomial}\}} = \alg{A}$, then we have similar results as above proposition.
 
+
 \section{\texorpdfstring{$C^{*}$-Algebras}{C*-Algebras}}
 
-Now, we have known $\oper$ is a Banach algebra. But there is another algebraic operation on $\oper$, which let $\oper$ be more interesting than the general Banach algebra. This operation is a map $T \sto T^{*}$ on $\oper$, called an involution, and moreover, it satisfies the condition $\norm{T} = \norm{T^{*}}$. This identity provides a strong relation between the topological structure and the algebraic structure on $\oper$. In fact, the topology is completely determined by the algebraic structure on $\oper$. In order to research this structure, we firstly define an general algebra satisfying above condition, called a $C^{*}$-algebra. By digging its topological structures and algebraic structures, we can embed it into $\oper$ for some Hilbert space $\fml{H}$. Therefore, any $C^{*}$-algebra can be regarded as a subalgebra of $\oper$.
+Now, we have known $\oper$ is a Banach algebra. But there is another algebraic operation on $\oper$, which let $\oper$ be more interesting than the general Banach algebra. This operation is a map $T \sto T^{*}$ on $\oper$, called an involution, and moreover, it satisfies the condition $\norm{T} = \norm{T^{*}} = \norm{\st{T}T}^{\frac{1}{2}}$. This identity provides a strong relation between the topological structure and the algebraic structure on $\oper$. In fact, the topology is completely determined by the algebraic structure on $\oper$. In order to research this structure, we firstly define an general algebra satisfying above condition, called a $C^{*}$-algebra. By digging its topological structures and algebraic structures, we can embed it into $\oper$ for some Hilbert space $\fml{H}$. Therefore, any $C^{*}$-algebra can be regarded as a subalgebra of $\oper$.
 
 \subsection{Elementary Properties}
 \begin{defn}
@@ -560,7 +565,7 @@ Therefore, any element in a \Cs $\A$ can be combined by two self-adjoint element
 	If $a \in \Rea{A}$, then $\sigma(a) \subset \R$.
 \end{cor}
 \begin{proof}
-	Let $\Cg(a)$ be the \Cs generated by $1$ and $a$. Thus $\Cg(a)$ is abelian. Then by \textbf{Proposition} \ref{prop6} in the subsection \textbf{2.1.4}, 
+	Let $\Cg{a}$ be the \Cs generated by $1$ and $a$. Thus $\Cg{a}$ is abelian. Then by \textbf{Proposition} \ref{prop6} in the subsection \textbf{2.1.4}, 
 	\begin{equation*}
 		\sigma_{\Cg{a}}(a) = \{~ h(a) \colon h \in \Sigma(\alg{A}) ~\} \subset \R
 	\end{equation*} 
@@ -724,7 +729,7 @@ Like the fact that any element in a \Cs can be combined by two self-ajoint eleme
 \end{prop}
 \begin{proof}
 	Let $f(x) = \max{x,0}$ and $g(x) = - \min{x,0}$. Then $f,g \in C(\sigma(a))$ and $f(x)-g(x)=x$ and $f(x)g(x)=0$. Then $u = f(a)$ and $v = g(a)$ satisfy above conditions.\\
-	If $a=u_1-v_1$, then we can know $\Cg(a,u,v,u_1,v_1)$ is an abelian \Cs, thus for some compact space $X$, $\Cg(a,u,v,u_1,v_1) \cong C(X)$. And this uniqueness can be proved in a continuous function space.
+	If $a=u_1-v_1$, then we can know $\Cg{a,u,v,u_1,v_1}$ is an abelian \Cs, thus for some compact space $X$, $\Cg{a,u,v,u_1,v_1} \cong C(X)$. And this uniqueness can be proved in a continuous function space.
 \end{proof}
 
 \begin{cor}
@@ -776,7 +781,7 @@ Then, we can build an order on $\Rea{\A}$ by defining $a \leqslant b \Leftrighta
 \end{proof}
 
 By using $2)$ on above proposition, we can easily see that
-\begin{cor}
+\begin{cor} \label{cor7}
 	Let $\Hs$ be a Hilbert space and $T \in \oper$. If $T$ is positive, then for any $h \in \Hs$
 	\begin{equation*}
 		\langle Th,h \rangle \geqslant 0
@@ -958,7 +963,7 @@ Now, we can give more profound properties of the closed left ideals.
 	\begin{eqnarray*}
 		\norm{a+\I}^2 &=& \inf{\{~\norm{a-ax}^2 \colon x \in \I_{+}, \norm{x} \leqslant 1~\}}\\
 		&=& \inf{\{~\norm{(1-x)\st{a}a(1-x)} \colon x \in \I_{+}, \norm{x} \leqslant 1~\}}\\
-		\leqslant \inf{\{~\norm{\st{a}a(1-x)} \colon x \in \I_{+}, \norm{x} \leqslant 1~\}}\\
+		&\leqslant& \inf{\{~\norm{\st{a}a(1-x)} \colon x \in \I_{+}, \norm{x} \leqslant 1~\}}\\
 		&=& \norm{\st{a}a+\I}
 	\end{eqnarray*}
 	Therefore, $\A / \I$ is indeed a $\st{C}$-algebra.
@@ -1000,7 +1005,7 @@ We have known that $\oper$ is a $\st{C}$-algebra. In fact, defining the general 
 	Let $\A$ be \Cs and $\phi$ is a linear functional on $\A$. $\phi$ is called positive if for any $a \in \A_{+}$, $\phi(a) \leqslant 0$. A positive linear functional $\phi$ is called a state if $\phi(1) = 1$.
 \end{defn}
 \begin{rem}
-	Let $\St_{\A}$ denote the state all states on $\A$.
+	Let $\St_{\A}$ denote the set of all states on $\A$.
 \end{rem}
 
 Then there are some properties of positive functionals.
@@ -1054,7 +1059,7 @@ In fact, the converse of $2)$ in above proposition is also true.
 	If $\A=C(X)$ for some compact space $X$, $\phi$ is a measure $\mu$ with $\mu(X)=\norm{\mu}$, then $\mu \geqslant 0$, i.e. $\phi$ is positive. Then for any $\A$, if $a \in \A_{+}$, $\B=\Cg{a} \cong C(\sigma(a))$. Then $\phi|_\B(1) \leqslant \norm{\phi} = \phi(1) = \phi|_\B(1)$, thus $\phi|_\B(a) = \phi(a) \geqslant 0$.
 \end{proof}
 Using above proposition and the Hahn-Banach Theorem, we can get the corollary.
-\begin{cor}
+\begin{cor} \label{cor6}
 	If $\A$ is a \Cs and $\B$ is a $\st{C}$-subalgebra of $\A$, then every state on $\B$ can extend to $\A$.
 \end{cor}	
 
@@ -1081,7 +1086,7 @@ Now, we can construct the a representation of a $\st{C}$-algebra. A representati
 		\begin{equation*}
 			\langle x,y \rangle = \phi(\st{y}x),~~ \text{for}~ x,y \in \A
 		\end{equation*}
-		\item Constructing $\Hs_{\phi}$: $\langle \cdot, \cdot \rangle$ is just a semi-inner product on $\A$, thus we need to make it be non-degenerate. The nature method is a equilaten relation or a closed ideal, and then inducing a quotient space. Naturally, we define
+		\item Constructing $\Hs_{\phi}$: $\langle \cdot, \cdot \rangle$ is just a semi-inner product on $\A$, thus we need to make it be nondegenerate. The nature method is constructing a equilaten relation or a closed ideal, and then inducing a quotient space. Naturally, we define
 		\begin{equation*}
 			\B = \{~x \in \A \colon \phi(x) = 0~\}
 		\end{equation*}
@@ -1123,7 +1128,7 @@ Now, we can construct the a representation of a $\st{C}$-algebra. A representati
 	and the facts that $\Hs_{\phi}=\clo{\pi_{\phi}(\A)e_{\phi}}$ and $\Hs=\clo{\pi(\A)e}$, we can find the unitary $U$. Firstly, let $U$ be defined on $\pi_{\phi}(\A)e_{\phi}$ 
 	\begin{center}
 		\begin{tabular}{l c c l}
-			$U \colon$ & $pi_{\phi}(\A)e_{\phi}$ & $\longrightarrow$ & $\pi(\A)e$ \\
+			$U \colon$ & $\pi_{\phi}(\A)e_{\phi}$ & $\longrightarrow$ & $\pi(\A)e$ \\
 			~ & $\pi_{\phi}(a)e_{\phi}$ & $\longmapsto$ & $\pi(a)e$
 		\end{tabular}
 	\end{center}
@@ -1212,7 +1217,7 @@ Now, using this corollary, we can finally construct a faithful representation.
 	\begin{equation}
 		0=\phi_n(a) = \langle \pi_n(\st{b}b)e_n,e_n \rangle = \norm{\pi(b)e_n}^2 \tag{$*$}
 	\end{equation}
-	But $\norm{b} = \sup_{n} \norm{\pi(b)e_n}$, thus implies $a = 0$.\\
+	But $\norm{b} = \sup_{n} \norm{\pi(b)e_n}$, that implies $a = 0$.\\
 	Conversely, if $\{\phi_n\}$ is these states, we can use the GNS Construction to get $\{(\pi_n,\Hs_n,e_n) \colon n \in \N\}$. Similarly, we can use direct sum to get the representation $(\pi,\Hs)$. Then by using the $(*)$, we can know this representation is definitely faithful.
 	\item Finally, if $\A$ is separable, then the closed unit ball in $\A^{*}$ is $wk^{*}$-compactly metrizable. Therefore, there is a countable $wk^{*}$-dense subset of $\St_{\A}$. Thus by above corollary, this subset can separate the points in $\A_{+}$
 \end{proof}
@@ -1263,7 +1268,7 @@ The bounded self-adjoint linear functional in $\st{\A}$ is like the self-adjoint
 		\begin{equation*}
 			\norm{\phi_{+}}+\norm{\phi_{-}}= s+t = 1 = \norm{L}
 		\end{equation*}
-	For general $L$, just let $L / \norm{L}$ for $L \neq 0$, the statements are true. \qedhere
+		For general $L$, just let $L / \norm{L}$ for $L \neq 0$, the statements are true. \qedhere
 	\end{enumerate}
 \end{proof}
 
@@ -1308,7 +1313,7 @@ By combining this and the Jordan Decomposition Theorem, we can have the followin
 	Let $\pi \colon \A \sto \oper$ be a representation and $e \in \Hs$ be any unit element. Then $\M = \clo{\pi(\A)e}$ is clearly a invariant space for $\pi$. If $\M \neq \Hs$, then $\Hs = \M \oplus \M^{\bot}$. We have another unit vector $e^{'} \in \M^{\bot}$, then let $\M^{'} = \clo{\pi(\A)e^{'}}$ and $\M^{'} \bot \M$. If $\M^{'} \neq \M^{\bot}$, we can continue above process again. By induction and the Zorn's Lemma, the theorem can be obtained.
 \end{proof}
 
-\begin{thm}
+\begin{thm} \label{thm8}
 	If $\A$ is a \Cs and $\I$ is an ideal of $\A$, then every representation $\rho \colon \I \sto \oper$ can be extended to a representation $\tilde{\rho} \colon \A \sto \oper$. Moreover, if $\rho$ is non-degenerate, then $\tilde{\rho}$ is unique.
 \end{thm}
 \begin{proof}
@@ -1344,6 +1349,7 @@ By combining this and the Jordan Decomposition Theorem, we can have the followin
 	then $\rho \cong \kappa$
 \end{cor}
 
+
 We know the irreducible representation play a important role in the representation theory. Therefore, we want to find the necessary and sufficient conditions make a representation be irreducible.
 
 \begin{defn}
@@ -1360,13 +1366,13 @@ We know the irreducible representation play a important role in the representati
 	Let $\A$ be a \Cs and $(\rho,\Hs)$ be a representation, the following statements are equivalent. Then $\rho$ is irreducible if and only if ${\rho(\A)}^{'} = \C$
 \end{thm}
 \begin{proof}
-	If $\rho$ is irreducible and $\C \neq {\rho(\A)}^{'}$, then there is a $T \in {\rho(\A)}^{'} \backslash \C$. Therefore, there is a proper projection $P \in {\rho(\A)}^{'} \backslash \C$. Then $P\Hs$ is a proper invariant space for $\rho$, which is a contradiction. The converse is clearly true by similar prove as above.
+	If $\rho$ is irreducible and $\C \neq {\rho(\A)}^{'}$, then there is a $T \in {\rho(\A)}^{'} \backslash \C$. Therefore, there is a proper projection $P \in {\rho(\A)}^{'} \backslash \C$. Then $P\Hs$ is a proper invariant space for $\rho$, which is a contradiction. The converse is clearly true by using similar prove as above.
 \end{proof}
 \begin{rem}
-	The existence of $P$ is because that ${\rho(\A)}^{'}$ is von Neumann algebra.
+	The existence of $P$ is because that ${\rho(\A)}^{'}$ is a von Neumann algebra.
 \end{rem}
 
-By the GNS construction, the representations generated by positive linear functionals are important. So we need more properties of these representations.
+Firstly, by the GNS construction, the representations generated by positive linear functionals are important. So we need more properties of these representations.
 
 \begin{prop}
 	Let $\A$ be a \Cs and $\psi$ and $\phi$ be two positive linear functionals on $\A$ and $(\pi,\Hs,e)$ be the representation generated by $\phi$. Then $\psi \leqslant \phi$ if and only if there is unique a $T \in {\pi(\A)}^{'}$ with $0 \leqslant T \leqslant 1$, s.t. $\psi(a) = \langle \pi(a)Te, e \rangle$ for all $a \in \A$. 
@@ -1376,7 +1382,7 @@ By the GNS construction, the representations generated by positive linear functi
 	\begin{equation*}
 		0 \leqslant T^{\frac{1}{2}}\pi(a)T^{\frac{1}{2}} = \pi(a)T = \pi(a)^{\frac{1}{2}}T\pi(a)^{\frac{1}{2}} \leqslant \pi(a)
 	\end{equation*}
-	Therefore, $\psi(a) \leqslant \phi(a)$.
+	Therefore, $\psi(a) \leqslant \phi(a)$. 
 	\item Conversely, we define a sesquilinear form on $\pi(\A)e$,
 	\begin{equation*}
 		f(\pi(a)e, \pi(b)e) = \psi(\st{b}a)
@@ -1425,6 +1431,10 @@ By the GNS construction, the representations generated by positive linear functi
 	\end{equation*}
 	$U$ is the unitary make $\pi_1 \cong \pi_2$. The converse is trivial.
 \end{proof}
+\begin{rem}
+	Using this proposition, we can strengthen the result of the \textbf{Corollary} \ref{cor6} in the subsection \textbf{2.2.6}. In fact, every state on an closed ideal $\I$ of a \Cs $\A$ can extend to a unique state on $\A$. 
+	If there are two extensions, they can generate two cyclic representations. And these two representations are equivalent on the ideal, thus these two representations are equivalent. And by above proposition, these two extensions are equal.
+\end{rem}
 
 By above two propositions, we can get the relationship between positive functionals and the generated representations.
 
@@ -1440,7 +1450,7 @@ By above two propositions, we can get the relationship between positive function
 	\begin{equation*}
 		\langle \pi_{\psi}(a)e_{\psi}, e_{\psi} \rangle = \psi(a) = \langle \pi_{\phi}(a)T^{\frac{1}{2}}e_{\phi}, T^{\frac{1}{2}}e_{\phi} \rangle
 	\end{equation*}
-	by above proposition $\pi_{\psi} \cong \pi_{\phi}|_{\M}$.
+	by above proposition $\pi_{\psi} \cong \pi_{\phi}|_{\M}$
 \end{proof}
 
 \begin{defn}
@@ -1451,7 +1461,7 @@ By above two propositions, we can get the relationship between positive function
 	Let $\A$ be a \Cs and $(\rho,\Hs)$ be a representation, the following statements are equivalent. Then $\rho$ is irreducible if and only if $\rho$ is equivalent to some cyclic representation generated by a pure state.
 \end{thm}
 \begin{proof}
-	Suppose $\rho$ is irreducible. Then for any nonzero unit vector $h \in \Hs$, $\clo{\rho{\A}h} = \Hs$. Define 
+	Suppose $\rho$ is irreducible. Then for any nonzero unit vector $h \in \Hs$, $\clo{\rho(\A)h} = \Hs$. Define 
 	\begin{center}
 		\begin{tabular}{l c c l}
 			$\phi \colon$ & $\A$ & $\longrightarrow$ & $\C$ \\
@@ -1483,16 +1493,225 @@ By above two propositions, we can get the relationship between positive function
 	Since $\Hs = \clo{\rho(\A)e}$, $P = \lambda$, thus $P=1$ or $0$. Therefore $\rho$ has no proper invariant space.
 \end{proof} 
 
+\begin{prop}
+	Let $\A$ be a \Cs and $\phi \in \St_{\A}$. Then $\phi$ is pure if and only if $\phi$ is the extreme point of  $\St_{\A}$.
+\end{prop}
+\begin{rem}
+	This proposition can be obtained by definition. In fact, we usually use the extreme point to define the pure state.
+\end{rem}
 
+We have similar results for pure states as general states. Firstly, we need a lemma.
 
+\begin{prop}
+	Let $\A$ be a \Cs and $\I$ be a closed ideal of $\A$. 
+	\begin{enumerate}[label=\arabic*)]
+		\item If $(\rho, \Hs)$ is an irreducible representation of $\I$, then it can extend to a unique irreducible representation $(\tilde{\rho},\Hs)$ on $\A$.
+		\item If $(\rho, \Hs)$ is an irreducible representation of $\A$, then $(\rho|_{\I},\Hs)$ is an irreducible representation of $\I$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	For $1)$, since $\rho$ is irreducible, $\rho$ is non-degenerate. By the \textbf{Theorem} \ref{thm8} in this subsection, there is a unique extension $\tilde{\rho}$ of $\A$. And clearly, 
+	\begin{equation*}
+		\C \subset {\tilde{\rho}(\A)}^{'} \subset {\rho(\I)}^{'} = \C
+	\end{equation*} 
+	${\tilde{\rho}(\A)}^{'} = \C$, i.e. $\tilde{\rho}$ is irreducible.
+	\item For $2)$, $\rho$ can be generated by a pure state $\phi$ on $\A$. Then $\phi|_{\I}$ is a pure state on $\I$ since if $\phi|_{\I} = s\psi_1 + (1-s)\psi_2$ for some $\psi_1 ,\psi_2 \in \St_{\I}$ and $s \in (0,1)$, then $\psi_1, \psi_2$ have extension $\psi_1^{'}, \psi_2^{'}$ on $\A$, $\phi = s\psi_1^{'} + (1-s)\psi_2^{'}$ by the uniqueness of extensions, which is a contradiction. Therefore, $\phi|_{\I}$ can generate an irreducible representation $\kappa$ on $\I$ and $\kappa \cong \rho|_{\I}$.
+\end{proof}
 
+\begin{prop}
+	Let $\B$ be a $\st{C}$-subalgebra of $\A$. Then every pure state on $\B$ can extend to a pure state on $\A$.
+\end{prop}
+\begin{proof}
+	Define $T \colon \St_{\A} \sto \St_{\B}$ by $\phi \sto \phi|_{\B}$. Then $T$ is surjective, affine and $\st{wk}$-continuous. Therefore, $T$ maps extreme points to extreme points. Thus the proposition holds.
+\end{proof}
 
+\begin{cor}
+	Let $\A$ be a \Cs and $a \in \A$. Then
+	\begin{equation*}
+		\norm{a}^2 = \sup{\{~\phi(\st{a}a) \colon \phi \text{ is a pure state on } \A~\}}
+	\end{equation*}
+\end{cor}
+\begin{proof}
+	If $\A=C(X)$ for some compact space $X$, this corollary is true. And then by above proposition, any pure state on $\Cg{\st{a}a}$ can extend to a pure state on $\A$. Therefore, this corollary holds.
+\end{proof}
 
+\begin{thm}
+	If $\A$ is a $\st{C}$-algebra, then there is a family of irreducible representations $\{\pi_i\}_{i\in I}$ s.t. $\oplus_{i \in I} \pi_{i}$ is a faithful representation of $\A$.
+\end{thm}
+\begin{proof}
+	Let $\{\pi_i\}_{i\in I}$ be generated by all pure state. Then by above corollary, $\oplus_{i \in I} \pi_{i}$ is faithful.
+\end{proof}
 
+\section{Operators on Hilbert Spaces}
 
+We have known that each $\st{C}$-algebra can be isometrically imbedded a $\oper$ for some Hilbert space $\Hs$. Therefore, we just research operator algebras other than $\st{C}$-algebras. Firstly, we need some general theories of operators on a Hilbert space.
 
+\subsection{Spectrums for Operators}
 
+By using the fact that $T \sto \st{T}$ in $\oper$ is bijective and isometrically antilinear, we have the following proposition.
+\begin{prop}
+	Let $\Hs$ be a Hilbert space and $T \in \oper$. Then
+	\begin{equation*}
+		\sigma(\st{T}) = \st{\sigma(T)} 
+	\end{equation*}
+\end{prop}
 
+For self-adjoint operators in $\oper$, we have some extral properties related to the inner product.
+
+\begin{prop}
+	Let $\Hs$ be a Hilbert space and $T \in \oper$. Then $T$ is self-adjoint if and only if $\langle Th,h \rangle \in \R$ for any $h \in \Hs$.
+\end{prop}
+\begin{proof}
+	If $\langle Th,h \rangle \in \R$ for any $h \in \Hs$, then for any $h,g \in \Hs$ and $\alpha \in \C$,
+	\begin{eqnarray*}
+		\langle T(h+\alpha g),h+\alpha g \rangle = \langle Th,h \rangle + \clo{\alpha}\langle Th,g \rangle + \alpha \langle Tg,h \rangle + \abs{\alpha}^2 \langle Tg,g \rangle \in \R
+	\end{eqnarray*}
+	Then by taking its conjugate,
+	\begin{eqnarray*}
+		\clo{\alpha}\langle Th,g \rangle + \alpha \langle Tg,h \rangle &=& \clo{\alpha} \langle h,Tg \rangle + \alpha \langle g,Th \rangle \\
+		&=& \clo{\alpha} \langle \st{T}h,g \rangle + \alpha \langle \st{T}g,h \rangle
+	\end{eqnarray*}
+	Taking $\alpha = 1$ and $i$, we have
+	\begin{eqnarray*}
+		\langle Th,g \rangle + \langle Tg,h \rangle &=& \langle \st{T}h,g \rangle + \langle \st{T}g,h \rangle \\
+		i\langle Th,g \rangle - i\langle Tg,h \rangle &=& -i\langle \st{T}h,g \rangle + i\langle \st{T}g,h \rangle
+	\end{eqnarray*}
+	Therfore, $\langle Th,g \rangle=\langle \st{T}g,h \rangle$ for any $h,g \in \Hs$.\\
+	The converse is clearly true by definition.
+\end{proof}
+
+\begin{prop} \label{prop9}
+	Let $\Hs$ be a Hilbert space and $T \in \oper$ be self-adjoint. Then
+	\begin{equation*}
+		\sigma(T) \subset \{~\langle Th,h \rangle \colon \norm{h} = 1~\}
+	\end{equation*}
+\end{prop}
+\begin{proof}
+	If $\lambda \notin \{~\langle Th,h \rangle \colon \norm{h} = 1~\}$, then there is a $\varepsilon > 0$, s.t.
+	\begin{equation*}
+		\varepsilon < \abs{\lambda - \langle Th,h \rangle} \leqslant \norm{Th},~~\forall~ h \in \Hs,~\norm{h}=1
+	\end{equation*}
+	Therefore, by the \textbf{Lemma} \ref{lem1} in the subsection \textbf{1.4.4},
+	\begin{equation*}
+		\ker{(T - \lambda)}=\{0\} ~\&~ \ran{(T - \lambda)} \text{ is closed}
+	\end{equation*}
+	Since $T$ is self-adjoint, $\clo{\lambda} \notin \sigma(T)$, so $\ker{(\clo{\lambda} - T)} = \{0\}$. Thus 
+	\begin{equation*}
+		\ran{(T - \lambda)}^{\bot} = \ker{(T - \clo{\lambda})} = \{0\}
+	\end{equation*}
+	i.e. $\ran{(T - \lambda)} = \Hs$. Then by the Inverse Mapping Theorem, $(T - \lambda)^{-1} \in \oper$, i.e. $\lambda \notin \sigma(a)$.
+\end{proof}
+
+\begin{cor}
+	Let $\Hs$ be a Hilbert space and $T \in \oper$ be self-adjoint.
+	\begin{enumerate}[label=\arabic*)]
+		\item $\norm{T} = \sup{\{\langle Th,h \rangle \colon \norm{h} = 1\}}$.
+		\item If $\langle Th,h \rangle = 0$ for any $h \in \Hs$, then $T=0$.
+	\end{enumerate}
+\end{cor}
+\begin{proof}
+	For $1)$, 
+	\begin{equation*}
+		\norm{T} = r(T) \leqslant \sup{\{\langle Th,h \rangle \colon \norm{h} = 1\}} \leqslant \norm{T}
+	\end{equation*}
+	$2)$ is the direct result of $1)$.
+\end{proof}
+\begin{rem}
+	In fact, for any $T \in \oper$ with $\langle Th,h \rangle = 0$ for any $h \in \Hs$, then $T = 0$ since any $T$ can be the linear combination of two self-adjoint operators.
+\end{rem}
+
+By above proposition, we see the spectrum of operators can be described by using another method. Firstly, we can generize the consequence in \textbf{Proposition} \ref{prop9}.
+\begin{prop}
+	Let $\Hs$ be a Hilbert space and $T \in \oper$. Then let 
+	\begin{equation*}
+		\chi(\lambda) = \inf{\{~\norm{(T-\lambda)h} \colon \norm{h} = 1~\}}
+	\end{equation*}
+	\begin{equation*}
+		\sigma_l(T) =\{~\lambda \in \C \colon \chi(\lambda) = 0~\}
+	\end{equation*}
+\end{prop}
+\begin{proof}
+	By above proposition, we have seen if $\chi(\lambda) > 0$, 
+	\begin{equation*}
+		\ker{(T - \lambda)}=\{0\} ~\&~ \ran{(T - \lambda)} \text{ is closed}
+	\end{equation*}
+	Then let $\fml{K} = \ran{(T - \lambda)}$, then $T - \lambda \colon \Hs \sto \fml{K}$ is a bijection and\\ $(T-\lambda)^{-1} \colon \fml{K} \sto \Hs$ is bounded. Let
+	\begin{equation*}
+		B = (T-\lambda)^{-1}P \colon \Hs \sto \Hs
+	\end{equation*}
+	where $P$ is a projection to $\fml{K}$. Then $B \in \oper$ and $B(T - \lambda) = 1$. Therefore, $\sigma_l(T) \subset \{~\lambda \in \C \colon \chi(\lambda) = 0~\}$.
+	\item Conversely, if there is a $B \in \oper$ s.t. $B(T-\lambda)=1$, then
+	for $h \in \Hs$ with $\norm{h} = 1$
+	\begin{equation*}
+		1 = \norm{h} = \norm{B(T-\lambda)h} \leqslant \norm{B}\norm{(T-\lambda)h}
+	\end{equation*}
+	Therefore, $\norm{(T-\lambda)h} \geqslant \norm{B}^{-1}$, i.e. $\chi(\lambda) > 0$.
+\end{proof}
+
+\begin{defn}
+	Let $\Hs$ be a Hilbert space and $T \in \oper$.
+	\begin{enumerate}[label=\arabic*)]
+		\item The point spectrum of $T$ is defined as
+		\begin{equation*}
+			\sigma_p(T) = \{~ \lambda \in \C \colon \ker{(T-\lambda)} \neq \{0\}~\}
+		\end{equation*}
+		\item The approximate point spectrum of $T$ is defined as 
+		\begin{equation*}
+			\sigma_{ap}(T) =\{~\lambda \in \C \colon \exists~\text{units }{x_n} \subset \oper ~\text{s.t.}~ \norm{(T-\lambda)x_n} \sto 0~\}
+		\end{equation*}
+	\end{enumerate}
+\end{defn}
+
+\begin{prop}
+	Let $\Hs$ be a Hilbert space and $T \in \oper$.
+	\begin{enumerate}
+		\item $\lambda \notin \sigma_{ap}(T)$ if and only if $\ker{(T - \lambda)}=\{0\}$ and $\ran{(T - \lambda)}$ is closed.
+		\item $\partial \sigma(T) \subset \sigma_{ap}(T)$.
+		\item $\partial \sigma(T) \subset \sigma_l(T) \cap \sigma_r(T) = \sigma_{ap}(T) \cap \sigma_{ap}(\st{T})$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	For $1)$, if $\lambda \notin \sigma_{ap}(T)$, then there is a constant $C > 0$ s.t.
+	\begin{equation*}
+		\norm{(T-\lambda)x} \geqslant C\norm{x},~~\forall~x \in \Hs
+	\end{equation*}
+	Thus by above proposition, $\ker{(T - \lambda)}=\{0\}$ and $\ran{(T - \lambda)}$ is closed. Conversely, the condition that means $(T-\lambda)$ is left invertible, thus 
+	\begin{equation*}
+		\norm{(T-\lambda)x} \geqslant \norm{B}^{-1}\norm{x},~~\forall~ x \in \Hs,~\norm{x}=1
+	\end{equation*}
+	where $B$ is the left inverse of $T$. Therefore, $\lambda \notin \sigma_{ap}(T)$.
+	\item For $2)$, let $\lambda \in \partial \sigma(T)$ and $\{\lambda_n\} \subset \rho(T)$ s.t. $\lambda_n \sto \lambda$. Then we know $\norm{(T-\lambda_n)^{-1}} \sto \infty$. Otherwise, if $\norm{(T-\lambda_n)^{-1}} < M$ and $\abs{\lambda_n-\lambda} < M^{-1}$ for sufficiently large $n$,
+	\begin{equation*}
+		\norm{(T-\lambda_n)-(T-\lambda)} < \norm{(T-\lambda_n)^{-1}}^{-1}
+	\end{equation*}
+	by the perturbation of inverse, $T-\lambda$ is also invertible. Let $\{x_n\}$ by any sequence of unit vectors in $\Hs$. Define
+	\begin{equation}
+		y_n = \frac{(T-\lambda_n)^{-1}x_n}{\norm{(T-\lambda_n)^{-1}x_n}}
+	\end{equation}
+	Then $\norm{(T-\lambda)y_n} \sto 0$, i.e. $\lambda \in \sigma_{ap}(T)$.
+	\item For $3)$, by $1)$ we have known $\sigma_l(T)=\sigma_{ap}(T)$ and by taking the complex conjugate, $\sigma_r(\st{T})=\sigma_{ap}(\st{T})$. Therefore, $3)$ holds.
+\end{proof}
+
+Now, we can prove the inverse of the \textbf{Corollary} \ref{cor7} in the subsection \textbf{2.2.3}.
+
+\begin{thm}
+	Let $\Hs$ be a Hilbert space and $T \in \oper$. If for any $h \in \Hs$, 
+	\begin{equation*}
+		\langle Th, h \rangle \geqslant 0
+	\end{equation*}
+	then $T$ is positive.
+\end{thm}
+\begin{proof}
+	Firstly, $T$ is self-adjoint by above proposition. And for $\lambda < 0$ and $\norm{h} =1$
+	\begin{eqnarray*}
+		\norm{(T-\lambda)h} &=& \norm{Th}^2 - 2\lambda \langle Th,h \rangle + \lambda^2\norm{h}^2 \\
+		&\geqslant& - 2\lambda \langle Th,h \rangle + \lambda^2\norm{h}^2 \\
+		&\geqslant& \lambda^2\norm{h}^2
+	\end{eqnarray*}
+	Therefore, $\lambda \notin \sigma_l(T)$. Since $T$ is self-adjoint, $\lambda \notin \sigma_r(T)$. Thus  $\lambda \notin \sigma(T)$, i.e. $\sigma(T) \subset [0,\infty)$.
+\end{proof}
+
+\subsection{Polar Decomposition}
 
 
 

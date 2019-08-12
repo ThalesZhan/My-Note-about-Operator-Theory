@@ -37,3 +37,6 @@
 \contentsline {subsection}{\numberline {2.2.5}Ideals and Quotients}{67}{subsection.2.2.5}
 \contentsline {subsection}{\numberline {2.2.6}Positive Functionals and GNS Construction}{69}{subsection.2.2.6}
 \contentsline {subsection}{\numberline {2.2.7}Representations}{76}{subsection.2.2.7}
+\contentsline {section}{\numberline {2.3}Operators on Hilbert Spaces}{81}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Spectrums for Operators}{81}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Polar Decomposition}{84}{subsection.2.3.2}
