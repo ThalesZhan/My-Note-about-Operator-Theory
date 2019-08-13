@@ -3330,7 +3330,7 @@ We have similar results for pure states as general states. Firstly, we need a le
 
 \section{Operators on Hilbert Spaces}
 
-We have known that each $\st{C}$-algebra can be isometrically embedded a $\oper$ for some Hilbert space $\Hs$. Therefore, we just research operator algebras other than $\st{C}$-algebras. Firstly, we need some general theories of operators on a Hilbert space.
+We have known that each $\st{C}$-algebra can be isometrically imbedded a $\oper$ for some Hilbert space $\Hs$. Therefore, we just research operator algebras other than $\st{C}$-algebras. Firstly, we need some general theories of operators on a Hilbert space.
 
 \subsection{Spectrums for Operators}
 
@@ -3388,7 +3388,7 @@ For self-adjoint operators in $\oper$, we have some extral properties related to
 	i.e. $\ran{(T - \lambda)} = \Hs$. Then by the Inverse Mapping Theorem, $(T - \lambda)^{-1} \in \oper$, i.e. $\lambda \notin \sigma(a)$.
 \end{proof}
 
-\begin{cor}
+\begin{cor} \label{cor8}
 	Let $\Hs$ be a Hilbert space and $T \in \oper$ be self-adjoint.
 	\begin{enumerate}[label=\arabic*)]
 		\item $\norm{T} = \sup{\{\langle Th,h \rangle \colon \norm{h} = 1\}}$.
@@ -3421,7 +3421,7 @@ By above proposition, we see the spectrum of operators can be described by using
 	\begin{equation*}
 		\ker{(T - \lambda)}=\{0\} ~\&~ \ran{(T - \lambda)} \text{ is closed}
 	\end{equation*}
-	Then let $\fml{K} = \ran{(T - \lambda)}$, then $T - \lambda \colon \Hs \sto \fml{K}$ is a bijection and \\$(T-\lambda)^{-1} \colon \fml{K} \sto \Hs$ is bounded. Let
+	Then let $\fml{K} = \ran{(T - \lambda)}$, then $T - \lambda \colon \Hs \sto \fml{K}$ is a bijection and\\ $(T-\lambda)^{-1} \colon \fml{K} \sto \Hs$ is bounded. Let
 	\begin{equation*}
 		B = (T-\lambda)^{-1}P \colon \Hs \sto \Hs
 	\end{equation*}
@@ -3433,6 +3433,20 @@ By above proposition, we see the spectrum of operators can be described by using
 	\end{equation*}
 	Therefore, $\norm{(T-\lambda)h} \geqslant \norm{B}^{-1}$, i.e. $\chi(\lambda) > 0$.
 \end{proof}
+
+\begin{defn}
+	Let $\Hs$ be a Hilbert space and $T \in \oper$.
+	\begin{enumerate}[label=\arabic*)]
+		\item The point spectrum of $T$ is defined as
+		\begin{equation*}
+			\sigma_p(T) = \{~ \lambda \in \C \colon \ker{(T-\lambda)} \neq \{0\}~\}
+		\end{equation*}
+		\item The approximate point spectrum of $T$ is defined as 
+		\begin{equation*}
+			\sigma_{ap}(T) =\{~\lambda \in \C \colon \exists~\text{units }{x_n} \subset \oper ~\text{s.t.}~ \norm{(T-\lambda)x_n} \sto 0~\}
+		\end{equation*}
+	\end{enumerate}
+\end{defn}
 
 \begin{prop}
 	Let $\Hs$ be a Hilbert space and $T \in \oper$.
@@ -3484,6 +3498,291 @@ Now, we can prove the inverse of the \textbf{Corollary} \ref{cor7} in the subsec
 \end{proof}
 
 \subsection{Polar Decomposition}
+
+For a $z \in \C$, it can be decomposed as $z = \abs{z}e^{i\theta}$. Similarly, a operator in $\oper$ can also be decomposed as a complex number does. Firstly, we need to find the element playing same role as $e^{i\theta}$.
+
+\begin{defn}
+	Let $\Hs$ be a Hilbert space and $U \in \oper$ and $\M$ be a closed subspace of $\Hs$. If $U|_{\M}$ is an isometry and $U|_{\M^{\bot}} = 0$, then $U$ is called a partial isometry. $\M$ is called the initial space and $\fml{N}=U(\M)$ is called the final space.
+\end{defn}
+
+\begin{prop}
+	If $U$ is a partial isometry, then $\st{U}U$ is the projection on the initial space $\M$ and $U\st{U}$ is the projection on the final space $\fml{N}$. Moreover, $\st{U}$ is the partial isometry with the initial space $\fml{N}$ and final space $\M$.
+\end{prop}
+\begin{proof}
+	For any $g,h \in \Hs$, then $g = g_{\shortparallel} + g_{\bot}$ and $h = h_{\shortparallel} + h_{\bot}$, where $g_{\shortparallel},h_{\shortparallel} \in \M$ and $g_{\bot},h_{\bot} \in \M^{\bot}$
+	\begin{eqnarray*}
+		\langle \st{U}U(g_{\shortparallel} + g_{\bot}), h_{\shortparallel} + h_{\bot} \rangle &=& \langle Ug_{\shortparallel},Uh_{\shortparallel} \rangle = \langle g_{\shortparallel},h_{\shortparallel} \rangle \\
+		&=& \langle P_{\M}(g_{\shortparallel} + g_{\bot}),h_{\shortparallel} + h_{\bot} \rangle
+	\end{eqnarray*}
+	Then $\st{U}U = P_{\M}$. $P_{\M^{\bot}} = 1-\st{U}U$ implies $U(1-\st{U}U) = 0$, i.e. $U = U\st{U}U$ and $\ker{\st{U}} = (\ran{U})^{\bot} = \fml{N}^{\bot}$, therefore, $U\st{U}$ is the projection on $\fml{N}$. For $x \in \fml{N}$.
+	\begin{equation}
+		\langle \st{U}x, \st{U}x \rangle = \langle U\st{U}x, x \rangle = \langle x, x \rangle
+	\end{equation}
+	And $\ran{\st{U}} = (\ker{U})^{\bot} = \M$, thus $\st{U}$ is a partial isometry with the initial space $\fml{N}$ and the final space $\M$.
+\end{proof}
+
+\begin{cor}
+	If $U \in \oper$, then the following statements are equivalent.
+	\begin{enumerate}[label=\arabic*)]
+		\item $U$ is a partial isometry.
+		\item $\st{U}U$ is a projection.
+		\item $U = U\st{U}U$.
+		\item $\st{U}$ is a partial isometry.
+		\item $U\st{U}$ is a projection.
+		\item $\st{U} = \st{U}U\st{U}$.
+	\end{enumerate}
+\end{cor}
+
+\begin{thm}[Polar Decomposition]
+	Let $\Hs$ be a Hile]bert space and $T \in \oper$. Then there is a partial isometry $U \in \oper$ with the initial space $(\ker{T})^{\bot}$ and the final space $\clo{\ran{T}}$, s.t. $T = U\abs{T}$. Moreover, if $T=WS$, where $S \geqslant 0$ and $W$ is a partial isometry with $\ker{W}=\ker{S}$, then $S = \abs{T}$ and $W=U$.
+\end{thm}
+\begin{proof}
+	Define 
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$U \colon$ & $\ran{\abs{T}}$ & $\longrightarrow$ & $\ran{T}$ \\
+			~ & $\abs{T}h$ & $\longmapsto$ & $Th$
+		\end{tabular}
+	\end{center}
+	Since 
+	\begin{equation*}
+		\norm{Th}^2=\langle Th,Th \rangle = \langle \st{T}Th,h \rangle = \langle \abs{T}h,\abs{T}h \rangle = \norm{\abs{T}h}^2
+	\end{equation*}
+	$U$ is a isometry. And thus $U$ can extend to $\clo{\ran{\abs{T}}}$ and onto $\clo{\ran{T}}$. Then extending $U$ to $\Hs$ by setting $U|_{\clo{\ran{\abs{T}}}^{\bot}} = 0$. $U$ is a partial isometry with the initial space $\ker{\abs{T}}^{\bot}$ and the final space $\clo{\ran{T}}$. Clearly, $\ker{\abs{T}} = \ker{T}$ and $T=U\abs{T}$.\\
+	If $T=WS$, then $\st{T}T=S\st{W}WS = SP_{\ker{S}^{\bot}}S = S^2$. Therefore, $S = \abs{T}$. And $W\abs{T}=U\abs{T}$, thus $W$ ans $U$ has same initial space, then $W=U$.
+\end{proof}
+
+\subsection{Topologies on \texorpdfstring{$\oper$}{Operator}}
+
+In $\oper$, the norm topology may be too stronger, which means norm closed subalgebras in $\oper$ do not contain "enough" elements. Therefore, we need some weaker topologies
+
+\begin{defn}
+	Let $\Hs$ be a Hilbert space. 
+	\begin{enumerate}[label=\arabic*)]
+		\item The strong operator topology on $\oper$, denoted by $SOT$, is generated by a family of seminorms $\{p_x\}_{x \in \Hs}$, where $p_x(T) = \norm{Tx}$.
+		\item The weak operator topology on $\oper$, denoted by $WOT$, is denerated by a fanmily of seminorms $\{p_{gh}\}_{g,h \in \Hs}$, where $p_{gh}(T) = \abs{\langle Tg,h \rangle}$.
+	\end{enumerate}
+\end{defn}
+\begin{rem}
+	Firstly, by definition and the \textbf{Corollary} \ref{cor8} in the subsection \textbf{2.3.1}, we can see 
+	\begin{equation*}
+		\bigcap_{x \in \Hs} \ker{p_x}=\{0\} ~\&~ \bigcap_{g,h \in \Hs} \ker{p_{gh}}=\{0\}
+	\end{equation*}
+	Therefore, both $SOT$ and $WOT$ can let $\oper$ be a Hausdorff locally convex t.v.s.. And by the CBS Inequatlity, $SOT$ is stronger than $WOT$. Moreover,
+	\begin{enumerate}[label=\arabic*)]
+		\item the subbasis of the $WOT$ at $T_0$ is like 
+			\begin{equation*}
+				U_{gh\varepsilon}(T_0) = \{T \in \oper \colon \abs{\langle (T-T_0)g,h \rangle} < \varepsilon\}
+			\end{equation*}
+		Therefore, a net $\{T_\alpha\}$ in $\oper$ converges in $WOT$ to $T_0$ if and only if $\langle T_{\alpha}g,h \rangle \sto \langle T_0g,h \rangle $ for all $g,h \in \Hs$.
+		\item the subbasis of the $SOT$ at $T_0$ is like 
+			\begin{equation*}
+				V_{x\varepsilon}(T_0) = \{T \in \oper \colon \norm{(T-T_0)x} < \varepsilon\}
+			\end{equation*}
+		Therefore, a net $\{T_\alpha\}$ in $\oper$ converges in $TOT$ to $T_0$ if and only if $\norm{T_{\alpha}x} \sto \norm{T_0x}$ for all $x \in \Hs$.
+	\end{enumerate}
+	Comparing with the norm topology, the $SOT$ is related to the pointwise convergence, where the norm topology is related to the uniform convergence.
+\end{rem}
+
+\begin{prop}
+	Let $\Hs$ be a Hilbert space and $L$ is a linear functional on $\oper$. Then the following statements are equivalent.
+	\begin{enumerate}[label=\arabic*)]
+		\item $L$ is $SOT$-continuous.
+		\item $L$ is $WOT$-continuous.
+		\item There are vectors $f_1,\cdots,f_n,g_1,\cdots,g_n \in \Hs$ s.t.
+		\begin{equation*}
+			L(T) = \sum_{i=1}^{n} \langle Tg_i,f_i \rangle,~~\forall~T \in \oper
+		\end{equation*}
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	Clearly, $3) \Rightarrow 2) \Rightarrow 1)$, thus assume $1)$, then by the \textbf{Theorem} \ref{thm2} in the subsection \textbf{1.2.4}, there are $g_1,\cdots,g_n \in \Hs$ and $\alpha_1,\cdots,\alpha_n > 0$ s.t.
+	\begin{equation*}
+		\norm{L(T)} \leqslant \sum_{i=1}^{n} \alpha_i \norm{Tg_i}
+	\end{equation*}
+	Replacing $g_i$ by $\alpha_i g_i$ and $g_i$ by $\sqrt{n} g_i$ then
+	\begin{equation*}
+		\norm{L(T)} \leqslant \sum_{i=1}^{n} \norm{Tg_i} \leqslant \sqrt{n}(\sum_{i=1}^{n} \norm{Tg_i}^2)^{\frac{1}{2}} = (\sum_{i=1}^{n} \norm{Tg_i}^2)^{\frac{1}{2}}
+	\end{equation*}
+	Let $\fml{K} = \clo{\{\oplus_{i=1}^{n}Tg_i \colon T \in \oper\}}$ be a closed subspace of $\Hs^{(n)}$. 
+	Define a linear functional $F$ on $\fml{K}$ by $F(\oplus_{i=1}^{n}Tg_i) = L(T)$, since
+	\begin{equation*}
+		\abs{F(\oplus_{i=1}^{n}Tg_i)} = \norm{L(T)} \leqslant (\sum_{i=1}^{n} \norm{Tg_i}^2)^{\frac{1}{2}}
+	\end{equation*}
+	Therefore, $F$ can extends to $\Hs^{(n)}$ with the conincided inner product and norm. By the Riesz Theorem, there is a $f_1, \cdots, f_n \in \Hs$ s.t.
+	\begin{equation*}
+		F(\oplus_{i=1}^{n}h_i) = \langle \oplus_{i=1}^{n}h_i, \oplus_{i=1}^{n}f_i \rangle,~~\forall~\oplus_{i=1}^{n}h_i \in \Hs^{(n)}
+	\end{equation*}
+	In particular, restricting $F$ to $\fml{K}$
+	\begin{equation*}
+		L(T) = F(\oplus_{i=1}^{n}Tg_i) = \langle \oplus_{i=1}^{n}Tg_i, \oplus_{i=1}^{n}f_i \rangle = \sum_{i=1}^{n} \langle Tg_i,f_i \rangle \qedhere
+	\end{equation*}
+
+\end{proof}
+
+\begin{prop}
+	If $S$ is a convex subset of $\oper$, then
+	\begin{equation*}
+		\clo{S}^{WOT} = \clo{S}^{SOT} 
+	\end{equation*}
+\end{prop}
+\begin{proof}
+	Clearly, 
+	\begin{equation*}
+		\fml{T}_{WOT} \subset \fml{T}_{SOT}
+	\end{equation*}
+	Therefore,
+	\begin{equation*}
+		\clo{S}^{SOT} \subset \clo{S}^{WOT}
+	\end{equation*}
+	Since for linear functionals, $SOT$-continuity implies $WOT$-continuity, 
+	\begin{equation*}
+		\clo{(S,WOT)}^{wk} \subset \clo{(S,SOT)}^{wk}
+	\end{equation*}
+	And we have known $\clo{(S,WOT)}^{wk} = \clo{(S,WOT)} = \clo{S}^{WOT}$ and $\clo{(S,SOT)}^{wk} = \clo{(S,SOT)} = \clo{S}^{SOT}$, therefore
+	\begin{equation*}
+		\clo{S}^{SOT} \subset \clo{S}^{WOT} \subset \clo{S}^{SOT} \qedhere
+	\end{equation*}
+\end{proof}
+
+
+\chapter{Normal Operators and Abelian Von Neumann Algebras}
+
+For a normal operator $N$, it can generate an abelian norm closed $\st{C}$-subalgebra of $\oper$, which is isometrically $*$-isomorphic to $C(\sigma(N))$. But the norm closed $\st{C}$-subalgebra may be too "small" to get more interesting results. Therefore, we want to see the $WOT$-closed $\st{C}$-subalgebra $\st{W}(N)$ generated by a normal operator $N$. This extension can be naturally done by following processes. Firstly, we will extend $C(X)$ to $B(X,\Omega)$, where $B(X,\Omega)$ denotes all $\Omega$-measurable functions on $X$, and find the map from $B(X,\Omega)$ to $\oper$. Then using these method, we can extend the Continuous Functional Calculus to the Borel Functional Calculus. In order to illuminate the structure of $\st{W}(N)$, we need more properties of $WOT$-closed $\st{C}$-subalgebras, i.e. von Neumann algebras, and abelian von Neumann algebras. After that, we can build the isomorphism from $\st{W}(N)$ to $\lfs{\infty}(\sigma(N))$. Finally, by above methods, we can get the multiplicity theory of normal operators.
+
+\section{Spectral Theorem}
+
+\subsection{Spectral Measures}
+
+Firstly, we want to construct the map from $B(X,\Omega)$ to $\oper$. Thus we need to define the operator-valued measure.
+
+\begin{defn}
+	If $X$ is a set and $\Omega$ is a $\sigma$-algebra of subsets of $X$, and $\Hs$ is a Hilbert space, then a spectral measure for $(X,\Omega,\Hs)$ is a function $E \colon \Omega \sto \oper$ satisfying the following properties.
+	\begin{enumerate}[label=\arabic*)]
+		\item $E(\Delta)$ is a projection for any $\Delta \in \Omega$.
+		\item $E(\varnothing) = 0$ and $E(X) = 1$.
+		\item $E(\Delta_1\cap\Delta_1)=E(\Delta_1)E(\Delta_2)$ for any $\Delta_1, \Delta_2 \in \Omega$.
+		\item If $\{\Delta_n\}_{n=1}^{\infty}$ is a sequence of pairwise disjoint sets in $\Omega$,
+		\begin{equation*}
+			E(\bigcup_{n=1}^{\infty}\Delta_n) = \sum_{n=1}^{\infty} E(\Delta_n)
+		\end{equation*}
+	\end{enumerate}
+\end{defn}
+\begin{rem}
+	In $4)$, this convergence is about $SOT$, and since $E(\Delta)$ is a projection, it is also about $WOT$.
+\end{rem}
+
+Then we can see the relation between the spectral measure and the complex measure.
+\begin{prop}
+	If $E$ is a spectral measure for $(X,\Omega,\Hs)$ and $g,h \in \Hs$, then
+	\begin{equation*}
+		E_{gh}(\Delta) = \langle E(\Delta)g, h \rangle
+	\end{equation*}
+	is a complex measure of $(X,\Omega)$. Moreover, $\norm{E_{gh}} \leqslant \norm{g}\norm{h}$.
+\end{prop}
+\begin{proof}
+	$\mu=E_{gh}(\Delta)$ is a complex measure by definition.
+	\begin{equation*}
+		\abs{\mu}(\Delta) = \abs{\langle E(\Delta)g, h \rangle} \leqslant \norm{E(\Delta)g}\norm{h} \leqslant \norm{g}\norm{h} \qedhere
+	\end{equation*}
+\end{proof}
+
+Using the spectral measure, we can define the operator-valued integral.
+
+\begin{thm}
+	If $E$ is a spectral measure for $(X,\Omega,\Hs)$ and $\phi \colon X \sto \C$ is a bounded $\Omega$-measurable function, then there is a unique operator $T \in \oper$ s.t. for any $\varepsilon > 0$, there is a $\Omega$-partition $\{\Delta_i\}_{i=1}^{n}$ of $X$ with
+	\begin{equation*}
+		 \sup{\{\abs{\phi(x)-\phi(y)} \colon x, y \in \Delta_k\}}
+	\end{equation*}
+	for $1 \leqslant k \leqslant n$ s.t. for any $x_k \in \Delta_k$
+	\begin{equation*}
+		\norm{T-\sum_{k=1}^{n}\phi(k)E(\Delta_k)} < \varepsilon
+	\end{equation*}
+\end{thm}
+\begin{proof}
+	Define
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$B \colon$ & $\Hs \times \Hs$ & $\longrightarrow$ & $\C$ \\
+			~ & $(g,h)$ & $\longmapsto$ & $\int \phi dE_{gh}$
+		\end{tabular}
+	\end{center}
+	Since $\norm{B(g,h)} \leqslant \norm{\phi}_{\infty} \norm{g} \norm{h}$, $B$ is a bounded sesquilinear form. Then by the Riesz Theorem, there is a $B \in \oper$ s.t. $B(g,h) = \langle Tg,h \rangle$ for all $g,h \in \Hs$ and $\norm{T} \leqslant \norm{\phi}_{\infty}$. Then for and $g,h \in \Hs$ and $x_k \in \Delta_k$ with the giving partition
+	\begin{eqnarray*}
+		\abs{\langle Tg,h \rangle - \sum_{k=1}^{n}\phi(x_k)\langle E(\Delta_k)g, h \rangle} &=& \abs{\sum_{k=1}^{n} \int_{\Delta_k} (\phi(x)-\phi(x_k))dE_{gh}(x)} \\
+		&\leqslant& \sum_{k=1}^{n} \int_{\Delta_k} \abs{\phi(x)-\phi(x_k)} d\abs{E_{gh}}(x) \\
+		&\leqslant& \varepsilon \int d\abs{E_{gh}}(x) \leqslant \varepsilon \norm{g}\norm{h}
+	\end{eqnarray*}
+	Therefore, by the Riezs Theorem, 
+	\begin{equation*}
+		\norm{T-\sum_{k=1}^{n}\phi(k)E(\Delta_k)} < \varepsilon  \qedhere
+	\end{equation*}
+\end{proof}
+\begin{rem}
+	We define $T = \int \phi dE$, and $\langle Tg,h \rangle = \int \phi dE_{gh}$.
+\end{rem}
+
+We have one more property on $B(X)$ for a compact space $X$. Let $B(X)$ denote all bounded Borel measurable functions on $X$ and $M(X)$ be all Borel measures.
+
+\begin{lem}
+	If $X$ is a compact space and $\phi \in B(X)$, then there is a net $\{u_i\} \subset C(X)$ with $\norm{u_i}_{\infty} \leqslant \norm{\phi}$ s.t. $\int u_i d\mu \sto \int \phi d\mu$ for any $\mu$ in $M(X)$.
+\end{lem}
+\begin{proof}
+	$C(X)^{*} = M(X)$ and $C(X) \subset C(X)^{**} = \st{M(X)}$.  Therefore, the unit ball in $C(X)$ is $wk$-dense in the unit ball in $\st{M(X)}$ (by using Hahn-Banach Theorem). Identifying $B(X)$ be the subspace of $\st{M(X)}$, we have this lemma.
+\end{proof}
+\begin{rem}
+	In fact, $C(X)$ is norm closed in $C(X)^{**} = \st{M(X)}$ like that the $\st{C}$-algebra is norm closed in $\oper$. But by above lemma, we see in $\st{M(X)}$
+	\begin{equation*}
+		\clo{C(X)}^{wk} = B(X)
+	\end{equation*}
+	Thus we may apply this to extending $\st{C}$-algebras.
+\end{rem}
+
+$B(X,\Omega)$ with the supremum norm and complex conjugate can become a $\st{C}$-algebra. Then by above theorem, we can provide the map from $B(X,\Omega)$ to operator algebras.
+
+\begin{prop}
+	If $E$ is a spectral measure for $(X,\Omega,\Hs)$, then
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$\rho \colon$ & $B(X,\Omega)$ & $\longrightarrow$ & $\oper$ \\
+			~ & $\phi$ & $\longmapsto$ & $\int \phi dE$
+		\end{tabular}
+	\end{center}
+	is a representation of $B(X,\Omega)$.
+\end{prop}
+\begin{proof}
+	Firstly, we need check that $\rho$ preserves the involution. For $g,h \in \Hs$,
+	\begin{equation*}
+		E_{gh}(\Delta) = \langle E(\Delta)g, h \rangle = \langle g, E(\Delta)h \rangle = \clo{\langle E(\Delta)h, g \rangle} = \clo{E_{hg}(\Delta)}
+	\end{equation*}
+	Therefore, for any $g,h \in \Hs$
+	\begin{eqnarray*}
+		\langle \st{(\int \phi dE)}g,h \rangle &=& \langle g, (\int \phi dE)h \rangle \\
+		&=& \clo{\langle (\int \phi dE)h, g \rangle} = \clo{\int \phi dE_{hg}} \\
+		&=& \int \st{\phi} d \clo{E_{hg}} = \int \st{\phi} dE_{gh} \\ 
+		&=& \langle (\int \st{\phi} dE)g,h \rangle
+	\end{eqnarray*}
+	\item Also, $\rho$ must be multiplicative. Fix $\phi,\psi \in B(X)$ and $\varepsilon >0$, let $\{\Delta_i\}_{i=1}^{n}$ be the $\Omega$-partition of $X$ s.t. the oscillations of $\phi,\psi,\phi\psi$ on each $\Delta_i$ are less than $\varepsilon$.
+	By the fact $E(\Delta_i)E(\Delta_j) = 0$ for $i \neq j$, 
+	\begin{eqnarray*}
+		\lefteqn{\norm{\int \phi\psi dE - (\int \phi dE)(\int \psi dE)}} \\
+		&\leqslant& \varepsilon+ \norm{\sum_{k=1}^{n}\phi(x_k)\psi(x_k)E(\Delta_k) - (\sum_{i=1}^{n}\phi(x_i)E(\Delta_i))(\sum_{j=1}^{n}\psi(x_j)E(\Delta_j))} \\
+		&& \negmedspace{} + \norm{(\sum_{i=1}^{n}\phi(x_i)E(\Delta_i))(\sum_{j=1}^{n}\psi(x_j)E(\Delta_j))-(\int \phi dE)(\int \psi dE)} \\
+		&\leqslant& \varepsilon + \norm{(\sum_{i=1}^{n}\phi(x_i)E(\Delta_i))(\sum_{j=1}^{n}\psi(x_j)E(\Delta_j)-\int \psi dE)} \\
+		&& \negmedspace{} + \norm{(\sum_{i=1}^{n}\phi(x_i)E(\Delta_i)-\int \phi dE)(\sum_{j=1}^{n}\psi(x_j)E(\Delta_j))} \\
+		&\leqslant& \varepsilon(1+\norm{\phi}_{\infty}+\norm{\psi}_{\infty})
+	\end{eqnarray*} 
+	Then $\rho$ is indeed multiplicative.
+\end{proof}
+
+We have already there is a map from $C(X)$ to $\oper$, then by combining this proposition and above lemma, if the map is $wk$-continuous on $C(X)$, we can extend it from $M(X)$ to $\oper$. 
+
+\begin{thm}
+	If $X$ is a compact space and $\rho \colon C(X) \sto \oper$ is a representation, then there is a unique spectral measure $E$ defined on the Borel sets of $X$ s.t. $\rho$ can extend to $\tilde{\rho}$ on $B(X)$, where 
+	\begin{equation*}
+		\tilde{\rho}(\phi) = \int \phi dE  ~~\forall~\phi \in B(X)
+	\end{equation*}
+\end{thm}
 
 
 \end{document}

@@ -39,4 +39,8 @@
 \contentsline {subsection}{\numberline {2.2.7}Representations}{76}{subsection.2.2.7}
 \contentsline {section}{\numberline {2.3}Operators on Hilbert Spaces}{81}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Spectrums for Operators}{81}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Polar Decomposition}{84}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.2}Polar Decomposition}{85}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Topologies on $\mathscr {B(H)}$}{86}{subsection.2.3.3}
+\contentsline {chapter}{\numberline {3}Normal Operators and Abelian Von Neumann Algebras}{89}{chapter.3}
+\contentsline {section}{\numberline {3.1}Spectral Theorem}{89}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Spectral Measures}{89}{subsection.3.1.1}
