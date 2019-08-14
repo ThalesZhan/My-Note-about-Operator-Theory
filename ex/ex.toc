@@ -44,3 +44,6 @@
 \contentsline {chapter}{\numberline {3}Normal Operators and Abelian Von Neumann Algebras}{89}{chapter.3}
 \contentsline {section}{\numberline {3.1}Spectral Theorem}{89}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Spectral Measures}{89}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Spectral Theorem for Normal Operators}{94}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Abelian Von Neumann Algebras}{96}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Double Commutant Theorem}{96}{subsection.3.2.1}

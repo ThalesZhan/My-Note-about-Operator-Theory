@@ -2454,7 +2454,7 @@ Therefore, this map is unique and it is clearly the extension of the Riesz Funct
 
 
 There is an important example.
-\begin{exam} 
+\begin{exam} \label{exam2}
 	Let $\mu$ be a compactly supported, regular Borel measure on $\C$ and ($X,\Omega,\mu$) be the measure space. For each $\pi \in \lfs{\infty}(\mu)$, we define the map
 	\begin{center}
 		\begin{tabular}{l c c l}
@@ -3778,11 +3778,168 @@ $B(X,\Omega)$ with the supremum norm and complex conjugate can become a $\st{C}$
 We have already there is a map from $C(X)$ to $\oper$, then by combining this proposition and above lemma, if the map is $wk$-continuous on $C(X)$, we can extend it from $M(X)$ to $\oper$. 
 
 \begin{thm}
-	If $X$ is a compact space and $\rho \colon C(X) \sto \oper$ is a representation, then there is a unique spectral measure $E$ defined on the Borel sets of $X$ s.t. $\rho$ can extend to $\tilde{\rho}$ on $B(X)$, where 
+	If $X$ is a compact space and $\rho \colon C(X) \sto \oper$ is a representation, then there is a unique spectral measure $E$ defined on the Borel sets of $X$ s.t. $\rho$ can be expressed as 
 	\begin{equation*}
-		\tilde{\rho}(\phi) = \int \phi dE  ~~\forall~\phi \in B(X)
+		\rho(\phi) = \int \phi dE ~~\forall~\phi \in C(X)
 	\end{equation*}
+	Moreover, $T \in \oper$ commutes with $\rho(\phi)$ for any $\phi \in C(X)$ if and only if $T$ commutes with $E(\Delta)$ for any Borel set $\Delta$.
 \end{thm}
+\begin{proof}
+	Constructing $\tilde{\rho}$ from $\rho$: \\
+	For any $g,h \in \Hs$, the map $u \sto \langle \rho(u)g,h \rangle$ from $C(X)$ to $\oper$ is bounded with $\norm{g}\norm{h}$. Therefore, by Riesz Theorem, there exists a unique $\mu_{gh} \in M(X)$ with $\norm{\mu_{gh}} \leqslant \norm{g}\norm{h}$
+	\begin{equation*}
+		\langle \rho(u)g,h \rangle = \int u d\mu_{gh},~~\forall~u \in C(X)
+	\end{equation*}
+	For any $\phi \in B(X)$, $(g,h) \sto \int \phi d\mu_{gh}$ is a bounded sesquilinear on $\Hs \times \Hs$. Therefore, there exsits a unique $T \in \oper$, s.t.
+	\begin{equation*}
+		\int \phi d\mu_{gh} = \langle Tg,h \rangle
+	\end{equation*}
+	Then we define $\tilde{\rho}(\phi) = T$ and it is well-defined. Clearly, $\tilde{\rho}(u) = \rho(u)$ for any $u$ in $C(X)$.
+	\item Check: $\tilde{\rho} \colon B(X) \sto \oper$ is a representation \\
+	By the definiation, $\tilde{\rho}$ is clearly linear and preserves the involution, thus we just need to prove the multiplication. Let $\phi$ and $\psi$ in $B(X)$. There is a sequence $\{u_i\} \subset C(X)$ s.t. $u_i \sto \phi$ in $wk$-topology. Then since $\int u_i\psi d\mu \sto \int \phi\psi$ for any $\mu \in M(X)$,  $\tilde{\rho(u_i\psi)} \sto \rho(\phi\psi)$ in $WOT$. For any $\psi \in C(X)$,
+	\begin{equation*}
+		\tilde{\rho}(\phi\psi) = \lim \tilde{\rho}(u_i\psi) = \lim \rho(u_i)\rho(\psi) = \tilde{\rho}(\phi)\rho(\psi)
+	\end{equation*}
+	Therefore, if $\phi,\psi \in B(X)$, $\tilde{\rho}(\phi\psi) = \tilde{\rho}(\phi)\tilde{\rho}(\psi)$.
+	\item Contructing the spectral measure: \\
+	Let $E(\Delta) = \rho(\chi_{\Delta}(x))$ for all Borel set $\Delta$. Clearly, $E(\Delta)$ is a projection for any $\Delta$. For disjoint Borel sets $\Delta_1, \Delta_2$,
+	\begin{equation*}
+		E(\Delta_1 \cap \Delta_2) = \tilde{\rho}(\chi_{\Delta_1 \cap \Delta_2}) = \tilde{\rho}(\chi(\Delta_1)\chi(\Delta_2)) =\tilde{\rho}(\chi(\Delta_1)) = E(\Delta_1)E(\Delta_2)
+	\end{equation*}
+	Let $\{\Delta_n\}_{n=1}^{\infty}$ be disjoint Borel sets and $\Delta = \cup_{n=1}^{\infty}\Delta_n$ and $\Lambda_n = \cup_{k=n+1}^{\infty}\Delta_k$. By the fact that $E$ is finitely additive, for any $h \in \Hs$
+	\begin{eqnarray*}
+	\norm{E(\Delta)h-\sum_{k=1}^{n}E(\Delta_k)h} &=& \langle E(\Lambda_n)h, E(\Lambda_n)h \rangle \\
+	&=& \langle E(\Lambda_n)h, h \rangle = \langle \tilde{\rho}(\Lambda_n)h, h \rangle \\
+	&=& \int \chi_{\Lambda_n} d\mu_{hh} \\
+	&\leqslant& \mu_{hh}(\Lambda_n) \sto 0
+	\end{eqnarray*}
+	Then by above theorem, with respect to this spectral measure $E$, for any $\phi \in B(X)$,
+	\begin{equation*}
+		\tilde{\rho}(\phi) = \int \phi dE
+	\end{equation*}
+	In particular, for $u \in C(X)$, it is also true.
+	\item Check: The uniqueness of $E$.
+	If there is another $E^{'}$ satisfying above conditions, then for any $g,h \in \Hs$
+	\begin{equation*}
+		\int \phi dE^{'}_{gh} = \int \phi dE_{gh}
+	\end{equation*}
+	Therefore, $E^{'} = E$.
+	\item Finally, if $T$ commutes with $\tilde{\rho}(\phi)$ for any $\phi \in C(X)$, we can use the $WOT$-convergence to get that $T$ commutes with $\tilde{\rho}(\phi)$ for any $\phi \in B(X)$. Therefore, clearly $T$ commutes with $E(\Delta)$ for any Borel set $\Delta$. Conversely, if $T$ commutes with $E(\Delta)$ for any Borel set $\Delta$, 
+	\begin{equation*}
+		\langle E(\Delta)Tg,h \rangle = \langle E(\Delta)g,\st{T}h \rangle
+	\end{equation*}
+	i.e. $\mu_{Tg,h} = \mu_{g, \st{T}h}$. Thus for any $\phi \in B(X)$,
+	\begin{equation*}
+		\int \phi d\mu_{Tg,h} = \int \phi d\mu_{g,\st{T}h},~\text{i.e.}~\langle \phi Tg,h \rangle = \langle \phi g,\st{T}h \rangle
+	\end{equation*}
+	Then $\langle \tilde{\rho}(\phi) Tg,h \rangle = \langle T \tilde{\rho}(\phi) g,h \rangle$ for any $g,h \in \Hs$.
+\end{proof}
+\begin{rem}
+	Thus, we extend $\rho \colon C(X) \sto \oper$ to $\tilde{\rho}$ defined on $B(X)$ Moreover, by above proof we know the $*$-homomorphism
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$\tilde{\rho} \colon$ & $(B(X),wk)$ & $\longrightarrow$ & $(\oper,WOT)$ \\
+			~ & $\phi$ & $\longmapsto$ & $\int \phi dE$
+		\end{tabular}
+	\end{center}
+	is continuous and therefore $\tilde{\rho}(B(X))$ is $WOT$-closed in $\oper$.
+\end{rem}
+
+\subsection{Spectral Theorem for Normal Operators}
+
+Now we can apply above theorem to a normal operator and extend the Continuous Functional Calculus to the Borel Functional Calculus. Moreover, it will promote us to consider the structure of the $WOT$-closed operator algebra generated by a normal operator.
+
+\begin{thm}
+	If $N$ is a normal operator, then there is a unique spectral measure $E$ s.t. 
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$\rho \colon$ & $B(\sigma(N))$ & $\longrightarrow$ & $\oper$ \\
+			~ & $\phi$ & $\longmapsto$ & $\phi(N) = \int \phi dE$
+		\end{tabular}
+	\end{center}
+	and $\rho|_{C(\sigma(N))}$ is the Continuous Functional Calculus. Moreover,
+	\begin{enumerate}[label=\arabic*)]
+		\item $\tilde{\rho} \colon (B(X),wk) \sto (\oper,WOT)$ is continuous.
+		\item if $G$ is nonempty and relatively open subset in $\sigma(N)$, $E(G) \neq 0$.
+		\item if $T \in \oper$, then $TN=NT$ and $T\st{N}=\st{N}T$ if and only if T commutes with $E(\Delta)$ for any Borel set $\Delta$.
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	By above theorem, this $\rho$ is in fact the extension of the Continuous Functional Calculus. And $\rho$ is $wk-WOT$ continuous. 
+	\item For $2)$, it is because that $\rho|_{C(\sigma(N))}$ is an isometry. If $\chi_{G} > 0$, then there is a continuous function s.t. $0<f<\chi_{G}$. Therefore, $0 < \rho(f) \leqslant \rho(\chi_{G})$.
+	\item Since the condition that $T$ commutes with $N$ and $\st{N}$ is equivalent to that $T$ commutes with $\phi(N)$ for any $\phi \in C(\sigma(N))$, by above theorem, $3)$ holds.
+\end{proof}
+\begin{rem}
+	Now, for a normal operator $N$, we have
+	\begin{equation*}
+		N = \int_{\sigma(N)} z dE = z(N) = \int_{\Gamma} (z-N)^{-1} dz
+	\end{equation*}
+\end{rem}
+
+There are some properties of the spectral measure of normal operator $N$.
+
+\begin{prop}
+	Let $N$ be a normal operator with the spectral measure $E$.
+	\begin{enumerate}[label=\arabic*)]
+		\item $\lambda \in \sigma_p(N) \Leftrightarrow E(\{\lambda\}) \neq 0$.
+		\item If $\lambda \in \sigma_p(N)$, then $\ran{E(\{\lambda\})}=\ker{(N-\lambda)}$.
+		\item If $\lambda \in \sigma_p(N)$ and $\phi \in B(\sigma(N))$, then for any $h \in \Hs$,
+		\begin{equation*}
+			\phi(N)h = \phi(\lambda)h
+		\end{equation*}
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	For $1)$, if $\lambda \in \sigma(N)$, then there is a nonzero vector $h \in \Hs$ s.t. $(N-\lambda)h=0$.
+	\begin{equation*}
+		0 = \norm{(N-\lambda)h}^2=\int_{\sigma(N)} \abs{z-\lambda}^2 d E_{hh} = \int_{\sigma(N) \backslash \{\lambda\}} \abs{z-\lambda}^2 d E_{hh}
+	\end{equation*}
+	Then since $E_{hh}$ is a positive measure,
+	\begin{equation*}
+		\int_{\sigma(N) \backslash \{\lambda\}} d E_{hh} = \norm{E(\sigma(N) \backslash \{\lambda\})h}^2 = 0
+	\end{equation*} 
+	And since $E(\sigma(N))=1$, 
+	\begin{equation*}
+		E(\{\lambda\})h = h,~\text{i.e } E(\{\lambda\}) \neq 0
+	\end{equation*}
+	Conversely, if $E(\{\lambda\}) \neq 0$, then for nonzero $h \in \ran{E(\{\lambda\})}$, $E(\{\lambda\})h = h$,
+	\begin{eqnarray*}
+		\int_{\sigma(N)} \abs{z-\lambda}^2 d \langle E(z)h,h \rangle &=&  \int_{\sigma(N)} \abs{z-\lambda}^2 d \langle E(z)E(\{\lambda\})h,h \rangle \\
+		&=& \int_{\{\lambda\}} \abs{z-\lambda}^2 d \langle E(z)h,h \rangle =0
+	\end{eqnarray*}
+	That means
+	\begin{equation*}
+		\norm{(N-\lambda)h}^2 = \int_{\sigma(N)} \abs{z-\lambda}^2 d \langle E(z)h,h \rangle = 0
+	\end{equation*}
+	Then $h \in \ker{(T-\lambda)}$, i.e. $\lambda \in \sigma_p(N)$. \\
+	$2)$ and $3)$ can be obtained directly by above proof.
+\end{proof}
+
+Now, we can extend the \textbf{Example} \ref{exam2} in the subsection \textbf{2.2.2}.
+
+\begin{exam}
+	Let $\mu$ be a compactly supported, regular Borel measure on $\C$ and ($X,\Omega,\mu$) be the measure space. For each $\pi \in \lfs{\infty}(\mu)$, we define the map
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$M_{\phi} \colon$ & $\lfs{2}(\mu)$ & $\longrightarrow$ & $\lfs{2}(\mu)$ \\
+			~ & $f(z)$ & $\longmapsto$ & $\phi(z)f(z)$
+		\end{tabular} 
+	\end{center}
+	\begin{enumerate}[label=\arabic*)]
+		\item the spectral measure for $M_{\phi}$ is $M_{\chi_{\phi^{-1}(\Delta)}}$.
+		\item If $\psi \in B(\sigma(M_{\phi}))$, then $\psi(M_{\phi}) = M_{\psi \circ \phi}$.
+	\end{enumerate}
+\end{exam}
+
+\section{Abelian Von Neumann Algebras}
+
+In above section, we built the representation $\rho$ from $B(X)$ to $\oper$, and more over, $\rho$ is $wk-WOT$ continuous. Thus we want to prove $\rho(B(X))$ is indeed a $WOT$-closed $\st{C}$-subalgebra of $\oper$. If $X = \sigma(N)$, $\rho(B(\sigma(N)))$ is the $WOT$-closed $\st{C}$-subalgebra generated by $N$, denoted by $\st{W}(N)$. We will provide more rigorous proof of this statement. After that, we will make the structure of $\st{W}(N)$ more explicit. But before doing these, we some properties of $WOT$-closed subalgebra.
+
+\subsection{Double Commutant Theorem}
+
+
+
+
 
 
 \end{document}
