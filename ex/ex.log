@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.24)  15 AUG 2019 01:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.24)  16 AUG 2019 03:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -697,22 +697,22 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 Chapter 3.
 [89
 
-] [90] [91] [92] [93] [94] [95] [96]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3945.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3945.
+] [90] [91] [92] [93] [94] [95] [96] [97] [98]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4073.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4073.
  (./ex.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3945.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3945.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4073.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4073.
 
 Package rerunfilecheck Info: File `ex.out' has not changed.
-(rerunfilecheck)             Checksum: 4B0AEB46AD362C12284B99CEDA592984;3729.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3945.
+(rerunfilecheck)             Checksum: CB6059D6BBCF149BEA3DCC9FE75BFC8D;3811.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4073.
  ) 
 Here is how much of TeX's memory you used:
- 18075 strings out of 492649
- 344833 string characters out of 6129622
- 404091 words of memory out of 5000000
- 21005 multiletter control sequences out of 15000+600000
+ 18097 strings out of 492649
+ 345043 string characters out of 6129622
+ 404105 words of memory out of 5000000
+ 21008 multiletter control sequences out of 15000+600000
  23576 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,14n,86p,1055b,1153s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -736,10 +736,10 @@ texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/201
 8/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive
 /2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/tex
 live/2018/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on ex.pdf (97 pages, 568884 bytes).
+Output written on ex.pdf (99 pages, 580563 bytes).
 PDF statistics:
- 1479 PDF objects out of 1728 (max. 8388607)
- 1346 compressed objects within 14 object streams
- 648 named destinations out of 1000 (max. 500000)
- 405 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1515 PDF objects out of 1728 (max. 8388607)
+ 1380 compressed objects within 14 object streams
+ 667 named destinations out of 1000 (max. 500000)
+ 413 words of extra memory for PDF output out of 10000 (max. 10000000)
 
