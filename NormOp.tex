@@ -273,7 +273,7 @@ There are some properties of the spectral measure of normal operator $N$.
 
 Now, we can extend the \textbf{Example} \ref{exam2} in the subsection \textbf{2.2.2}.
 
-\begin{exam}
+\begin{exam} \label{exam3}
 	Let $\mu$ be a compactly supported, regular Borel measure on $\C$ and ($X,\Omega,\mu$) be the measure space. For each $\pi \in \lfs{\infty}(\mu)$, we define the map
 	\begin{center}
 		\begin{tabular}{l c c l}
@@ -407,10 +407,146 @@ So, these interesting elements are projections. We say the von Neumann algebra h
 	And this equation can be easily extended to $\clo{\ran{\abs{A}}}$. $\Hs = \ker{\abs{A}} \oplus \clo{\ran{\abs{A}}}$, thus $TW=WT$.
 \end{proof}
 
-Before researching the structure of abelian von Neumann algebras, there is a typical abelian von Neumann algebra.
+Before researching the structure of abelian von Neumann algebras, there is a typical example.
 \begin{exam}
-	If $(X,\Omega,\mu)$ is a $\sigma$-finite measure space, then $\A_{\mu} = \{M_{\phi} \colon \phi \in \}$
+	If $(X,\Omega,\mu)$ is a finite measure space, and $\A_{\mu} = \{M_{\phi} \colon \phi \in \lfs{\infty}(\mu)\}$, then
+	\begin{equation*}
+		\A_{\mu} = \A_{\mu}^{'} = \A_{\mu}^{''}
+	\end{equation*}
 \end{exam}
+\begin{proof}
+	It suffices to show $\A_{\mu} = \A_{\mu}^{'}$. And since $\A_{\mu}$ is abelian, $\A_{\mu} \subset \A_{\mu}^{'}$. Consider $T \in \A_{\mu}^{'}$, then $\mu(X) < \infty$ implies that $1 \in \lfs{2}(\mu)$. Let $\phi = T(1) \in \lfs{2}(\mu)$. 
+	\item Check: $T=M_{\phi}$ \\
+	Firstly, if $\psi \in \lfs{\infty}(\mu)$, 
+	\begin{equation*}
+		T(\psi) = T(M_{\psi}1) = M_{\psi}T(1) = \phi\psi
+	\end{equation*}
+	And also,
+	\begin{equation*}
+		\norm{T(\psi)} = \norm{\phi\psi} \leqslant \norm{T}\norm{\psi}_2
+	\end{equation*}
+	Using this we can show $\phi \in \lfs{\infty}(\mu)$. Let 
+	\begin{equation*}
+		\Delta_n = \{~ x \in X \colon \abs{\phi(x)} \leqslant n ~\},~ \psi = \chi_{\Delta_n}
+	\end{equation*}
+	Then we have 
+	\begin{equation*}
+		\norm{T}^2\mu(\Delta_n) = \norm{T}^2 \norm{\psi}^2 \geqslant \norm{\phi}^2\norm{\psi}^2 = \int_{\Delta_n}\abs{\phi}^2 d\mu = n^2\mu(\Delta_n)
+	\end{equation*}
+	Thus $\mu(\Delta_n)=0$. $\phi \in \lfs{\infty}(\mu)$. And since $\lfs{\infty}(\mu)$ is dense in $\lfs{2}(\infty)$, $T=M_{\phi}$ can be defined on $\lfs{2}(\infty)$.
+\end{proof}
+\begin{rem}
+	In fact, this result can be also true for $(X,\Omega,\mu)$ $\sigma$-finite.
+\end{rem}
+
+\begin{defn}
+	Let $\mathcal{S} \subset \oper$ and $e_0 \in \Hs$.
+	\begin{enumerate}[label=\arabic*)]
+		\item $e_0$ is said to be star-cyclic for $\mathcal{S}$ if $\clo{\Cg{\mathcal{S}}e_0} = \Hs$.
+		\item $e_0$ is said to be separating for $\mathcal{S}$ there is no nonzero $S \in \mathcal{S}$ s.t. $Se_0=0$.
+	\end{enumerate}
+\end{defn}
+
+\begin{prop}
+	If $\A$ is a unital $\st{C}$-algebra of operators, a vector is cyclic if and only if it is separating for $\A^{'}$
+\end{prop}
+\begin{proof}
+	For $T \in \A^{'}$, s.t. $Te_0 = 0$. Then $T \A e_0 = \A T e_0 =  0$. If $e_0$ is the cyclic vector for $\A$, then $\A e_0$ is dense in $\Hs$. Therefore, $T=0$.\\
+	Conversely, if $e_0$ separates $\A^{'}$, let $P$ be the projection onto $\clo{(\A e_0)}^{\bot}$. Then $P \in \A^{'}$ and $P e_0 = 0$. Therefore, $P = 0$. $e_0$ is cyclic for $\A$. 
+\end{proof}
+\begin{cor}
+	If $\A$ is an abelian operator algebra, then each cyclic vector for $\A$ is also a separating vector for $\A$.
+\end{cor}
+
+\begin{defn}
+	An abelian subalgebra $\A \subset \oper$ is said to be a maximal abelian subalgebra if there is no abelian subalgebra in $\oper$ containing $\A$. In paticular, a maximal abelian von Neumann algebra is called a masa.
+\end{defn}
+
+\begin{thm}
+	Let $\A$ be a subalgebra in $\oper$. Then the following statement are equivalent.
+	\begin{enumerate}[label=\arabic*)]
+		\item  $\A$ is a masa.
+		\item $\A = \A^{'}$
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	Assume $\A$ is a masa. Then $\A \subset \A^{'}$. If there is a nonzero $A \in \A^{'} \backslash \A$, then $\C = \st{W}(\A,A)$ is an abelian von Neumann algebra containing $\A$, which is a contradiction. Thus $\A = \A^{'}$.\\
+	Conversely, $\A$ is an abelian von Neumann algebra by above proposition. By Zorn's Lemma there is a maximal abelian von Neumann algebra $\B$ s.t. $\A \subset \B$. Then $\B^{'} \subset \A^{'}$. By above statement, $\B = \B^{'}$. Thus $\B \subset \A$.
+\end{proof}
+
+\begin{thm}
+	If $\Hs$ is separable and $\A$ is an abelian $\st{C}$-algebra containing the identity, the following statements are equivalent.
+	\begin{enumerate}[label=\arabic*)]
+		\item $\A=\A^{'}$.
+		\item $\A$ is strongly closed and has a cyclic vector.
+		\item There is a compact metric space $X$, a regular Borel measure $\mu$ with support $X$, and a unitary $U \colon \lfs{2}(\mu) \sto \Hs$ s.t. $U\A_{\mu}U^{-1}=\A$.
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	$1) \Rightarrow 2)$ Let $\{e_n\}_{n=1}^{\infty}$ be a sequence of unit vectors s.t. 
+	\begin{equation*}
+		\clo{\A e_n} \bot \clo{\A e_m},\text{ for } n \neq m \text{ and } \Hs = \oplus_{n=1}^{\infty} \clo{\A e_n}
+	\end{equation*}
+	Set $e_0 = \sum_{n=1}^{\infty} 2^{-n} e_n$ and $P_n = \clo{\A e_n}$. Then $P_n \in \A^{'} = \A$. 
+	\begin{equation*}
+		e_n = 2^{n} P_n e_0 \in \clo{\A e_0} \Rightarrow \clo{\A e_n} \subset \clo{\A e_0}
+	\end{equation*}
+	Therefore, $\Hs = \clo{\A e_0}$.
+	\item $2) \Rightarrow 3)$ Since $\Hs$ is separable, the unit ball in $\A$ is a $WOT$-closed  compact metric space, therefore there is a countable weakly dense set. Let $\A_1$ be the $\st{C}$-algebra generated by this set and $X$ be the maximal ideal space of $\A_1$. Clearly, $X$ is metrizable. Then the inverse of Gelfand transform
+	\begin{equation*}
+		\rho \colon C(X) \longrightarrow \A_1 \subset \A
+	\end{equation*}
+	And there is a spectral measure $E$, s.t. $\rho(f) = \int_{X} f dE$.
+	Let $e_0$ be the cyclic vector of $\A$. Then we can define the $U$,
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$U \colon$ & $C(X)$ & $\longrightarrow$ & $\A_1 e_0$ \\
+			~ & $\phi$ & $\longmapsto$ & $\rho(\phi)e_0$
+		\end{tabular}
+	\end{center}
+	Let $\mu(\Delta) = \langle E(\Delta)e_0,e_0 \rangle$, then $C(X) \subset \lfs{2}(\mu)$ by the fact that $\mu$ is positive finite measure. For $\phi \in C(X)$,
+	\begin{equation*}
+		\norm{\rho(\phi)e_0}^2 = \langle \rho(\st{\phi})\rho(\phi)e_0,e_0 \rangle = \int \abs{\phi}^2 d \mu = \norm{\phi}^2
+	\end{equation*}
+	Therefore, $U$ is an isometry. Since $C(X)$ is norm densed in $\lfs{2}(\mu)$ and $\clo{\A_1 e_0} = \clo{\A e_0} = \Hs$, $U \colon \lfs{2}(\mu) \sto \Hs$ is a unitary. \\
+	Let $\psi \in C(X)$ and $\phi \in C(X)$
+	\begin{equation*}
+		UM_{\psi}\phi = U(\psi\phi) = \rho(\psi\phi)e_0 = \rho(\psi) \rho(\phi)e_0 = \rho(\psi) U \phi  
+	\end{equation*}
+	Since $\rho(C(X)) = \A_1$, $\st{U} \A_1 U = \{M_{\phi} \colon \phi \in C(X)\}$.
+	Define the map $\Gamma \colon \A \sto \A_{\mu}$ by $\Gamma(A) = \st{U} A U$. We have known that
+	\begin{equation*}
+		 \Gamma(\A_1) \subset \{M_{\phi} \colon \phi \in C(X)\} \subset \A_{\mu},
+	\end{equation*}
+	\begin{equation*}
+		\clo{\{M_{\phi} \colon \phi \in C(X)\}}^{WOT} \subset \A_{\mu}
+	\end{equation*}
+	And $\Gamma$ is clearly $WOT$-closed, thus 
+	\begin{equation*}
+		\Gamma(\A) \subset \clo{\Gamma(\A_1)}^{WOT} \subset \A_{\mu}
+	\end{equation*}
+	$\Gamma$ is well-defined.
+	In fact, ${\{M_{\phi} \colon \phi \in C(X)\}}^{'} = \A_{\mu}$, i.e. 
+	\begin{equation*}
+		\A_{\mu} = \clo{\{M_{\phi} \colon \phi \in C(X)\}}^{WOT}
+	\end{equation*}
+	Finally, it can easily check $\clo{\Gamma(\A_1)}^{WOT} \subset \Gamma(\A)$. Therefore, $\Gamma$ is an isomorphism.
+	\item $3) \Rightarrow 1)$ It clearly holds by above example.
+\end{proof}
+
+This theorem gives an explicit structure of the maximal abelian von Neumann algebra, which is equivalent to $\lfs{\infty}(\mu)$. And for a general abelian von Neumann algebra, by Zorn's Lemma, it can embedded into a masa.
+
+\begin{cor}
+	If $\Hs$ is separable, every abelian \Cs contained in $\oper$ has a separating vector.
+\end{cor}
+\begin{proof}
+	By Zorn's Lemma, there is a masa containing the abelian \Cs and thus by above theorem it has a cyclic vector, which can separate the masa, in particular, this $\st{C}$-algebra.
+\end{proof}
+
+\subsection{Star-Cyclic Normal Operators}
+
+In above subsection, we can see $\A_{\mu} = \{M_{\phi} \colon \phi \in \lfs{\infty}(\mu)\} \cong \lfs{\infty}(\mu)$ play an important role in the abelian von Neumann algebra. So we will see more properties of $\A_{\mu}$. \\
+
 
 
 
