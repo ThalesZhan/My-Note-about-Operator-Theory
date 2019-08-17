@@ -4188,7 +4188,7 @@ Before researching the structure of abelian von Neumann algebras, there is a typ
 		\Gamma(\A) \subset \clo{\Gamma(\A_1)}^{WOT} \subset \A_{\mu}
 	\end{equation*}
 	$\Gamma$ is well-defined.
-	In fact, ${\{M_{\phi} \colon \phi \in C(X)\}}^{'} = \A_{\mu}$, i.e. 
+	In fact, by similar proof of $\A_{\mu}=\A_{\mu}^{'}$, ${\{M_{\phi} \colon \phi \in C(X)\}}^{'} = \A_{\mu}$, i.e. 
 	\begin{equation*}
 		\A_{\mu} = \clo{\{M_{\phi} \colon \phi \in C(X)\}}^{WOT}
 	\end{equation*}
@@ -4199,7 +4199,7 @@ Before researching the structure of abelian von Neumann algebras, there is a typ
 
 This theorem gives an explicit structure of the maximal abelian von Neumann algebra, which is equivalent to $\lfs{\infty}(\mu)$. And for a general abelian von Neumann algebra, by Zorn's Lemma, it can embedded into a masa.
 
-\begin{cor}
+\begin{cor} \label{cor9}
 	If $\Hs$ is separable, every abelian \Cs contained in $\oper$ has a separating vector.
 \end{cor}
 \begin{proof}
@@ -4210,5 +4210,232 @@ This theorem gives an explicit structure of the maximal abelian von Neumann alge
 
 In above subsection, we can see $\A_{\mu} = \{M_{\phi} \colon \phi \in \lfs{\infty}(\mu)\} \cong \lfs{\infty}(\mu)$ play an important role in the abelian von Neumann algebra. So we will see more properties of $\A_{\mu}$.
 
+\begin{thm}[Fuglede-Putnam Theorem]
+	Let $N$ and $M$ are normal operators and $A \in \oper$. If $NA = AM$, then $\st{N}A = A\st{M}$.
+\end{thm}
+\begin{proof}
+	Since for any polynomial, $p(N)A=Ap(M)$, then for a fixed $\omega \in \C$, by taking limits
+	\begin{equation*}
+		e^{i\omega N}A = A e^{i\omega M}, \text{ or } A = e^{-i\omega N} A e^{i\omega M}
+	\end{equation*}
+	By the fact that $e^{X}e^{Y} = e^{X+Y}$ for commuting operators $X,Y$., therefore
+	\begin{eqnarray*}
+		f(\omega) &=& e^{-i\omega \st{N}} A e^{i\omega \st{M}} \\
+		&=& e^{-i\omega \st{N}} e^{-i\clo{\omega} N} A e^{i\clo{\omega} M} e^{i\omega \st{M}} \\
+		&=& e^{-i(\omega \st{N}+\clo{\omega} N)} A e^{i(\omega \st{M}+\clo{\omega} M)}
+	\end{eqnarray*}
+	Note that $f$ is a entire operator-valued function. Since $(\omega \st{N}+\clo{\omega} N)$ and $(\omega \st{M}+\clo{\omega} M)$ are self-adjoint, $e^{-i(\omega \st{N}+\clo{\omega} N)}$ and $e^{i(\omega \st{M}+\clo{\omega} M)}$ are unitaries. Then $f$ is bounded, thus $f$ is constant, i.e.
+	\begin{equation*}
+		0 = f^{'}(\omega) = -i\st{N}e^{-i\omega \st{N}} A e^{i\omega \st{M}} + ie^{-i\omega \st{N}} A \st{M} e^{i\omega \st{M}}
+	\end{equation*}
+	Let $\omega = 0$, then $0=-i\st{N}A + iA\st{M}$.
+\end{proof}
+
+\begin{cor}
+	If $N$ is a normal operator with $N = \int z dE$, then $NA=AN$ if and only if $E(\Delta)N=NE(\Delta)$ for all Borel set $\Delta$.
+\end{cor}
+
+Then using this theorem we can find the generator of $\A_{\mu}$.
+\begin{thm}
+	If $\mu$ is any compactly supported measure on $\C$, then
+	\begin{equation*}
+		\{N_{\mu}\}^{'} = \A_{\mu}^{'}
+	\end{equation*}
+\end{thm}
+\begin{proof}
+	Clearly, $\A_{\mu}^{'} \subset N_{\mu}^{'}$. If $T \in N_{\mu}^{'}$, then $T\st{N_{\mu}} = \st{N_{\mu}}T$. Therefore, $T$ can commutes with any polynomials in $z$ and $\clo{z}$, and taking limits, $T \in \A_{\mu}^{'}$.
+\end{proof}
+\begin{rem}
+	By this, we can also see the statement in above theorem
+	\begin{equation*}
+		{\{M_{\phi} \colon \phi \in C(X)\}}^{'} = \A_{\mu}
+	\end{equation*}
+	is true. Moreover, $\{N_{\mu}\}^{'} = \A_{\mu}^{'}$ implies that
+	\begin{equation*}
+		\st{W}(N_{\mu}) = \A_{\mu} \cong \lfs{\infty}(\mu)
+	\end{equation*}
+	Therefore, in order to research $\A_{\mu}$, we just research $N_{\mu}$.
+\end{rem}
+
+We have seen that if $\mu$ is finite then $N_{\mu}$ is indeed a cyclic normal operator on $\lfs{2}(\mu)$ as $\clo{\st{C}(\mu)1} = \lfs{2}(\mu)$ by the Stone-Weierstrass Theorem. Now, we can prove any cyclic normal operator is equivalent to a $N_{\mu}$ for some finite $\mu$.
+\begin{thm}
+	A normal operator $N$ is cyclic if and only if it is equivalent to $N_{\mu}$ for some compactly supported measure $\mu$ on $\C$. Moreover, if $e_0$ is the cyclic vector, then the unitary $U \colon \Hs \sto \lfs{2}(\mu)$ with $N_{\mu} = UN\st{U}$ can be chosen s.t. $Ue_0 = 1$.
+\end{thm}
+\begin{proof}
+	If $E$ is the spectral measure s.t. $N = \int_{\sigma(N)} z dE$, for any Borel set $\Delta$ in $\sigma(N)$, then define
+	\begin{equation*}
+		\mu(\Delta) = \langle E(\Delta)e_0,e_0 \rangle = \norm{E(\Delta)e_0}^2
+	\end{equation*}
+	$\mu$ is finite, positive, and compactly supported on $\C$. Then $C(\sigma(N)) \subset \lfs{2}(\mu)$. We know that $\Cg{N} \cong C(\sigma(N))$. Define
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$U \colon$ & $\Cg{N}e_0$ & $\longrightarrow$ & $C(\sigma(N))$ \\
+			~ & $\phi(N)e_0$ & $\longmapsto$ & $\phi$
+		\end{tabular}
+	\end{center}
+	Then we have,
+	\begin{equation*}
+		\norm{\phi(N)e_0}^2 = \langle \phi(\st{N})\phi(N)e_0,e_0 \rangle = \int_{\sigma(N)} \abs{\phi}^2 d\mu = \norm{\phi}_2
+	\end{equation*}
+	$U$ is a unitary. By taking norm limits, $U \colon \Hs \sto \lfs{2}(\mu)$ is a unitary and $Ue_0 = 1$ and $UNe_0 = z$. If $\phi \in C(\sigma(N))$, then
+	\begin{equation*}
+		UN\st{U}(\phi) = UN\phi(N)e_0 = U(z\phi)(N)e_0 = z\phi = N_{\mu}(\phi)
+	\end{equation*}
+	Also, taking the norm limits, $UN\st{U}=N_{\mu}$.
+\end{proof}
+
+\begin{thm}
+	Two normal operator $N_{\mu}$ and $N_{\nu}$ are equivalent if and only if $\mu$ and $\nu$ are mutually absolutely continuous.
+\end{thm}
+\begin{proof}
+	If $\mu$ and $\nu$ are mutually absolutely continuous and $\phi = \frac{d\mu}{d\nu}$, then define
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$U \colon$ & $\lfs{2}(\mu)$ & $\longrightarrow$ & $\lfs{2}(\nu)$ \\
+			~ & $f$ & $\longmapsto$ & $f\sqrt{\phi}$
+		\end{tabular}
+	\end{center}
+	Then we have
+	\begin{equation*}
+		\norm{Uf}^2 = \int \abs{f}^2 \phi d\nu = \int \abs{f}^2 d \mu = \norm{f}^2
+	\end{equation*}
+	Thus $U$ is an isometry. Since $\frac{1}{\phi} = \frac{d\nu}{d \mu}$, the map $g \sto \sqrt{\frac{1}{\phi}}g$ is the inverse of $U$. Therefore, $U$ is unitary, and
+	\begin{equation*}
+		UN_{\mu}\st{U}g = UN_{\mu}(\sqrt{\frac{1}{\phi}}g) = U(z\sqrt{\frac{1}{\phi}}g) = zg = N_{\nu}g
+	\end{equation*}
+	Conversely, $N_{\mu} \cong N_{\nu}$ means $K=\sup{\mu} = \sigma(N_{\mu}) = \sigma(N_{\nu}) = \sup{N_{\nu}}$. Let $V \colon \lfs{2}(\mu) \sto \lfs{2}(\nu)$ be the unitary s.t. $VN_{\mu}\st{V}=N_{\nu}$. Then also $V\st{N_{\mu}}\st{V}=\st{N_{\nu}}$. Therefore, for any polynomial in $z$ and $\clo{z}$, let $V(1) = \psi$
+	\begin{equation*}
+		Vp(N_{\mu},\st{N_{\mu}})(1) = p(N_{\nu},\st{N_{\nu}})V(1)
+	\end{equation*}
+	That means
+	\begin{equation*}
+		\int_{K} \abs{p}^2 d\mu = \int_{K} \abs{p}^2 \abs{\psi}^2 d \nu
+	\end{equation*}
+	Taking limits, for any $f \in C(K)$, above identity is also true. Thus, $d \mu = \abs{\psi}^2 d \nu$, i.e. $\mu << \mu$. Similarly, by $V^{-1}$, we can get the converse.
+\end{proof}
+
+\section{The structure of \texorpdfstring{$W^{*}(N)$}{WN}}
+
+For a norm operator $N$, by above subsection, clearly
+\begin{equation*}
+	\{~M_{\phi} \colon \phi \in B~\} \subset \st{W}(N) = \{N\}^{'}
+\end{equation*}
+And we have seen, $\{N_{\mu}\}^{'} = \A_{\mu} \cong \lfs{\infty}(\mu)$. Firsty, we want to prove $\{M_{\phi} \colon \phi \in B\} = \st{W}(N)$. More, if we also can find some $\mu$ s.t. $\st{W}(N)=\st{W}(N_{\mu})$, then the structure of $\st{W}(N)$ is explicit, 
+\begin{equation*}
+	\st{W}(N) = \{~M_{\phi} \colon \phi \in B~\} \cong \lfs{\infty}(\mu)
+\end{equation*}
+
+Let $N$ be a normal operator acting on $\Hs$ with the spectral measure $E$. If $h \in \Hs$ is nonzero, then let 
+\begin{equation*}
+	\mu_h(\Delta) = E_{hh}(\Delta),~\Hs_h=\clo{\st{W}(N)h},~N_h = N|_{\Hs_h}
+\end{equation*}
+In fact, $\Hs_h$ is the smallest reducing space for $N$ containing $h$. And $N_h$ is a star-cyclic normal operator with the cyclic vector $h$. If $E_h$ is the spectral measure of $N_h$, then by the uniqueness of spectral measure
+\begin{equation*}
+	E_h(\Delta) = \chi_{\Delta}(N_h) = \chi_{\Delta}(N)|_{\Hs_h} = E(\Delta)|_{\Hs_h}
+\end{equation*}
+Therefore, there is a unique unitary $U_h \colon \Hs_h \sto \lfs{2}(\mu_h)$ s.t. $U_hh=1$ and $U_h N_h \st{U_h} = N_{\mu_h}$.
+
+\begin{prop}
+	Let $N$ be a normal operator acting on $\Hs$ and a nonzero $h \in \Hs$.
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$\rho_h \colon$ & $\st{W}(N)$ & $\longrightarrow$ & $\st{W}(N_h)$ \\
+			~ & $A$ & $\longmapsto$ & $A|_{\Hs_h}$
+		\end{tabular}
+	\end{center}
+	\begin{enumerate}[label=\arabic*)]
+		\item $\rho_h$ is a $*$-homomorphism and $WOT$-continuous.
+		\item If $\phi \in B(\sigma(N))$, then $\rho_h(\phi(N)) = \phi(N_h)$.
+		\item If $h$ is separating for $\st{W}(N)$, then $\rho_h$ is injective.
+		\item If $A \in \st{W}(N)$, then there exists a $\phi \in B(\sigma(N))$ s.t. $\rho_h(A) = \phi(N_h)$, and thus $\rho_h$ is surjective.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	For $1)$, if $p(z,\clo{z})$ is any polynomial, then $\rho(p(N,\st{N})) = p(N_h,\st{N_h})$. For any $A \in \st{W}(N)$, there exists $p_n(N,\st{N})$ s.t. $p_n(N,\st{N}) \sto A$ in $WOT$. Then for any $g,h \in \Hs_h$
+	\begin{equation*}
+		\langle p_n(N,\st{N})g,h \rangle \sto \langle Ag,h \rangle
+	\end{equation*}
+	Therefore, $p_n(N_h,\st{N_h}) \sto A|_{\Hs_h}$ in $WOT$. And thus, $\rho_h$ is $WOT$-continuous and $\rho_h(A) \in \st{W}(N_h)$, well-defined. And clearly, $\rho_h$ is a $*$-homomorphism.
+
+	\item For $2)$, if $\phi \in B(\sigma(N))$, then there exist polynomials $p_n(z,\clo{z})$ s.t. $p_n \sto \phi$ weakly in $M(\sigma(N))$ and $M(\sigma(N_h))$ as $\sigma(N_h) \subset \sigma(N)$. That means $p_n(N,\st{N}) \sto \phi(N)$ in $WOT$ and $p_n(N_h,\st{N_h}) \sto \phi(N_h)$. But $\rho_h(p_n(N,\st{N}) = p_n(N_h,\st{N_h})$ and $\rho$ is $WOT$-continuous, $\rho_h(\phi(N)) = \phi(N_h)$.
+
+	\item For $3)$, if $h$ is separating for $\st{W}(N)$, $A_h = 0$ i.e $A\st{W}(N)h = 0$. That means $A\st{W}(N)=0$, then $A = 0$.
+
+	\item For $4)$, if $A \in \st{W}(N)$ and $A_h = \rho_h(A)$, then $A_h \in \{N_h\}^{'} =\st{U_h}\{N_{\mu_h}\}^{'}U_h$. There is a $\psi \in \lfs{\infty}(\mu_h)$ s.t. $A_h = \st{U_h}M_{\psi} U_h$. Then there exist $\psi_n \in B(\sigma(N))$ s.t. $M_{\psi_n} \sto M_{\psi}$ in norm. Thus $\psi_n(N_h) \sto A_h$ in norm, there is a $\phi \in M(\sigma(N))$, s.t. $\phi(N_h) = A_h$. Moreover, this also implies $\rho_h$ is surjective.
+\end{proof}
+\begin{rem}
+	The most important part in this proof is that for the $\mu_h$,
+	\begin{equation*}
+		\st{W}(N_{\mu_h}) = \A_{\mu_h} = \{~M_{\phi} \colon \phi \in \lfs{\infty}(\mu_h)~\} = \{~M_{\phi} \colon \phi \in B(\sigma(N_{\mu_h}))~\}
+	\end{equation*}
+\end{rem}
+
+Using above proposition we get one of the main result of this subsection.
+\begin{thm}
+	If $N$ is a normal operator, then 
+	\begin{equation*}
+		\st{W}(N) = \{~\phi(N) \colon \phi \in B(\sigma(N))~\}
+	\end{equation*}
+\end{thm}
+\begin{proof}
+	It is sufficient to show that $\A = \{\phi(N) \colon \phi \in B(\sigma(N))\}$ is $WOT$-closed. Let $A \in \clo{\A}^{WOT} = \st{W}(N)$. Then there exists $\{\phi)n\} \subset B(\sigma(N))$ s.t. $\phi_n(N) \sto A$ in $WOT$. And for any $h \in \Hs$, there exists $\phi_h \in B(\sigma(N_h))$, s.t. $A_h = \phi_h(N_h)$, also $\phi_n(N_h) \sto A_h$ in $WOT$. That means 
+	\begin{equation*}
+		Ah = \phi_h(N_h)h = \phi_h(N)h,~~\forall~h \in \Hs
+	\end{equation*}
+	But $\phi_h$ is dependent with the chose of $h$. So we want to find a $e \in \Hs$ s.t. $\phi_h(N_h) = \phi_e(N_h)$ for any $h \in \Hs$. Fix a $e \in \Hs$ \\
+	Check: $\phi_h(N_h)h = \phi_e(N_h)h$ \\
+	By the definition, for any Borel subset $\Delta$ of $\sigma(N)$, since
+	\begin{eqnarray*}
+		\mu_e &=& \langle E(\Delta)e,e \rangle = \norm{E(\Delta)e}^2 \\
+		\mu_h &=& \langle E(\Delta)h,h \rangle = \norm{E(\Delta)h}^2
+	\end{eqnarray*}
+	$mu_e$ and $\mu_h$ are mutually absolutely continuous. In fact, for any $g \in \Hs$, $\mu_h$ and $\mu_g$ are mutually absolutely continuous. Since $\phi_n(N_h) \sto A_h$ in $WOT$, $\phi_n \sto \phi_h$ weak$^{*}$ in $\lfs{\infty}(\mu_h)$. Also, $\phi_n \sto \phi_e$ weak$^{*}$ in $\lfs{\infty}(\mu_e)$. Then for any Borel subset $\Delta$
+	\begin{equation*}
+		\int_{\Delta} \phi_n d\mu_h = \int_{\Delta} \phi_n \frac{d\mu_h}{d\mu_e}d\mu_e \sto \int_{\Delta} \phi_e d\mu_h
+	\end{equation*}
+	and also $\int_{\Delta} \phi_n d\mu_h \sto \int_{\Delta} \phi d\mu_h$, therefore, $\phi_h = \phi_e$ a.e. with repect to $\mu_h$, in fact, it can be with respect to any $\mu_g$. Then for $g \in \Hs_h$,
+	\begin{equation*}
+		\langle \phi_h(N_h)g,g \rangle = \langle \phi_h(N)g,g \rangle = \int \phi_h d\mu_g = \int \phi_e d\mu_g = \langle \phi_e(N_h)g,g \rangle
+	\end{equation*}
+	Therefore, $\phi_h(N_h)h = \phi_e(N_h)h$. Then $A = \phi_e(N)$.
+\end{proof} 
+
+And also, by above proposition, the second result can also be proved.
+
+\begin{thm}
+	If $N$ is a normal operator on a separable Hilbert space, then there is a compactly supported, positive and finite measure $\mu$, s.t. there is a map $\rho \colon \lfs{\infty} \sto \st{W}(N)$, s.t.
+	\begin{enumerate}[label=\arabic*)]
+		\item $\rho$ is an isometrical $*$-isomorphism.
+		\item $\rho \colon (\lfs{\infty}(\mu), \text{weak}^{*}) \sto (\st{W}(N), WOT)$ is a homeomorphism.
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	Since $\st{W}(N)$ is an abelian von Neumann algebra, it has a separating vector $e$ by the \textbf{Corollary} \ref{cor9} in the subsection \textbf{3.2.2}. Then let $\rho^{'} = \rho_e$ and $\mu = \mu_e$. By above proposition, $\rho^{'}$ is a $*$-isomorphism from $\st{W}(N_e)$ to $\st{W}(N)$. And since $\st{W}(N_e)$ is also $*$-isomorphic to $\lfs{\infty}(\mu)$. Thus there is a $*$-isomorphism $\rho$ from $\lfs{\infty}(\mu)$ to $\st{W}(N)$ s.t. for any $\phi \in B(\sigma(N))$, $\rho(\phi) = \phi(N)$. And thus $\rho$ is isometrical.\\
+	For $2)$, since $\st{W}(N) = \{\phi(N) \colon \phi \in B(\sigma(N))\}$, if $\phi_n(N) \sto \phi(N)$ in $WOT$, then we can easily know $\phi_n \sto \phi$ in weak$^{*}$. And the converse is trivial. $\rho$ is weak$^{*}$-$WOT$ homeomorphism.
+\end{proof}
+
+Now, we can see the structure of any abelian von Neumann algebra on a separable Hilbert space.
+\begin{thm}
+	If $\A$ is an abelian von Neumann algebra on a separable Hilbert space $\Hs$, then there is a compactly supported, positive and finite measure $\mu$ s.t. $\A \cong \lfs{\infty}(\mu)$, $*$-isomorphism.
+\end{thm}
+\begin{proof}
+	Since $\Hs$ is separable, the closed unit ball in $\A$ is $WOT$-compactly metrizable, thus there is a countable $WOT$-dense set of $\A$. Since $\A$ can be generated by projections in $\A$, thus this $WOT$-dense set can be chosen as a set of projections $\{P_n\}$. Let $\C = \Cg{\{P_n\}}$, then $\C$ is ablelian. Thus there is a compact space $X$, which is totally disconnected, s.t. $\C \cong C(X)$. And let $\rho \colon C(X) \sto \C$ be the inverse of Gelfand Transform. Then $p_n = \rho^{-1}(P_n)$ is the characteristic function and continuous. Define
+	\begin{equation*}
+		f = \sum_{n=1}^{\infty} 3^{-n}(2p_n - 1)
+	\end{equation*}
+	Claim: $\Cg{f} = C(X)$ \\
+	By the Stone-Weierstrass Theorem, we just need to show that $f$ can separate the points of $X$. Since $\{p_n\}$ generates $C(X)$, $\{p_n\}$ can separate the points in $X$. Thus, for $x \neq y \in X$, there is a $p_k$, s.t. $p_k(x) \neq p_k(y)$ and chosing the $k$ be the smallest one satifying this condition, then
+	\begin{eqnarray*}
+		\abs{f(x)-f(y)} &=& 2 \abs{\sum_{n=k}^{\infty} 3^{-n}(p_n(x) - p_n(y))} \\
+		&\geqslant& 2 3^{-k} - 2 \sum_{n=k+1}^{\infty} 3^{-n} \\
+		= 3^{-k}
+	\end{eqnarray*}
+	Therefore, let $A = \rho(f) = \sum_{n=1}^{\infty} 3^{-n}(2P_n - 1)$, $\Cg{A} = \C$. Moreover, $\st{W}(A) = \clo{\Cg{A}}^{WOT} = \A$. And since $A$ is self-adjoint, thus by above theorem, there exists $\mu$ on $\sigma(A)$, s.t.
+	\begin{equation*}
+		\A \cong \lfs{\infty}(\mu) \qedhere
+	\end{equation*}
+\end{proof}
+
+\section{Multiplicity Theory}
 
 \end{document}
