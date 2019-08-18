@@ -4311,7 +4311,7 @@ We have seen that if $\mu$ is finite then $N_{\mu}$ is indeed a cyclic normal op
 	\begin{equation*}
 		\int_{K} \abs{p}^2 d\mu = \int_{K} \abs{p}^2 \abs{\psi}^2 d \nu
 	\end{equation*}
-	Taking limits, for any $f \in C(K)$, above identity is also true. Thus, $d \mu = \abs{\psi}^2 d \nu$, i.e. $\mu << \mu$. Similarly, by $V^{-1}$, we can get the converse.
+	Taking limits, for any $f \in C(K)$, above identity is also true. Thus, $d \mu = \abs{\psi}^2 d \nu$, i.e. $\mu \ll \mu$. Similarly, by $V^{-1}$, we can get the converse.
 \end{proof}
 
 \section{The structure of \texorpdfstring{$W^{*}(N)$}{WN}}
@@ -4437,5 +4437,195 @@ Now, we can see the structure of any abelian von Neumann algebra on a separable 
 \end{proof}
 
 \section{Multiplicity Theory}
+
+Finally, we want find the necessary and sufficient condition making two normal operators be equivalent. We should assume the Hilbert space is always separable.
+
+\begin{prop}
+	If $N$ is a normal operator on $\Hs$ and $e \in \Hs$, then there is a separating vector $e_0$ for $\st{W}(N)$ s.t. $e \in \clo{\st{W}(N)}$.
+\end{prop}
+\begin{proof}
+	Choosing any separating operator $f_0$ for $\clo{\st{W}(N)}$, let $\M = \clo{\st{W}(N)}f_0$, then $e = m_0 + g_0$ for $m_0 \in \M$ and $g_0 \in \M^{\bot}$. Now, let $\fml{G} = \clo{\st{W}(N)g_0}$ and $e_0 = f_0 +g_0$. Then $e \in \clo{\st{W}(N)e_0}$.\\
+	Check: $e_0$ is separating for $\st{W}(N)$\\
+	For any $A \in \st{W}(N)$, since both $\M$ and $\fml{G}$ reduce $\st{W}(N)$, if
+	\begin{equation*}
+		Ae_0 = Af_0 + Ag_0 = 0
+	\end{equation*}
+	then $Af_0=0$. Because $f_0$ is separating for $\st{W}(N)$, $A = 0$.
+\end{proof}
+
+\begin{prop}
+	Let $\mu$ be a compactly supported measure on $\C$ and $\Delta$ be a Borel subset of $\sup{\mu}$ and $\nu = \mu|_{\Delta}$. If $N = N_{\mu} \oplus N_{\nu}$ on $\lfs{2}(\mu) \oplus \lfs{2}(\nu)$ and $g\oplus h \in \lfs{2}(\mu) \oplus \lfs{2}(\nu)$ with $h \neq 0$ a.e. $\nu$, then there is a $f \in \lfs{2}(\mu)$ s.t. $f \oplus h$ is a separating vector for $\st{W}(N)$ and $g\oplus h \in \clo{\st{W}(N)(f \oplus h)}$.
+\end{prop}
+\begin{proof}
+	Let $f(z) = g(z)$ for $z \in \Delta$ and $f(z) = 1$ for $x \in \Delta^{'}$ where $\Delta^{'} = \sup{\mu} \backslash \Delta$. In fact,
+	\begin{equation*}
+		\Hs = \clo{\st{W}(N)(f \oplus h)} = \clo{\{~\phi f \oplus \phi h \colon \phi \in \lfs{\infty}(\mu)~\}}
+	\end{equation*}
+	Since $\phi \chi_{\Delta^{'}} \oplus 0 = \phi \chi_{\Delta^{'}}(f \oplus h)$,
+	\begin{equation*}
+		g \oplus h = f \oplus h - (1-g)\chi_{\Delta^{'}} \oplus 0 \in \Hs
+	\end{equation*}
+	If $\phi \in \lfs{\infty}(\mu)$ with $\phi f \oplus \phi h = 0$, then $\phi f = \phi h = 0$ a.e. $\mu$ and $\nu$ respectively. By definition, $\phi = 0$ a.e. $\mu$.
+\end{proof}
+
+Then we can decompose normal operators as a "decreasing" sequence of cyclic operators.
+
+\begin{thm}
+	If $N$ is a normal operator, then there is a sequence of measures $\{\mu_n\}$ on $\C$ s.t. $\mu_{n+1} \ll \mu_{n}$ for all $n$ and 
+	\begin{equation*}
+		N \cong N_{\mu_1} \oplus N_{\mu_2} \oplus N_{\mu_3} \oplus \cdots
+	\end{equation*}
+\end{thm}
+\begin{proof}
+	Let $e_1$ be a separating vector for $\st{W}(N)$ and $\{f_n\}$ be the orthonormal basis of $\Hs$ s.t. $f_1 = e_1$. Put
+	\begin{equation*}
+		\Hs_1 = \clo{\st{W}(N)e_1},~~\mu_1(\Delta) = \norm{E(\Delta)}^2,~~ N_2 = N|_{\Hs_1}
+	\end{equation*}
+	Then for $f_2^{'} = $ the projection of $f_2$ to $\Hs_1^{\bot}$, there is a separating vector $e_2$ for $\st{W}(N_2)$ s.t. 
+	\begin{equation*}
+		f_2^{'} \in \Hs_2 = \clo{\st{W}(N_2)e_2}
+	\end{equation*} 
+	And clearly, if $\mu_2{\Delta} = \norm{E(\Delta)|_{\Hs_2}e_2}$, $\mu_2 \ll \mu_1$. By induction and the Zorn's Lemma, 
+	\begin{equation*}
+		N \cong N_{\mu_1} \oplus N_{\mu_2} \oplus N_{\mu_3} \oplus \cdots \qedhere
+	\end{equation*}
+\end{proof}
+
+Therefore, if there is another normal operator $M \cong N_{\nu_1} \oplus N_{\nu_2} \oplus \cdots$, we want to find the relation between the equivalence of $N$ and $M$ and the equivalence of the coincided $\mu_n$ and $\nu_n$. But before that we need some lemmas.
+
+\begin{prop}
+	If $N_1$ and $N_2$ are normal operators on $\Hs_1$ and $\Hs_2$ respectively and $X \colon \Hs_1 \sto \Hs_2$ s.t. $XN_1 = N_2X$, then 
+	\begin{enumerate}[label=\arabic*)]
+		\item $\clo{\ran{X}}$ reduces $N_2$.
+		\item $\ker{X}$ reduces $N_1$.
+		\item If $M_1 = N_1|_{(\ker{X})^{\bot}}$ and $M_2 = N_2|_{\clo{\ran{X}}}$, then $M_1 \cong M_2$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	For $1)$, if $f_1 \in \Hs_1$, $XN_1f_1 = N_2Xf_1 \in \ran{X}$. Therefore, $\clo{\ran{X}}$ is invariant $N_2$. And also, by the Fuglede-Putnam Theorem, $X\st{N_1} = \st{N_2}X$, thus $\clo{\ran{X}}$ is invariant $\st{N_2}$.\\
+	$2)$ is similar as $1)$.
+	For $3)$, it is sufficent to show this when $\ker{X}=\{0\}$ and $\ran{X}$ is dense. By the Polar Decomposition, $X=UA$ for some unitary $U$. Since $\st{X}\st{N_2} = \st{N_1}\st{X}$, $\st{X}N_2 = N_1\st{X}$. Therefore $A^2 \in \{N_1\}^{'}$, so $A \in \{N_1\}^{'}$ by the functional calculus.
+	\begin{equation*}
+		N_2X = N_2UA= XN_1 = UAN_1 = UN_1A
+	\end{equation*}
+	That means $N_2U=UN_1$ on $\clo{\ran{A}} = \clo{\ran{X}} = \Hs_1$, therefore $N_1 \cong N_2$.
+\end{proof}
+
+\begin{prop}
+	If $N,A$ and $B$ are normal operators on $\fml{K}$, $\Hs_A$ and $\Hs_B$ respectively and $N$ is $*$-cyclic and 
+	\begin{equation*}
+		N \oplus A \cong N \oplus B
+	\end{equation*}
+	then $A \cong B$.
+\end{prop}
+\begin{proof}
+	Let $U \colon \fml{K} \oplus \Hs_A \sto \fml{K} \oplus \Hs_B$, and $U$ can be
+	\begin{equation*}
+		U = \left(
+			\begin{array}{cc}
+				U_{11} & U_{12} \\
+				U_{21} & U_{22}
+			\end{array}
+		\right)
+	\end{equation*}
+	Then we have
+	\begin{eqnarray*}
+		\left(
+			\begin{array}{cc}
+				U_{11}N & U_{12}A \\
+				U_{21}N & U_{22}A
+			\end{array}
+		\right)
+		&=& \left(
+			\begin{array}{cc}
+				NU_{11} & NU_{12} \\
+				BU_{21} & BU_{22}
+			\end{array}
+		\right) \\
+		\left(
+			\begin{array}{cc}
+				U_{11}\st{N} & U_{12}\st{A} \\
+				U_{21}\st{N} & U_{22}\st{N}
+			\end{array}
+		\right)
+		&=&\left(
+			\begin{array}{cc}
+				\st{N}U_{11} & \st{N}U_{12} \\
+				\st{B}U_{21} & \st{B}U_{22}
+			\end{array}
+		\right)
+	\end{eqnarray*}
+	Then by above proposition, 
+	\begin{equation*}
+		A|_{(\ker{U_{22}})^{\bot}} = B|_{(\ker{\st{U_{22}}})^{\bot}}
+	\end{equation*}
+	For $\ker{U_{22}}$ and $\ker{\st{U_{22}}}$, put $\M_1 = U_{12}(\ker{U_{22}})$, $\M_2= \st{U_{21}}(\ker{\st{U_{22}}})$, also by the identity, $\st{U}U = U\st{U} = 1$, 
+	\begin{equation*}
+		A|_{\ker{U_{22}}} \cong N|_{\M_1},~~B|_{\ker{\st{U_{22}}}} \cong N|_{\M_2}
+	\end{equation*}
+	And then it easily check that $\M_1 = \M_2$.
+\end{proof}
+
+\begin{thm}
+	For two normal operators $N$ and $M$ and the two sequences of measures $\{\mu_n\}$ and $\{\nu_n\}$ on $\C$ s.t. $\mu_{n+1} \ll \mu_{n}$ and $\nu_{n+1} \ll \nu_{n}$ for all $n$ s.t.
+	\begin{eqnarray*}
+		N &\cong& N_{\mu_1} \oplus N_{\mu_2} \oplus \cdots \\
+		M &\cong& N_{\nu_1} \oplus N_{\nu_2} \oplus \cdots
+	\end{eqnarray*}
+	then $N \cong M$ if and only if $\mu_n$ and $\nu_n$ are mutually absolutely continuous for all $n$.
+\end{thm}
+\begin{proof}
+	Let $N \cong M$ with the unitary $U$. If $e_1$ is the separating vector for $\st{W}(N)$, then $f_1 = Ue_1$ is the separating vector for $\st{W}(M)$. If the $\mu_1$ and $\nu_1$ are the coincided measures, then $\mu_1$ and $\nu_1$ are mutually absolutely continuous, thus $N_{\mu_1} \cong N_{\nu_1}$. Let $\Hs_1 = \clo{\st{W}(N)e_1}$ and $\Hs_1^{'} = \clo{\st{W}(M)e_1}$. Then by above theorem,
+	\begin{equation*}
+		N = N_{\mu_1} \oplus N|_{\Hs_1^{\bot}} \cong M = N_{\nu_1} \oplus M|_{\Hs_1^{'\bot}}
+	\end{equation*}
+	we know that $N|_{\Hs_1^{\bot}} \cong M|_{\Hs_1^{'\bot}}$. Therefore, by induction, we can get the result.
+\end{proof}
+
+Then we can get another formula of above theorem to help us build the Multiplicity Theorem.
+\begin{cor}
+ 	If $N$ is a normal operator with the coincided measure $\mu$, then there is a decreasing sequence $\{\Delta_n\}$ of Borel subsets of $\sigma(N)$ s.t. $\Delta_1 = \sigma(N)$ and 
+ 	\begin{equation*}
+ 		N \cong N_{\mu} \oplus N_{\mu|_{\Delta_2}} \oplus N_{\mu|_{\Delta_3}} \oplus \cdots
+ 	\end{equation*}
+ 	Also, if $M$ is another normal operator with similar formula
+ 	\begin{equation*}
+ 		M \cong N_{\nu} \oplus N_{\nu|_{\Sigma_2}} \oplus N_{\nu|_{\Sigma_3}} \oplus \cdots
+ 	\end{equation*}
+ 	then $N \cong M$ if and only if $\mu$ and $\nu$ are mutually absolutely continuous and $\mu(\Delta_n \backslash \Sigma_n) = 0 = \mu(\Sigma_n \backslash \Delta_n)$
+\end{cor}
+
+\begin{thm}
+	If $N$ is a normal operator, then there are mutually singular measures $\mu_{\infty}, \mu_1, \mu_2, \cdots$ s.t.
+	\begin{equation*}
+		N \cong N_{\infty}^{(\infty)} \oplus N_{\mu_1} \oplus N_{\mu_2}^{(2)} \oplus  N_{\mu_3}^{(3)} \oplus \cdots
+	\end{equation*}
+	If $M$ is another normal operator with the corresponding  measures $\nu_{\infty}, \nu_1, \cdots$, then $N \cong M$ if and only if $\mu_n$ and $\nu_n$ are mutually absolutely continuous for $1 \leqslant n \leqslant \infty$.
+\end{thm}
+\begin{proof}
+	Let the $\mu$ and $\{\Delta_n\}$ be the sequence in above corollary. Put
+	\begin{equation*}
+		\Sigma_{\infty} = \bigcap_{n=1}^{\infty} \Delta_n \text{, } \Sigma_n = \Delta_n \backslash \Delta_{n+1} \text{ and } \mu_n = \mu|_{\Sigma_n}
+	\end{equation*}
+	for $1 \leqslant n \leqslant \infty$ and $\nu_n = \mu|_{\Delta_n}$ for $1 \leqslant n < \infty$. Now, 
+	\begin{equation*}
+		\Delta_n = \Sigma_{\infty} \bigcup (\Delta_n \backslash \Delta_{n+1}) \bigcup (\Delta_{n+1} \backslash \Delta_{n+2}) \bigcup (\Delta_{n+2} \backslash \Delta_{n+3}) \bigcup \cdots
+	\end{equation*}
+	Therefore, $\nu_n = \mu_{\infty} + \mu_n + \mu_{n+1} + \mu_{n+2} + \cdots$ and $\{\mu_n\}$ are pairwise singular.
+	Thus,
+	\begin{equation*}
+		N_{\nu_n} = N_{\mu_{\infty}} \oplus N_{\mu_n} \oplus N_{\mu_{n+1}} \oplus \cdots
+	\end{equation*}
+	Then we have
+	\begin{eqnarray*}
+		N &=& N_{\nu_1} \oplus N_{\nu_2} \oplus \cdots \\
+		&=& N_{\infty}^{(\infty)} \oplus N_{\mu_1} \oplus N_{\mu_2}^{(2)} \oplus  N_{\mu_3}^{(3)} \oplus \cdots
+	\end{eqnarray*}
+\end{proof}
+
+
+
+
+
 
 \end{document}
