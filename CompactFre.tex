@@ -86,6 +86,57 @@ By above theorem, we can see the power of compact operators. Intuitively, compac
 
 \subsection{Spectrums of Compact Operators}
 
+The spectrum of a compact operator also has similar properties as a finite rank operator.
+
+\begin{thm}
+	If $T \in \coper$ and $\lambda \neq 0$ satisfying
+	\begin{equation*}
+		\inff{\{~\norm{(T-\lambda)h} \colon \norm{h}=1~\}} = 0
+	\end{equation*}
+	then $\lambda \in \sigma_p(T)$.
+\end{thm}
+\begin{proof}
+	There is a sequence $\{h_n\}$ with $\norm{h_n}=1$ s.t. $\norm{(T-\lambda)h_n} \sto 0$. Since $T$ is compact, there is a subsequence $\{h_{n_k}\}$ and a $h_0$ s.t. $\norm{Th_{n_k}-h_0} \sto 0$, therefore
+	\begin{equation*}
+		h_{n_k} = \frac{1}{\lambda}((\lambda-T)h_{n_k}+Th_{n_k}) \sto \frac{1}{\lambda}h_0
+	\end{equation*}
+	Then $\norm{\frac{1}{\lambda}h_0}=1=\abs{\frac{1}{\lambda}}\norm{h_0}$, thus $\norm{h_0} \neq 0$. Since $Th_{n_k} \sto \frac{1}{\lambda}Th_0$ and $Th_{n_k} \sto h_0$,
+	\begin{equation*}
+		h_0 = \frac{1}{\lambda}Th_0, \text{ i.e. } Th_0 = \lambda h_0
+	\end{equation*}
+\end{proof}
+
+In fact, we have known that
+\begin{equation*}
+	\sigma_{ap}(T) = \sigma_l(T) = \{~\lambda \in \C \colon \inff{\{\norm{(T-\lambda)h} \colon \norm{h}=1\}} = 0~\}
+\end{equation*}
+and $\lambda \notin \sigma_{ap}(T)$ is equivalent to that $\ker{(T-\lambda)} = \{0\}$ and $\ran{(T-\lambda)}$ is closed. Combining with the Riesz Theorem, any closed and bounded subset in a normed space is compact if and only if the normed space is finite dimensional, we have the following corollary.
+
+\begin{cor}
+	If $T \in \coper$ and $\lambda \neq 0$ and $\ker{(T-\lambda)} = \{0\}$, then $\ran{(T-\lambda)}$ is closed.
+\end{cor}
+
+Here is another important corollary, which says the point spectrum play an important role.
+\begin{cor}
+	If $T \in \coper$, $\lambda \notin \sigma_p(T)$ with $\lambda \neq 0$ and $\clo{\lambda} \notin \sigma_p(\st{T})$, then $\lambda \notin \sigma(T)$.
+\end{cor}
+\begin{proof}
+	By above theorem, $\lambda \notin \sigma_p(T)$ with $\lambda \neq 0$ means $\lambda \notin \sigma_l(T)$, thus $\ker{(T-\lambda)} = \{0\}$ and $\ran{(T-\lambda)}$ is closed.\\ Similarly, for $\st{T}$, $\ker{(\st{T}-\clo{\lambda})} = \{0\}$ and $\ran{(\st{T}-\lambda)}$ is closed. Therefore,
+	\begin{equation*}
+		\ran{(T-\lambda)} = \clo{\ran{(T-\lambda)}} = (\ker{(\st{T}-\clo{\lambda})})^{\bot} = \Hs
+	\end{equation*}
+	Thus $T-\lambda$ is a bijection, and by the Inverse Mapping Theorem, $(T-\lambda)^{-1} \in \oper$, i.e. $\lambda \notin \sigma(T)$.
+\end{proof}
+\begin{rem}
+	In other words, for a compact operator $T$, if $\lambda \in \sigma(T)$ with $\lambda \neq 0$, then $\lambda \in \sigma_p(T)$ or $\clo{\lambda} \in \sigma_p(\st{T})$.
+\end{rem}
+
+In fact, any nonzero point in $\sigma(T)$ for a compact operator $T$ is isolated and moreover, it is an eigenvalue. To prove this, we need a lemma.
+
+\begin{lem}
+	If $\M$ and $\fml{N}$ are two closed linear subspaces of $\Hs$ with $\M \subset \fml{N}$, then for any $\varepsilon > 0$, there exists a $y \in \fml{N}$ with $\norm{y} = 1$ s.t. $$ 
+\end{lem}
+
 
 
 
