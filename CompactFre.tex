@@ -1,0 +1,101 @@
+\chapter{Compact Operators, Fredholm Theory and Perturbations}
+
+The compact operator is as similar as the finite dimensional operator with respect to the spectrums, the representations and so on. In fact, all compact operators can form the unique closed ideal in $\oper$. Moverover, it contains some important classes of operators, like the trace class, which provides an extral topology on $\oper$ and this topology plays an important role in the von Neumann algebra. In fact, the topology is conincided with the $WOT$ in some cases, but it can give a new method to obtain some properties of general von Neumann algebras. For non-compact operators, there is a "weak version" of the compact operator, the Fredholm operator. By researching the Fredholm operators, it provides us an approach to find some "invariant variable" under the compact perturbations. Finally, we have known that finite dimensional normal operator can always be diagnolizable, but for infinite dimensional case, this statement is not true. But by some small compact perturbation, the normal operator can be diagnalizable, and this result has some applications of representation theory. 
+
+\section{Spectrums}
+
+\subsection{Elementary Properties}
+
+\begin{defn}
+	Let $\Hs$ be a Hilbert space and $B_{\Hs}$ be the closed unit ball in $\Hs$ and $T \in \oper$. $T$ is compact if and only if the closure of $T(B_{\Hs})$ is compact. Then let $\coper$ denote the set of all compact operators.
+\end{defn}
+\begin{rem}
+	Clearly, if $T$ is finite rank, $T \in \coper$. Denote $\foper$ as the set of all finite rank operators. Therefore, $\foper \subset \coper$.
+	\begin{equation*}
+		\foper = \{~T \in \oper \colon \ran{T} \text{ is finite dimension}~\}
+	\end{equation*}
+\end{rem}
+
+Since $\Hs$ is a complete metric space, the compactness of $\clo{T(B_{\Hs})}$ is equivalent to that any sequence in $\clo{T(B_{\Hs})}$ has a convergent subsequence with the convergent point in $\clo{T(B_{\Hs})}$. By this fact, we can get the following theorem.
+
+\begin{thm}
+	Let $\Hs$ be a Hilbert space.
+	\begin{enumerate}[label=\arabic*)]
+		\item $\coper$ is a linear space.
+		\item $\coper$ is closed in norm.
+		\item $\coper$ is an ideal in $\oper$.
+		\item If $T \in \coper$, then $\st{T} \in \coper$.
+	\end{enumerate}
+\end{thm}
+\begin{rem}
+	Therefore, $\coper$ is a $\st{C}$-subalgebra, and moreover, $\coper$ is a closed ideal of $\oper$.
+\end{rem}
+
+\begin{defn}
+	Let $\Hs$ be a Hilbert space and $T \in \oper$. $T$ is called completely continuous if for any sequence $\{x_n\} \in \Hs$ with $x_n \sto x$ weakly, then $Tx_n \sto Tx$ in norm.
+\end{defn}
+
+\begin{prop}
+	$T \in \oper$ is compact if and only if $T$ is completely continuous. 
+\end{prop}
+\begin{proof}
+	Let $T$ be a compact operator and $\{x_n\} \in \Hs$ with $x_n \sto 0$ weakly. By the Principle of Uniform Boundedness, $M = \sup_n{\norm{x_n}} < \infty$. Assuming $M \leqslant 1$,
+	\begin{equation*}
+		\{Tx_n\} \subset \clo{T(B_{\Hs})}
+	\end{equation*}
+	By the fact that $\clo{T(B_{\Hs})}$ is compact, there is a subsequence $\{x_{n_k}\}$ s.t. $Tx_{n_k}  \sto y$ in norm. Since $T$ is also weakly continuous, $Tx_n \sto 0$ weakly. Thus $y = 0$. Then $T$ is completely continuous.\\
+	Conversely, assume $T$ is completely continuous. \\
+	Firstly, if $\Hs$ is separable and since $\Hs$ is reflexive, $B_{\Hs}$ is a weak-compact metric space. Therefore, for any $\{x_n\} \subset B_{\Hs}$, there is a subsequence $\{x_{n_k}\}$ and $x$ s.t. $x_{n_k} \sto x$ weakly. Therefore, $Tx_{n_k} \sto x$ in norm, i.e. $T$ is compact.\\
+	For general case, let $\{x_n\} \subset B_{\Hs}$, then $\Hs_1 = \clo{\spn{\{x_n\}}}$ is separable. Therefore, since
+	\begin{equation*}
+		T|_{\Hs_1}(\{x_n\}) = T(\{x_n\}) \subset T|_{\Hs_1}(B_{\Hs_1})
+	\end{equation*}
+	$T$ is compact.
+\end{proof}
+
+By above theorem, we can see the power of compact operators. Intuitively, compact operators can "strengthen" the topology. They map the weakly convergent sequences be norm convergent sequence. How can they do that? We have known the weak topology is agree with the norm topology on the finite dimensional space. So, compact operators may be the "extension" of finite rank operators. In fact, we can descibe this property more rigorously.
+
+\begin{thm}
+	$T \in \oper$ is compact if and only if there is a sequence $\{T_n\} \subset \foper$ s.t. $T_n \sto T$ in norm.
+\end{thm}
+\begin{proof}
+	Assume $T$ is compact. Therefore, $\clo{T(B_{\Hs})}$ is separable. Let $\{e_n\}_{n=1}^{\infty}$ be the basis of the dense subspace of $\clo{T(B_{\Hs})}$. Then define projections
+	\begin{equation*}
+		P_n \colon \Hs \longrightarrow \spn{\{e_1, e_2, \cdots, e_n\}}
+	\end{equation*}
+	and let $T_n = P_nT$. Clearly, $T_n \in \foper$. Now, clearly, $\norm{Th - T_nh} \sto 0$ for any $h \in \Hs$. Since $\clo{T(B_{\Hs})}$ is compact, for any given $\varepsilon > 0$, there are $h_1, \cdots, h_m \in \Hs$ s.t.
+	\begin{equation*}
+		T(B_{\Hs}) \subset \bigcup_{i=1}^{m}B_{\varepsilon}(Th_i)
+	\end{equation*}
+	where $B_{\varepsilon}(h_i)$ is the open ball centred at $Th_i$ with radius $\varepsilon$. Therefore, for any $h \in B_{\Hs}$, choose $h_j$ s.t. $\norm{Th-Th_j} < \varepsilon$.
+	\begin{eqnarray*}
+		\norm{Th-T_nh} &\leqslant& \norm{Th - Th_j} + \norm{Th_j - T_nh_j} + \norm{P_n(Th_j-Th)} \\
+		&\leqslant& 2\norm{Th - Th_j} +  \norm{Th_j - T_nh_j} \\
+		&<& 2\varepsilon +  \norm{Th_j - T_nh_j}
+	\end{eqnarray*}
+	Since $\norm{Th_j - T_{n}h_j} < \varepsilon$ for any $h_j$ and $n > n_0$ for some $n_)$,  
+	\begin{equation*}
+		\norm{Th-T_nh} < 3\varepsilon \text{ for } n > n_0
+	\end{equation*}
+	Then $T_n \sto T$ uniformly, i.e. $T_n \sto T$ in norm. \\
+	The converse is clearly since $\foper \subset \coper$ and $\coper$ is norm closed.
+\end{proof}
+\begin{cor}
+	All projections $\{P_i\}_{i \in I}$ in $\oper$ form an approximate identity for the ideal $\coper$.
+\end{cor}
+
+\subsection{Spectrums of Compact Operators}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

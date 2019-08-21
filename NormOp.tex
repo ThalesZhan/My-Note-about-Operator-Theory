@@ -67,7 +67,7 @@ Using the spectral measure, we can define the operator-valued integral.
 	\end{eqnarray*}
 	Therefore, by the Riezs Theorem, 
 	\begin{equation*}
-		\norm{T-\sum_{k=1}^{n}\phi(k)E(\Delta_k)} < \varepsilon \qedhere
+		\norm{T-\sum_{k=1}^{n}\phi(k)E(\Delta_k)} < \varepsilon  \qedhere
 	\end{equation*}
 \end{proof}
 \begin{rem}
@@ -89,7 +89,6 @@ We have one more property on $B(X)$ for a compact space $X$. Let $B(X)$ denote a
 	\end{equation*}
 	Thus we may apply this to extending $\st{C}$-algebras.
 \end{rem}
-
 
 $B(X,\Omega)$ with the supremum norm and complex conjugate can become a $\st{C}$-algebra. Then by above theorem, we can provide the map from $B(X,\Omega)$ to operator algebras.
 
@@ -124,11 +123,11 @@ $B(X,\Omega)$ with the supremum norm and complex conjugate can become a $\st{C}$
 		&\leqslant& \varepsilon + \norm{(\sum_{i=1}^{n}\phi(x_i)E(\Delta_i))(\sum_{j=1}^{n}\psi(x_j)E(\Delta_j)-\int \psi dE)} \\
 		&& \negmedspace{} + \norm{(\sum_{i=1}^{n}\phi(x_i)E(\Delta_i)-\int \phi dE)(\sum_{j=1}^{n}\psi(x_j)E(\Delta_j))} \\
 		&\leqslant& \varepsilon(1+\norm{\phi}_{\infty}+\norm{\psi}_{\infty})
-	\end{eqnarray*}
+	\end{eqnarray*} 
 	Then $\rho$ is indeed multiplicative.
 \end{proof}
 
-We have already there is a map from $C(X)$ to $\oper$, then by combining this proposition and above lemma, if the map is $wk$-continuous on $C(X)$, we may extend it from $M(X)$ to $\oper$.
+We have already there is a map from $C(X)$ to $\oper$, then by combining this proposition and above lemma, if the map is $wk$-continuous on $C(X)$, we can extend it from $M(X)$ to $\oper$. 
 
 \begin{thm}
 	If $X$ is a compact space and $\rho \colon C(X) \sto \oper$ is a representation, then there is a unique spectral measure $E$ defined on the Borel sets of $X$ s.t. $\rho$ can be expressed as 
@@ -177,7 +176,7 @@ We have already there is a map from $C(X)$ to $\oper$, then by combining this pr
 		\int \phi dE^{'}_{gh} = \int \phi dE_{gh}
 	\end{equation*}
 	Therefore, $E^{'} = E$.
-	\item If $T$ commutes with $\tilde{\rho}(\phi)$ for any $\phi \in C(X)$, we can use the $WOT$-convergence to get that $T$ commutes with $\tilde{\rho}(\phi)$ for any $\phi \in B(X)$. Therefore, clearly $T$ commutes with $E(\Delta)$ for any Borel set $\Delta$. Conversely, if $T$ commutes with $E(\Delta)$ for any Borel set $\Delta$, 
+	\item Finally, if $T$ commutes with $\tilde{\rho}(\phi)$ for any $\phi \in C(X)$, we can use the $WOT$-convergence to get that $T$ commutes with $\tilde{\rho}(\phi)$ for any $\phi \in B(X)$. Therefore, clearly $T$ commutes with $E(\Delta)$ for any Borel set $\Delta$. Conversely, if $T$ commutes with $E(\Delta)$ for any Borel set $\Delta$, 
 	\begin{equation*}
 		\langle E(\Delta)Tg,h \rangle = \langle E(\Delta)g,\st{T}h \rangle
 	\end{equation*}
@@ -274,7 +273,7 @@ There are some properties of the spectral measure of normal operator $N$.
 Now, we can extend the \textbf{Example} \ref{exam2} in the subsection \textbf{2.2.2}.
 
 \begin{exam} \label{exam3}
-	Let $\mu$ be a compactly supported, regular Borel measure on $\C$ and ($X,\Omega,\mu$) be the measure space. For each $\pi \in \lfs{\infty}(\mu)$, we define the map
+	Let $\mu$ be a compactly supported, regular Borel measure on $\C$ and ($X,\Omega,\mu$) be the measure space. For each $\phi \in \lfs{\infty}(\mu)$, we define the map
 	\begin{center}
 		\begin{tabular}{l c c l}
 			$M_{\phi} \colon$ & $\lfs{2}(\mu)$ & $\longrightarrow$ & $\lfs{2}(\mu)$ \\
@@ -352,7 +351,7 @@ There are some easy properties if the commutant.
 	\end{equation*}
 \end{thm}
 \begin{proof}
-	Firslty, by above proposition, $\A^{''}$ is $SOT$-closed and clearly $\A \subset \A^{''}$. Therefore, it is sufficient to show that $\A^{''} \subset \clo{\A}^{SOT}$. Let $T \in \A^{''}$. Then, by above proposition, we just to check that $\Lat{\A^{(N)}} \subset \Lat{T^{(n)}}$. \\
+	Firslty, by above proposition, $\A^{''}$ is $SOT$-closed and clearly $\A \subset \A^{''}$. Therefore, it is sufficient to show that $\A^{''} \subset \clo{\A}^{SOT}$. Let $T \in \A^{''}$. Then, by above proposition, we just to check that $\Lat{\A^{(n)}} \subset \Lat{T^{(n)}}$. \\
 	Let $\M \in \Lat{\A^{(n)}}$. Thus, $\M$ reduces $\A^{(n)}$. That means the projection $P$ from $\Hs^{(n)}$ to $\M$ satisfies $P\A^{(n)} = \A^{(n)}P$, i.e. $P \in \{\A^{(n)}\}^{'}$. Since $T \in \{\A\}^{''}$, and by above proposition $T^{(n)} \in \{\A^{(n)}\}^{''}$, $PT^{(n)} = T^{(n)}P$. That means $\M \in \Lat{T^{(n)}}$
 \end{proof}
 \begin{rem}
@@ -389,7 +388,7 @@ We said that the norm closed $\st{C}$-subalgebras of $\oper$ not containing enou
 	In fact, for any normal operator $N$ in a von Neumann algebra $\A$ with the spectral measure $E$ and for any $\phi \in B(\sigma(N))$, $\phi(N)$ is in $\A$. It is because that $\clo{C(\sigma(N))}^{WOT} = B(\sigma(N))$, and the map from $B(\sigma(N))$ to $\oper$ is $wk-WOT$ continuous. That means $\phi(N)$ can be approximated by a sequence in $\A$ with respect to the $WOT$, thus $\phi(N)$ is in $\A$. In particular, for any Borel subset $\Omega$ of $\sigma(N)$, the projection $E(\Omega) \in \A$.
 \end{rem}
 
-So, these interesting elements are projections. We say the von Neumann algebra have enough projections wich can generate the von Neumann algebra. Projections play an important role in a von Neumann algebra. We will classify general von Neumann algebras by classifying the containing projections.
+So, these interesting elements are projections. We say the von Neumann algebra have enough projections wich can generate the von Neumann algebra. Projections play an important role in a von Neumann algebra. We will classify von Neumann algebras by classifying the containing projections.
 
 \begin{prop}
 	Let $\A$ be a von Neumann algebra and $A \in \A$.
@@ -534,6 +533,7 @@ Before researching the structure of abelian von Neumann algebras, there is a typ
 	\item $3) \Rightarrow 1)$ It clearly holds by above example.
 \end{proof}
 
+
 This theorem gives an explicit structure of the maximal abelian von Neumann algebra, which is equivalent to $\lfs{\infty}(\mu)$. And for a general abelian von Neumann algebra, by Zorn's Lemma, it can embedded into a masa.
 
 \begin{cor} \label{cor9}
@@ -545,7 +545,7 @@ This theorem gives an explicit structure of the maximal abelian von Neumann alge
 
 \subsection{Star-Cyclic Normal Operators}
 
-In above subsection, we can see $\A_{\mu} = \{M_{\phi} \colon \phi \in \lfs{\infty}(\mu)\} \cong \lfs{\infty}(\mu)$ play an important role in the abelian von Neumann algebra. So we will see more properties of $\A_{\mu}$. Firstly, we want to see whether $\A_{\mu}$ can be generated by some set. 
+In above subsection, we can see $\A_{\mu} = \{M_{\phi} \colon \phi \in \lfs{\infty}(\mu)\} \cong \lfs{\infty}(\mu)$ play an important role in the abelian von Neumann algebra. So we will see more properties of $\A_{\mu}$.
 
 \begin{thm}[Fuglede-Putnam Theorem]
 	Let $N$ and $M$ are normal operators and $A \in \oper$. If $NA = AM$, then $\st{N}A = A\st{M}$.
@@ -661,7 +661,7 @@ And we have seen, $\{N_{\mu}\}^{'} = \A_{\mu} \cong \lfs{\infty}(\mu)$. Firsty, 
 \begin{equation*}
 	\st{W}(N) = \{~M_{\phi} \colon \phi \in B~\} \cong \lfs{\infty}(\mu)
 \end{equation*}
-\\
+
 Let $N$ be a normal operator acting on $\Hs$ with the spectral measure $E$. If $h \in \Hs$ is nonzero, then let 
 \begin{equation*}
 	\mu_h(\Delta) = E_{hh}(\Delta),~\Hs_h=\clo{\st{W}(N)h},~N_h = N|_{\Hs_h}
@@ -707,8 +707,7 @@ Therefore, there is a unique unitary $U_h \colon \Hs_h \sto \lfs{2}(\mu_h)$ s.t.
 	\end{equation*}
 \end{rem}
 
-Using above proposition, we get one of the main result of this subsection.
-
+Using above proposition we get one of the main result of this subsection.
 \begin{thm}
 	If $N$ is a normal operator, then 
 	\begin{equation*}
@@ -782,7 +781,7 @@ Finally, we want find the necessary and sufficient condition making two normal o
 	If $N$ is a normal operator on $\Hs$ and $e \in \Hs$, then there is a separating vector $e_0$ for $\st{W}(N)$ s.t. $e \in \clo{\st{W}(N)}$.
 \end{prop}
 \begin{proof}
-	Chosing any separating operator $f_0$ for $\clo{\st{W}(N)}$, let $\M = \clo{\st{W}(N)}f_0$, then $e = m_0 + g_0$ for $m_0 \in \M$ and $g_0 \in \M^{\bot}$. Now, let $\fml{G} = \clo{\st{W}(N)g_0}$ and $e_0 = f_0 +g_0$. Then $e \in \clo{\st{W}(N)e_0}$.\\
+	Choosing any separating operator $f_0$ for $\clo{\st{W}(N)}$, let $\M = \clo{\st{W}(N)}f_0$, then $e = m_0 + g_0$ for $m_0 \in \M$ and $g_0 \in \M^{\bot}$. Now, let $\fml{G} = \clo{\st{W}(N)g_0}$ and $e_0 = f_0 +g_0$. Then $e \in \clo{\st{W}(N)e_0}$.\\
 	Check: $e_0$ is separating for $\st{W}(N)$\\
 	For any $A \in \st{W}(N)$, since both $\M$ and $\fml{G}$ reduce $\st{W}(N)$, if
 	\begin{equation*}
@@ -825,7 +824,7 @@ Then we can decompose normal operators as a "decreasing" sequence of cyclic oper
 	\end{equation*} 
 	And clearly, if $\mu_2{\Delta} = \norm{E(\Delta)|_{\Hs_2}e_2}$, $\mu_2 \ll \mu_1$. By induction and the Zorn's Lemma, 
 	\begin{equation*}
-		N \cong N_{\mu_1} \oplus N_{\mu_2} \oplus N_{\mu_3} \oplus \cdots
+		N \cong N_{\mu_1} \oplus N_{\mu_2} \oplus N_{\mu_3} \oplus \cdots \qedhere
 	\end{equation*}
 \end{proof}
 
@@ -961,13 +960,22 @@ Then we can get another formula of above theorem to help us build the Multiplici
 	\end{eqnarray*}
 \end{proof}
 
+Now, we can define the multiplicity function $m_N$ for a normal operator $N$ with the corresponding measure $\mu$. As above preceding theorem, 
+\begin{equation*}
+	N \cong N_{\infty}^{(\infty)} \oplus N_{\mu_1} \oplus N_{\mu_2}^{(2)} \oplus  N_{\mu_3}^{(3)} \oplus \cdots
+\end{equation*}
+If there are disjoint Borel sets $\Delta_{\infty},\Delta_1,\Delta_2,\cdots$ of $\C$ s.t. $\mu_n$ and $mu|_{\Delta_n}$ are mutually absolutely continuous for all $n$, then define
+$m_N \colon \C \sto \N \cup \{\infty\}$ as
+\begin{equation*}
+	m_N = \infty \chi_{\Delta_{\infty}} + \chi_{\Delta_1} + 2\chi_{\Delta_2} + 3\chi_{\Delta_3} + \cdots
+\end{equation*}
+Clearly, $m_N$ is dependent with the choice of $\{\Delta_n\}$, but by the definition, $m_N$ can be identified as an equivalent class with respect to $\mu$. And moreover,
+\begin{equation*}
+	\Delta_n = \{~z \colon m_N(z) = n~\}
+\end{equation*}
 
+Therefore, we can recover the $\{\Delta_n\}$ by the $m_N$. By combining with above theorem, we can classify the normal operators.
 
-
-
-
-
-
-
-
-
+\begin{thm}
+	Two normal operators are equivalent if and only if they have same multiplicity function.
+\end{thm}
