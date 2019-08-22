@@ -33,12 +33,12 @@
 \contentsline {subsection}{\numberline {2.2.1}Elementary Properties}{57}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Abelian $C^{*}$-Algebras}{60}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}Positive Elements}{62}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}Approximate Identities}{64}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.4}Approximate Identities}{65}{subsection.2.2.4}
 \contentsline {subsection}{\numberline {2.2.5}Ideals and Quotients}{67}{subsection.2.2.5}
-\contentsline {subsection}{\numberline {2.2.6}Positive Functionals and GNS Construction}{69}{subsection.2.2.6}
+\contentsline {subsection}{\numberline {2.2.6}Positive Functionals and GNS Construction}{70}{subsection.2.2.6}
 \contentsline {subsection}{\numberline {2.2.7}Representations}{76}{subsection.2.2.7}
-\contentsline {section}{\numberline {2.3}Operators on Hilbert Spaces}{81}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Spectrums for Operators}{81}{subsection.2.3.1}
+\contentsline {section}{\numberline {2.3}Operators on Hilbert Spaces}{82}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Spectrums for Operators}{82}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Polar Decomposition}{85}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}Topologies on $\mathscr {B(H)}$}{86}{subsection.2.3.3}
 \contentsline {chapter}{\numberline {3}Normal Operators and Abelian Von Neumann Algebras}{89}{chapter.3}
@@ -55,3 +55,4 @@
 \contentsline {section}{\numberline {4.1}Spectrums}{112}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Elementary Properties}{112}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}Spectrums of Compact Operators}{114}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Representations of Compact Operators}{120}{section.4.2}

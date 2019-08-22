@@ -302,7 +302,7 @@ Clearly, by the Cauchy's Integral Formula, this definition is well-defined and i
 	\item Conversely, if $\alpha \notin f(\sigma(a))$, $g(z)=(f(z)-\alpha)^{-1} \in \hol{(a)}$. Thus, $g(a)(f(a)-\alpha) = 1$. Therefore, $\alpha \notin \sigma(f(a))$.
 \end{proof}
 
-\begin{prop}
+\begin{prop} \label{prop10}
 	Let $\alg{A}$ be a Banach algebra and $a \in \alg{A}$. $\sigma(a) = F_1 \bigcup F_2$, where $F_1$ and $F_2$ are disjoint nonempty closed sets. Then there is a nontrial idempotent $e$, i.e. $e^{2}=e$, s.t.
 	\begin{enumerate}[label=\arabic*)]
 		\item if $ab=ba$, then $eb=be$.
@@ -315,6 +315,18 @@ Clearly, by the Cauchy's Integral Formula, this definition is well-defined and i
 	\item For $1)$, there is a more genera result, $f(a)b=bf(a)$ for any $f \in \hol{(a)}$. It is because by extending the fact $p(a)b=bp(a)$ for any polynomial $p$.
 	\item $2)$ is clearly true.
 	\item Let $f_1(z)=zf(z)$ and $f_2(z)=z(1-f(z))$. Then $a_j = f_j(a)$ for $j=1,2$. Then by the Spectral Mapping Theorem $\sigma(a_j) = f_j(\sigma(a_j)) = F_j \bigcup \{0\}$.
+\end{proof}
+
+\begin{cor}
+	Let $\Hs$ be a Hilbert space and $T \in \oper$. If $\sigma(T) = F_1 \cup F_2$, where $F_1$ and $F_2$ are disjoint nonempty closed sets, then there are closed subspaces $\Hs_1$ and $\Hs_2$ with $\Hs = \Hs_1 \oplus \Hs_2$, s.t.
+	\begin{enumerate}[label=\arabic*)]
+		\item $B\Hs_j \subset \Hs_j$ for $j=1,2$, whenever $BT=TB$.
+		\item If $T_j = T|_{\Hs_j} \colon \Hs_j \sto \Hs_j$, then $\sigma(T_j) = F_j$, for $j=1,2$.
+	\end{enumerate}
+\end{cor}
+\begin{proof}
+	From above proposition, $e$ is actually the propjection from $\Hs$ to $\Hs_1$. Therefore by the result in above propostion, $1)$ clearly holds.\\
+	For $2)$, since $e$ is in fact the indentity from $\Hs_1$ to $\Hs_1$, similarly, by the Spectral Mapping Theorem, $\sigma(T_j) = F_j$.
 \end{proof}
 
 \subsection{Abelian Banach Algebras} \label{sec2}
