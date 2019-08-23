@@ -55,4 +55,6 @@
 \contentsline {section}{\numberline {4.1}Spectrums}{112}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Elementary Properties}{112}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}Spectrums of Compact Operators}{114}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Representations of Compact Operators}{120}{section.4.2}
+\contentsline {section}{\numberline {4.2}Compact Operator Algebras}{120}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Minimal Projections}{120}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Representations of Compact Operator Algebras}{122}{subsection.4.2.2}
