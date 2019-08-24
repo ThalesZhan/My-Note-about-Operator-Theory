@@ -5129,7 +5129,17 @@ For the representation of a compact operator subalgebra, it can be decomposed as
 	If $\rho$ is degenerate, then let $\Hs_0 = \clo{\rho(\A) \Hs}$. The representation $(\rho_0(A) = \rho(A)|_{\Hs_0}, \Hs_0)$ is a non-degenerate representation, thus above theorem can be applied to it. Moreover, $\rho = \rho_0 \oplus 0$. 
 \end{rem}
 
+Now, we can use above theorem to get the structure of any finite dimensional $\st{C}$-algebra.
 \begin{cor}
+	For any finite dimensional $\st{C}$-algebra $\A$ and let $M(n)$ be the set of $n \times n$ matrices with complex entries acting on the inner product space $\C^{n}$, there are $n_1,\cdots,n_p \in \N$, s.t.
+	\begin{equation*}
+		\A \cong M(n_1) \oplus M(n_2) \oplus \cdots \oplus M(n_p)
+	\end{equation*}
+\end{cor}
+
+Also, there are some other corollaries of above theorem.
+
+\begin{cor} \label{cor10}
 	\begin{enumerate}[label=\arabic*)]
 		\item If $(\rho, \fml{K})$ is an irreducible representation of $\A$, then $\rho(\A) = \fml{B}_0(\fml{K})$.
 		\item If $\Hs$ and $\fml{K}$ are Hilbert spaces and $\rho \colon \coper \sto \fml{B}_0(K)$ is an $*$-isomorphism, then there is a unitary $U \colon \Hs \sto \fml{K}$, s.t.
@@ -5155,8 +5165,119 @@ For the representation of a compact operator subalgebra, it can be decomposed as
 	Therefore, $\rho(A_i) = U A_i \st{U} \sto U A \st{U} = T$ in $SOT$. Since $A_i \leqslant A$, $\rho(A_i) \leqslant \rho(A)$ and thus $T \leqslant \rho(A)$ by the fact that $\{A_i\}$ is increasing. Conversely, $\rho(A_i) \leqslant T$ implies that $A_i \leqslant \rho^{-1}(T)$. Thus $A \leqslant \rho^{-1}(T)$, thus $\rho(A) \leqslant T$.
 \end{proof}
 
+Here is an important example, which can be used to construct the $AF$ algebra.
 
+\begin{exam}
+	Let $M(n)$ be the set of $n \times n$ matrices with complex entries acting on the inner product space $\C^{n}$. If
+	\begin{equation*}
+		\rho \colon M(m) \longrightarrow M(n)
+	\end{equation*}
+	is a $*$-homomorphism, then there is an integer $k$ s.t. $km \leqslant n$ and a unitary $U$ in $M(n)$ and 
+	\begin{equation*}
+		\rho(x) = U(\underbrace{x \oplus x \oplus \cdots \oplus x}_k \oplus 0)\st{U}
+	\end{equation*}
+	In general, define $\mathbf{m} = (m_1, m_2, \cdots, m_p)$, where $m_i \in \N$, and
+	\begin{equation*}
+		M(\mathbf{m}) = M(m_1) \oplus M(m_2) \oplus \cdots M(m_p)
+	\end{equation*}
+	Then for $\mathbf{m} = (m_1, m_2, \cdots, m_p)$ and $\mathbf{n}=(n_1, n_2, \cdots, n_q)$, if $\rho \colon M(\mathbf{m}) \rightarrow M(\mathbf{n})$ is a $*$-homomorphism, then there this a $q \times p$ matirx $[k_{ij}]$ with integer entries s.t.
+	\begin{equation*}
+		\rho(x_1,\cdots,x_p) = U_1(\underbrace{x_1 \oplus \cdots \oplus x_1}_{k_{11}} \oplus 0)\st{U}_1 \oplus \cdots \oplus U_q(\underbrace{x_p \oplus \cdots \oplus x_p}_{k_{qp}} \oplus 0)\st{U}_q
+	\end{equation*}
+	By above corollary, we see for any finite dimensional $\st{C}$-algebras $\A$, there exists a $\mathbf{n}=(n_1, n_2, \cdots, n_q)$ s.t. $\A \cong M(\mathbf{n})$. Then we can get the form of the $*$-homomorphism between any two finite dimensional $\st{C}$-algebras. \\
+	If $\rho$ is a $*$-homomorphism between two finite dimensional $\st{C}$-algebras\\ $\A \cong M(\mathbf{m})$ and $\B \cong M(\mathbf{n})$, where $\mathbf{m} = (m_1, m_2, \cdots, m_p)$ and $\mathbf{n}=(n_1, n_2, \cdots, n_q)$, then $\rho$ is determined up to a $q \times p$ matirx $[k_{ij}]$ with integer entries. In fact, we can use it to construct the $AF$ algebras.
+\end{exam}
 
+\subsection{Decompositions of Compact Operator Algebras}
+
+By above theorem and the Zorn's Lemma, for the non-degenerate $\A$, there is a maximal family $\{E_i\}_{i \in I}$ of pairwise orthogonal minimal projections in $\A$ and let $\Hs_i = \clo{\A E_i \Hs}$ s.t.
+\begin{equation*}
+	\Hs = \oplus_{i \in I} \Hs_i~,~ \A|_{\Hs_i} = \fml{B}_0(\Hs_i)
+\end{equation*}
+But we cannot just using this as the decomposition of the compact operator algebra $\A$, since there are some "equivalent" relationships of these $\Hs_i$. Firstly, we say that $\Hs_i$ does not dependent on $\Hs_j$, if there is a $A \in \A$ s.t. $\A|_{\Hs_i} = 0$ and $\A|_{\Hs_j} \neq 0$.
+
+\begin{prop}
+ 	$\Hs_i$ does not dependent on $\Hs_j$ if and only if
+ 	\begin{equation*}
+ 		A|_{\Hs_i \oplus \Hs_j} = \fml{B}_0(\Hs_i) \oplus \fml{B}_0(\Hs_j)
+ 	\end{equation*}
+ \end{prop}
+ \begin{proof}
+ 	Assume that $\Hs_i$ does not dependent on $\Hs_j$. Let
+ 	\begin{equation*}
+ 		\I = \{~A \in \A \colon A|_{\Hs_j} = 0~\}
+ 	\end{equation*}
+ 	Since $\Hs_j$ is reducing, $\I$ is a closed ideal. Moreover, $\I|_{\Hs_i}$ is a closed ideal of $\A|_{\Hs_i} = \fml{B}_0(\Hs_i)$. By the assumption, $\I|_{\Hs_i}$ is not zero, thus $\I|_{\Hs_i} = \fml{B}_0(\Hs_i)$. Let $K_i$ and $K_j$ be arbitrary compact operators on $\Hs_i$ and $\Hs_j$. And $A \in \A$ s.t. $A|_{\Hs_j} = K_j$. Since $\I|_{\Hs_i} = \fml{B}_0(\Hs_i)$, there exists $B \in \I$ s.t. $B|_{\Hs_i} = K_i - A|_{\Hs_i}$. Thus,
+ 	\begin{equation*}
+ 		(A+B)|_{\Hs_i} = K_i,~~\&~~ (A+B)|_{\Hs_j} = K_j
+ 	\end{equation*}
+ 	The converse is trivial.
+ \end{proof}
+\begin{rem}
+	By this proposition, if $\Hs_i$ does not dependent with $\Hs_j$, $\Hs_j$ does not $\Hs_i$. $\Hs_i$ and $\Hs_j$ are independent if they are not dependent.
+\end{rem}
+
+Now we want to research the same properties of the dependent subspaces have, and then we can devide all ${\Hs_i}_{i \in I}$ into dependency class.
+
+\begin{prop}
+	If $\Hs_i$ and $\Hs_j$ are dependent, then
+	\begin{equation*}
+		\norm{A|_{\Hs_i}} = \norm{A|_{\Hs_j}}~, \text{ for any } A \in \A
+	\end{equation*}
+	Moreover, two dependent spaces are isomorphic, and each dependency class is finite.
+\end{prop}
+\begin{proof}
+	By the hypothesis, if $A \in \A$ s.t. $A|_{\Hs_i} = 0$, then $A|_{\Hs_j} = 0$. Then we can define the map
+	\begin{equation*}
+		\rho \colon  \fml{B}_0(\Hs_j)  \longrightarrow  \fml{B}_0(\Hs_i)
+	\end{equation*}
+	For any $K \in \fml{B}_0(\Hs_j)$, there is a $A \in \A$ s.t. $A|_{\Hs_j} = K$, then we define that $\rho(K) = A|_{\Hs_i}$.
+	\item Claim: $\rho$ is well-defined. \\
+	If $B \in \A$ s.t. $B|_{\Hs_j} = K$, then $(A-B)|_{\Hs_j} = 0$. By the dependency of $\Hs_j$ and $\Hs_i$, $(A-B)|_{\Hs_i} = 0$, i.e. $A|_{\Hs_i} = B|_{\Hs_i}$.
+	\item $\rho$ is a $*$-isomorphism. \\
+	If $K \in \fml{B}_0(\Hs_j)$ s.t. $\rho(K) = 0$, then there is a $A \in \A$ s.t. $A|_{\Hs_j} = K$ and $A|_{\Hs_i} = 0$. Also, by the dependency, $K = A|_{\Hs_j} = 0$. Clearly, $\rho$ is a $*$-homomorphism, then $\rho$ is a $*$-monomorphism, i.e. $\rho$ is an isometry. And the surjectivity of $\rho$ is similar by the dependency of $\Hs_j$ and $\Hs_i$.
+	\item Then by the \textbf{Corollary} \ref{cor10} in above subsection, we can find a unitary from $\Hs_j$ to $\Hs_i$. Thus $\dim{\Hs_j} = \dim{\Hs_i}$. And if there are infinite element in a dependency class, by the compactness of $A$, $\norm{A|_{\Hs_i}} \sto 0$, which is a contradiction.
+\end{proof}
+
+\begin{thm}
+	If $\A$ is a $\st{C}$-subalgebra of compact operators, then
+	\begin{equation*}
+		\Hs \cong \Hs_0 \oplus \oplus_{d \in D} \Hs_d^{(k_d)}
+	\end{equation*}
+	and
+	\begin{equation*}
+		\A \cong \{~0 \oplus \oplus_{d \in D} K_d^{(k_d)} \colon K_d \in \fml{B}_0(\Hs_d)~\}
+	\end{equation*}
+\end{thm}
+\begin{proof}
+	Firstly, by above mention, if $\A$ is non-degenerate, there are $\{\Hs_i\}_{i \in I}$ s.t. 
+	\begin{equation*}
+		\Hs = \oplus_{i \in I} \Hs_i~,~ \A|_{\Hs_i} = \fml{B}_0(\Hs_i)
+	\end{equation*}
+	But by above theorem, we can divide $\{\Hs_i\}$ into the dependency classes, and re-labeled as 
+	\begin{equation*}
+		\{~\underbrace{\Hs_1,\cdots,\Hs_1}_{k_1},\underbrace{\Hs_2,\cdots,\Hs_2}_{k_2}, \cdots~\}
+	\end{equation*}
+	Thus, for the non-degenerate $\A$,
+	\begin{equation*}
+		\Hs \cong \oplus_{d \in D} \Hs_d^{(k_d)}, \A \cong \{~\oplus_{d \in D} K_d^{(k_d)} \colon K_d \in \fml{B}_0(\Hs_d)~\}
+	\end{equation*}
+	If $\A$ is degenerate, let $\Hs_0 = (\clo{\A \Hs})^{\bot}$, then this theorem holds.
+\end{proof}
+
+For a non-degenerate $\A$, let $\hat{\A}$ denote the set of all equivalent classes of irreducible representations of $\A$. For any $\zeta \in \hat{\A}$, let $\rho_{\zeta} \in \zeta$. By the theorem, for any representation $\rho$ of $\A$, there are irreducible representations $\{\rho_i\}$ s.t. $\rho = \oplus_i \rho_i$, then we define the mutiplicity function of $\rho$,
+\begin{equation*}
+	m_{\rho}(\zeta) = \#\{i \colon \rho_i \in \zeta\}
+\end{equation*}
+Now, we can easily apply above theorem to the representation. 
+
+\begin{thm}
+	If $\rho$ is a representation of $\A$ and $m_{\rho}$ is the multiplicity function, then
+	\begin{equation*}
+		\rho \cong \oplus \{~\rho_{\zeta}^{(m_{\rho}(\zeta))} \colon \zeta \in \hat{\A}~\}
+	\end{equation*}
+	Moreover, any two representations of $\A$ are equivalent if and only if they have same multiplicity functions.
+\end{thm}
 
 
 \end{document}

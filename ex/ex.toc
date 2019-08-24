@@ -58,3 +58,4 @@
 \contentsline {section}{\numberline {4.2}Compact Operator Algebras}{120}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Minimal Projections}{120}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Representations of Compact Operator Algebras}{122}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Decompositions of Compact Operator Algebras}{125}{subsection.4.2.3}
