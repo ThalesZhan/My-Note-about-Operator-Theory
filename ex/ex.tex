@@ -5279,5 +5279,270 @@ Now, we can easily apply above theorem to the representation.
 	Moreover, any two representations of $\A$ are equivalent if and only if they have same multiplicity functions.
 \end{thm}
 
+\section{Trace Class and Ultraweak Topology}
+
+There some interesting subalgebras in the compact operator algebras, and some of them can provide extra topologies on operator algebras, which will be helpful in the research of general von Neumann algebras.
+
+\subsection{Trace Class and Hilbert-Schmit Operators}
+
+\begin{defn}
+	Let $T \in \oper$. If there is a a orthonormal basis $\fml{E}$ of $\Hs$ s.t.
+	\begin{equation*}
+		\sum_{e \in \fml{E}} \langle \abs{T}e,e \rangle < \infty
+	\end{equation*}
+	then $T$ is called trace class. Let $\toper$ denote the set of all trace classes operators.
+\end{defn}
+
+In this definition, the orthonormal basis just need to exist. But how can that condition garantees for any orthonormal basis of $\Hs$ the condition is always satisfied?
+
+\begin{prop}
+	If $\fml{E}$ and $\fml{F}$ are two orthonormal bases for $\Hs$, then for any $T \in \oper$,
+	\begin{equation*}
+		\sum_{e \in \fml{E}} \norm{Te}^2 = \sum_{f \in \fml{F}} \norm{\st{T}f}^2 = \sum_{e \in \fml{E}}\sum_{f \in \fml{F}} \abs{\langle Te,f \rangle}^2
+	\end{equation*}
+\end{prop}
+\begin{proof}
+	By the Parseval's Identity,
+	\begin{equation*}
+		\norm{Te}^2 = \sum_{f \in \fml{F}} \abs{\langle Te,f \rangle}^2
+	\end{equation*}
+	Then we get above identity.
+\end{proof}
+
+\begin{cor}
+	The sum 
+	\begin{equation*}
+		\sum_{e \in \fml{E}} \langle \abs{T}e,e \rangle
+	\end{equation*}
+	is independent with the choise of the $\fml{E}$.
+\end{cor}
+
+Therefore, by this corollary, above definition is valid. Moreover, we can define one more norm on $\toper$, for $T \in \toper$ and some orthonormal basis $\fml{E}$,
+\begin{equation*}
+	\norm{T}_1 = \sum_{e \in \fml{E}} \langle \abs{T}e,e \rangle
+\end{equation*}
+
+Then by using this norm, called the trace norm, on $\toper$, the $\toper$ can be a Banach space.
+
+\begin{defn}
+	$T \in \oper$ is called a Hilbert-Schimdt operator if $\abs{T}^2$ is trace class. Let $\hoper$ denote the set of all Hilbert-Schimdt operators. 
+\end{defn}
+
+Also, we can define the norm on $\hoper$, for any orthonormal basis $\fml{E}$ in $\Hs$,
+\begin{equation*}
+	\norm{T}_2 = (\sum_{e \in \fml{E}} \langle \abs{T}^2e,e \rangle)^{\frac{1}{2}} = (\sum_{e \in \fml{E}} \norm{\abs{T}e}^2)^{\frac{1}{2}} = (\sum_{e \in \fml{E}} \norm{Te}^2)^{\frac{1}{2}} = \norm{\abs{T}^2}_1^{\frac{1}{2}}
+\end{equation*}
+And $\hoper$ can be also a Banach space.
+
+In order to research the trace class, it is convinient to get some properties of the Hilbert-Schmidt operators.
+
+\begin{prop}
+	Let $T \in \hoper$.
+	\begin{enumerate}[label=\arabic*)]
+		\item $\norm{T}_2 = (\sum_{e \in \fml{E}} \norm{Te}^2)^{\frac{1}{2}}$.
+		\item $\norm{\st{T}}_2 = \norm{T}_2$.
+		\item $\norm{T} \leqslant \norm{T}_2$.
+		\item If $A \in \oper$, then $AT,TA \in \hoper$ and 
+		\begin{equation*}
+			\norm{AT}_2, \norm{TA}_2 \leqslant \norm{A} \norm{T}_2
+		\end{equation*}
+		\item $\hoper$ is an ideal of $\oper$ and $\norm{\cdot}_2$ is a norm on $\hoper$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	The first three results are trivial. For $4)$, fix an orthonormal basis $\fml{E}$ and an $A \in \oper$, for a $e \in \fml{E}$,
+	\begin{equation*}
+		\norm{ATe}^2 \leqslant \norm{A}^2 \norm{Te}^2 = \norm{A}^2 \norm{\abs{T}e}^2
+	\end{equation*}
+	Therefore, $\norm{AT}_2 \leqslant \norm{A} \norm{T}_2$. \\
+	For $5)$, we just need to prove the addition is continuous and closed. For a fixed normal basis $\fml{E}$ and $T,S \in \hoper$, then 
+	\begin{equation*}
+		\{\norm{Te} \colon e \in \fml{E}\}, \{\norm{Se} \colon e \in \fml{E}\} \in l^{2}(\fml{E})
+	\end{equation*}
+	By the triangle inequality for $l^{2}(\fml{E})$, 
+	\begin{equation*}
+		\norm{S+T}_2 = \left(\sum_{E}(\norm{Te}+\norm{Se})^2 \right)^{\frac{1}{2}} \leqslant \norm{T}_2 + \norm{S}_2 \qedhere
+	\end{equation*}
+\end{proof}
+\begin{rem}
+	Therefore, $\hoper$ with the fixed involution and the norm $\norm{\cdot}_2$ is a $\st{C}$-algebra.
+\end{rem}
+
+By using these results, we can see the Hilbert-Schmidt operator is compact.
+
+\begin{cor}
+	If $T \in \hoper$ and $\varepsilon > 0$, there is a $A \in \foper$ s.t.
+	\begin{equation*}
+		\norm{T-A}_2 \leqslant \varepsilon
+	\end{equation*}
+	Consequently, every Hilbert-Schmidt operator is compact.
+\end{cor}
+\begin{proof}
+	For this fixed $\varepsilon > 0$, since $T \in \hoper$, there is a finite set $I \in \fml{E}$ s.t.
+	\begin{equation*}
+		\sum_{\fml{E} \backslash I} \norm{Te}^2 < \varepsilon^2
+	\end{equation*}
+	Let $\hat{E} = \spn{E}$ and $B = T|_{\hat{E}} \in \foper$, then
+	\begin{equation*}
+		\norm{T-B}_2 = (\sum_{\fml{E} \backslash I} \norm{Te}^2)^{\frac{1}{2}} < \varepsilon \qedhere
+	\end{equation*}
+\end{proof}
+
+Then, there are similar consequences of the $\toper$.
+
+\begin{prop}
+	If $T \in \oper$, then the following statements are equivalent.
+	\begin{enumerate}[label=\arabic*)]
+		\item $T \in \toper$.
+		\item $\abs{T}^{\frac{1}{2}} \in \hoper$.
+		\item $T$ is the product of two Hilbert-Schmidt operators.
+		\item $\abs{T}$ is the product of two Hilbert-Schmidt operators.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	Since $\norm{\abs{T}^{\frac{1}{2}}}{e}^2$, $1)$ implies $2)$. And by the Polar Decomposition,
+	\begin{equation*}
+		T = W \abs{T} = (W \abs{T}^{\frac{1}{2}})\abs{T}^{\frac{1}{2}}
+	\end{equation*}
+	thus $2)$ implies $3)$. And $3)$ implies $3)$, because of the Polar Decomposition. \\
+	Suppose $\abs{T} = BC$ for $B,C \in \hoper$, then for any orthonormal $\fml{E}$ and $e \in \fml{E}$
+	\begin{equation*}
+		\langle \abs{T}e, e \rangle = \langle Ce \st{B}e \rangle \leqslant \norm{Ce}\norm{\st{B}e}
+	\end{equation*}
+	Therefore, we have 
+	\begin{eqnarray*}
+		\sum_{\fml{E}} \langle \abs{T}e, e \rangle &\leqslant& \sum_{\fml{E}} \norm{Ce}\norm{\st{B}e} \\
+		&\leqslant& (\sum_{\fml{E}} \norm{Ce}^2)^{\frac{1}{2}} (\sum_{\fml{E}} \norm{Be}^2)^{\frac{1}{2}} \\ 
+		&=& \norm{C}_2 \norm{B}_2
+	\end{eqnarray*}
+	Thus, $T \in \toper$.
+\end{proof}
+
+\begin{defn}
+	If $T \in \toper$ and $\fml{E}$ is any orthonormal basis, the trace of $T$ is defined as
+	\begin{equation*}
+		\tr{T} = \sum_{\fml{E}} \langle Te,e \rangle
+	\end{equation*}
+\end{defn}
+
+It need to check that this definition is well-defined.
+
+\begin{prop}
+	If $T \in \toper$ and $\fml{E}$ is any orthonormal basis, then $\sum_{\fml{E}} \abs{\langle Te,e \rangle} < \infty$, and the sum $\sum_{\fml{E}} \langle Te,e \rangle$ is independent with the choice of $\fml{E}$.
+\end{prop}
+\begin{proof}
+	By above proposition, $T = \st{C}B$ for $C,B \in \hoper$. Since\\ $\norm{(C-\lambda B)e}^2 \leqslant 0$ for any $\lambda \in \C$,
+	\begin{equation*}
+		2 \Rea{\clo{\lambda} \langle Be,Ce \rangle} \leqslant \norm{Be}^2+\abs{\lambda} \norm{Ce}^2
+	\end{equation*}
+	Choosing a $\lambda$ s.t. $\abs{\lambda} = 1$ and
+	\begin{equation*}
+		\clo{\lambda} \langle Be,Ce \rangle = \abs{\langle Be,Ce \rangle}
+	\end{equation*}
+	Then we have,
+	\begin{equation*}
+		\abs{\langle Te,e \rangle} = \abs{\langle Be,Ce \rangle} \leqslant \frac{1}{2}(\norm{Be}^2+\norm{Ce}^2)
+	\end{equation*}
+	Thus $\sum_{\fml{E}} \abs{\langle Te,e \rangle} \leqslant \frac{1}{2}(\norm{B}_2^2+\norm{C}_2^2)$. \\ 
+	And since 
+	\begin{eqnarray*}
+		\Rea{\langle Te,e \rangle} &=& \frac{1}{4} (\norm{(B+C)e}^2 - \norm{(B+C)e}^2) \\
+		\Img{\langle Te,e \rangle} &=& \frac{1}{4} (\norm{(iB+C)e}^2 - \norm{(iB+C)e}^2)
+	\end{eqnarray*}
+	then
+	\begin{equation*}
+		\sum_{\fml{E}} \langle Te,e \rangle = \Rea{\langle Te,e \rangle} + i\Img{\langle Te,e \rangle}
+	\end{equation*}
+	The sum is independent with the choice of the orthonormal basis $\fml{E}$.
+\end{proof}
+
+There are some elementary properties for this rank one operator.
+\begin{prop}
+	Let $g,h \in \Hs$.
+	\begin{enumerate}[label=\arabic*)]
+		\item $e \otimes e$ is the projection onto $\C e$.
+		\item $\ran{g \otimes h} = \C g$ and $\ker{g \otimes h} = (\C h)^{\bot}$ for $g \neq 0$.
+		\item $(g \otimes h)^{*} = h \otimes g$.
+		\item The map $(g,h) \sto g \otimes h$ is a sesquilinear from $\Hs \times \Hs$ to $\oper$.
+		\item $\norm{g \otimes h} = \norm{g} \norm{h}$.
+		\item If $T \in \oper$, then $T(g \otimes h) = (Tg) \otimes h$ and $(g \otimes h) T = g \otimes (\st{T}h)$.
+		\item Every any finite rank operator can be expressed as
+		\begin{equation*}
+			\sum_{k=1}^{n} g_k \otimes h_k
+		\end{equation*}
+		for some $g_1, \cdots, g_n \in \Hs$ and $h_1, \cdots, h_n \in \Hs$.
+	\end{enumerate}
+\end{prop}
+
+There are more interesting properties of the trace class.
+
+\begin{thm}
+	\begin{enumerate}[label=\arabic*)]
+		\item $\toper \subset \coper$ and conversely, if $A \in \coper$ and $\{\alpha_n\}$ are the eigenvalues of $\abs{A}$, then $A \in \toper$ if and only if $(\alpha_n) \in l^{1}$. In this case, $\norm{A}_1 = \sum \alpha_n$.
+		\item $\toper$ is an ideal of $\oper$.
+		\item $\tr{} \colon \toper \sto \C$ is a positive non-degenerate linear functional.
+		\item $\foper$ is a dense subset in $\toper$ with respect to $\norm{\cdot}_1$.
+		\item If $T \in \toper$, then for any $A \in \oper$,
+		\begin{equation*}
+			\tr{TA} = \tr{AT},~\text{and } \abs{\tr{AT}} \leqslant \norm{A}\norm{T}_1
+		\end{equation*}
+		\item $\norm{T}_1 = \norm{\st{T}}_1$ for any $T \in \toper$.
+		\item If $T \in \toper$ and $A \in \oper$, then
+		\begin{equation*}
+			\norm{TA}_1,~ \norm{AT}_1 \leqslant \norm{A} \norm{T}_1
+		\end{equation*}
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	If $A \in \coper$, also $\abs{A} \in \coper$, then there is an orthonormal basis $\{e_n\}$ for $\Hs$ and the correponding eigenvalues $\{\alpha_n\} \in l^{\infty}(\C)$ s.t.
+	\begin{equation*}
+		\abs{A} = \sum_{n} \alpha_n P_{e_n} = \sum_{n} \alpha_n e_n \otimes e_n
+	\end{equation*}
+	Then we have that
+	\begin{equation*}
+		\sum_n \langle \abs{A}e_n, e_n \rangle = \sum_n \alpha_n
+	\end{equation*}
+	By the Polar Decomposion, $A \in \toper$ is equivalent the $\abs{A} \in \toper$. Thus, $\{\alpha_n\} \in l^{1}(\C)$ is equivalent to $A \in \toper$, and $\norm{A}_1 = \sum \alpha_n$.
+	\item For $2)$, similarly as the $\hoper$, we just need to prove that the addition is continuous and closed. Let $A \in \toper$ and $B \in \toper$, and by the Polar Decomposition,
+	\begin{equation*}
+		A = W\abs{A},~ B = V \abs{B},~ A+B = U\abs{A+B}
+	\end{equation*}
+	And $\abs{A+B} = \sum_{n} \gamma_n e_n \otimes e_n$ for an orthonormal basis $\{e_n\}$. By $1)$, we just need to check that $\{\gamma_n\} \in l^{1}(\C)$.
+	\begin{eqnarray*}
+		\sum_n \gamma_n &=& \sum_n \langle \abs{A+B}e_n,e_n \rangle = \sum_n \abs{\langle Ae_n, Ue_n \rangle + \langle Be_n, Ue_n \rangle} \\
+		&=& \sum_n \abs{\langle \abs{A}e_n, \st{W}Ue_n \rangle + \langle \abs{B}e_n, \st{V}Ue_n \rangle} \\
+		&=& \sum_n \abs{\langle \abs{A}^{\frac{1}{2}}e_n, \abs{A}^{\frac{1}{2}}\st{W}Ue_n \rangle + \langle \abs{B}^{\frac{1}{2}}e_n, \abs{B}^{\frac{1}{2}}\st{V}Ue_n \rangle} \\
+		&\leqslant& \sum_n (\norm{\abs{A}^{\frac{1}{2}}e_n}\norm{\abs{A}^{\frac{1}{2}}\st{W}Ue_n}+\norm{\abs{B}^{\frac{1}{2}}e_n}\norm{\abs{B}^{\frac{1}{2}}\st{V}Ue_n}) \\
+		&\leqslant& \left(\sum_n \norm{\abs{A}^{\frac{1}{2}}e_n}^2 \right)^{\frac{1}{2}}\left(\sum_n \norm{\abs{A}^{\frac{1}{2}}\st{W}Ue_n}^2 \right)^{\frac{1}{2}} \\
+		&& \negmedspace{} + \left(\sum_n \norm{\abs{B}^{\frac{1}{2}}e_n}^2 \right)^{\frac{1}{2}}\left(\sum_n \norm{\abs{B}^{\frac{1}{2}}\st{V}Ue_n}^2 \right)^{\frac{1}{2}} \\
+		&\leqslant& \norm{\abs{A}^{\frac{1}{2}}}_2^2 + \norm{\abs{B}^{\frac{1}{2}}}_2^2 \\
+		&=& \norm{A}_1 + \norm{B}_1
+	\end{eqnarray*}
+	\item $3)$ is trivial and $4)$ can be obtained by similar argument as the $\hoper$.
+	\item For $5)$, let $T \in \toper$ and $T = \st{C}B$ for some $B,C \in \hoper$, then by above mention,
+	\begin{eqnarray*}
+		\Rea{\tr{\st{C}B}} &=& \frac{1}{4} (\norm{(B+C)e}^2 - \norm{(B+C)e}^2) \\
+		&=& \frac{1}{4} (\norm{(\st{B}+\st{C})e}^2 - \norm{(\st{B}+\st{C})e}^2) \\
+		&=& \Rea{\tr{C\st{B}}}
+	\end{eqnarray*}
+	And similarly, $\Img{\tr{\st{C}B}} = - \Img{\tr{C\st{B}}}$, thus
+	\begin{equation*}
+		\tr{\st{C}B} = \clo{\tr{C\st{B}}}
+	\end{equation*}
+	Therefore, we have that for any $A \in \oper$ 
+	\begin{equation*}
+		\tr{AT} = \tr{(A\st{C})B} = \clo{\tr{C\st{A} \st{B}}} = \tr{(\st{C})BA} = \tr{TA}
+	\end{equation*}
+	Let $T = W \abs{T}$ be the Polar Decomposition. Then by the CBS Inequality,
+	\begin{eqnarray*}
+		\abs{\tr{AT}} &\leqslant& \sum_{\fml{E}}  \norm{\abs{T}^{\frac{1}{2}}e}\norm{\abs{T}^{\frac{1}{2}}\st{W}\st{A}e} \\
+		&\leqslant& \left(\sum \norm{\abs{T}^{\frac{1}{2}}e}^2 \right)^{\frac{1}{2}}\left(\sum \norm{\abs{T}^{\frac{1}{2}}\st{W}\st{A}e}^2 \right)^{\frac{1}{2}} \\
+		&\leqslant& \norm{\abs{T}^{\frac{1}{2}}}_2\norm{\abs{T}^{\frac{1}{2}}\st{W}\st{A}}_2 \\
+		&\leqslant& \norm{\abs{T}^{\frac{1}{2}}}_2^2 \norm{\st{W}\st{A}} \\
+		&\leqslant& \norm{T}_1 \norm{A}
+	\end{eqnarray*}	
+	
+\end{proof}
+
 
 \end{document}
