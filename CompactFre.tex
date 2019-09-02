@@ -822,6 +822,10 @@ There are some elementary properties for this rank one operator.
 			\sum_{k=1}^{n} g_k \otimes h_k
 		\end{equation*}
 		for some $g_1, \cdots, g_n \in \Hs$ and $h_1, \cdots, h_n \in \Hs$.
+		\item For $C = \sum_{k=1}^n g_k \otimes h_k$ and $A \in \oper$,
+		\begin{equation*}
+			\tr{AC} = \sum_{k=1}^n \langle Ag_k,h_k \rangle
+		\end{equation*}
 	\end{enumerate}
 \end{prop}
 
@@ -892,15 +896,233 @@ There are more interesting properties of the trace class.
 		&\leqslant& \norm{\abs{T}^{\frac{1}{2}}}_2^2 \norm{\st{W}\st{A}} \\
 		&\leqslant& \norm{T}_1 \norm{A}
 	\end{eqnarray*}
+	\item For $6)$, let $T = W \abs{T} \in \toper$, then $T\st{T} = W \abs{T}^2 \st{W}$. So by the uniqueness of root, $\abs{\st{T}} = W \abs{T} \st{W}$. Therefore,
+	\begin{equation*}
+		\norm{\st{T}}_1 = \tr{\abs{\st{T}}} = \tr{W \abs{T} \st{W}} = \tr{W \st{W} \abs{T}}
+	\end{equation*} 
+	Since $W \st{W} \abs{T} = \abs{T}$, $\norm{\st{T}}_1 = \norm{T}_1$.
+	\item For $7)$, let $T = W \abs{T} \in \toper$ and $AT = V \abs{AT}$. So
+	\begin{equation*}
+		\abs{AT} = S \abs{T}, \text{ where } S = \st{V}A W
+	\end{equation*}
+	Thus $\norm{S} \leqslant \norm{A}$, then
+	\begin{equation*}
+		\norm{AT}_1 = \tr{\abs{AT}} = \tr{S \abs{T}} \leqslant \norm{S} \norm{T}_1 \leqslant \norm{A}\norm{T}_1 \qedhere
+	\end{equation*}
+\end{proof}
+\begin{rem}
+	By this theorem, $(\toper, \norm{\cdot}_1)$ is also a $\st{C}$-algebra.
+\end{rem}
 
+\begin{thm}
+	If $\{g_n\}$ and $\{h_n\}$ are two square summable sequences, then 
+	\begin{equation*}
+		T = \sum_{n} g_n \otimes h_n \in \toper, \text{ and } \norm{T}_1 \leqslant \sum_{n} \norm{g_n}\norm{h_n}
+	\end{equation*}
+	Conversely, if $T \in \toper$, then there are two square summable sequences $\{g_n\}$ and $\{h_n\}$ s.t.
+	\begin{equation*}
+		\sum_n \norm{g_n}^2 = \norm{T}_1 = \sum_n \norm{h_n}^2, \text{ and } T = \sum_{n} g_n \otimes h_n
+	\end{equation*}
+\end{thm}
+\begin{proof}
+	Let $\{e_n\}$ be an orthonormal sequence of $\Hs$ and $G_n = \sum_{k=1}^{n} g_n \otimes e_n$. If $n > m$, then
+	\begin{equation*}
+		\norm{G_n-G_m}_2^2 = \sum_{k=m+1}^{n} \norm{(G_n-G_m)e_k}^2 = \sum_{k=m+1}^{n} \abs{\langle e_k,g_K \rangle}^2 \leqslant \sum_{k=m+1}^{n} \norm{g_k}^2
+	\end{equation*}
+	Since $\{g_n\}$ is square summable, $\{G_n\}$ is Cauchy with respect to the norm $\norm{\cdot}_2$. Therefore, there is a $G \in \hoper$ s.t.
+	\begin{equation*}
+		G = \lim_n G_n = \sum_n g_n \otimes e_n
+	\end{equation*}
+	Similarly, there is a $H = \sum_n e_n \otimes h_n$ in $\hoper$. And then by the definition, $T = GH \in \toper$.
+	\item Conversely, if $T \in \toper$ and $T = W\abs{T}$ is the Polar Decomposition, there exist an orthonormal basis $\{e_n\}$ for $\ker{\abs{T}}^{\bot} = \ker{T}^{\bot}$ and a sequence $\{\alpha_n\} \in l^{1}(\C)$, s.t. 
+	\begin{equation*}
+		\abs{T} = \sum_n \alpha_n e_n \otimes e_n
+	\end{equation*}
+	Then put $h_n = \sqrt{\alpha_n}e_n$ and $g_n = W h_n$. Since $W$ is a partial isometry, $\{g_n\}$ is an orthonormal set. And clearly, 
+	\begin{equation*}
+		\norm{g_n}^2 = \norm{h_n}^2 = \alpha_n \Rightarrow \sum_n \norm{g_n}^2 = \sum_n \norm{h_n}^2 = \sum_n \alpha_n = \norm{T}_1
+	\end{equation*}
+	and $T = \sum_n g_n \otimes h_n$.
+\end{proof}
+\begin{rem}
+	In fact, if $g_n$ and $h_n$ are chosen like above mention,
+	\begin{equation*}
+		\norm{T}_1 = \sum_n \norm{g_n}\norm{h_n}
+	\end{equation*}
+\end{rem}
 
+Also, the structure of $\hoper$ can be more explicit.
+
+\begin{thm}
+	\begin{enumerate}[label = \arabic*)]
+		\item For $\hoper$, define the inner product $\langle \cdot,\cdot \rangle$ as
+		\begin{equation*}
+			\langle T,G \rangle = \tr{\st{G}T}
+		\end{equation*}
+		Then $\norm{\cdot}_2$ can be induced by this inner product, and moreover, $\hoper$ is a Hilbert space with respect to this inner product.
+		\item If $A \in \coper$ and $\{\alpha_n\}$ are the eigenvalues of $\abs{A}$, then $A \in \hoper$ if and only if $(\alpha_n) \in l^{2}$. In this case, $\norm{A}_1 = \sum \alpha_n^2$.
+		\item The Hilbert space $\hoper$ containing $\foper$ as a dense subspace with respect to the norm $\norm{\cdot}_2$.
+	\end{enumerate}
+\end{thm}
+
+\subsection{Dual Spaces}
+
+In above subsection, we have seen $\toper$ is indeed a $\st{C}$-algebra, thus a Banach algebra with respect to the norm $\norm{\cdot}_1$. Therefore, we can get the following important properties.
+
+\begin{thm}
+	For $A \in \toper$, define the functional
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$\Phi_A \colon$ & $\coper$ & $\longrightarrow$ & $\C$ \\
+			~ & $C$ & $\longmapsto$ & $\tr{AC}$
+		\end{tabular}
+	\end{center}
+	Then $\Phi_A \in \st{\coper}$. Therefore, there is a map
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$\rho \colon$ & $\toper$ & $\longrightarrow$ & $\st{\coper}$ \\
+			~ & $A$ & $\longmapsto$ & $\Phi_A$
+		\end{tabular}
+	\end{center}
+	Moreover, $\rho$ is an isomorphic isomorphism, i.e. $\toper \cong \coper$. 
+\end{thm}
+\begin{proof}
+	Since $\coper \subset \toper$, by above proposition, $\Phi_A \in \st{\coper}$. Moreover, 
+	\begin{equation*}
+		\sup{\{~\abs{\tr{AC}} \colon \norm{C}_1 \leqslant 1~\}} \leqslant \norm{A}_1 \Rightarrow  \norm{\Phi_A} \leqslant \norm{A}_1
+	\end{equation*}
+	That means $\norm{\rho} \leqslant 1$.
+	\item Check: $\rho$ is surjective.\\
+	Let $\Phi \in \st{\coper}$ and define the sesquilinear map $f$ on $\Hs$,
+	\begin{equation*}
+		f(g,h) = \Phi(g \otimes h), \text{ and } \abs{f(g,h)} \leqslant \norm{\Phi}\norm{g}\norm{h}
+	\end{equation*}
+	Therefore, there exists $A \in \oper$ s.t.
+	\begin{equation*}
+		f(g,h) = \Phi(g \otimes h) = \langle Ag, h \rangle,~\forall g,h \in \Hs
+	\end{equation*}
+	For any $C \in \foper$, then there are finite number $\{g_k\}$ and $\{h_k\}$ for $k=1,\cdots,n$ s.t. $C = \sum_{k=1}^{n} g_k \otimes h_k$
+	\begin{eqnarray*}
+		\Phi(C) &=& \Phi(\sum_{k=1}^{n} g_k \otimes h_k) = \sum_{k=1}^{n} \langle A g_k , h_k \rangle \\
+		&=& \tr{AC} = \Phi_A(C)
+	\end{eqnarray*}
+	Since $\foper$ is norm-dense in $\coper$ and $\Phi$ and $\Phi_A$ are bounded, $\Phi = \Phi_A$.
+	\item Check: $\rho$ is isometric.\\
+	Let $\fml{E}$ be an orthonormal basis and $A \in \toper$ with the Polar Decomposition $A = W\abs{A}$, then for any finite subset $E$ in $\fml{E}$
+	\begin{eqnarray*}
+		\norm{\Phi_A} &\geqslant& \abs{\Phi(\sum_{e \in E}(e \otimes e)\st{W})} = \abs{\Phi_A(\sum_{e \in E}e \otimes We)} \\
+		&=& \sum_{e \in E} \abs{\langle Ae,We \rangle} \\
+		&=& \sum_{e \in E} \langle \abs{A}e, e \rangle
+	\end{eqnarray*}
+	Then $\norm{\Phi_A} \geqslant \norm{A}_1$ as $\{E\}$ can be an increasing net in $\fml{E}$.
 \end{proof}
 
+\begin{thm}
+	For $B \in \oper$, define the functional
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$\Psi_B \colon$ & $\toper$ & $\longrightarrow$ & $\C$ \\
+			~ & $A$ & $\longmapsto$ & $\tr{AB}$
+		\end{tabular}
+	\end{center}
+	Then $\Psi_B \in \st{\toper}$. Therefore, there is a map
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$\rho \colon$ & $\oper$ & $\longrightarrow$ & $\st{\toper}$ \\
+			~ & $B$ & $\longmapsto$ & $\Psi_B$
+		\end{tabular}
+	\end{center}
+	Moreover, $\rho$ is an isomorphic isomorphism, i.e. $\oper \cong \st{\toper}$. 
+\end{thm}
+\begin{proof}
+	Clearly, $\Psi_B \in \st{\toper}$ with $\norm{\Psi_B} \leqslant \norm{B}$.
+	\item Check: $\rho$ is isometric. \\
+	For a given $\varepsilon > 0$, there exists a unit $g$ s.t. 
+	\begin{equation*}
+		\norm{Bg} > \norm{B}-\varepsilon
+	\end{equation*}
+	And choosing a $h \in \Hs$, s.t. $\norm{Bg} = \langle Bg,h \rangle$. Let $C = g \otimes h$, then $C \in \toper$ and $\norm{C}_1 = 1$.  Thus,
+	\begin{equation*}
+		\norm{\Psi_B} \geqslant \abs{\tr{BC}} = \langle Bg,h \rangle = \norm{Bg} > \norm{B}-\varepsilon
+	\end{equation*}
+	Therefore, $\norm{\Psi_B} = \norm{B}$.
+	\item Check: $\rho$ is surjective.\\
+	Let $\Psi \in \st{\toper}$. Similarly as above theorem, there is a $B \in \oper$ s.t. $\langle Bg,h \rangle = \Psi(g \otimes h)$ for all $g,h \in \Hs$. And also, $\Psi = \Psi_B$ on the $\foper$. By the extension, $\Psi = \Psi_B$.
+\end{proof}
 
+\begin{thm}
+	$\st{(\oper, WOT)} = \st{(\oper, SOT)} = \foper$.
+\end{thm}
+\begin{proof}
+	By the \textbf{Proposition} \ref{prop13} in the subsection \textbf{3.3.3}, any $L \in \st{(\oper, WOT)}$ can be expressed as
+	\begin{equation*}
+		L(T) = \sum_{k=1}^n \langle Tg_k, h_k \rangle = \tr{CT} = \Psi_C(T), \text{ where } C = \sum_{k=1}^n g_k \otimes h_k
+	\end{equation*}
+	Thus, $\st{(\oper, WOT)} = \st{(\oper, SOT)} = \foper$.
+\end{proof}
 
+\subsection{Ultraweak Topology}
 
+By above subsection, we know that
+\begin{equation*}
+	\oper \cong \st{(\toper, \norm{\codt}_1)}
+\end{equation*}
+Thus, $\oper$ can be equiped with the $weak^{*}$ topology with respect to the $\st{(\toper, \norm{\codt}_1)}$. The subbasis of a point $A \in \oper$ is like,
+\begin{equation*}
+	V_{\varepsilon}(A) = \{~B \in \oper \colon \abs{\tr{T(A-B)}} < \varepsilon, \forall T \in \toper~\}
+\end{equation*}
+for any $\varepsilon > 0$. This topology on $\oper$ is called the ultraweak topology or $\sigma-weak$ topology. Therefore, for a net $\{A_{\alpha}\}$ in $\oper$, $A_{\alpha} \sto A$ if and only of for any $T \in \toper$
+\begin{equation*}
+	\tr{TA_{\alpha}} \sto \tr{TA}
+\end{equation*}
+Moreover, by the \textbf{Theorem} \ref{thm11} in above subsection, for any $T \in \toper$, there exist two sequences $\{g_n\}$ and $\{h_n\}$ s.t. $T = \sum_n g_n \otimes h_n$ and then
+\begin{equation*}
+	\tr{TA} = \sum_n \langle A g_n, h_n \rangle
+\end{equation*}
+Then, for a net $\{A_{\alpha}\}$ in $\oper$, $A_{\alpha} \sto A$ if and only of for any two summable sequences $\{g_n\}$ and $\{h_n\}$ in $\Hs$, 
+\begin{equation*}
+	\sum_n \langle A_{\alpha} g_n, h_n \rangle \sto \sum_n \langle A g_n, h_n \rangle
+\end{equation*}
 
+Then there are some trivial properties of this topology.
 
+\begin{prop}
+	\begin{enumerate}[label = \arabic*)]
+		\item If $\Hs$ is separable, then the closed unit ball in $\oper$ with the ultraweak topology is a compact metric space.
+		\item The ultraweak topology and the $WOT$ agree on bounded subsets of $\oper$.
+		\item A sequence in $\oper$ converges $weak^{*}$ if and only if it converges $WOT$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	$1)$ is clearly by the form of subbasis of the ultraweak topology. 
+	\item For $2)$, by above mention, the ultraweak topology is bigger than the $WOT$, that means the identity map
+	\begin{equation*}
+		i \colon (\oper, weak^{*}) \longrightarrow (\oper, WOT)
+	\end{equation*}
+	is continuous. When it restricts to any bounded subset $\mathcal{S}$, since $\mathcal{S}$ is $weak^{*}$-compact by $1)$, $i$ is a homeomorphism.
+	\item By the Principle of Uniform Boundedness, $WOT$-convergent sequence is bounded, thus by $2)$, it is $weak^{*}$-convergent. And the converse is trivial.
+\end{proof}
+
+Now, we want to find more relations between the ultraweak topology and the $WOT$. Firstly, the inflation can provide us some information about that.
+
+\begin{prop}
+	If $1 \leqslant d \leqslant \infty$ and $C \in \fml{B}_1(\fml{H}^{(d)})$ with the matrix representation $C = [C_{jk}]$, then
+	\begin{enumerate}[label = \arabic*)]
+		\item $K = \sum_k C_{kk}$ converges $weak^{*}$ in $\toper$ and
+		\begin{equation*}
+			\norm{\sum_k C_{kk}} \leqslant \norm{C}_1
+		\end{equation*}
+		\item if $T \in \oper$ and $K$ is as $1)$, then
+		\begin{equation*}
+			\tr{T^{(d)}C} = \tr{TK} = \sum_{k=1}^{d} \tr{TC_{kk}}
+		\end{equation*}
+		and this converges absolutely for $d = \infty$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	We just need to prove this proposition in the infinite case.
+	\item For $1)$, 
+\end{proof}
 
 
 

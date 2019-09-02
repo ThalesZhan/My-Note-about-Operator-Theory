@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.24)  27 AUG 2019 23:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.24)  1 SEP 2019 22:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -656,7 +656,7 @@ ocpdfTeX warning (ext4): destination with the same identifier (name{page.1}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.34 ...an $C^{*}$-Algebras}{60}{subsection.2.2.2}
+l.33 ...ne {3.2}$C^{*}$-Algebras}{60}{section.3.2}
                                                    [1
 
 ])
@@ -667,62 +667,67 @@ l.34 ...an $C^{*}$-Algebras}{60}{subsection.2.2.2}
 Chapter 1.
 [3
 
-] [4] [5] [6] [7] [8] [9] [10]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 359.
+] [4] [5]
+Chapter 2.
+[6
+
+] [7] [8] [9] [10] [11] [12] [13]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 382.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 359.
- [11] [12]
-[13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 382.
+ [14] [15]
+[16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1014.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1037.
 
- [27]
-[28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42]
-[43] [44] [45]
-Chapter 2.
-LaTeX Font Info:    Try loading font information for U+euf on input line 1795.
+ [30]
+[31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45]
+[46] [47] [48]
+Chapter 3.
+LaTeX Font Info:    Try loading font information for U+euf on input line 1818.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [46
+) [49
 
-] [47]
-[48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62]
-[63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77]
-[78] [79] [80] [81] [82] [83] [84] [85] [86] [87] [88]
-Chapter 3.
-[89
-
-] [90] [91] [92] [93] [94] [95] [96] [97] [98] [99] [100] [101] [102]
-[103] [104] [105] [106] [107] [108] [109] [110] [111]
+] [50]
+[51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65]
+[66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77] [78] [79] [80]
+[81] [82] [83] [84] [85] [86] [87] [88] [89] [90] [91]
 Chapter 4.
-[112
+[92
 
-] [113] [114] [115] [116] [117] [118] [119] [120] [121] [122] [123]
-[124] [125] [126] [127] [128] [129] [130] [131] [132] [133]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5548.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 5548.
+] [93] [94] [95] [96] [97] [98] [99] [100] [101] [102] [103] [104] [105]
+[106] [107] [108] [109] [110] [111] [112] [113] [114]
+Chapter 5.
+[115
+
+] [116] [117] [118] [119] [120] [121] [122] [123] [124] [125] [126]
+[127] [128] [129] [130] [131] [132] [133] [134] [135] [136] [137] [138]
+[139] [140] [141]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5815.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 5815.
  (./ex.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 5548.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 5548.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 5815.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 5815.
 
 Package rerunfilecheck Info: File `ex.out' has not changed.
-(rerunfilecheck)             Checksum: 98F1FA4254F8173E42D5801E5199EBF4;4848.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 5548.
+(rerunfilecheck)             Checksum: 3DD364E50D3DE7D10FF030F2B1E9359A;5033.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 5815.
  ) 
 Here is how much of TeX's memory you used:
- 18299 strings out of 492649
- 347019 string characters out of 6129622
- 406407 words of memory out of 5000000
- 21036 multiletter control sequences out of 15000+600000
+ 18331 strings out of 492649
+ 347334 string characters out of 6129622
+ 404463 words of memory out of 5000000
+ 21041 multiletter control sequences out of 15000+600000
  23576 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,14n,86p,1105b,1153s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{thm.4.2.2.3} has been referenced but does not exi
+ 68i,14n,86p,1554b,1153s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{thm.5.2.2.3} has been referenced but does not exi
 st, replaced by a fixed one
 
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
@@ -745,10 +750,10 @@ xmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2018/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2
 018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texli
 ve/2018/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on ex.pdf (134 pages, 705518 bytes).
+Output written on ex.pdf (142 pages, 730635 bytes).
 PDF statistics:
- 1912 PDF objects out of 2073 (max. 8388607)
- 1738 compressed objects within 18 object streams
- 841 named destinations out of 1000 (max. 500000)
- 517 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1988 PDF objects out of 2073 (max. 8388607)
+ 1805 compressed objects within 19 object streams
+ 868 named destinations out of 1000 (max. 500000)
+ 541 words of extra memory for PDF output out of 10000 (max. 10000000)
 
