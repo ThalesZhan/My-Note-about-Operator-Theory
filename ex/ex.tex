@@ -2281,7 +2281,7 @@ Now, we have known $\oper$ is a Banach algebra. But there is another algebraic o
 
 Then we can get some easy properties for the norm and the involution.
 
-\begin{prop}
+\begin{prop} \label{prop14}
 	Let $\A$ be a \Cs and $a \in \A$.
 	\begin{enumerate}[label=\arabic*)]
 		\item $\norm{\st{a}} = \norm{a}$.
@@ -4885,8 +4885,8 @@ Now, we can see any nonzero point in the spectrum of a compact operator is a eig
 	which is a contradiction.
 \end{proof}
 
-\begin{thm}
-	If $T \in \coper$ and a nonzero $\lambda \in \sigma(T)$, then $\lambda \in \sigma_p(T)$ and $\dim{(T-\lambda)} < \infty$.
+\begin{thm} \label{thm12}
+	If $T \in \coper$ and a nonzero $\lambda \in \sigma(T)$, then $\lambda \in \sigma_p(T)$ and $\dim{\ker{(T-\lambda)}} < \infty$ and $\ran{(T-\lambda)}$ is closed.
 \end{thm}
 \begin{proof}
 	By the \textbf{Proposition} \ref{prop10} in the subsection \textbf{2.1.3}, since each $\lambda \in \sigma(T)$ is isolated, we can define
@@ -4897,7 +4897,17 @@ Now, we can see any nonzero point in the spectrum of a compact operator is a eig
 	\begin{equation*}
 		\Hs_{\lambda} = E(\lambda)\Hs,~ T_{\lambda} = T|_{\Hs_{\lambda}} \colon \Hs_{\lambda} \sto \Hs_{\lambda}
 	\end{equation*}
-	Since $\sigma(T_{\lambda}) = \{\lambda\}$ and $\lambda \neq 0$, $T_{\lambda}$ is invertible. But clearly, $T_{\lambda}$ is compact. That means any bounded and closed subset in $\Hs_{\lambda}$ is compact, thus $\dim{\Hs_{\lambda}} < \infty$ by the Riesz Theorem. Therefore, by the result of finite linear algebra, $\lambda$ is the eigenvalue of $T_{\lambda}$, i.e. $\lambda \in \sigma_p(T)$. By above lemma, $\dim{(T-\lambda)} < \infty$.
+	Since $\sigma(T_{\lambda}) = \{\lambda\}$ and $\lambda \neq 0$, $T_{\lambda}$ is invertible. But clearly, $T_{\lambda}$ is compact. That means any bounded and closed subset in $\Hs_{\lambda}$ is compact, thus $\dim{\Hs_{\lambda}} < \infty$ by the Riesz Theorem. Therefore, by the result of finite linear algebra, $\lambda$ is the eigenvalue of $T_{\lambda}$, i.e. $\lambda \in \sigma_p(T)$. By above lemma, $\dim{\ker{(T-\lambda)}} < \infty$.\\
+	Let $\Delta = \sigma(T) \backslash \{\lambda\}$, $\Hs_{\Delta} = E(\{\Delta\})\Hs$ and $T_{\Delta} = T|_{\Hs_{\Delta}}$. Then since $\lambda \notin \Delta$,
+	\begin{equation*}
+		\ran{(T_{\Delta}-\lambda)} = \Hs_{\Delta}
+	\end{equation*}
+	Therefore, 
+	\begin{eqnarray*}
+		\ran{(T-\lambda)} &=& (T-\lambda)\Hs_{\lambda}+(T-\lambda)\Hs_{\Delta} \\
+		&=& \ran{(T_{\lambda}-\lambda)} + \Hs_{\Delta}
+	\end{eqnarray*}
+	Moreover, since $\dim{\Hs_{\lambda}} < \infty$, $\ran{(T_{\lambda}-\lambda)}$ is closed. Thus $\ran{(T-\lambda)}$ is closed.
 \end{proof}
 
 Combining all of above results, we can get an explicit structure of the spectrum of compact operator.
@@ -5804,12 +5814,307 @@ Now, we want to find more relations between the ultraweak topology and the $WOT$
 		and this converges absolutely for $d = \infty$.
 	\end{enumerate}
 \end{prop}
+\begin{proof}
+	We just need to prove this proposition in the infinite case.
+	\item For $1)$, let $P_k$ be the projection from $\Hs^{(\infty)}$ onto the $k$-th coordinate space. Then $C_{kk} = P_k C P_k$. And clearly, for $1 \leqslant n < m < \infty$, $\sum_{k=n}^{m}C_{kk} \in \toper$, if $L \in \fml{B}_0(\fml{H}^{(\infty)})$,
+	\begin{eqnarray*}
+		\abs{\tr{(L \sum_{k=n}^{m}C_{kk})}} &=& \abs{\sum_{k=n}^{m} \tr{(LP_kCP_k)}} = \abs{\sum_{k=n}^{m} \tr{(CP_kLP_k)}} \\
+		&=& \abs{\tr{(C \sum_{k=n}^{m} P_kLP_k)}} \\
+		&\leqslant& \norm{C}_1 \norm{\sum_{k=n}^{m} P_kLP_k} \\
+		&=& \norm{C}_1 \sup{\{\norm{P_kLP_k} \colon n \leqslant k \leqslant m\}} \\
+		&\leqslant& \norm{C}_1 \norm{L}
+	\end{eqnarray*}
+	Then by the \textbf{Proposition} \ref{prop14} in the subsection \textbf{3.2.1}, (Confused!)
+	\begin{equation*}
+		\norm{\sum_{k=n}^{m}C_{kk}}_1 = \sup{\left\{~\abs{\tr{(L\sum_{k=n}^{m}C_{kk})}} \colon \norm{L} \leqslant 1,~ \ \in \fml{B}_0(\fml{H}^{(\infty)}~\right\}}
+	\end{equation*}
+	And since $L \in \fml{B}_0(\fml{H}^{(\infty)}$, $\norm{P_kLP_k} \sto 0$. Therefore, $1)$ holds.
+	\item For $2)$, let $\{e_i \colon i \in I\}$ be a orthonormal basis of $\Hs$ and $\{e_{ki} \colon 1 \leqslant k \leqslant \infty, i \in I\}$ be a orthonormal basis of $\Hs^{(\infty)}$, then for any $T \in \fml{B}(\fml{H})$, $TC \in \fml{B}_1(\fml{H}^{(\infty)})$ and
+	\begin{equation*}
+		\tr{(T^{(\infty)}C)} = \sum_{i \in I} \sum_{k=1}^{\infty} \langle T^{(\infty)}C e_{ki},e_{ki} \rangle
+	\end{equation*}
+	Fixing $k$, we have that
+	\begin{equation*}
+		\langle T^{(\infty)}Ce_{ki},e_{ki} \rangle = \langle TC_{kk}e_{i},e_{i} \rangle = \tr{((e_i \otimes e_i)TC_{kk})}
+	\end{equation*}
+	By the $weak^{*}$-convergence of $K = \sum_{k} C_{kk}$, 
+	\begin{eqnarray*}
+		\langle TKe_i,e_i \rangle &=& \sum_{k=1}^{\infty} \tr{((e_i \otimes e_i)TC_{kk})} \\
+		&=& \sum_{k=1}^{\infty} \langle TC_{kk}e_{ki},e_{ki} \rangle \\
+		&=& \sum_{k=1}^{\infty} \langle T^{(\infty)}Ce_{ki},e_{ki} \rangle
+	\end{eqnarray*}
+	Since above series is absolutely convergent, 
+	\begin{equation*}
+		\tr{(T^{(\infty)}C)} = \sum_{k=1}^{\infty} \sum_{i \in I} \langle TC_{kk}e_{ki},e_{ki} \rangle = \sum_{k=1}^{\infty} \tr{(TC_{kk})} = \tr{TK}
+	\end{equation*}
+\end{proof}
 
+\begin{thm}
+	\begin{enumerate}[label = \arabic*)]
+		\item If $C \in \toper$ with rank at most $d$, where $1 \leqslant d \leqslant \infty$, then there are $g,h \in \Hs^{(d)}$ s.t. $\norm{g}^2 = \norm{h}^2 \leqslant \norm{C}_1$ and 
+		\begin{equation*}
+			\langle T^{(d)}g,h \rangle = \tr{TC},~ \forall T \in \oper
+		\end{equation*}
+		\item If $1 \leqslant d \leqslant \infty$ and $g,h \in \Hs^{(d)}$, then there is a $C \in \toper$ with rank at most $d$ s.t.
+		\begin{equation*}
+			\langle T^{(d)}g,h \rangle = \tr{TC},~ \forall T \in \oper
+		\end{equation*}
+		\item If $C \in \fml{B}_1(\fml{H}^{(\infty)}$, then there are $g,h \in \Hs^{(\infty)}$ s.t. $\norm{g}^2 = \norm{h}^2 \leqslant \norm{C}_1$ and
+		\begin{equation*}
+			\langle T^{(\infty)}g,h \rangle = \tr{T^{(\infty)}C},~ \forall T \in \oper
+		\end{equation*}
+		\item If $g,h \in \Hs^{(\infty)}$, then there is a $C \in \fml{B}_1(\fml{H}^{(\infty)})$ s.t. $\norm{g}^2 = \norm{h}^2 \leqslant \norm{C}_1$ and
+		\begin{equation*}
+			\langle T^{(\infty)}g,h \rangle = \tr{T^{(\infty)}C},~ \forall T \in \oper
+		\end{equation*}
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	Just need to prove the case when $d = \infty$.
+	\item For $1)$, let $C = \sum_k g_k \otimes h_k$ with $\norm{g_k}^2 = \norm{h_k}^2 = \norm{C}_1$. Then $g = (g_k)$ and $h = (h_k)$ are in $\Hs^{(\infty)}$, and it is clear that 
+	\begin{equation*}
+		\langle T^{(\infty)}g,h \rangle = \tr{TC},~ \forall T \in \oper
+	\end{equation*}
+	And the converse is similar.
+	\item If $C = (C_{jk}) \in \fml{B}_1(\fml{H}^{(\infty)})$, then by above proposition, $K = \sum_k C_{kk} \in \toper$ and $\norm{K}_1 \leqslant \norm{C}_1$. Moreover, $\tr{(T^{(\infty)}C)} = \tr{(TK)}$. Then by $1)$, there are $g = (g_k)$ and $h = (h_k)$ in $\Hs^{(\infty)}$ with $\norm{g_k}^2 = \norm{h_k}^2 = \norm{K}_1 \leqslant \norm{C}_1$ s.t.
+	\begin{equation*}
+		\tr{(T^{(\infty)}C)} = \tr{(TK)} = \langle T^{(\infty)}g,h \rangle.
+	\end{equation*}
+	And $4)$ is also trivial.
+\end{proof}
 
+Then, we can see one more relation between the ultraweak topology and the $WOT$.
 
+\begin{thm}
+	If $\{T_i\}$ is a net in $\oper$, then the following statements are equivalent.
+	\begin{enumerate}[label = \arabic*)]
+		\item $T_i \sto 0$ in $weak^{*}$.
+		\item $T_i^{\infty} \sto 0$ in $weak^{*}$.
+		\item $T_i^{\infty} \sto 0$ in $WOT$.
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	If $C \in \fml{B}_1(\fml{H}^{(\infty)})$ and $K = \sum_k C_{kk}$, then by above theorem,
+	\begin{equation*}
+		\tr{T_i^{(\infty)}C} = \tr{(T_iK)}
+	\end{equation*}
+ 	Therefore, $1)$ implies $2)$. Since the the ultraweak topology and the $WOT$ agree on any bounded subset, $2)$ implies $3)$. Let $K \in \toper$, then there are $h,g \in \Hs^{\infty}$ s.t. $\tr{(KT_i)} = \langle T_i^{\infty}f,g \rangle$. Thus, $3)$ implies $1)$.
+\end{proof}
 
+\begin{cor}
+	\begin{enumerate}[label=\arabic*)]
+		\item If $\mathcal{S} \subset \oper$ is a subset and $\mathcal{S}_1 = \clo{\mathcal{S}}^{wk^{*}}$, then 
+		\begin{equation*}
+			\clo{\{S^{(\infty)} \colon S \in \mathcal{S}\}}^{WOT} = \clo{\{S^{(\infty)} \colon S \in \mathcal{S}\}}^{wk^{*}} = \mathcal{S}_1^{(\infty)}
+		\end{equation*}
+		Therefore, $\mathcal{S}$ is $weak^{*}$-closed if and only if $\mathcal{S}^{(\infty)}$ is $WOT$-closed.
+		\item If $\A$ is a $\st{C}$-subalgebra of $\oper$, then
+		\begin{equation*}
+			\clo{\A}^{wk^{*}} = \A^{''}
+		\end{equation*}
+		That means any von Neumann algebra is $weak^{*}$-closed.
+	\end{enumerate}
+\end{cor}
+\begin{proof}
+	$1)$ is a direct result from above theorem.
+	\item For $2)$, let $\A_1 = \clo{\A}^{wk^{*}}$. Then by $1)$ and the Double Commutant Theorem,
+	\begin{equation*}
+		\A_1^{(\infty)} = \{\A^{(\infty)}\}^{''} = \{\A^{''}\}^{(\infty)}
+	\end{equation*}
+	Thus, $\A_1 = \A^{''} $.
+\end{proof}
+\begin{rem}
+	Therefore, we have another powerful topology to research von Neumann algebras and it is very important.
+\end{rem}
 
+\section{Fredholm Theory}
 
+Let $\pi \colon \oper \sto \oper \backslash \coper$ be the quotient map. Then 
+\begin{equation*}
+	\pi(A) = A + \coper
+\end{equation*}
+And the $\st{C}$-algebra $\oper \backslash \coper$ is called the Calkin algebra. Therefore, in order to research the compact perturbations, the Calkin algebra plays an important role. 
 
+\subsection{Fredholm Operators}
+
+\begin{defn}
+	Let $A \in \oper$ and $\pi \colon \oper \sto \oper \backslash \coper$ be the quotient map. If $\pi(A)$ is left-invertible (or right) in the Calkin algebra, then $A$ is called a left (or right) semi-Fredholm operator. If $\pi(A)$ is invertible in the Calkin algebra, then $A$ is called a Fredholm operator.
+\end{defn}
+
+There are some equivalent conditions of the Fredholm operators.
+\begin{thm}
+	If $A \in \oper$, then the following statements are equivalent.
+	\begin{enumerate}[label = \arabic*)]
+		\item $A$ is left semi-Fredholm.
+		\item $\ran{A}$ is closed and $\dim{\ker{A}} < \infty$.
+		\item There is a $B \in \oper$ and a finite rank $F \in \oper$ s.t.
+		\begin{equation*}
+			BA = 1 + F
+		\end{equation*}
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	$1) \Rightarrow 2)$: There is a $B$ s.t. $\pi(B)\pi(A) = 1$, i.e $\pi(BA-1) = 0$. That means there is a $K \in \coper$ s.t. $BA = 1 + K$. Then, by the \textbf{Theorem} \ref{thm12} in the subsection \textbf{5.1.2},
+	\begin{equation*}
+		\ker{A} \subset \ker{BA} = \ker{(1+K)} < \infty
+	\end{equation*}
+	And $\ran{BA} = \ran{(1+K)}$ is closed. By the \textbf{Lemma} \ref{lem1} in the subsection \textbf{2.4.4}, there is a constant $C > 0$ s.t. for any $h \in (\ker{BA})^{\bot}$, 
+	\begin{equation*}
+		C\norm{h} \leqslant \norm{BAh} \leqslant \norm{B}\norm{Ah} \Rightarrow \norm{Ah} > C^{'}\norm{h}
+	\end{equation*}
+	Therefore, $A((\ker{BA})^{\bot})$ is closed. Because
+	\begin{equation*}
+		\ran{A} = A((\ker{BA})^{\bot}) + A(\ker{BA})
+	\end{equation*}
+	and $\ker{BA} < \infty$, then $\ran{A}$ is closed.
+	\item $2) \Rightarrow 3)$: Define $A_1 \colon (\ker{A})^{\bot} \sto \ran{A}$, then $A_1$ is invertible by the Inverse Mapping Theorem. Let $F$ be the projection onto $\ker{A}$ and $P$ be the projection onto $\ran{A}$, then
+	\begin{equation*}
+		BA = 1 - F, \text{ where } B = A_1^{-1}P
+	\end{equation*}
+	$3)$ implies $1)$ trivially.
+\end{proof}
+
+Above theorem provides the information of the range and the kernel of Fredholm operators. Besides that, we can also find the equivalent conditions of Fredholm operators from another point of view.
+\begin{thm}
+	If $A \in \oper$, then the following statements are equivalent. 
+	\begin{enumerate}[label=\arabic*)]
+		\item $A$ is left semi-Fredholm.
+		\item There is no unit sequence $\{h_n\}$ s.t. $h_n \sto 0$ weakly and $Ah_n \sto 0$ in norm.
+		\item There is no orthonormal sequence $\{e_n\}$ s.t. $Ae_n \sto 0$ in norm.
+		\item There is a $\delta > 0$ s.t. $\{h \in \Hs \colon \norm{Ah} \leqslant \delta \norm{h}\}$ contains no infinite dimensional manifold.
+		\item Let $\abs{A} = \int t dE(t)$, then there is a $\delta > 0$ s.t. $E([0,\delta])\Hs$ is finite dimensional.
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	$1) \Rightarrow 2)$: Let $B \in \oper$ and $T \in \coper$ s.t. $BA = 1+K$. For a unit sequence $\{h_n\}$ with $h_n \sto 0$ weakly, since $K$ is completely continuous,
+	\begin{equation*}
+		\abs{1 - \norm{BAh_n}} = \abs{\norm{h_n} - \norm{BAh_n}} \leqslant \norm{Kh_n} \sto 0
+	\end{equation*}
+	Therefore, $\norm{BAh_n} \sto 1$, i.e. $Ah_n$ cannot converge to $0$ in norm.
+	\item $2) \Rightarrow 3)$: Orthonormal sequences alway converge weakly $0$.
+	\item $3) \Rightarrow 4)$: Assume it is not true. For any $n$, there is a manifold $\fml{M}_n$ s.t. 
+	\begin{equation*}
+		\norm{Ah} \leqslant \frac{1}{n} \norm{h},~\forall~ h \in \fml{M}_n
+	\end{equation*}
+	Let $e_k \in \fml{M}_k$ for $1 \leqslant k \leqslant n$ and $\{e_k\}_{k=1}^n$ be orthonormal and $E$ be the projection onto $\spn{\{e_k\}_{k=1}^n}$. Since $\fml{M}_{n+1}$ is infinite dimensional,  $\fml{M}_{n+1} \cap E^{\bot} \neq \{0\}$. Thus, there is a unit $e_{n+1} \in \M_{n+1}$ s.t. $e_{n+1} \bot E$. But $Ae_n \sto 0$ in norm contradicted to $3)$.
+	\item $4) \Rightarrow 5)$: If $\delta > 0$ and $h \in E([0,\delta])\Hs$, then
+	\begin{eqnarray*}
+		\norm{Ah}^2 &=& \langle \st{A}A h,h \rangle = \langle \abs{A}^2 h,h \rangle \\
+		&=& \int_0^{\delta} t^2 dE_{hh}(t) \\
+		&\leqslant& \delta^2 E_{hh}([0,\delta]) = \delta^2 \norm{h}^2
+	\end{eqnarray*}
+	That means
+	\begin{equation*}
+		E([0,\delta])\Hs \subset \{h \in \Hs \colon \norm{Ah} \leqslant \delta \norm{h}\}
+	\end{equation*}
+	\item $5) \Rightarrow 1)$: Let $\M = (E([0,\delta])\Hs)^{\bot}$. Then $\abs{A}$ maps $\M$ onto $\M$ bijectively. Put
+	\begin{equation*}
+		B_1 = \int_{\delta}^{\infty} t^{-1} dE(t)
+	\end{equation*}
+	then $B_1 \abs{A} = 1|_{\M}$. Let $A = U \abs{A}$. Since $\M \subset \ran{\abs{A}}$, $U$ maps $\M$ isometrically to $U(\M)$. Then there is a $V$ s.t. $VU = 1|_{\M}$ and $V|_{U(\M)^{\bot}} = 0$. Put $B = B_1V$, then for any $h \in \M$,
+	\begin{equation*}
+		BAh = B_1 V U \abs{A} h = h
+	\end{equation*}
+	If $h \in \M^{\bot}$, we know that $BAh = 0$. Thus,
+	\begin{equation*}
+		BA = E((\delta,\infty)) = 1 - E([0,\delta])
+	\end{equation*}
+	Thus, by above theorem, $A$ is left semi-Fredholm.
+\end{proof}
+
+\begin{thm}
+	$A \in \oper$ is left semi-Fredholm operator if and only if for any $K \in \coper$,
+	\begin{equation*}
+		\dim{\ker{(A+K)}} < \infty
+	\end{equation*}
+\end{thm}
+\begin{proof}
+	If there is $B \in \oper$ and $L \in \coper$ s.t. $BA = 1+L$. If $K \in \coper$, 
+	\begin{equation*}
+		B(A+K) = 1 + (L + BK)
+	\end{equation*}
+	Thus $A+K$ is left semi-Fredholm, then $\dim{\ker{(A+K)}} < \infty$.\\
+	Conversely, if there is a orthonormal sequence $\{e_n\}$ s.t. $Ae_n \sto 0$ in norm. By passing a subsequence, it may assume that $\sum \norm{Ae_n}^2 < \infty$. Thus for any $h \in \Hs$, 
+	\begin{eqnarray*}
+		\sum \abs{\langle h,e_n \rangle}\norm{Ae_n} &\leqslant& \left(\sum \abs{\langle h,e_n \rangle}^2\right)^{\frac{1}{2}}\left(\sum \norm{Ae_n}^2\right)^{\frac{1}{2}} \\
+		&\leqslant& C\norm{h}
+	\end{eqnarray*}
+	Thus $Kh = \sum \langle h,e_n \rangle Ae_n$ is a bounded operator and clealy it can be approximated by finite rank operators $K_nh=\sum_{k=1}^n \langle h,e_k \rangle Ae_k$, thus $K \in \coper$. But $(A-K)e_n = 0$ for all $n$, that means $\dim{\ker{(A-K)}} = \infty$.
+\end{proof}
+
+\begin{cor}
+	$A \in \oper$ is Fredholm if and only if $\ran{A}$ is closed and both $\ker{A}$ and $\ker{\st{A}}$ are finite dimensional.
+\end{cor}
+
+\subsection{Fredholm Index}
+
+\begin{defn}
+	If $A$ is a semi-Fredholm operator, then the Fredholm index of $A$ is defined as
+	\begin{equation*}
+		\ind{A} = \dim{\ker{A}} - \dim{\ker{\st{A}}}
+	\end{equation*}
+\end{defn}
+\begin{rem}
+	In fact, $\ind{A} \in \Z \cup \{\pm \infty\}$. If $A$ is Fredholm, $\ind{A} \in \Z$. And clearly, $\ind{(\lambda+K)} = 0$ for all nonzero $\lambda \in C$ and $K \in \coper$.
+\end{rem}
+
+\begin{prop}
+	\begin{enumerate}[label=\arabic*)]
+		\item If $A$ is a semi-Fredholm, then so is $\st{A}$ and
+		\begin{equation*}
+			\ind{\st{A}} = - \ind{A}
+		\end{equation*}
+		\item If $N$ is normal, then $N$ is semi-Fredholm if and only if $N$ is Fredholm, in which case $\ind{N} = 0$.
+		\item If $A$ and $B$ are Fredholm, then $A \oplus B$ is Fredholm and 
+		\begin{equation*}
+			\ind{A \oplus B} = \ind{A} + \ind{B}
+		\end{equation*}
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	$1)$ and $3)$ is trivial and $2)$ is since $\norm{N} = \norm{\st{N}}$.
+\end{proof}
+
+\begin{lem}
+	Let $A \in \oper$ and $\Hs = \M \oplus \fml{N}$. Suppose $A$ has the form
+	\begin{equation*}
+		A = \left(
+			\begin{array}{cc}
+				A_1 & X \\
+				0 & A_2
+			\end{array}
+		\right)
+	\end{equation*}
+	If $\dim{\fml{N}} < \infty$ and $A_1$ is invertible, then $A$ is Fredholm and $\ind{A} = 0$.
+\end{lem}
+\begin{proof}
+	Just need to show $\ker{\st{A}} = \ker{\st{A_2}}$ and $\dim{\ker{A}} = \dim{\ker{A_2}}$, then since $A_2 \in \fml{B}(\fml{N})=\fml{B}_0(\fml{N})$, 
+	\begin{equation*}
+		\ind{A} = \dim{\ker{A}} - \dim{\ker{\st{A}}} = \ind{A_2} = 0
+	\end{equation*}
+	But $\ker{\st{A}} = \ker{\st{A_2}}$ and $\dim{\ker{A}} = \dim{\ker{A_2}}$ are clearly because $A_1$ is invertible.
+\end{proof}
+
+\begin{lem}
+	Let $\M$ and $\fml{N}$ be two closed subspaces of $\Hs$.
+	\begin{enumerate}[label = \arabic*)]
+		\item If $\M \cap \fml{N} = \{0\}$ and $\dim{\fml{N}} = \infty$, then $\dim{\M^{\bot}} = \infty$.
+		\item If $\dim{\M^{\bot}} = \infty$ and $\dim{\fml{N}} < \infty$, then $\dim{(\M+\fml{N})^{\bot}} < \infty$.
+	\end{enumerate}
+\end{lem}
+
+\begin{thm}
+	If $A,B \in \oper$ are left semi-Fredholm operator, then $BA$ is also a left semi-Fredholm operator and
+	\begin{equation*}
+		\ind{BA} = \ind{A} + \ind{B}
+	\end{equation*}
+\end{thm}
+\begin{proof}
+	There are $X,Y \in \oper$ s.t. $XA = 1+K$ and $YB=1+K^{'}$ for some $K,K^{'} \in \coper$. Then 
+	\begin{equation*}
+		(XY)(BA) = X(1+K^{'})A = 1 + (K+XK^{'}A)
+	\end{equation*}
+	Therefore, $BA$ is left semi-Fredholm.
+\end{proof}
 
 \end{document}
