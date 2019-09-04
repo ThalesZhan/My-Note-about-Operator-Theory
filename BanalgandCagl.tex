@@ -1633,7 +1633,7 @@ For self-adjoint operators in $\oper$, we have some extral properties related to
 \end{rem}
 
 By above proposition, we see the spectrum of operators can be described by using another method. Firstly, we can generize the consequence in \textbf{Proposition} \ref{prop9}.
-\begin{prop}
+\begin{prop} \label{prop15}
 	Let $\Hs$ be a Hilbert space and $T \in \oper$. Then let 
 	\begin{equation*}
 		\chi(\lambda) = \inf{\{~\norm{(T-\lambda)h} \colon \norm{h} = 1~\}}
@@ -1660,6 +1660,24 @@ By above proposition, we see the spectrum of operators can be described by using
 	Therefore, $\norm{(T-\lambda)h} \geqslant \norm{B}^{-1}$, i.e. $\chi(\lambda) > 0$.
 \end{proof}
 
+\begin{cor}
+	If $N \in \oper$ is a normal operator, then
+	\begin{equation*}
+		\sigma_l(N) = \sigma_r(N) = \sigma(N)
+	\end{equation*}
+	In particular, if a normal operator is left (or right) invertible, then it is invertible.
+\end{cor}
+\begin{proof}
+	If $N$ is normal, then $N-\lambda$ is normal. Therefore,
+	\begin{equation*}
+		\norm{(N-\lambda)h} = \norm{(\st{N}-\clo{\lambda})h},~ \forall h \in \Hs
+	\end{equation*}
+	By above theorem, $\sigma_l(\st{N}) = \clo{\sigma_l(N)}$. Thus,
+	\begin{equation*}
+		\sigma_r(N) = \clo{\sigma_l(\st{N})} = \sigma_l(N) \qedhere
+	\end{equation*}
+\end{proof}
+
 \begin{defn}
 	Let $\Hs$ be a Hilbert space and $T \in \oper$.
 	\begin{enumerate}[label=\arabic*)]
@@ -1674,7 +1692,7 @@ By above proposition, we see the spectrum of operators can be described by using
 	\end{enumerate}
 \end{defn}
 
-\begin{prop}
+\begin{prop} \label{prop16}
 	Let $\Hs$ be a Hilbert space and $T \in \oper$.
 	\begin{enumerate}
 		\item $\lambda \notin \sigma_{ap}(T)$ if and only if $\ker{(T - \lambda)}=\{0\}$ and $\ran{(T - \lambda)}$ is closed.

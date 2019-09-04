@@ -3442,7 +3442,7 @@ For self-adjoint operators in $\oper$, we have some extral properties related to
 \end{rem}
 
 By above proposition, we see the spectrum of operators can be described by using another method. Firstly, we can generize the consequence in \textbf{Proposition} \ref{prop9}.
-\begin{prop}
+\begin{prop} \label{prop15}
 	Let $\Hs$ be a Hilbert space and $T \in \oper$. Then let 
 	\begin{equation*}
 		\chi(\lambda) = \inf{\{~\norm{(T-\lambda)h} \colon \norm{h} = 1~\}}
@@ -3469,6 +3469,24 @@ By above proposition, we see the spectrum of operators can be described by using
 	Therefore, $\norm{(T-\lambda)h} \geqslant \norm{B}^{-1}$, i.e. $\chi(\lambda) > 0$.
 \end{proof}
 
+\begin{cor}
+	If $N \in \oper$ is a normal operator, then
+	\begin{equation*}
+		\sigma_l(N) = \sigma_r(N) = \sigma(N)
+	\end{equation*}
+	In particular, if a normal operator is left (or right) invertible, then it is invertible.
+\end{cor}
+\begin{proof}
+	If $N$ is normal, then $N-\lambda$ is normal. Therefore,
+	\begin{equation*}
+		\norm{(N-\lambda)h} = \norm{(\st{N}-\clo{\lambda})h},~ \forall h \in \Hs
+	\end{equation*}
+	By above theorem, $\sigma_l(\st{N}) = \clo{\sigma_l(N)}$. Thus,
+	\begin{equation*}
+		\sigma_r(N) = \clo{\sigma_l(\st{N})} = \sigma_l(N) \qedhere
+	\end{equation*}
+\end{proof}
+
 \begin{defn}
 	Let $\Hs$ be a Hilbert space and $T \in \oper$.
 	\begin{enumerate}[label=\arabic*)]
@@ -3483,7 +3501,7 @@ By above proposition, we see the spectrum of operators can be described by using
 	\end{enumerate}
 \end{defn}
 
-\begin{prop}
+\begin{prop} \label{prop16}
 	Let $\Hs$ be a Hilbert space and $T \in \oper$.
 	\begin{enumerate}
 		\item $\lambda \notin \sigma_{ap}(T)$ if and only if $\ker{(T - \lambda)}=\{0\}$ and $\ran{(T - \lambda)}$ is closed.
@@ -5929,16 +5947,16 @@ Then, we can see one more relation between the ultraweak topology and the $WOT$.
 
 \section{Fredholm Theory}
 
-Let $\pi \colon \oper \sto \oper \backslash \coper$ be the quotient map. Then 
+Let $\pi \colon \oper \sto \oper / \coper$ be the quotient map. Then 
 \begin{equation*}
 	\pi(A) = A + \coper
 \end{equation*}
-And the $\st{C}$-algebra $\oper \backslash \coper$ is called the Calkin algebra. Therefore, in order to research the compact perturbations, the Calkin algebra plays an important role. 
+And the $\st{C}$-algebra $\oper / \coper$ is called the Calkin algebra. Therefore, in order to research the compact perturbations, the Calkin algebra plays an important role. 
 
 \subsection{Fredholm Operators}
 
 \begin{defn}
-	Let $A \in \oper$ and $\pi \colon \oper \sto \oper \backslash \coper$ be the quotient map. If $\pi(A)$ is left-invertible (or right) in the Calkin algebra, then $A$ is called a left (or right) semi-Fredholm operator. If $\pi(A)$ is invertible in the Calkin algebra, then $A$ is called a Fredholm operator.
+	Let $A \in \oper$ and $\pi \colon \oper \sto \oper / \coper$ be the quotient map. If $\pi(A)$ is left-invertible (or right) in the Calkin algebra, then $A$ is called a left (or right) semi-Fredholm operator. If $\pi(A)$ is invertible in the Calkin algebra, then $A$ is called a Fredholm operator.
 \end{defn}
 
 There are some equivalent conditions of the Fredholm operators.
@@ -6075,8 +6093,22 @@ Above theorem provides the information of the range and the kernel of Fredholm o
 	$1)$ and $3)$ is trivial and $2)$ is since $\norm{N} = \norm{\st{N}}$.
 \end{proof}
 
+In fact, for $A \in \operr{H}{H^{'}}$, we can similarly defined the Fredholm operator and the Fredholm index, and all of above mention are valid.
+
+\begin{prop}
+	If $\Hs$ and $\fml{H^{'}}$ are finite dimensional Hilbert spaces and $A \in \operr{H}{H^{'}}$, then $A$ is Fredholm and $\ind{A} = \dim{\Hs} - \dim{\Hs^{'}}$.
+\end{prop}
+\begin{proof}
+	The fact that $A$ is Fredholm is trivial by the definition.
+	\begin{eqnarray*}
+		\ind{A} &=& \dim{\ker{A}} - \dim{(\ran{A})^{\bot}} \\
+		&=& \dim{\Hs} - \dim{\ran{A}} - (\dim{\Hs^{'}} - \dim{\ran{A}}) \\
+		&=& \dim{H} - \dim{H^{'}} 
+	\end{eqnarray*}
+\end{proof}
+
 \begin{lem}
-	Let $A \in \oper$ and $\Hs = \M \oplus \fml{N}$. Suppose $A$ has the form
+	Let $A \in \operr{H}{H^{'}}$ and $\Hs = \M \oplus \fml{N}$ and $\Hs^{'} = \M^{'} \oplus \fml{N}^{'}$. Suppose $A$ has the form
 	\begin{equation*}
 		A = \left(
 			\begin{array}{cc}
@@ -6085,26 +6117,18 @@ Above theorem provides the information of the range and the kernel of Fredholm o
 			\end{array}
 		\right)
 	\end{equation*}
-	If $\dim{\fml{N}} < \infty$ and $A_1$ is invertible, then $A$ is Fredholm and $\ind{A} = 0$.
+	If $\dim{\fml{N}} < \infty$ and $\dim{\fml{N}^{'}} < \infty$ and $A_1$ is invertible, then $A$ is Fredholm and $\ind{A} = \dim{\fml{N}}-\dim{\fml{N}^{'}}$.
 \end{lem}
 \begin{proof}
 	Just need to show $\ker{\st{A}} = \ker{\st{A_2}}$ and $\dim{\ker{A}} = \dim{\ker{A_2}}$, then since $A_2 \in \fml{B}(\fml{N})=\fml{B}_0(\fml{N})$, 
 	\begin{equation*}
-		\ind{A} = \dim{\ker{A}} - \dim{\ker{\st{A}}} = \ind{A_2} = 0
+		\ind{A} = \dim{\ker{A}} - \dim{\ker{\st{A}}} = \ind{A_2} = \dim{\fml{N}}-\dim{\fml{N}^{'}}
 	\end{equation*}
 	But $\ker{\st{A}} = \ker{\st{A_2}}$ and $\dim{\ker{A}} = \dim{\ker{A_2}}$ are clearly because $A_1$ is invertible.
 \end{proof}
 
-\begin{lem}
-	Let $\M$ and $\fml{N}$ be two closed subspaces of $\Hs$.
-	\begin{enumerate}[label = \arabic*)]
-		\item If $\M \cap \fml{N} = \{0\}$ and $\dim{\fml{N}} = \infty$, then $\dim{\M^{\bot}} = \infty$.
-		\item If $\dim{\M^{\bot}} = \infty$ and $\dim{\fml{N}} < \infty$, then $\dim{(\M+\fml{N})^{\bot}} < \infty$.
-	\end{enumerate}
-\end{lem}
-
 \begin{thm}
-	If $A,B \in \oper$ are left semi-Fredholm operator, then $BA$ is also a left semi-Fredholm operator and
+	If $A,B \in \oper$ are Fredholm operator, then $BA$ is also a Fredholm operator and
 	\begin{equation*}
 		\ind{BA} = \ind{A} + \ind{B}
 	\end{equation*}
@@ -6114,7 +6138,159 @@ Above theorem provides the information of the range and the kernel of Fredholm o
 	\begin{equation*}
 		(XY)(BA) = X(1+K^{'})A = 1 + (K+XK^{'}A)
 	\end{equation*}
-	Therefore, $BA$ is left semi-Fredholm.
+	Therefore, $BA$ is left semi-Fredholm. Similarly, $BA$ is right semi-Fredholm.\\
+	Then for the index, let
+	\begin{eqnarray*}
+		\M^{'} = \ran{A} \cap (\ker{B})^{\bot} &,& \fml{N}^{'} = \M^{' \bot} \\
+		\M = A^{-1}(\M^{'}) \cap (\ker{A})^{\bot} &,& \fml{N} = \M^{\bot} \\
+		\M^{''} = B(\M^{'}) &,& \fml{N^{''}} = \M^{'' \bot}
+	\end{eqnarray*}
+	Therefore,
+	\begin{equation*}
+		\Hs = \M \oplus \fml{N} = \M^{'} \oplus \fml{N^{'}} = \M^{''} \oplus \fml{N^{''}}
+	\end{equation*}
+	And since $A(\M) = \M^{'}$, we can see
+	\begin{eqnarray*}
+		A = \left(
+			\begin{array}{cc}
+				A_1 & X \\
+				0 & A_2
+			\end{array}
+		\right)
+		&\colon& \M \oplus \fml{N} \longrightarrow \M^{'} \oplus \fml{N^{'}} \\
+		B = \left(
+			\begin{array}{cc}
+				B_1 & Y \\
+				0 & B_2
+			\end{array}
+		\right)
+		&\colon& \M^{'} \oplus \fml{N^{'}} \longrightarrow \M^{''} \oplus \fml{N^{''}} \\
+		BA = \left(
+			\begin{array}{cc}
+				B_1A_1 & Z \\
+				0 & B_2A_2
+			\end{array}
+		\right)
+		&\colon& \M \oplus \fml{N} \longrightarrow \M^{''} \oplus \fml{N^{''}}
+	\end{eqnarray*}
+	It can see that $\fml{N}$, $\fml{N^{'}}$ and $\fml{N^{''}}$ are finite dimensional. Moreover, $A_1$, $B_1$ and $B_1A_1$ are invertible. Then using above lemma,
+	\begin{eqnarray*}
+		\ind{BA} &=& \dim{\fml{N}} - \dim{\fml{N^{''}}} \\
+		&=& \dim{\fml{N}} - \dim{\fml{N^{'}}} + \dim{\fml{N^{'}}} - \dim{\fml{N^{''}}} \\
+		&=& \ind{B} + \ind{A}
+	\end{eqnarray*}
+\end{proof}
+\begin{rem}
+	In fact, above theorem can also be valid if $A$ and $B$ are semi-Fredholm.
+\end{rem}
+
+\begin{thm}
+	If $A \in \oper$ is a Fredholm operator, then for any $K \in \oper$, $A+K$ is Fredholm and $\ind{(A+K)} = \ind{A}$.
+\end{thm}
+\begin{proof}
+	$A+K$ is Fredholm is trivial. Let $X$ be Fredholm and $L \in \coper$, s.t. $XA = 1+L$, then
+	\begin{equation*}
+		0 = \ind{(1+L)} = \ind{XA} = \ind{X} + \ind{A}
+	\end{equation*}
+	And since $X(A+K) = 1+(L+XK)$, 
+	\begin{equation*}
+		\ind{X(A+K)} = \ind{(A+K)} + \ind{X} = 0
+	\end{equation*}
+	Therefore, $\ind{(A+K)} = \ind{A}$.
+\end{proof}
+
+Now, we can see that the index of a Fredholm is invariant under a small perturbation.
+
+\begin{thm}
+	If $A \in \oper$ is a Fredholm operator, then there is an $\varepsilon>0$ s.t. for any $Y \in \oper$ with $\norm{Y} < \varepsilon$, then $A+Y$ is Fredholm and $\ind{A+Y} = \ind{A}$.
+\end{thm}
+\begin{proof}
+	Let $\Hs = \ker{A}^{\bot} \oplus \ker{A} = \ran{A} \oplus \ker{\st{A}}$. Then,
+	\begin{equation*}
+		A = \left(
+			\begin{array}{cc}
+				A_1 & 0 \\
+				0 & 0
+			\end{array}
+		\right)
+	\end{equation*}
+	And $A_1$ is invertible since $\ran{A}$ is closed. By the perturbation of inverse, there is a $\varepsilon > 0$ s.t. if $\norm{Y_1} < \varepsilon$, $A_1+Y_1$ is invertible. If $Y \in \oper$ with $\norm{Y} < \varepsilon$, and 
+	\begin{equation*}
+		Y = \left(
+				\begin{array}{cc}
+				Y_1 & Y_2 \\
+				Y_3 & Y_4
+				\end{array}
+			\right)
+	\end{equation*}
+	Thus $A_1+Y_1$ is invertible and 
+	\begin{equation*}
+		A + Y =
+		\left(
+			\begin{array}{cc}
+			A_1+Y_1 & Y_2 \\
+			Y_3 & Y_4
+			\end{array}
+		\right)
+		= 
+		\left(
+			\begin{array}{cc}
+				A_1+Y_1 & 0 \\
+				0 & 0
+			\end{array}
+		\right)
+		+
+		\left(
+			\begin{array}{cc}
+			0 & Y_2 \\
+			Y_3 & Y_4
+			\end{array}
+		\right)
+	\end{equation*}
+	The first part is Fredholm and the second part is finite rank. Thus $A+Y$ is Fredholm, and $\ind{A+Y} = \ind{A}$ by above theorem.
+\end{proof}
+
+\begin{cor}
+	Let $\fml{F}$ denote the set of all Fredholm operators. Then the map
+	\begin{equation*}
+		\ind{} \colon (\fml{F},\norm{\cdot}) \longrightarrow \Z
+	\end{equation*}
+	is continuous with respect to the discrete topology on $\Z$. 
+\end{cor}
+
+\subsection{Essential Spectrum}
+
+Let $\pi \colon \oper \sto \oper / \coper$ be the quotient map. We have know that the inverse of the invertible element in the Calkin algebra is Fredholm. Thus, the spectrum of the element in the Calkin algebra may be interesting.
+
+\begin{defn}
+	If $A \in \oper$, the essential spectrum of $A$ is defined as
+	\begin{equation*}
+		\sigma_e(A) = \sigma(\pi(A))
+	\end{equation*}
+	Similarly, $\sigma_{le} = \sigma_l(\pi(A))$ and $\sigma_{re} = \sigma_r(\pi(A))$.
+\end{defn}
+
+By the properties of the general spectrum and the Fredholm operators, we have following properties of the essential spectrum.
+
+\begin{prop}
+	Let $A \in \oper$.
+	\begin{enumerate}[label = \arabic*)]
+		\item $\sigma_{le}(A) \subset \sigma_l(A)$ and $\sigma_{re}(A) \subset \sigma_r(A)$ and $\sigma_e(A) \subset \sigma(A)$.
+		\item $\sigma_{le}(A)$, $\sigma_{re}(A)$ and $\sigma_e(A)$ are compact.
+		\item For any $K \in \coper$, $A+K$ and $A$ have same left (or right) essential spectrum.
+		\item $\lambda \in \sigma_{le}(A)$ is and only if $\dim{\ker{(A-\lambda)}} = \infty$ or $\ran{(A-\lambda)}$ is not closed.
+		\item $\lambda \in \sigma_{re}(A)$ is and only if $\dim{\ran{(A-\lambda)}^{\bot}} = \infty$ or $\ran{(A-\lambda)}$ is not closed.
+	\end{enumerate}
+\end{prop}
+
+\begin{prop}
+	If $A \in \oper$, then
+	\begin{equation*}
+		\sigma_{ap}(A) = \sigma_{le}(A) \cup \{\lambda \in \sigma_p(A) \colon \dim{\ker{(A-\lambda)}} < \infty\}
+	\end{equation*}
+\end{prop}
+\begin{proof}
+	If $\lambda \in \sigma_{ap}(A)$, then by the \textbf{Proposition} \ref{prop15} and \ref{prop16} in the subsection \textbf{3.3.1}, we know that either $\ran{(A-\lambda)}$ is not closed or $\ker{(A-\lambda)} \neq \{0\}$. If $\ran{(A-\lambda)}$ is not closed or $\dim{\ker{(A-\lambda)}} = \infty$, $\lambda \in \sigma_{le}(A)$. The converse is similar.
 \end{proof}
 
 \end{document}
