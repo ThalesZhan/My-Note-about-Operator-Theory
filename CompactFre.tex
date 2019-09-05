@@ -206,7 +206,7 @@ Now, we can see any nonzero point in the spectrum of a compact operator is a eig
 \end{proof}
 
 \begin{thm} \label{thm12}
-	If $T \in \coper$ and a nonzero $\lambda \in \sigma(T)$, then $\lambda \in \sigma_p(T)$ and $\dim{\ker{(T-\lambda)}} < \infty$ and $\ran{(T-\lambda)}$ is closed.
+	If $T \in \coper$ and a nonzero $\lambda \in \sigma(T)$, then $\lambda \in \sigma_p(T)$ and $\dim{\ker{(T-\lambda)}} = \dim{\st{\ker{(T-\lambda)}}} < \infty$ and $\ran{(T-\lambda)}$ is closed.
 \end{thm}
 \begin{proof}
 	By the \textbf{Proposition} \ref{prop10} in the subsection \textbf{2.1.3}, since each $\lambda \in \sigma(T)$ is isolated, we can define
@@ -227,7 +227,22 @@ Now, we can see any nonzero point in the spectrum of a compact operator is a eig
 		\ran{(T-\lambda)} &=& (T-\lambda)\Hs_{\lambda}+(T-\lambda)\Hs_{\Delta} \\
 		&=& \ran{(T_{\lambda}-\lambda)} + \Hs_{\Delta}
 	\end{eqnarray*}
-	Moreover, since $\dim{\Hs_{\lambda}} < \infty$, $\ran{(T_{\lambda}-\lambda)}$ is closed. Thus $\ran{(T-\lambda)}$ is closed.
+	Moreover, since $\dim{\Hs_{\lambda}} < \infty$, $\ran{(T_{\lambda}-\lambda)}$ is closed. Thus $\ran{(T-\lambda)}$ is closed.\\
+	Finally, note that
+	\begin{eqnarray*}
+		\Hs / \ran{(T-\lambda)} &=& (\Hs_{\Delta} + \Hs_{\lambda}) / (\ran{(T_{\lambda}-\lambda)} + \Hs_{\Delta}) \\
+		&\cong& \Hs_{\lambda} / \ran{(T_{\lambda}-\lambda)}
+	\end{eqnarray*}
+	Since $\dim{\Hs_{\lambda}} < \infty$,
+	\begin{eqnarray*}
+		\dim{(\Hs / \ran{(T-\lambda)})} &=& \dim{\Hs_{\lambda}} - \dim{\ran{(T_{\lambda}-\lambda)}} = \dim{\ker{(T_{\lambda}-\lambda)}} \\
+		&=& \dim{\ker{(T-\lambda)}} < \infty
+	\end{eqnarray*}
+	And since
+	\begin{equation*}
+		(\Hs / \ran{(T-\lambda)})^{*} \cong \ran{(T-\lambda)}^{\bot} = \ker{\st{(T-\lambda)}}
+	\end{equation*}
+	$\dim{\ker{(T-\lambda)}} = \dim{\st{\ker{(T-\lambda)}}}$.
 \end{proof}
 
 Combining all of above results, we can get an explicit structure of the spectrum of compact operator.
@@ -1593,11 +1608,188 @@ By the properties of the general spectrum and the Fredholm operators, we have fo
 For normal operators, by above proposition, there are more interesting results about the essential spectrum.
 
 \begin{lem}
-	If $N$ is a normal operator and $\lambda \in \sigma(N)$, then $\ran{(N-\lambda)}$ is closed if and only if $\lambda$ is not a isolated point of $\sigma(N)$.
+	If $N$ is a normal operator and $\lambda \in \sigma(N)$, then $\ran{(N-\lambda)}$ is closed if and only if $\lambda$ is not a limit point of $\sigma(N)$.
 \end{lem}
 \begin{proof}
-	If $\lambda$ is isolated in $\sigma(N)$, then by the
+	Assume $\lambda$ is isolated in $\sigma(N)$. Let $X = \sigma(N) \backslash \{\lambda\}$ and $\Hs_1 = E(X) \Hs$. Hence, $(N-\lambda)\Hs_1$ is closed as $\sigma(N|_{\Hs_1}) = X$. Since
+	\begin{equation*}
+		\Hs_1^{\bot} = E(\{\lambda\}) \Hs = \ker{(A-\lambda)}
+	\end{equation*}
+	$\ran{(N-\lambda)} = (N-\lambda)\Hs_1$. Therefore, $\ran{(N-\lambda)}$ is closed. \\
+	Conversely, assume $\lambda$ is not isolated in $\sigma(N)$. Then there is a positive sequence $\{r_n\}$ s.t. $r_n \sto 0$ decreasingly. Each open set
+	\begin{equation*}
+		A_n = \{~z \in \C \colon r_{n+1} < \abs{z - \lambda} < r_n~\}
+	\end{equation*}
+	has non-empty intersection with $\sigma(N)$, i.e. $E(A_n)\Hs \neq \{0\}$ for all $n$. Let $e_n \in A_n$ be the unit element and $e_n \in \ker{(N-\lambda)}^{\bot}$ and
+	\begin{equation*}
+		\norm{(N-\lambda)e_n}^2 = \int_{A_n} \abs{z-\lambda}^2 d E_{e_n,e_n}(z) \leqslant r_n^2 \sto 0
+	\end{equation*}
+	Therefore,
+	\begin{equation*}
+		\inf{\{\norm{(N-\lambda)h} \colon \norm{h} = 1,~h \in \ker{(N-\lambda)}^{\bot}\}} = 0
+	\end{equation*}
+	i.e. $\ran{(N-\lambda)}$ is not closed.
 \end{proof}
+
+\begin{thm}
+	If $N$ is normal, then $\sigma_e(N) = \sigma_{le}(N) = \sigma_{re}(N)$ and
+	\begin{equation*}
+		\sigma(N) \backslash \sigma_e(N) = \{\lambda \in \sigma(N) \colon \lambda \text{ is isolated and } \dim{\ker{(N-\lambda)}} < \infty\}
+	\end{equation*}
+\end{thm}
+\begin{proof}
+	The first part can be obtained by applying the \textbf{Corrllary} \ref{cor11} in the subsection \textbf{3.3.1} to the Calkin algebra.\\
+	If $\lambda$ is isolated in $\sigma(N)$, then $\ran{(N-\lambda)}$ is closed. Thus, 
+	\begin{equation*}
+		\dim{\ker{(N-\lambda)}} < \infty \Rightarrow \lambda \notin \sigma_{le}(N)
+	\end{equation*}
+	The converse is similar.
+\end{proof}
+
+Let $\gamma(A) = \inf{\{\norm{Ah} \colon \norm{h} = 1,~ h \bot \ker{A}\}} = \chi(0)$. In fact, $\gamma(A) = \gamma(\st{A})$. Moreover,
+\begin{equation*}
+	\gamma(A)\dist{(h,\ker{A})} \leqslant \norm{Ah}
+\end{equation*}
+
+\begin{lem}
+	If $\M, \fml{N}$ are closed subspace of $\Hs$ and $\fml{N}$ is finite dimensional and $\dim{\M} > \dim{\fml{N}}$, then there is a non-zero vector $m \in \M$ s.t.
+	\begin{equation*}
+		\norm{m} = \dist{(m,\fml{N})}
+	\end{equation*}
+\end{lem}
+\begin{proof}
+	Let $P$ be the projection onto $\M$, so $\dim{P(\fml{N})} \leqslant \dim{\fml{N}} < \dim{\M}$. Thus $P(\fml{N})$ is a proper subspace of $\M$. Let $m \in \M \cap P(\fml{N})^{\bot}$. For any $n \in \fml{N}$,
+	\begin{equation*}
+		0 = \langle Pn,m \rangle = \langle n, Pm \rangle = \langle n,m \rangle
+	\end{equation*}
+	Thus $m \bot \fml{N}$, i.e. $\norm{m} = \dist{(m,\fml{N})}$.
+\end{proof}
+
+\begin{lem}
+	If $A$ is left semi-Fredholm and $B \in \oper$ s.t. $\norm{B} < \gamma(A)$, then $A+B$ is left semi-Fredholm and 
+	\begin{enumerate}[label=\arabic*)]
+		\item $\dim{\ker{(A+B)}} \leqslant \dim{\ker{A}}$.
+		\item $\dim{\ran{(A+B)}^{\bot}} \leqslant \dim{\ran{A}^{\bot}}$.
+	\end{enumerate}
+\end{lem}
+\begin{proof}
+	Check: $\{h \colon \norm{(A+B)h} \leqslant \delta \norm{h}\}$ for some $\delta < \gamma - \norm{B}$ contains no infinite dimensional subspace. \\
+	If there is an infinite dimensional subspace, then it would contain a finite dimensional subspace $\M$ with $\dim{\M} > \dim{\ker{A}}$. Therefore, there is a $h \in \ker{A}$ s.t.$\norm{h} = \dist{(h,\ker{A})}$.Then
+	\begin{eqnarray*}
+		\gamma(A)\norm{h} &=& \gamma(A) \dist{(h,\ker{A})} \leqslant \norm{Ah} \\
+		&\leqslant& \norm{(A+B)h} +\norm{Bh} \leqslant (\delta+\norm{B})\norm{h} \\
+		&<& \gamma(A)\norm{h}
+	\end{eqnarray*}
+	which is a contradiction. Therefore, $A+B$ is a left semi-Fredholm.
+
+	\item Check: $\dim{\ker{(A+B)}} \leqslant \dim{\ker{A}}$. \\
+	If $h \in \ker{(A+B)}$, then $Ah = -Bh$. Then
+	\begin{equation*}
+		\gamma(A)\dist{(h,\ker{A})} \leqslant \norm{Bh} \leqslant \norm{B}\norm{h} < \gamma(A) \norm{h}
+	\end{equation*}
+	Therefore, $\dist{(h,\ker{A})} < \norm{h}$. By above lemma,
+	\begin{equation*}
+		\dim{\ker{(A+B)}} \leqslant \dim{\ker{A}}
+	\end{equation*}
+
+	\item Finally, if $\dim{\ran{A}^{\bot}} = \infty$, $2)$ holds clearly. But if $\dim{\ran{A}^{\bot}} < \infty$, $A$ is also right semi-Fredholm, i.e. $\st{A}$ is left semi-Fredholm, and by $1)$, $2)$ holds.
+\end{proof}
+\begin{rem}
+	Clearly, these results can also be valid for right semi-Fredholm and Fredholm.
+\end{rem}
+
+\begin{prop}
+	If $A$ is semi-Fredholm and either $\ker{A} = \{0\}$ or $\ran{A} = \Hs$, then there is a $\delta > 0$ s.t. if $\norm{B-A} < \delta$, the 
+	\begin{equation*}
+		\dim{\ker{A}} = \dim{\ker{B}},~ \dim{\ran{A}} = \dim{\ran{B}}
+	\end{equation*}
+\end{prop}
+\begin{proof}
+	In fact, there is a $\delta > 0$ s.t. if $\norm{B-A} < \delta$, then $\ind{A} = \ind{B}$ and 
+	\begin{equation*}
+		\dim{\ker{B}} \leqslant \dim{\ker{A}},~ \dim{\ran{B}^{\bot}} \leqslant \dim{\ran{A}^{\bot}}
+	\end{equation*}
+	Since one of these is $0$, the results are true.
+\end{proof}
+
+\begin{thm}
+	If $\lambda \notin \sigma_{le}(A) \cap \sigma_{re}(A)$, then there is a $\delta > 0$ s.t. \\ $\dim{\ker{(A - \mu)}}$ and $\dim{\ran{(A - \mu)}^{\bot}}$ are constant for $0< \abs{\lambda - \mu} < \delta$.
+\end{thm}
+\begin{proof}
+	Assume $\lambda = 0$ and $\ker{A}$ is finite dimensional. And $A^n$ is also left semi-Fredholm for all $n$. Let $\M_n = \ran{A^n}$. Note $\M_{n+1} \subset \M_n$ and $\A \M_{n} = \M_{n+1}$. Let $\M = \cap \M_n$ and $B = A|_{\M}$.
+	\item Claim: $B(\M) = \M$.\\
+	Since $\ker{A}$ is finite dimensional and $\{\M_n\}$ is decreasing, there is a $m$ s.t. for all $n \geqslant m$, $\M_n \cap \ker{A} = \M_m \cap \ker{A}$. For any $h \in \M$ and $n \geqslant m$, there is $f_n \in \M_n$ s.t. $h = Af_n$. 
+	\begin{equation*}
+		f_m - f_n \in \M_n \cap \ker{A} = \M_m \cap \ker{A}
+	\end{equation*}
+	Therefore, $f_m \in \M_n$ for all $n \geqslant m$. Thus $f_m \in \M$ and
+	\begin{equation*}
+		h = Af_m = Bf_m \in B(\M)
+	\end{equation*}
+	Thus $B$ is semi-Fredholm and $\ind{B} = \dim{\ker{B}}$. Then there is a $\delta_1 > 0$ s.t. for $\abs{\mu} < \delta_1$,
+	\begin{equation*}
+		\dim{\ker{B-\mu}} \leqslant \dim{\ker{B}},~ \dim{\ran{(B-\mu)}^{\bot}} = 0 \text{ and } \ind{(B-\mu)} = \ind{B}
+	\end{equation*}
+	And thus $\dim{\ker{B-\mu}} = \dim{\ker{B}}$. \\
+	Also There is a $\delta_2$ s.t. $\ind{(A-\mu)} = \ind{A}$ for all $\abs{\mu} < \delta_2$. Then let $\delta = \min{\{\delta_1,\delta_2\}}$.
+	\item Claim: $\ker{(A-\mu)} \subset \M$ for $0 < \abs{\mu} < \delta$. \\
+	If $h \in \ker{(A-\mu)}$, then $A^n h = \mu^n h$. So $h = A^n \mu^{-n} h \in \M$.\\
+	Finally, for $0 < \abs{\mu} < \delta$,
+	\begin{equation*}
+		\dim{\ker{(A-\mu)}} = \dim{\ker{(B-\mu)}} = \dim{\ker{B}}
+	\end{equation*}
+	And since $\ind{(A-\mu)}$ is constant, $\dim{\ran{(A - \mu)}^{\bot}}$ is also constant.
+\end{proof}
+
+\begin{thm}
+	If $\lambda \in \partial{\sigma(A)}$, then either $\lambda$ is an isolated point of $\sigma(A)$ or $\lambda \in \sigma_{le}(A) \cap \sigma_{re}(A)$.
+\end{thm}
+\begin{proof}
+	Suppose $\lambda \in \partial{\sigma(A)}$ and $\lambda \notin \sigma_{le}(A) \cap \sigma_{re}(A)$. Therefore, $A-\lambda$ is semi-Fredholm. By above theorem, there is a $\delta > 0$ s.t. $\dim{\ker{(A - \mu)}}$ and $\dim{\ran{(A - \mu)}^{\bot}}$ are constant for $0< \abs{\lambda - \mu} < \delta$. Since $\lambda \in \partial{\sigma(A)}$, there is a $\nu \in \rho(A)$ with $0< \abs{\nu - \mu} < \delta$. Therefore,
+	\begin{equation*}
+		\ker{(A-\mu)} = \{0\} = \ran{(A-\mu)}^{\bot}, \text{ for } 0 < \abs{\lambda - \mu} < \delta
+	\end{equation*}
+	And $A-\mu$ is semi-Fredholm, $\ran{(A-\mu)}$ is closed, thus $A-\mu$ is invertible for $0 < \abs{\lambda - \mu} < \delta$, which means that $\lambda$ is isolated.
+\end{proof}
+
+\begin{prop}
+	Let $\lambda$ be an isolated point of $\sigma(A)$, then the following statements are equivalent.
+	\begin{enumerate}[label = \arabic*)]
+		\item $\lambda \notin \sigma_{le}(A) \cap \sigma_{re}(A)$.
+		\item $A-\lambda$ is Fredholm and $\ind{(A-\lambda)} = 0$.
+		\item The Riesz idempotent $E(\{\lambda\})$ is finite rank.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	$1) \Rightarrow 2)$: Since $\lambda \notin \sigma_{le}(A) \cap \sigma_{re}(A)$, $\ran{(A-\lambda)}$ is closed and either $\dim{\ker{(A-\lambda)}} < \infty$ or $\dim{\st{\ker{(A-\lambda)}}} < \infty$. Assume $\dim{\ker{(A-\lambda)}} < \infty$. Since $\lambda$ is isolated, we can use similar argument in the \textbf{Theorem} \ref{thm12} in the subsection \textbf{5.1.2} to get
+	\begin{equation*}
+		\dim{\ker{(A-\lambda)}} = \dim{\st{\ker{(A-\lambda)}}} < \infty
+	\end{equation*}
+	And if we assume $\dim{\st{\ker{(A-\lambda)}}} < \infty$, we can also get same result. Thus $A-\lambda$ is Fredholm and $\ind{(A-\lambda)} = 0$.
+	\item $2) \Rightarrow 3)$: By the definition,
+	\begin{equation*}
+		(A-\lambda)E(\{\lambda\}) = \int_{\Gamma} \frac{(z-\lambda)\chi_{\{\lambda\}(z)}}{z - A} dz = 0 \Rightarrow E(\{\lambda\})\Hs \subset \ker{(A-\lambda)}
+	\end{equation*}
+	Thus $E(\{\lambda\})$ is finite rank.
+	\item $3) \Rightarrow 1)$: As above mention, $E(\{\lambda\})\Hs \subset \ker{(A-\lambda)}$. In fact, the converse is also true.\\
+	Claim: $\ker{(A-\lambda)} \subset E(\{\lambda\})\Hs$. \\
+	Let $\Delta = \sigma(A) \backslash \{\lambda\}$, $\Hs_{\Delta} = E(\{\Delta\})\Hs$ and $A_{\Delta} = A|_{\Hs_{\Delta}}$, and similarly for $\{\lambda\}$. Then $A_{\Delta} - \lambda$ is invertible. If $h \in \ker{(A-\lambda)}$, 
+	\begin{eqnarray*}
+	0 = (A-\lambda)h &=& (A-\lambda)E(\{\lambda\})h+(A-\lambda)E(\Delta)h \\
+	&=& (A_{\lambda}-\lambda)E(\{\lambda\})h + (A_{\Delta}-\lambda)E(\Delta)h
+	\end{eqnarray*}
+	Since $E(\{\lambda\}) \bot E(\Delta)$, 
+	\begin{equation*}
+		(A_{\lambda}-\lambda)E(\{\lambda\})h = (A_{\Delta}-\lambda)E(\Delta)h = 0
+	\end{equation*}
+	And the fact that $A_{\Delta} - \lambda$ is invertible implies that $E(\Delta)h = 0$, thus $h \in \Hs_{\{\lambda\}}$. \\
+	Thus, $\ker{(A-\lambda)} = E(\{\lambda\})\Hs$ is finite. Moreover, by the similar argument in in the \textbf{Theorem} \ref{thm12} in the subsection \textbf{5.1.2}, $\ran{(A-\lambda)}$ is closed. Thus, $A-\lambda$ is semi-Fredholm.
+\end{proof}
+
+\section{Compact Perturbations}
+
+
+
 
 
 

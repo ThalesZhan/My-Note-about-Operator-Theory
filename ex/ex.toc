@@ -59,8 +59,8 @@
 \contentsline {section}{\numberline {5.2}Compact Operator Algebras}{124}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Minimal Projections}{124}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}Representations of Compact Operator Algebras}{126}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Decompositions of Compact Operator Algebras}{128}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}Trace Class and Ultraweak Topology}{130}{section.5.3}
+\contentsline {subsection}{\numberline {5.2.3}Decompositions of Compact Operator Algebras}{129}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Trace Class and Ultraweak Topology}{131}{section.5.3}
 \contentsline {subsection}{\numberline {5.3.1}Trace Class and Hilbert-Schmit Operators}{131}{subsection.5.3.1}
 \contentsline {subsection}{\numberline {5.3.2}Dual Spaces}{139}{subsection.5.3.2}
 \contentsline {subsection}{\numberline {5.3.3}Ultraweak Topology}{141}{subsection.5.3.3}
@@ -68,3 +68,4 @@
 \contentsline {subsection}{\numberline {5.4.1}Fredholm Operators}{145}{subsection.5.4.1}
 \contentsline {subsection}{\numberline {5.4.2}Fredholm Index}{148}{subsection.5.4.2}
 \contentsline {subsection}{\numberline {5.4.3}Essential Spectrum}{150}{subsection.5.4.3}
+\contentsline {section}{\numberline {5.5}Compact Perturbations}{155}{section.5.5}
