@@ -6701,6 +6701,22 @@ In above theorem, we can not estimate the value of $\norm{N - \st{U}MU}$. But if
 	Moreover, if $A - \st{U_n}BU_n \in \coper$ and $A \cong_a B$, then $A$ and $B$ are called strongly approximately unitarily equivalent, denoted by $A \cong_{sa} B$.
 \end{defn}
 
+\begin{lem}
+	If $\A$ is a \Cs and $\{a_n\}$ is a sequence of normal elements of $\A$ s.t. $a_n \sto a$ in norm, then $\sigma(a_n) \sto \sigma(a)$.
+\end{lem}
+\begin{proof}
+	Since $\A$ is a $\st{C}$-algebra, by the continuity of the involution and the multiplication, $a$ is normal. By the Continuous Functional Calculus, we know
+	\begin{equation*}
+		\Cg{a_n} \cong C(\sigma(a_n)),~ \Cg{a} \cong C(\sigma(a))
+	\end{equation*}
+	For any $f_k \in C(\sigma(a_k))$, extending $f_k$ on $\cup \sigma(a_n) \cup \sigma(a)$ by setting $f_k = 0$ on other areal. Then $f_k \in B(\cup \sigma(a_n) \cup \sigma(a))$, and $\norm{f_k}$ does not change. And this mention can also apply to any $f$ in $C(\sigma(a))$.\\
+	Let $g_k(z) = z \in C(\sigma(a_k))$ and $g(z) = z \in C(\sigma(a))$, then extending $g_k$ and $g$ on $\cup \sigma(a_n) \cup \sigma(a)$. Therefore, $\norm{g_k} = \norm{a_k}$ and $\norm{g} = \norm{a}$. Take $\alpha \in \sigma(a)$, then since $a_n \sto a$ in norm, for any $0 < \varepsilon < \abs{g(\alpha)}$, there is a $n_0$ s.t. for all $n > n_0$
+	\begin{equation*}
+		\abs{g_n(\alpha)-g(\alpha)} \leqslant \norm{g_n - g} = \norm{a_n - a} < \varepsilon
+	\end{equation*}
+	Then we can choose some $\alpha_n \in g_n^{-1}(g_n(\alpha)) \in \sigma(\alpha_n)$ since $g_n(\alpha) \neq 0$. Therefore, $\alpha_n \sto \alpha$. And the converse is similar.
+\end{proof}
+
 \begin{thm}
 	If $N$ and $M$ are normal operators on a separable Hilbert spaces, then the following statements are equivalent.
 	\begin{enumerate}[label = \arabic*)]
