@@ -1631,7 +1631,7 @@ For normal operators, by above proposition, there are more interesting results a
 	i.e. $\ran{(N-\lambda)}$ is not closed.
 \end{proof}
 
-\begin{thm}
+\begin{thm} \label{thm14}
 	If $N$ is normal, then $\sigma_e(N) = \sigma_{le}(N) = \sigma_{re}(N)$ and
 	\begin{equation*}
 		\sigma(N) \backslash \sigma_e(N) = \{\lambda \in \sigma(N) \colon \lambda \text{ is isolated and } \dim{\ker{(N-\lambda)}} < \infty\}
@@ -1788,7 +1788,231 @@ Let $\gamma(A) = \inf{\{\norm{Ah} \colon \norm{h} = 1,~ h \bot \ker{A}\}} = \chi
 
 \section{Compact Perturbations}
 
+\subsection{Weyl-von Neumann Theorem}
 
+In finite dimensional case, any normal operator can be diagonalized, but it is not true for the infinite dimensional case. In fact, it can hold by doing some extra efforts. Firstly, we can do that for a self-adjoint operator. 
+
+Like the definition of Hilbert-Schmidt operators, we define $B \in \fml{B}_p(\Hs)$ if $\abs{B}^{\frac{p}{2}} \in \hoper$, and 
+\begin{equation*}
+	\norm{B}_p = \norm{\abs{B}^{\frac{p}{2}}}_2^{\frac{2}{p}} = (\sum_e \norm{Be}^p)^{\frac{1}{p}}
+\end{equation*}
+Clearly, $\norm{B} \leqslant \norm{B}_p$. And moreover, if $B$ has finite rank $m$, then
+\begin{equation*}
+	\norm{B}_p \leqslant m^{\frac{1}{p}} \norm{T}
+\end{equation*}
+In fact, $\fml{B}_p(\Hs) \subset \coper$.
+
+\begin{thm}[Weyl-von Neumann Theorem]
+	If $A$ is a self-adjoint operator on a separable Hilbert space, $\varepsilon > 0$ and $1 < p < \infty$, then there is a diagonalizable self-adjoint operator $D$ s.t. 
+	\begin{equation*}
+		A-D \in \fml{B}_p(\Hs), \text{ and } \norm{A-D}_p < \varepsilon
+	\end{equation*}
+\end{thm}
+
+To prove it, we need a lemma.
+
+\begin{lem}
+	If $A$ is a self-adjoint operator on a separable Hilbert space, $h \in \Hs$, $\varepsilon > 0$ and $1 < p < \infty$, then there is a finite rank projection $P$ and a self-adjoint $K \in \fml{B}_p(\Hs)$, s.t. $f \in P$, $\norm{K}_p < \varepsilon$ and $A+K$ is reduced by $P$.
+\end{lem}
+\begin{proof}
+	Let $E$ be the spectral measure for $A$ and $\sigma(A) \subset [a,b]$ and intervals $\{\Delta_k\}_{k=1}^{n}$ be a partition of $[a,b]$ with length $(b-a)/n$. Put
+	\begin{equation*}
+		f_k = E(\Delta_k) f, \text{ and } g_k = \frac{f_k}{\norm{f_k}} \text{ for } f_k \neq 0
+	\end{equation*}
+	Let $\lambda_k$ be the midpoint of $\Delta_k$ then
+	\begin{equation*}
+		\norm{(A-\lambda_k)g_k} \leqslant \frac{(b-a)}{n}
+	\end{equation*}
+	Define $P$ as the projection onto $\spn{g_1,\cdots,g_n}$. Since $P^{\bot}g_k = 0$,
+	\begin{equation*}
+		\norm{P^{\bot} Ag_k} = \norm{P^{\bot}(A-\lambda_k)g_k} \leqslant \frac{(b-a)}{n}
+	\end{equation*}
+	Since $g_k \in E(\Delta_k)$, $Ag_k \in E(\Delta_k)$. Thus, $Ag_k \bot g_j$ for $j \neq k$.
+	\begin{equation*}
+		P^{\bot} Ag_k = Ag_k - \sum_{j=1}^{n} \langle Ag_k,g_j \rangle g_j = Ag_k - \langle Ag_k,g_k \rangle g_k \in E(\Delta_k)
+	\end{equation*}
+	Thus $P^{\bot}Ag_k \bot P^{\bot}Ag_j$ for $j \neq k$. Then
+	\begin{eqnarray*}
+		\norm{P^{\bot}APh} &=& \norm{\sum_{k=1}^n \langle h,g_k \rangle P^{\bot}Ag_k} \\
+		&=& \sum_{k=1}^n \abs{\langle h,g_k \rangle}^2 \norm{P^{\bot}Ag_k}^2 \\
+		&\leqslant& \left(\frac{(b-a)}{n} \right)^2 \norm{h}^2
+	\end{eqnarray*}
+	Therefore, $\norm{P^{\bot}AP} \leqslant {(b-a)}/{n}$ and by above mention
+	\begin{equation*}
+		\norm{P^{\bot}AP}_p \leqslant n^{\frac{1}{p}} \left(\frac{(b-a)}{n} \right) = \frac{(b-a)}{n^q},~ q = 1 - \frac{1}{p}
+	\end{equation*}
+	Put $B = PAP + P^{\bot}AP^{\bot}$ and $K = -(P^{\bot}AP + PAP^{\bot})$, then $B = A + K$. Clearly, $K$ is self-adjoint and $P$ reduces $B$ and 
+	\begin{equation*}
+		\norm{K}_p \leqslant \frac{2(b-a)}{n^q}
+ 	\end{equation*}
+ 	Thus for any $\varepsilon > 0$, $\norm{K}_p < \varepsilon$ for some partition.
+\end{proof}
+
+Then we can prove the Weyl-von Neumann Theorem.
+
+\begin{proof}[Proof of Weyl-von Neumann Theorem]
+	Let $\{h_j\}$ be a dense subset in $\Hs$ and put $f = h_1$, then by above lemma, there is a finite rank projection $P_1$ and a self-adjoint operator $K_1$ s.t. $A+K_1$ is reduced by $P_1$ and $h_1 \in P_1$ and $\norm{K_1}_p < \varepsilon / 2$. Then applying above lemma to $(A+K_1)|_{P_1^{\bot}}$ and the vector $f = P_1^{\bot} h_2$, we get $K_2$ and $P_2$ and extend $K_2$ on $\Hs$ by defining $K_2 h =0$ for $h \in P_1$. By reduction, we get finite rank projections $\{P_n\}$ and $\{K_n\}$ s.t.
+	\begin{enumerate}[label = \arabic*)]
+		\item $P_j P_n = 0$ for $j \neq n$;
+		\item $\norm{K_n}_p < \varepsilon / 2^n$;
+		\item $h_n \in P_1 + \cdots + P_n$;
+		\item $A+K_1+\cdots+K_n$ is reduced by $P_1 + \cdots + P_n$;
+		\item $K_n(P_1 + \cdots + P_{n-1}) = 0$.
+	\end{enumerate}
+	Then let $K = \sum K_n$, then $\norm{K_n}_p < \varepsilon$. And let $D = A + K$. Clearly, $D$ is self-adjoint. Since $1 = \sum_n P_n$ and $D$ is reduced by any $P_n$, if $D_n = D|_{P_n}$, $D = \oplus D_n$. And since $P_n$ is finite, each $D_n$ can be diagonalized, thus $D$ is diagonalizable.
+\end{proof}
+
+\subsection{Weyl-von Neumann-Berg Theorem}
+
+Now, we can apply above theorem to the normal operators. But it can be more general. Since a class of commutative finite rank normal operators can be diagonalizable simutaneously, we want to see the similar result for the infinite dimensional case.
+
+By the \textbf{Theorem} \ref{thm13} in the section \textbf{4.3}, we can get a trivial corollary.
+
+\begin{cor}
+	If $N_1, \cdots, N_n$ are commutating normal operators on a separable Hilbert space, then there is a self-adjoint operator $A$ and continuous functions $f_1,\cdots,f_n$ s.t. $N_j = f_j(A)$ for $1 \leqslant j \leqslant n$.
+\end{cor}
+
+\begin{thm}[Weyl-von Neumann-Berg Theorem]
+	If $N_1, \cdots, N_n$ are commutating normal operators on a separable Hilbert space and $\varepsilon > 0$, then there are diagonalizable normal operators $D_1,\cdots,D_n$ and compact operators $K_1,\cdots,K_n$ s.t. for $1 \leqslant j \leqslant n$, $\norm{K_j} < \varepsilon$ and $N_j = D_j + K_j$.
+\end{thm}
+
+By above corollary and the Weyl-von Neumann Theorem, $A = D + K$ with $\norm{K} < \varepsilon$, but we need to prove that $f(A) - f(D) \in \coper$, and $\norm{f(A) - f(D)} M< \varepsilon$.
+
+\begin{lem}
+	\begin{enumerate}[label=\arabic*)]
+		\item Let $A$ be a self-adjoint operator with $A = D + K$ for some diagonalizable $D$ and compact operator $K$. Then for any continuous function $f$ on $\sigma(A)$, there is a compact operator $K^{'}$ s.t. $f(A) = f(D) + K^{'}$.
+		\item If $f$ is a continuous function on $\R$, then the map $A \sto f(A)$ is uniformly continuous on a bounded sets of self-adjoint operators.
+	\end{enumerate}
+\end{lem}
+\begin{proof}
+	For $1)$, if $A = D + K$, then for any $m \geqslant 1$, $A^m = D^m + K_m$ for some compact operatr $K_m$. Therefore, for each polynomial $p$, 
+	\begin{equation*}
+		p(A) = p(D) + K_p, \text{ for some operator } K_p \in \coper
+	\end{equation*}
+	Let $\{p_k\}$ be a sequence converging uniformly to $f$ on a closed interval containing $\sigma(A) \cup \sigma(D)$, thus
+	\begin{equation*}
+		\norm{p_k(A) - f(A)} \sto 0,~ \norm{p_k(D) - f(D)} \sto 0
+	\end{equation*}
+	Therefore, we have
+	\begin{equation*}
+		K_{pk} = p_k(A) - p_k(D) \sto f(A) - f(D) = K^{'} \text{ in norm}
+	\end{equation*}
+	and $K^{'} \in \coper$.
+	\item For $2)$, we just need to prove this if $f$ is a polynomial since on a compact set the limit of a sequence of uniformly continuous functions is also uniformly continuous. Note that
+	\begin{equation*}
+		T^{n+1} - S^{n+1} = T^n(T-S) + (T^n - S^n)S
+	\end{equation*}
+	That means $T \sto T^n$ is uniformly continuous on a bounded set of self-adjoint operators. Therefore, $A \sto f(A)$ for any polynomial $f$.
+\end{proof}
+
+\begin{proof}[Weyl-von Neumann-Berg Theorem]
+	By above corollary, let $A$ be the self-adjoint operator and $f_1,\cdots,f_n$ be continuous functions on $\sigma(A)$ s.t. $N_j = f_j(A)$ for any $1 \leqslant j \leqslant n$. By the Weyl-von Neumann Theorem, there are self-adjoint operators $D$ and $K$ with $K \in \coper$ and $\norm{K} < \varepsilon$ s.t. $A = D + K$. Then by above lemma,
+	\begin{equation*}
+		N_j - f_j(D) \in \coper, \norm{N_j - f_j(D)} = \norm{f_j(A) - f_j(D)} < \varepsilon \qedhere
+	\end{equation*}
+\end{proof}
+
+\begin{cor}
+	If $N$ is a normal operator on a separable Hilbert space and $\varepsilon > 0$, then there is a diagonalizable normal operator $D$ s.t. $N - D \in \coper$ and $\sigma(D) = \sigma_e(D)$.
+\end{cor}
+\begin{proof}
+	By above theorem, $N = D^{'} + K$ for the normal diagnolizable operator $D^{'}$ and self-adjoint compact operator $K$. By the \textbf{Theorem} \ref{thm14} in the subsetction \textbf{5.4.3} and the separability of the Hilbert space, 
+	\begin{equation*}
+		\{\mu_j\}_{j=1}^{\infty} = \sigma(D^{'}) \backslash \sigma_e(D^{'})
+	\end{equation*}
+	where each $\mu_j$ has finite multiplicity and is repeated as often as their multiplicity. Let $\{h_j\}$ be the coresponding eigenvectors then
+	\begin{equation*}
+		D^{'} = D + \sum_{j=1}^{\infty} \mu_j h_j \otimes h_j
+	\end{equation*}
+	where $D$ is a diagonalizable normal operator $D$ with $\sigma(D) = \sigma_e(D)$. And clearly,
+	\begin{equation*}
+		\sum_{j=1}^{\infty} \mu_j h_j \otimes h_j \in \coper
+	\end{equation*}
+	thus $N-D = K+\sum_{j=1}^{\infty} \mu_j h_j \otimes h_j \in \coper$.
+\end{proof}
+
+\subsection{Approximately Unitary Equivalence}
+
+For two operators $N$ and $M$, if there is a unitary $U$ s.t. $N = \st{U}MU$, $N$ and $M$ are same in some sense and we say that these two are unitary equivalent. But this relation is too strong, so there is another weaker relation, approximately unitary equivalence.
+
+\begin{lem}
+	If $N$ and $M$ are diagonalizable normal operators on a separable Hilbert space with
+	\begin{equation*}
+		\sigma(N) = \sigma_e(N) = \sigma_e(M) = \sigma(M)
+	\end{equation*}
+	and $\varepsilon > 0$, then there is a unitary operator $U$ s.t. $N-\st{U}MU \in \toper$ with $\norm{N-\st{U}MU}_1 < \varepsilon$. 
+\end{lem}
+\begin{proof}
+	By the condition, if $\nu$ is an isolated point of $\sigma(N)$, it must be an eigenvalue with infinite multiplicity, and thus it is an eigenvalue of $M$ with infinite multiplicity. If $\nu$ is a limit point of $\sigma(N)$, then there is a sequence in $\sigma(M)$ converging to $\nu$. \\
+	Let $\{\nu_n\}$ and $\{\mu_m\}$ be all eigenvalues of $N$ and $M$ repectively and repeated as often as their multiplicity. Since $\sigma(N) = \sigma_e(N)$, all of them have infinite multiplicity. Moreover, for any $\nu_j$, there is a sequence $\{\mu_{n_j}\}$ converging to it.
+	\item Claim: There is a renumbering of the two sets $\{\nu_{n_k}\}$ and $\{\mu_{m_k}\}$ s.t. 
+	\begin{equation*}
+		\abs{\nu_{n_k} - \mu_{m_k}} < \frac{\varepsilon}{2^k},~ \forall k \in \{n_1, \cdots, n_{2k}\} \cap \{m_1, \cdots, m_{2k}\}
+	\end{equation*}
+	Step 1: Let $n_1 = 1$ and $m_1$ be the smallest integer with 
+	\begin{equation*}
+		\abs{\nu_1 - \mu_{m_1}} < \frac{\varepsilon}{2}
+	\end{equation*}
+	Step 2: If $m_1 > 1$, put $m_2 = 1$, otherwise, put $m_2 =2$. Then let $\nu_2$ be the smallest integer larger than $1$ s.t.
+	\begin{equation*}
+		\abs{\nu_2 - \mu_{m_2}} < \frac{\varepsilon}{2^2}
+	\end{equation*}
+	Step 3: Continuing Step 1 and Step 2 to get $\{n_k\}$ and $\{m_k\}$ for $1 \leqslant k \leqslant 2j$. Then let $n_{2j+1}$ be the smallest integer and $n \neq n_k$ for $1 \leqslant k \leqslant 2j$ and $m_{2j+1}$ be the smallest integer grater than $m_k$ for $1 \leqslant k \leqslant 2j$ with
+	\begin{equation*}
+		\abs{\nu_{n_{2j+1}} - \mu_{m_{2j+1}}} < \frac{\varepsilon}{2^{2j+1}}
+	\end{equation*}
+	Similarly, we get $n_{2j+2}$ and $m_{2j+1}$ with same properties. Therefore, by induction, this claim holds.\\
+	Since $N$ and $M$ are diagonalizable on a separable Hilbert space, there are two orthonormal basis $\{e_n\}$ and $\{f_m\}$ s.t. 
+	\begin{equation*}
+		Ne_n = \nu_n e_n, \text{ and } Mf_m = \mu_m f_m
+	\end{equation*}
+	Define $U$ as $Ue_{n_k} = f_{m_k}$ for all $k$, then clearly $U$ is a unitary. And,
+	\begin{equation*}
+		(N-\st{U}MU)e_{n_k} = (\nu_{n_k} - \mu_{m_k}) e_{n_k}
+	\end{equation*}
+	thus $\norm{N-\st{U}MU}_1 < \varepsilon$.
+\end{proof}
+
+\begin{thm}
+	If $N$ and $M$ are normal operators on a separable Hilbert space with same essential spectrum, then there is a unitary $U$ s.t. $N-\st{U}MU$ is compact.
+\end{thm}
+\begin{proof}
+	According the last corollary in above subsection, there are diagonalizable normal operators $N_1$ and $M_1$ s.t.
+	\begin{equation*}
+		N-N_1,~ M-M_1 \in \coper, \text{ and } \sigma(N_1) = \sigma_e(N_1) = \sigma_e(M_1) = \sigma(M_1)
+	\end{equation*}
+	By above lemma, there is a unitary $U$ s.t. $N_1-\st{U}M_1U \in \coper$. Therefore,
+	\begin{equation*}
+		N - \st{U}MU = (N-N_1) + (N_1-\st{U}M_1U) + \st{U}(M-M_1)U
+	\end{equation*}
+	is compact.
+\end{proof}
+
+In above theorem, we can not estimate the value of $\norm{N - \st{U}MU}$. But if there is an another condition these two normal operators satisfy, then $\norm{N - \st{U}MU}$ can be arbitratry small. And this property induce the concept of approximately unitary equivalence.
+
+\begin{defn}
+	Two normal operators $A$ and $B$ are approximately unitarily equivalent, denoted by $A \cong_a B$, if there is a sequence of unitaries $\{U_n\}$ s.t. 
+	\begin{equation*}
+		\norm{A - \st{U_n}BU_n} \sto 0
+	\end{equation*}
+	Moreover, if $A - \st{U_n}BU_n \in \coper$ and $A \cong_a B$, then $A$ and $B$ are called strongly approximately unitarily equivalent, denoted by $A \cong_{sa} B$.
+\end{defn}
+
+\begin{thm}
+	If $N$ and $M$ are normal operators on a separable Hilbert spaces, then the following statements are equivalent.
+	\begin{enumerate}[label = \arabic*)]
+		\item $N \cong_{sa} M$.
+		\item $N \cong_a M$.
+		\item $\sigma_e(N) = \sigma_e(M)$ and for any $\lambda \in \sigma_e(N) = \sigma_e(M)$,
+		\begin{equation*}
+			\dim{\ker{(N-\lambda)}} = \dim{\ker{(M-\lambda)}}
+		\end{equation*}
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	Let $E_N$ and $E_M$ be the spectral measures for $N$ and $M$. $1)$ implies $2)$ clearly.
+	\item $2) \Rightarrow 3)$: 
+\end{proof}
 
 
 
