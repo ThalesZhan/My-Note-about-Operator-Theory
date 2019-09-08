@@ -6616,22 +6616,37 @@ By above corollary and the Weyl-von Neumann Theorem, $A = D + K$ with $\norm{K} 
 \end{proof}
 
 \begin{cor}
-	If $N$ is a normal operator on a separable Hilbert space and $\varepsilon > 0$, then there is a diagonalizable normal operator $D$ s.t. $N - D \in \coper$ and $\sigma(D) = \sigma_e(D)$.
+	If $N$ is a normal operator on a separable Hilbert space and $\varepsilon > 0$, then there is a diagonalizable normal operator $D$ s.t. $N \cong D \oplus K + K_1 $ and $\sigma(D) = \sigma_e(D) = \sigma_e(N)$, where $K$ and $K_1$ are compact with $\norm{K}, \norm{K_1} < \varepsilon$
 \end{cor}
 \begin{proof}
-	By above theorem, $N = D^{'} + K$ for the normal diagnolizable operator $D^{'}$ and self-adjoint compact operator $K$. By the \textbf{Theorem} \ref{thm14} in the subsetction \textbf{5.4.3} and the separability of the Hilbert space, 
+	By above theorem, $N = D_1 + K_1$ for the normal diagnolizable operator $D_1$ and self-adjoint compact operator $K_1$ with $\norm{K_1} < \varepsilon$. Then by the Fredholm Theory, $\sigma_e(D_1) = \sigma_e(N)$. By the \textbf{Theorem} \ref{thm14} in the subsetction \textbf{5.4.3} and the separability of the Hilbert space, 
 	\begin{equation*}
-		\{\mu_j\}_{j=1}^{\infty} = \sigma(D^{'}) \backslash \sigma_e(D^{'})
+		\{\mu_j\}_{j=1}^{\infty} = \sigma(D_1) \backslash \sigma_e(D_1)
 	\end{equation*}
 	where each $\mu_j$ has finite multiplicity and is repeated as often as their multiplicity. Let $\{h_j\}$ be the coresponding eigenvectors then
 	\begin{equation*}
-		D^{'} = D + \sum_{j=1}^{\infty} \mu_j h_j \otimes h_j
+		D_1 = D_2 \oplus \sum_{j=1}^{\infty} \mu_j h_j \otimes h_j
 	\end{equation*}
-	where $D$ is a diagonalizable normal operator $D$ with $\sigma(D) = \sigma_e(D)$. And clearly,
+	where $D_2$ is a diagonalizable normal operator on a subspace of $\Hs$ with $\sigma(D_2) = \sigma_e(D_2) = \sigma_e(D_1)$. Then for any $\mu_j$, there is a $\lambda_j \in \sigma_e(D_2)$, s.t.
 	\begin{equation*}
-		\sum_{j=1}^{\infty} \mu_j h_j \otimes h_j \in \coper
+		\abs{\mu_j - \lambda_j} = \dist{(\mu_j, \sigma_e(D_2))} = \dist{(\mu_j, \sigma_e(N))} < \varepsilon ~(?)
 	\end{equation*}
-	thus $N-D = K+\sum_{j=1}^{\infty} \mu_j h_j \otimes h_j \in \coper$.
+	Then since $D_2$ is diagonalizable, let $g_j$ be the corresponding vector  with respect to $\lambda_j$,
+	\begin{equation*}
+		D_1 = D \oplus \sum_{j=1}^{\infty} (-\lambda_j) g_j \otimes g_j \oplus \sum_{j=1}^{\infty} \mu_j h_j \otimes h_j
+	\end{equation*}
+	And in fact,
+	\begin{equation*}
+		D_1 \cong D \oplus \sum_{j=1}^{\infty} (\mu_j-\lambda_j) h_j \otimes h_j
+	\end{equation*}
+	where $D$ a diagonalizable normal operator on a subspace of $\Hs$ with $\sigma(D) = \sigma_e(D) = \sigma_e(N)$. Put 
+	\begin{equation*}
+		K = \sum_{j=1}^{\infty} (\mu_j-\lambda_j) h_j \otimes h_j
+	\end{equation*}
+	then $K$ is compact with $\norm{K} < \varepsilon$. Therefore,
+	\begin{equation*}
+		N \cong D \oplus K + K_1 \qedhere
+	\end{equation*}	
 \end{proof}
 
 \subsection{Approximately Unitary Equivalence}
@@ -6677,21 +6692,23 @@ For two operators $N$ and $M$, if there is a unitary $U$ s.t. $N = \st{U}MU$, $N
 \end{proof}
 
 \begin{thm}
-	If $N$ and $M$ are normal operators on a separable Hilbert space with same essential spectrum, then there is a unitary $U$ s.t. $N-\st{U}MU$ is compact.
+	If $N$ and $M$ are normal operators on a separable Hilbert space with same essential spectrum, then for any given $\varepsilon > 0$, there is a unitary $U$ s.t. $N-\st{U}MU$ is compact and $\norm{N-\st{U}MU} < \varepsilon$.
 \end{thm}
 \begin{proof}
 	According the last corollary in above subsection, there are diagonalizable normal operators $N_1$ and $M_1$ s.t.
 	\begin{equation*}
-		N-N_1,~ M-M_1 \in \coper, \text{ and } \sigma(N_1) = \sigma_e(N_1) = \sigma_e(M_1) = \sigma(M_1)
+		N = N_1 \oplus K_1 + K, ~ M = M_1 \oplus K_1^{'} + K^{'}
 	\end{equation*}
-	By above lemma, there is a unitary $U$ s.t. $N_1-\st{U}M_1U \in \coper$. Therefore,
+	where $K_1, K$ and $K_1^{'}, K^{'}$ are compact operators with arbitrary small norm. And since $\sigma_e(N) = \sigma_e(M)$, 
 	\begin{equation*}
-		N - \st{U}MU = (N-N_1) + (N_1-\st{U}M_1U) + \st{U}(M-M_1)U
+		\sigma(N_1) = \sigma_e(N_1) = \sigma_e(M_1) = \sigma(M_1)
 	\end{equation*}
-	is compact.
+	By above lemma, there is a unitary $V$ s.t. $N_1-\st{V}M_1V \in \coper$. Therefore, put $U = V \oplus id$,
+	\begin{equation*}
+		N - \st{U}MU = (N_1-\st{V}M_1V) \oplus (K_1 - K_1^{'}) + \st{U}(K-K^{'})U 
+	\end{equation*}
+	is compact and its norm can be arbitrary small.
 \end{proof}
-
-In above theorem, we can not estimate the value of $\norm{N - \st{U}MU}$. But if there is an another condition these two normal operators satisfy, then $\norm{N - \st{U}MU}$ can be arbitrary small. And this property induce the concept of approximately unitary equivalence.
 
 \begin{defn}
 	Two normal operators $A$ and $B$ are approximately unitarily equivalent, denoted by $A \cong_a B$, if there is a sequence of unitaries $\{U_n\}$ s.t. 
@@ -6710,9 +6727,9 @@ In above theorem, we can not estimate the value of $\norm{N - \st{U}MU}$. But if
 		\Cg{a_n} \cong C(\sigma(a_n)),~ \Cg{a} \cong C(\sigma(a))
 	\end{equation*}
 	For any $f_k \in C(\sigma(a_k))$, extending $f_k$ on $\cup \sigma(a_n) \cup \sigma(a)$ by setting $f_k = 0$ on other areal. Then $f_k \in B(\cup \sigma(a_n) \cup \sigma(a))$, and $\norm{f_k}$ does not change. And this mention can also apply to any $f$ in $C(\sigma(a))$.\\
-	Let $g_k(z) = z \in C(\sigma(a_k))$ and $g(z) = z \in C(\sigma(a))$, then extending $g_k$ and $g$ on $\cup \sigma(a_n) \cup \sigma(a)$. Therefore, $\norm{g_k} = \norm{a_k}$ and $\norm{g} = \norm{a}$. Take $\alpha \in \sigma(a)$, then since $a_n \sto a$ in norm, for any $0 < \varepsilon < \abs{g(\alpha)}$, there is a $n_0$ s.t. for all $n > n_0$
+	Let $g_k(z) = z \in C(\sigma(a_k))$ and $g(z) = z \in C(\sigma(a))$, then extending $g_k$ and $g$ on $\cup \sigma(a_n) \cup \sigma(a)$. Therefore, $\norm{g_k} = \norm{a_k}$ and $\norm{g} = \norm{a}$. Take $\alpha \in \sigma(a)$, then since $a_n \sto a$ in norm, $g_n \sto g$ in norm (?), therefore for any $0 < \varepsilon < \abs{g(\alpha)}$, there is a $n_0$ s.t. for all $n > n_0$
 	\begin{equation*}
-		\abs{g_n(\alpha)-g(\alpha)} \leqslant \norm{g_n - g} = \norm{a_n - a} < \varepsilon
+		\abs{g_n(\alpha)-g(\alpha)} \leqslant \norm{g_n - g} < \varepsilon
 	\end{equation*}
 	Then we can choose some $\alpha_n \in g_n^{-1}(g_n(\alpha)) \in \sigma(\alpha_n)$ since $g_n(\alpha) \neq 0$. Therefore, $\alpha_n \sto \alpha$. And the converse is similar.
 \end{proof}
@@ -6728,6 +6745,34 @@ In above theorem, we can not estimate the value of $\norm{N - \st{U}MU}$. But if
 		\end{equation*}
 	\end{enumerate}
 \end{thm}
+\begin{proof}
+	Let $E_N$ and $E_M$ be the spectral measures for $N$ and $M$. $1)$ implies $2)$ clearly.
+	\item $2) \Rightarrow 3)$: Let $\{U_n\}$ be the unitaties s.t. $\norm{N - \st{U_n}MU_n} \sto 0$. Then by above lemma, 
+	\begin{equation*}
+		X = \sigma(M) = \sigma(N)
+	\end{equation*}
+	If $\lambda \in X$ is isolated, then $\lambda$ is eigenvalue for $M$ and $N$. And the characteristic function $\chi_{\{\lambda\}}(z)$ satisfies
+	\begin{equation*}
+		\chi_{\{\lambda\}}(\st{U}_nMU_n) \longrightarrow \chi_{\{\lambda\}}(N)
+	\end{equation*}
+	in norm. That means $E_N(\{\lambda\})$ and $E_M(\{\lambda\})$ has same rank, thus 
+	\begin{equation*}
+		\dim{\ker{(N-\lambda)}} = \dim{\ker{(M-\lambda)}}
+	\end{equation*}
+	for any isolated point $\lambda$ in $X$. Since the essential spectrum consists of all points in the spectrum that are not isolated eigenvalues of finite multiplicity, thus $\sigma_e(M) = \sigma_e(N)$.
+	\item $3) \Rightarrow 1)$: By the Spectral Theorem, 
+	\begin{equation*}
+		N = N_1 \oplus N_2, \text{ and } M = M_1 \oplus M_2,
+	\end{equation*}
+	where $\sigma(M_2) = \sigma_e(M_2) = \sigma_e(M) = \sigma_e(N) = \sigma_e(N_2) = \sigma(N_2)$ and the spectrum of $N_1$ and $M_1$ consists of all eigenvalues of $N$ and $M$ with finite multiplicity, and thus $N_1 \cong M_1$. Let $V$ be the unitary s.t. $\st{V}M_1V = N_1$. And by above theorem, there is a sequence of unitaries $\{W_n\}$ s.t.
+	\begin{equation*}
+		\st{W}_n M_2 W_n \longrightarrow N_2
+ 	\end{equation*}
+ 	in norm and $N_2 - \st{W}_n M_2 W_n \in \coper$. Then putting $U_n = W_n \oplus V_n$, thus $N \cong_{sa} M$.
+\end{proof}
+
+\chapter{Von Neumann Algebras}
+
 
 
 

@@ -1,6 +1,6 @@
 \chapter{Compact Operators, Fredholm Theory and Perturbations}
 
-The compact operator is as similar as the finite dimensional operator with respect to the spectrums, the representations and so on. In fact, all compact operators can form the unique closed ideal in $\oper$. Moverover, it contains some important classes of operators, like the trace class, which provides an extral topology on $\oper$ and this topology plays an important role in the von Neumann algebra. In fact, the topology is conincided with the $WOT$ in some cases, but it can give a new method to obtain some properties of general von Neumann algebras. For non-compact operators, there is a "weak version" of the compact operator, the Fredholm operator. By researching the Fredholm operators, it provides us an approach to find some "invariant variable" under the compact perturbations. Finally, we have known that finite dimensional normal operator can always be diagnolizable, but for infinite dimensional case, this statement is not true. But by some small compact perturbation, the normal operator can be diagnalizable, and this result has some applications of representation theory. 
+The compact operator is as similar as the finite dimensional operator with respect to the spectrums, the representations and so on. In fact, all compact operators can form the unique closed ideal in $\oper$. Moreover, it contains some important classes of operators, like the trace class, which provides an extra topology on $\oper$ and this topology plays an important role in the von Neumann algebra. In fact, the topology is coincided with the $WOT$ in some cases, but it can give a new method to obtain some properties of general von Neumann algebras. For non-compact operators, there is a "weak version" of the compact operator, the Fredholm operator. By researching the Fredholm operators, it provides us an approach to find some "invariant variable" under the compact perturbations. Finally, we have known that finite dimensional normal operator can always be diagnolizable, but for infinite dimensional case, this statement is not true. But by some small compact perturbation, the normal operator can be diagonalizable, and this result has some applications of representation theory. 
 
 \section{Spectrums}
 
@@ -53,7 +53,7 @@ Since $\Hs$ is a complete metric space, the compactness of $\clo{T(B_{\Hs})}$ is
 	$T$ is compact.
 \end{proof}
 
-By above theorem, we can see the power of compact operators. Intuitively, compact operators can "strengthen" the topology. They map the weakly convergent sequences be norm convergent sequence. How can they do that? We have known the weak topology is agree with the norm topology on the finite dimensional space. So, compact operators may be the "extension" of finite rank operators. In fact, we can descibe this property more rigorously.
+By above theorem, we can see the power of compact operators. Intuitively, compact operators can "strengthen" the topology. They map the weakly convergent sequences be norm convergent sequence. How can they do that? We have known the weak topology is agree with the norm topology on the finite dimensional space. So, compact operators may be the "extension" of finite rank operators. In fact, we can describe this property more rigorously.
 
 \begin{thm}
 	$T \in \oper$ is compact if and only if there is a sequence $\{T_n\} \subset \foper$ s.t. $T_n \sto T$ in norm.
@@ -139,13 +139,13 @@ In fact, any nonzero point in $\sigma(T)$ for a compact operator $T$ is isolated
 \begin{proof}
 	For $y \in \fml{N}$, define $\delta(y) = \dist{(y,\M)}$. Choosing $y_1 \in \fml{N} \backslash \M$, there exists a $x_0 \in \M$ s.t.
 	\begin{equation*}
-		\delta(y_1) \leqslant \norm{x_0-y_1} \leqslant (1+\varepsilon)\delta(y_1)
+		\delta(y_1) \leqslant \norm{x_0-y_1} \leqslant (1+\varepsilon) \delta (y_1)
 	\end{equation*}
 	Let $y_2 = y_1-x_0$, then
 	\begin{equation*}
 		(1+\varepsilon)\delta(y_2) = (1+\varepsilon)\inff{\{\norm{y_1-x_0-x} \colon x \in \M\}} = (1+\varepsilon)\delta(y_1)
 	\end{equation*}
-	Thus $(1+\varepsilon)\delta(y_2) > \norm{x_0 - y_1} = \norm{y_2}$. Let $y = \norm{y_2}^{-1}y_2$, then $y_2 \in \fml{N}$ with $\norm{y_2}=1$.
+	Thus $(1+\varepsilon)\delta(y_2) > \norm{x_0 - y_1} = \norm{y_2}$. Let $y = \norm{y_2}^{-1}y_2$, then $y_2 \in \fml{N}$.
 	\begin{eqnarray*}
 		\norm{y-x} &=& \norm{\norm{y_2}^{-1}y_2-x} = \norm{y_2}^{-1}\norm{y_2-\norm{y_2}x} \\
 		&>& ((1+\varepsilon)\delta(y_2))^{-1} \norm{y_2-\norm{y_2}x} \\
@@ -327,7 +327,7 @@ Finally,, we can prove $\coper$ is the unique closed ideal in $\oper$ if $\Hs$ i
 	Thus $N \in \coper$. \\
 	Conversely, if $N$ is compact, then for any $\varepsilon > 0$, put $\phi(z) = z^{-1}\chi_{\Delta_{\varepsilon}}$, then
 	\begin{equation*}
-		N\phi(N) &=& \int \chi_{\Delta_{\varepsilon}} dE = E_{\varepsilon} 
+		N\phi(N) = \int \chi_{\Delta_{\varepsilon}} dE = E_{\varepsilon} 
 	\end{equation*}
 	Since $E_{\varepsilon}$ is a compact projection, i.e. $\ran{E_{\varepsilon}}$ is closed, by the Riesz Theorem, $\dim{\ran{E_{\varepsilon}}} < \infty$.
 \end{proof}
@@ -371,7 +371,7 @@ For a normal operator, it can be decomposed as the direct sum of $*$-cyclic norm
 \subsection{Minimal Projections}
 
 \begin{defn}
-	Let $\A$ is a $\st{C}$-subalgebra in $\coper$
+	If $\A$ is a $\st{C}$-subalgebra in $\coper$
 	\begin{enumerate}[label=\arabic*)]
 		\item A projection $E$ in $\A$ is minimal if $E \neq 0$ and there are no nonzero projection $P$ in $\A$ s.t. $P < E$.
 		\item $\A$ is called irreducible if $\A$ has no proper reducing subspaces.
@@ -437,7 +437,6 @@ Using the minimal projection, we can get an important trait the irreducible comp
 	Let $\I = \B \cap \coper$. Then $\I$ is a closed ideal in $\B$. By above corollary, $\I = \coper$, i.e. $\coper \subset \B$.
 \end{proof}
 
-
 Now, the unit element of a compact operator subalgebra can be provided.
 \begin{prop}
 	If $E$ is a minimal projection in $\A$, $e$ is any nonzero vector in $\Hs$ and $\Hs_e = \clo{\A e}$, then $\A|_{\Hs_e} = \fml{B}_0(\Hs_e)$.
@@ -500,13 +499,14 @@ For the representation of a compact operator subalgebra, it can be decomposed as
 
 Now, we can use above theorem to get the structure of any finite dimensional $\st{C}$-algebra.
 \begin{cor}
-	For any finite dimensional $\st{C}$-algebra $\A$ and let $M(n)$ be the set of $n \times n$ matrices with complex entries acting on the inner product space $\C^{n}$., there are $n_1,\cdots,n_p \in \N$, s.t.
+	For any finite dimensional $\st{C}$-algebra $\A$ and let $M(n)$ be the set of $n \times n$ matrices with complex entries acting on the inner product space $\C^{n}$, there are $n_1,\cdots,n_p \in \N$, s.t.
 	\begin{equation*}
 		\A \cong M(n_1) \oplus M(n_2) \oplus \cdots \oplus M(n_p)
 	\end{equation*}
 \end{cor}
 
 Also, there are some other corollaries of above theorem.
+
 \begin{cor} \label{cor10}
 	\begin{enumerate}[label=\arabic*)]
 		\item If $(\rho, \fml{K})$ is an irreducible representation of $\A$, then $\rho(\A) = \fml{B}_0(\fml{K})$.
@@ -533,7 +533,7 @@ Also, there are some other corollaries of above theorem.
 	Therefore, $\rho(A_i) = U A_i \st{U} \sto U A \st{U} = T$ in $SOT$. Since $A_i \leqslant A$, $\rho(A_i) \leqslant \rho(A)$ and thus $T \leqslant \rho(A)$ by the fact that $\{A_i\}$ is increasing. Conversely, $\rho(A_i) \leqslant T$ implies that $A_i \leqslant \rho^{-1}(T)$. Thus $A \leqslant \rho^{-1}(T)$, thus $\rho(A) \leqslant T$.
 \end{proof}
 
-Here is an important example, which can be used to constract the $AF$ algebra.
+Here is an important example, which can be used to construct the $AF$ algebra.
 
 \begin{exam}
 	Let $M(n)$ be the set of $n \times n$ matrices with complex entries acting on the inner product space $\C^{n}$. If
@@ -558,13 +558,13 @@ Here is an important example, which can be used to constract the $AF$ algebra.
 
 \subsection{Decompositions of Compact Operator Algebras}
 
-By above theorem and the Zorn's Lemma, for the non-degenerate $\A$, there is a maximal family $\{E_i\}_{i \in I}$ of pairwise orthogonal minimal projections in $\A$ and let $\Hs_i = \clo{\A E_i \Hs}$ s.t. 
+By above theorem and the Zorn's Lemma, for the non-degenerate $\A$, there is a maximal family $\{E_i\}_{i \in I}$ of pairwise orthogonal minimal projections in $\A$ and let $\Hs_i = \clo{\A E_i \Hs}$ s.t.
 \begin{equation*}
 	\Hs = \oplus_{i \in I} \Hs_i~,~ \A|_{\Hs_i} = \fml{B}_0(\Hs_i)
 \end{equation*}
-But we cannot just using this as the decomposition of the compact operator algebra $\A$, since there are some "equivalent" relationships of these $\Hs_i$. Firstly, we say that $\Hs_i$ does not dependent on $\Hs_j$, if there is a $A \in \A$ s.t. $\A|_{\Hs_j} = 0$ and $\A|_{\Hs_i} \neq 0$.
+But we cannot just using this as the decomposition of the compact operator algebra $\A$, since there are some "equivalent" relationships of these $\Hs_i$. Firstly, we say that $\Hs_i$ does not dependent on $\Hs_j$, if there is a $A \in \A$ s.t. $\A|_{\Hs_i} = 0$ and $\A|_{\Hs_j} \neq 0$.
 
- \begin{prop}
+\begin{prop}
  	$\Hs_i$ does not dependent on $\Hs_j$ if and only if
  	\begin{equation*}
  		A|_{\Hs_i \oplus \Hs_j} = \fml{B}_0(\Hs_i) \oplus \fml{B}_0(\Hs_j)
@@ -580,7 +580,7 @@ But we cannot just using this as the decomposition of the compact operator algeb
  		(A+B)|_{\Hs_i} = K_i,~~\&~~ (A+B)|_{\Hs_j} = K_j
  	\end{equation*}
  	The converse is trivial.
-\end{proof}
+ \end{proof}
 \begin{rem}
 	By this proposition, if $\Hs_i$ does not dependent with $\Hs_j$, $\Hs_j$ does not $\Hs_i$. $\Hs_i$ and $\Hs_j$ are independent if they are not dependent.
 \end{rem}
@@ -722,7 +722,7 @@ In order to research the trace class, it is convinient to get some properties of
 	\begin{equation*}
 		\norm{ATe}^2 \leqslant \norm{A}^2 \norm{Te}^2 = \norm{A}^2 \norm{\abs{T}e}^2
 	\end{equation*}
-	Therefore, $\norm{AT}_2 \leqslant \norm{A} \norm{T}_2$.  \\
+	Therefore, $\norm{AT}_2 \leqslant \norm{A} \norm{T}_2$. \\
 	For $5)$, we just need to prove the addition is continuous and closed. For a fixed normal basis $\fml{E}$ and $T,S \in \hoper$, then 
 	\begin{equation*}
 		\{\norm{Te} \colon e \in \fml{E}\}, \{\norm{Se} \colon e \in \fml{E}\} \in l^{2}(\fml{E})
@@ -799,7 +799,7 @@ It need to check that this definition is well-defined.
 	If $T \in \toper$ and $\fml{E}$ is any orthonormal basis, then $\sum_{\fml{E}} \abs{\langle Te,e \rangle} < \infty$, and the sum $\sum_{\fml{E}} \langle Te,e \rangle$ is independent with the choice of $\fml{E}$.
 \end{prop}
 \begin{proof}
-	By above proposition, $T = \st{C}B$ for $C,B \in \hoper$. Since $\norm{(C-\lambda B)e}^2 \leqslant 0$ for any $\lambda \in \C$,
+	By above proposition, $T = \st{C}B$ for $C,B \in \hoper$. Since\\ $\norm{(C-\lambda B)e}^2 \leqslant 0$ for any $\lambda \in \C$,
 	\begin{equation*}
 		2 \Rea{\clo{\lambda} \langle Be,Ce \rangle} \leqslant \norm{Be}^2+\abs{\lambda} \norm{Ce}^2
 	\end{equation*}
@@ -821,10 +821,10 @@ It need to check that this definition is well-defined.
 	\begin{equation*}
 		\sum_{\fml{E}} \langle Te,e \rangle = \Rea{\langle Te,e \rangle} + i\Img{\langle Te,e \rangle}
 	\end{equation*}
-	Therefore, the sum is independent with the choice of the orthonormal basis $\fml{E}$.
+	The sum is independent with the choice of the orthonormal basis $\fml{E}$.
 \end{proof}
 
-For convinience, there is another notation to denote the rank one operators.
+For convenience, there is another notation to denote the rank one operators.
 \begin{defn}
 	For two vectors $g,h \in \Hs$, the rank one operator $g \otimes h$ is defined as
 	\begin{equation*}
@@ -842,6 +842,11 @@ There are some elementary properties for this rank one operator.
 		\item The map $(g,h) \sto g \otimes h$ is a sesquilinear from $\Hs \times \Hs$ to $\oper$.
 		\item $\norm{g \otimes h} = \norm{g} \norm{h}$.
 		\item If $T \in \oper$, then $T(g \otimes h) = (Tg) \otimes h$ and $(g \otimes h) T = g \otimes (\st{T}h)$.
+		\item Every any finite rank operator can be expressed as
+		\begin{equation*}
+			\sum_{k=1}^{n} g_k \otimes h_k
+		\end{equation*}
+		for some $g_1, \cdots, g_n \in \Hs$ and $h_1, \cdots, h_n \in \Hs$.
 		\item Every any finite rank operator can be expressed as
 		\begin{equation*}
 			\sum_{k=1}^{n} g_k \otimes h_k
@@ -911,7 +916,7 @@ There are more interesting properties of the trace class.
 	\end{equation*}
 	Therefore, we have that for any $A \in \oper$ 
 	\begin{equation*}
-		\tr{AT} = \tr{(A\st{C})B} = \clo{\tr{C\st{A} \st{B}}} = \tr{(\st{C})BA} = \tr{TA}
+		\tr{AT} = \tr{(A\st{C})B} = \clo{\tr{C\st{A} \st{B}}} = \tr{(\st{C}B)A} = \tr{TA}
 	\end{equation*}
 	Let $T = W \abs{T}$ be the Polar Decomposition. Then by the CBS Inequality,
 	\begin{eqnarray*}
@@ -920,7 +925,7 @@ There are more interesting properties of the trace class.
 		&\leqslant& \norm{\abs{T}^{\frac{1}{2}}}_2\norm{\abs{T}^{\frac{1}{2}}\st{W}\st{A}}_2 \\
 		&\leqslant& \norm{\abs{T}^{\frac{1}{2}}}_2^2 \norm{\st{W}\st{A}} \\
 		&\leqslant& \norm{T}_1 \norm{A}
-	\end{eqnarray*}
+	\end{eqnarray*}	
 	\item For $6)$, let $T = W \abs{T} \in \toper$, then $T\st{T} = W \abs{T}^2 \st{W}$. So by the uniqueness of root, $\abs{\st{T}} = W \abs{T} \st{W}$. Therefore,
 	\begin{equation*}
 		\norm{\st{T}}_1 = \tr{\abs{\st{T}}} = \tr{W \abs{T} \st{W}} = \tr{W \st{W} \abs{T}}
@@ -939,7 +944,7 @@ There are more interesting properties of the trace class.
 	By this theorem, $(\toper, \norm{\cdot}_1)$ is also a $\st{C}$-algebra.
 \end{rem}
 
-\begin{thm}
+\begin{thm} \label{thm11}
 	If $\{g_n\}$ and $\{h_n\}$ are two square summable sequences, then 
 	\begin{equation*}
 		T = \sum_{n} g_n \otimes h_n \in \toper, \text{ and } \norm{T}_1 \leqslant \sum_{n} \norm{g_n}\norm{h_n}
@@ -1009,7 +1014,7 @@ In above subsection, we have seen $\toper$ is indeed a $\st{C}$-algebra, thus a 
 			~ & $A$ & $\longmapsto$ & $\Phi_A$
 		\end{tabular}
 	\end{center}
-	Moreover, $\rho$ is an isomorphic isomorphism, i.e. $\toper \cong \coper$. 
+	Moreover, $\rho$ is an isomorphic isomorphism, i.e. $\toper \cong \st{\coper}$. 
 \end{thm}
 \begin{proof}
 	Since $\coper \subset \toper$, by above proposition, $\Phi_A \in \st{\coper}$. Moreover, 
@@ -1079,7 +1084,7 @@ In above subsection, we have seen $\toper$ is indeed a $\st{C}$-algebra, thus a 
 	$\st{(\oper, WOT)} = \st{(\oper, SOT)} = \foper$.
 \end{thm}
 \begin{proof}
-	By the \textbf{Proposition} \ref{prop13} in the subsection \textbf{3.3.3}, any $L \in \st{(\oper, WOT)}$ can be expressed as
+	By the \textbf{Proposition} \ref{prop13} in the subsection \textbf{3.3.3},  $L \in \st{(\oper, WOT)}$ can be expressed as
 	\begin{equation*}
 		L(T) = \sum_{k=1}^n \langle Tg_k, h_k \rangle = \tr{CT} = \Psi_C(T), \text{ where } C = \sum_{k=1}^n g_k \otimes h_k
 	\end{equation*}
@@ -1090,9 +1095,9 @@ In above subsection, we have seen $\toper$ is indeed a $\st{C}$-algebra, thus a 
 
 By above subsection, we know that
 \begin{equation*}
-	\oper \cong \st{(\toper, \norm{\codt}_1)}
+	\oper \cong \st{(\toper, \norm{\cdot}_1)}
 \end{equation*}
-Thus, $\oper$ can be equiped with the $weak^{*}$ topology with respect to the $\st{(\toper, \norm{\codt}_1)}$. The subbasis of a point $A \in \oper$ is like,
+Thus, $\oper$ can be equiped with the $weak^{*}$ topology with respect to the $\st{(\toper, \norm{\cdot}_1)}$. The subbasis of a point $A \in \oper$ is like,
 \begin{equation*}
 	V_{\varepsilon}(A) = \{~B \in \oper \colon \abs{\tr{T(A-B)}} < \varepsilon, \forall T \in \toper~\}
 \end{equation*}
@@ -1251,7 +1256,7 @@ Then, we can see one more relation between the ultraweak topology and the $WOT$.
 	\begin{equation*}
 		\A_1^{(\infty)} = \{\A^{(\infty)}\}^{''} = \{\A^{''}\}^{(\infty)}
 	\end{equation*}
-	Thus, $\A_1 = \A^{''} = \A$.
+	Thus, $\A_1 = \A^{''} $.
 \end{proof}
 \begin{rem}
 	Therefore, we have another powerful topology to research von Neumann algebras and it is very important.
@@ -1415,7 +1420,7 @@ In fact, for $A \in \operr{H}{H^{'}}$, we can similarly defined the Fredholm ope
 	\begin{eqnarray*}
 		\ind{A} &=& \dim{\ker{A}} - \dim{(\ran{A})^{\bot}} \\
 		&=& \dim{\Hs} - \dim{\ran{A}} - (\dim{\Hs^{'}} - \dim{\ran{A}}) \\
-		&=& \dim{H} - \dim{H^{'}}
+		&=& \dim{H} - \dim{H^{'}} 
 	\end{eqnarray*}
 \end{proof}
 
@@ -1913,22 +1918,37 @@ By above corollary and the Weyl-von Neumann Theorem, $A = D + K$ with $\norm{K} 
 \end{proof}
 
 \begin{cor}
-	If $N$ is a normal operator on a separable Hilbert space and $\varepsilon > 0$, then there is a diagonalizable normal operator $D$ s.t. $N - D \in \coper$ and $\sigma(D) = \sigma_e(D)$.
+	If $N$ is a normal operator on a separable Hilbert space and $\varepsilon > 0$, then there is a diagonalizable normal operator $D$ s.t. $N \cong D \oplus K + K_1 $ and $\sigma(D) = \sigma_e(D) = \sigma_e(N)$, where $K$ and $K_1$ are compact with $\norm{K}, \norm{K_1} < \varepsilon$
 \end{cor}
 \begin{proof}
-	By above theorem, $N = D^{'} + K$ for the normal diagnolizable operator $D^{'}$ and self-adjoint compact operator $K$. By the \textbf{Theorem} \ref{thm14} in the subsetction \textbf{5.4.3} and the separability of the Hilbert space, 
+	By above theorem, $N = D_1 + K_1$ for the normal diagnolizable operator $D_1$ and self-adjoint compact operator $K_1$ with $\norm{K_1} < \varepsilon$. Then by the Fredholm Theory, $\sigma_e(D_1) = \sigma_e(N)$. By the \textbf{Theorem} \ref{thm14} in the subsetction \textbf{5.4.3} and the separability of the Hilbert space, 
 	\begin{equation*}
-		\{\mu_j\}_{j=1}^{\infty} = \sigma(D^{'}) \backslash \sigma_e(D^{'})
+		\{\mu_j\}_{j=1}^{\infty} = \sigma(D_1) \backslash \sigma_e(D_1)
 	\end{equation*}
 	where each $\mu_j$ has finite multiplicity and is repeated as often as their multiplicity. Let $\{h_j\}$ be the coresponding eigenvectors then
 	\begin{equation*}
-		D^{'} = D + \sum_{j=1}^{\infty} \mu_j h_j \otimes h_j
+		D_1 = D_2 \oplus \sum_{j=1}^{\infty} \mu_j h_j \otimes h_j
 	\end{equation*}
-	where $D$ is a diagonalizable normal operator $D$ with $\sigma(D) = \sigma_e(D)$. And clearly,
+	where $D_2$ is a diagonalizable normal operator on a subspace of $\Hs$ with $\sigma(D_2) = \sigma_e(D_2) = \sigma_e(D_1)$. Then for any $\mu_j$, there is a $\lambda_j \in \sigma_e(D_2)$, s.t.
 	\begin{equation*}
-		\sum_{j=1}^{\infty} \mu_j h_j \otimes h_j \in \coper
+		\abs{\mu_j - \lambda_j} = \dist{(\mu_j, \sigma_e(D_2))} = \dist{(\mu_j, \sigma_e(N))} < \varepsilon ~(?)
 	\end{equation*}
-	thus $N-D = K+\sum_{j=1}^{\infty} \mu_j h_j \otimes h_j \in \coper$.
+	Then since $D_2$ is diagonalizable, let $g_j$ be the corresponding vector  with respect to $\lambda_j$,
+	\begin{equation*}
+		D_1 = D \oplus \sum_{j=1}^{\infty} (-\lambda_j) g_j \otimes g_j \oplus \sum_{j=1}^{\infty} \mu_j h_j \otimes h_j
+	\end{equation*}
+	And in fact,
+	\begin{equation*}
+		D_1 \cong D \oplus \sum_{j=1}^{\infty} (\mu_j-\lambda_j) h_j \otimes h_j
+	\end{equation*}
+	where $D$ a diagonalizable normal operator on a subspace of $\Hs$ with $\sigma(D) = \sigma_e(D) = \sigma_e(N)$. Put 
+	\begin{equation*}
+		K = \sum_{j=1}^{\infty} (\mu_j-\lambda_j) h_j \otimes h_j
+	\end{equation*}
+	then $K$ is compact with $\norm{K} < \varepsilon$. Therefore,
+	\begin{equation*}
+		N \cong D \oplus K + K_1 \qedhere
+	\end{equation*}	
 \end{proof}
 
 \subsection{Approximately Unitary Equivalence}
@@ -1974,21 +1994,23 @@ For two operators $N$ and $M$, if there is a unitary $U$ s.t. $N = \st{U}MU$, $N
 \end{proof}
 
 \begin{thm}
-	If $N$ and $M$ are normal operators on a separable Hilbert space with same essential spectrum, then there is a unitary $U$ s.t. $N-\st{U}MU$ is compact.
+	If $N$ and $M$ are normal operators on a separable Hilbert space with same essential spectrum, then for any given $\varepsilon > 0$, there is a unitary $U$ s.t. $N-\st{U}MU$ is compact and $\norm{N-\st{U}MU} < \varepsilon$.
 \end{thm}
 \begin{proof}
 	According the last corollary in above subsection, there are diagonalizable normal operators $N_1$ and $M_1$ s.t.
+	\begin{eqution*}
+		N = N_1 \oplus K_1 + K, ~ M = M_1 \oplus K_1^{'} + K^{'}
+	\end{eqution*}
+	where $K_1, K$ and $K_1^{'}, K^{'}$ are compact operators with arbitrary small norm. And since $\sigma_e(N) = \sigma_e(M)$, 
 	\begin{equation*}
-		N-N_1,~ M-M_1 \in \coper, \text{ and } \sigma(N_1) = \sigma_e(N_1) = \sigma_e(M_1) = \sigma(M_1)
+		\sigma(N_1) = \sigma_e(N_1) = \sigma_e(M_1) = \sigma(M_1)
 	\end{equation*}
-	By above lemma, there is a unitary $U$ s.t. $N_1-\st{U}M_1U \in \coper$. Therefore,
+	By above lemma, there is a unitary $V$ s.t. $N_1-\st{V}M_1V \in \coper$. Therefore, put $U = V \oplus id$,
 	\begin{equation*}
-		N - \st{U}MU = (N-N_1) + (N_1-\st{U}M_1U) + \st{U}(M-M_1)U
+		N - \st{U}MU = (N_1-\st{V}M_1V) \oplus (K_1 - K_1^{'}) + \st{U}(K-K^{'})U 
 	\end{equation*}
-	is compact.
+	is compact and its norm can be arbitrary small.
 \end{proof}
-
-In above theorem, we can not estimate the value of $\norm{N - \st{U}MU}$. But if there is an another condition these two normal operators satisfy, then $\norm{N - \st{U}MU}$ can be arbitratry small. And this property induce the concept of approximately unitary equivalence.
 
 \begin{defn}
 	Two normal operators $A$ and $B$ are approximately unitarily equivalent, denoted by $A \cong_a B$, if there is a sequence of unitaries $\{U_n\}$ s.t. 
@@ -2002,14 +2024,14 @@ In above theorem, we can not estimate the value of $\norm{N - \st{U}MU}$. But if
 	If $\A$ is a \Cs and $\{a_n\}$ is a sequence of normal elements of $\A$ s.t. $a_n \sto a$ in norm, then $\sigma(a_n) \sto \sigma(a)$.
 \end{lem}
 \begin{proof}
-	Since $\A$ is a $\Cs$, by the continuity of the involution and the multiplication, $a$ is normal. By the Continuous Functional Calculus, we know
+	Since $\A$ is a $\st{C}$-algebra, by the continuity of the involution and the multiplication, $a$ is normal. By the Continuous Functional Calculus, we know
 	\begin{equation*}
 		\Cg{a_n} \cong C(\sigma(a_n)),~ \Cg{a} \cong C(\sigma(a))
 	\end{equation*}
 	For any $f_k \in C(\sigma(a_k))$, extending $f_k$ on $\cup \sigma(a_n) \cup \sigma(a)$ by setting $f_k = 0$ on other areal. Then $f_k \in B(\cup \sigma(a_n) \cup \sigma(a))$, and $\norm{f_k}$ does not change. And this mention can also apply to any $f$ in $C(\sigma(a))$.\\
-	Let $g_k(z) = z \in C(\sigma(a_k))$ and $g(z) = z \in C(\sigma(a))$, then extending $g_k$ and $g$ on $\cup \sigma(a_n) \cup \sigma(a)$. Therefore, $\norm{g_k} = \norm{a_k}$ and $\norm{g} = \norm{a}$. Take $\alpha \in \sigma(a)$, then since $a_n \sto a$ in norm, for any $0 < \varepsilon < \abs{g(\alpha)}$, there is a $n_0$ s.t. for all $n > n_0$
+	Let $g_k(z) = z \in C(\sigma(a_k))$ and $g(z) = z \in C(\sigma(a))$, then extending $g_k$ and $g$ on $\cup \sigma(a_n) \cup \sigma(a)$. Therefore, $\norm{g_k} = \norm{a_k}$ and $\norm{g} = \norm{a}$. Take $\alpha \in \sigma(a)$, then since $a_n \sto a$ in norm, $g_n \sto g$ in norm (?), therefore for any $0 < \varepsilon < \abs{g(\alpha)}$, there is a $n_0$ s.t. for all $n > n_0$
 	\begin{equation*}
-		\abs{g_n(\alpha)-g(\alpha)} \leqslant \norm{g_n - g} = \norm{a_n - a} < \varepsilon
+		\abs{g_n(\alpha)-g(\alpha)} \leqslant \norm{g_n - g} < \varepsilon
 	\end{equation*}
 	Then we can choose some $\alpha_n \in g_n^{-1}(g_n(\alpha)) \in \sigma(\alpha_n)$ since $g_n(\alpha) \neq 0$. Therefore, $\alpha_n \sto \alpha$. And the converse is similar.
 \end{proof}
@@ -2027,23 +2049,26 @@ In above theorem, we can not estimate the value of $\norm{N - \st{U}MU}$. But if
 \end{thm}
 \begin{proof}
 	Let $E_N$ and $E_M$ be the spectral measures for $N$ and $M$. $1)$ implies $2)$ clearly.
-	\item $2) \Rightarrow 3)$: Let $\{U_n\}$ be the unitaties s.t. $\norm{A - \st{U_n}BU_n} \sto 0$.
+	\item $2) \Rightarrow 3)$: Let $\{U_n\}$ be the unitaties s.t. $\norm{N - \st{U_n}MU_n} \sto 0$. Then by above lemma, 
+	\begin{equation*}
+		X = \sigma(M) = \sigma(N)
+	\end{equation*}
+	If $\lambda \in X$ is isolated, then $\lambda$ is eigenvalue for $M$ and $N$. And the characteristic function $\chi_{\{\lambda\}}(z)$ satisfies
+	\begin{equation*}
+		\chi_{\{\lambda\}}(\st{U}_nMU_n) \longrightarrow \chi_{\{\lambda\}}(N)
+	\end{equation*}
+	in norm. That means $E_N(\{\lambda\})$ and $E_M(\{\lambda\})$ has same rank, thus 
+	\begin{equation*}
+		\dim{\ker{(N-\lambda)}} = \dim{\ker{(M-\lambda)}}
+	\end{equation*}
+	for any isolated point $\lambda$ in $X$. Since the essential spectrum consists of all points in the spectrum that are not isolated eigenvalues of finite multiplicity, thus $\sigma_e(M) = \sigma_e(N)$.
+	\item $3) \Rightarrow 1)$: By the Spectral Theorem, 
+	\begin{equation*}
+		N = N_1 \oplus N_2, \text{ and } M = M_1 \oplus M_2,
+	\end{equation*}
+	where $\sigma(M_2) = \sigma_e(M_2) = \sigma_e(M) = \sigma_e(N) = \sigma_e(N_2) = \sigma(N_2)$ and the spectrum of $N_1$ and $M_1$ consists of all eigenvalues of $N$ and $M$ with finite multiplicity, and thus $N_1 \cong M_1$. Let $V$ be the unitary s.t. $\st{V}M_1V = N_1$. And by above theorem, there is a sequence of unitaries $\{W_n\}$ s.t.
+	\begin{equation*}
+		\st{W}_n M_2 W_n \longrightarrow N_2
+ 	\end{equation*}
+ 	in norm and $N_2 - \st{W}_n M_2 W_n \in \coper$. Then putting $U_n = W_n \oplus V_n$, thus $N \cong_{sa} M$. 
 \end{proof}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
