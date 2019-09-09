@@ -6616,7 +6616,7 @@ By above corollary and the Weyl-von Neumann Theorem, $A = D + K$ with $\norm{K} 
 \end{proof}
 
 \begin{cor}
-	If $N$ is a normal operator on a separable Hilbert space and $\varepsilon > 0$, then there is a diagonalizable normal operator $D$ s.t. $N \cong D \oplus K + K_1 $ and $\sigma(D) = \sigma_e(D) = \sigma_e(N)$, where $K$ and $K_1$ are compact with $\norm{K}, \norm{K_1} < \varepsilon$
+	If $N$ is a normal operator on a separable Hilbert space and $\varepsilon > 0$, then there is a diagonalizable normal operator $D$ s.t. $N = D \oplus K + K_1 $ and $\sigma(D) = \sigma_e(D) = \sigma_e(N)$, where $K$ and $K_1$ are compact.
 \end{cor}
 \begin{proof}
 	By above theorem, $N = D_1 + K_1$ for the normal diagnolizable operator $D_1$ and self-adjoint compact operator $K_1$ with $\norm{K_1} < \varepsilon$. Then by the Fredholm Theory, $\sigma_e(D_1) = \sigma_e(N)$. By the \textbf{Theorem} \ref{thm14} in the subsetction \textbf{5.4.3} and the separability of the Hilbert space, 
@@ -6625,12 +6625,74 @@ By above corollary and the Weyl-von Neumann Theorem, $A = D + K$ with $\norm{K} 
 	\end{equation*}
 	where each $\mu_j$ has finite multiplicity and is repeated as often as their multiplicity. Let $\{h_j\}$ be the coresponding eigenvectors then
 	\begin{equation*}
+		D_1 = D \oplus \sum_{j=1}^{\infty} \mu_j h_j \otimes h_j
+	\end{equation*}
+	where $D$ is a diagonalizable normal operator on a subspace of $\Hs$ with $\sigma(D) = \sigma_e(D) = \sigma_e(D_1)$. Put 
+	\begin{equation*}
+		K = \sum_{j=1}^{\infty} \mu_j h_j \otimes h_j
+	\end{equation*}
+	then $K$ is compact. Therefore,
+	\begin{equation*}
+		N = D \oplus K + K_1 \qedhere
+	\end{equation*}	
+\end{proof}
+
+In above corrolary, we cannot value the norm of $K$, but in some specitial case, we can do this. Firstly, we need some lemmas.
+\begin{lem}
+	Let $\A$ be a Banach algebra and $a \in \A$.
+	\begin{enumerate}[label=\arabic*)]
+		\item If $\alpha \in \rho(a)$, then $\dist{(\alpha,\rho(a))} \geqslant \norm{(a-\alpha)^{-1}}^{-1}$.
+		\item If $b,k \in \A$ with $\norm{k} < \varepsilon$ for some $\varepsilon > 0$ s.t. $a = b + k$, then 
+		\begin{equation*}
+			\{~\alpha \colon \alpha \in \rho(a),~ \norm{(a-\alpha)^{-1}}^{-1} > \varepsilon~\} \subset \rho(b)
+		\end{equation*}
+	\end{enumerate}
+\end{lem}
+\begin{proof}
+	For $1)$, if $\alpha \in \rho(a)$ and by the perturbation of inverse, 
+	\begin{equation*}
+		\abs{\beta} < \norm{(a-\alpha)^{-1}}^{-1} \Rightarrow \beta + \alpha \in \rho(a)
+ 	\end{equation*}
+ 	Therefore, $1)$ holds. \\
+ 	For $2)$, if
+ 	\begin{equation*}
+ 		\alpha \in \{~\alpha \colon \alpha \in \rho(a),~ \norm{(a-\alpha)^{-1}}^{-1} > \varepsilon~\}
+ 	\end{equation*}
+ 	then by the fact that $\norm{k} < \varepsilon$, 
+ 	\begin{equation*}
+ 		\norm{(a-\alpha)^{-1} k} \leqslant \norm{(a-\alpha)^{-1}} \norm{k} < 1
+ 	\end{equation*}
+ 	Therefore, $1 - (a-\alpha)^{-1} k$ is invertible. It shows
+ 	\begin{equation*}
+ 		b - \alpha = a - \alpha - k = (a - \alpha)(1 - (a-\alpha)^{-1} k)
+ 	\end{equation*}
+ 	is invertible, i.e. $\alpha \in \rho(a)$.
+\end{proof}
+
+Combining $1)$ and $2)$ in above lemma, if $N = D + K$ with $\norm{K} < \varepsilon$, then 
+\begin{equation*}
+	\sigma(D) \subset \{ \lambda \colon \dist{(\lambda,\sigma(N))} \leqslant \varepsilon\}
+\end{equation*}
+Then we can refine above corollary.
+
+\begin{prop}
+	If $N$ is a normal operator on a separable Hilbert space with $\sigma(N) = \sigma_e(N)$ and $\varepsilon > 0$, then there is a diagonalizable normal operator $D$ s.t. $N \cong D \oplus K + K_1 $ and $\sigma(D) = \sigma_e(D) = \sigma_e(N)$, where $K$ and $K_1$ are compact with $\norm{K}, \norm{K_1} < \varepsilon$
+\end{prop}
+\begin{proof}
+	By above corollary, $N = D_1 + K_1$ for the normal diagnolizable operator $D_1$ and self-adjoint compact operator $K_1$ with $\norm{K_1} < \varepsilon$. And
+	\begin{equation*}
 		D_1 = D_2 \oplus \sum_{j=1}^{\infty} \mu_j h_j \otimes h_j
 	\end{equation*}
-	where $D_2$ is a diagonalizable normal operator on a subspace of $\Hs$ with $\sigma(D_2) = \sigma_e(D_2) = \sigma_e(D_1)$. Then for any $\mu_j$, there is a $\lambda_j \in \sigma_e(D_2)$, s.t.
+	where $D_2$ is a diagonalizable normal operator on a subspace of $\Hs$ with $\sigma(D_2) = \sigma_e(D_2) = \sigma_e(D_1)$. Since 
 	\begin{equation*}
-		\abs{\mu_j - \lambda_j} = \dist{(\mu_j, \sigma_e(D_2))} = \dist{(\mu_j, \sigma_e(N))} < \varepsilon ~(?)
+		\sigma(D_1) = \sigma_e(D_1) \cup \{\mu_j\},~ \sigma_e(D_1) = \sigma_e(N) = \sigma(N)
 	\end{equation*}
+	then by above mention for any $\mu_j$, there is a $\lambda_j \in \sigma_e(D_2)$, s.t.
+	\begin{eqnarray*}
+		\abs{\mu_j - \lambda_j} &=& \dist{(\mu_j, \sigma_e(D_2))} = \dist{(\mu_j, \sigma_e(D_1))} \\
+		&=& \dist{(\mu_j, \sigma(N))} \\
+		&\leqslant& \varepsilon
+	\end{eqnarray*}
 	Then since $D_2$ is diagonalizable, let $g_j$ be the corresponding vector  with respect to $\lambda_j$,
 	\begin{equation*}
 		D_1 = D \oplus \sum_{j=1}^{\infty} (-\lambda_j) g_j \otimes g_j \oplus \sum_{j=1}^{\infty} \mu_j h_j \otimes h_j
@@ -6692,14 +6754,14 @@ For two operators $N$ and $M$, if there is a unitary $U$ s.t. $N = \st{U}MU$, $N
 \end{proof}
 
 \begin{thm}
-	If $N$ and $M$ are normal operators on a separable Hilbert space with same essential spectrum, then for any given $\varepsilon > 0$, there is a unitary $U$ s.t. $N-\st{U}MU$ is compact and $\norm{N-\st{U}MU} < \varepsilon$.
+	If $N$ and $M$ are normal operators on a separable Hilbert space with same essential spectrum, then there is a unitary $U$ s.t. $N-\st{U}MU$ is compact.
 \end{thm}
 \begin{proof}
 	According the last corollary in above subsection, there are diagonalizable normal operators $N_1$ and $M_1$ s.t.
 	\begin{equation*}
 		N = N_1 \oplus K_1 + K, ~ M = M_1 \oplus K_1^{'} + K^{'}
 	\end{equation*}
-	where $K_1, K$ and $K_1^{'}, K^{'}$ are compact operators with arbitrary small norm. And since $\sigma_e(N) = \sigma_e(M)$, 
+	where $K_1, K$ and $K_1^{'}, K^{'}$ are compact operators. And since $\sigma_e(N) = \sigma_e(M)$, 
 	\begin{equation*}
 		\sigma(N_1) = \sigma_e(N_1) = \sigma_e(M_1) = \sigma(M_1)
 	\end{equation*}
@@ -6707,8 +6769,20 @@ For two operators $N$ and $M$, if there is a unitary $U$ s.t. $N = \st{U}MU$, $N
 	\begin{equation*}
 		N - \st{U}MU = (N_1-\st{V}M_1V) \oplus (K_1 - K_1^{'}) + \st{U}(K-K^{'})U 
 	\end{equation*}
-	is compact and its norm can be arbitrary small.
+	is compact.
 \end{proof}
+
+By above theorem, any two normal operators with same essential spectrum actually differ by some compact operator. By we cannot estimate the norm of this compact operator. However, the last proposition in above subsection can provide us a clue. If the two normal operators $N$ and $M$ satisfy
+\begin{equation*}
+	\sigma(N) = \sigma_e(N) = \sigma_e(M) = \sigma(M)
+\end{equation*}
+then there are similar $N_1, K_1, K$ and $M_1,  K_1^{'}, K^{'}$ s.t.
+\begin{equation*}
+	N = N_1 \oplus K_1 + K, ~ M = M_1 \oplus K_1^{'} + K^{'}
+\end{equation*}
+But the differece is that the norm of $K_1$ and $K_1^{'}$ can be arbitrary small. Therefore, by above theorem, the unitary $U$ can be choosing s.t. $N - \st{U}MU$ has arbitrary small norm.
+
+In general case, we need a definition to describe this definition.
 
 \begin{defn}
 	Two normal operators $A$ and $B$ are approximately unitarily equivalent, denoted by $A \cong_a B$, if there is a sequence of unitaries $\{U_n\}$ s.t. 
@@ -6747,7 +6821,7 @@ For two operators $N$ and $M$, if there is a unitary $U$ s.t. $N = \st{U}MU$, $N
 \end{thm}
 \begin{proof}
 	Let $E_N$ and $E_M$ be the spectral measures for $N$ and $M$. $1)$ implies $2)$ clearly.
-	\item $2) \Rightarrow 3)$: Let $\{U_n\}$ be the unitaties s.t. $\norm{N - \st{U_n}MU_n} \sto 0$. Then by above lemma, 
+	\item $2) \Rightarrow 3)$: Let $\{U_n\}$ be the unitaries s.t. $\norm{N - \st{U_n}MU_n} \sto 0$. Then by above lemma, 
 	\begin{equation*}
 		X = \sigma(M) = \sigma(N)
 	\end{equation*}
@@ -6764,15 +6838,24 @@ For two operators $N$ and $M$, if there is a unitary $U$ s.t. $N = \st{U}MU$, $N
 	\begin{equation*}
 		N = N_1 \oplus N_2, \text{ and } M = M_1 \oplus M_2,
 	\end{equation*}
-	where $\sigma(M_2) = \sigma_e(M_2) = \sigma_e(M) = \sigma_e(N) = \sigma_e(N_2) = \sigma(N_2)$ and the spectrum of $N_1$ and $M_1$ consists of all eigenvalues of $N$ and $M$ with finite multiplicity, and thus $N_1 \cong M_1$. Let $V$ be the unitary s.t. $\st{V}M_1V = N_1$. And by above theorem, there is a sequence of unitaries $\{W_n\}$ s.t.
+	where $\sigma(M_2) = \sigma_e(M_2) = \sigma_e(M) = \sigma_e(N) = \sigma_e(N_2) = \sigma(N_2)$ and the spectrum of $N_1$ and $M_1$ consists of all eigenvalues of $N$ and $M$ with finite multiplicity, and thus $N_1 \cong M_1$. Let $V$ be the unitary s.t. $\st{V}M_1V = N_1$. Moreover, since
+	\begin{equation*}
+		\sigma(M_2) = \sigma_e(M_2) = \sigma_e(N_2) = \sigma(N_2)
+	\end{equation*}
+	by above mention there is a sequence of unitaries $\{W_n\}$ s.t.
 	\begin{equation*}
 		\st{W}_n M_2 W_n \longrightarrow N_2
  	\end{equation*}
- 	in norm and $N_2 - \st{W}_n M_2 W_n \in \coper$. Then putting $U_n = W_n \oplus V_n$, thus $N \cong_{sa} M$.
+ 	in norm and $N_2 - \st{W}_n M_2 W_n \in \coper$. Then putting $U_n = W_n \oplus V_n$, thus $N \cong_{sa} M$. 
 \end{proof}
 
 \chapter{Von Neumann Algebras}
 
+Abelian von Neuman algebras can be explicitly described as $L^{\infty}(\mu)$. For general von Neumann algebras, they have more complex structure but more interesting properties. Firstly, we have seen the relation between the $WOT$ and the ultraweak topology, therefore, the ultraweak topology can provide some different things of the von Neumann algebra. Then, since the weak closedness of von Neumann algebras, all projections in a von Neumann algebra can completely generate the whole algebra. Thus projections are fundamental elements in the von Neumann algebra. Researching the properties of them and classifying them can help us to classify general von Neumann algebras. By the properties of the projections contained in a von Neumann algebras, general von Neumann algebras can be classified as $5$ different categories and we can see that the abelian one is belong to what category.
+
+\section{General von Neumann Algebras}
+
+\subsection{Elementary Properties}
 
 
 
