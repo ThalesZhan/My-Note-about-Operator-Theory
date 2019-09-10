@@ -5957,7 +5957,7 @@ Then, we can see one more relation between the ultraweak topology and the $WOT$.
 	Thus, $\A_1 = \A^{''} $.
 \end{proof}
 \begin{rem}
-	Therefore, we have another powerful topology to research von Neumann algebras and it is very important.
+	Conversely, an algebra $\A$ is $weak^{*}$-closed, it is trivially $WOT$-closed. Therefore, we have another powerful topology to research von Neumann algebras and it is very important.
 \end{rem}
 
 \section{Fredholm Theory}
@@ -6637,11 +6637,11 @@ By above corollary and the Weyl-von Neumann Theorem, $A = D + K$ with $\norm{K} 
 	\end{equation*}	
 \end{proof}
 
-In above corrolary, we cannot value the norm of $K$, but in some specitial case, we can do this. Firstly, we need some lemmas.
+In above corollary, we cannot value the norm of $K$, but in some special case, we can do this. Firstly, we need some lemmas.
 \begin{lem}
 	Let $\A$ be a Banach algebra and $a \in \A$.
 	\begin{enumerate}[label=\arabic*)]
-		\item If $\alpha \in \rho(a)$, then $\dist{(\alpha,\rho(a))} \geqslant \norm{(a-\alpha)^{-1}}^{-1}$.
+		\item If $\alpha \in \rho(a)$, then $\dist{(\alpha,\sigma(a))} \geqslant \norm{(a-\alpha)^{-1}}^{-1}$.
 		\item If $b,k \in \A$ with $\norm{k} < \varepsilon$ for some $\varepsilon > 0$ s.t. $a = b + k$, then 
 		\begin{equation*}
 			\{~\alpha \colon \alpha \in \rho(a),~ \norm{(a-\alpha)^{-1}}^{-1} > \varepsilon~\} \subset \rho(b)
@@ -6669,7 +6669,24 @@ In above corrolary, we cannot value the norm of $K$, but in some specitial case,
  	is invertible, i.e. $\alpha \in \rho(a)$.
 \end{proof}
 
-Combining $1)$ and $2)$ in above lemma, if $N = D + K$ with $\norm{K} < \varepsilon$, then 
+\begin{lem}
+	If $A \in \oper$ is a normal operator, then for any $\lambda \in \rho(A)$
+	\begin{equation*}
+		\norm{(A-\lambda)^{-1}} = \dist{(\lambda, \sigma(A))}^{-1}
+	\end{equation*}
+\end{lem}
+\begin{proof}
+	Let $E$ be the spectral measure for $A$, then
+	\begin{equation*}
+		(A-\lambda)^{-1} = \int_{\sigma(A)} (z - \lambda)^{-1} dE(z)
+	\end{equation*}
+	Then, the norm
+	\begin{equation*}
+		\norm{(A-\lambda)^{-1}} = \sup{\{\abs{(z-\lambda)}^{-1} \colon z \in \sigma(A)\}} = \dist{(\lambda, \sigma(A))}^{-1} \qedhere
+	\end{equation*}
+\end{proof}
+
+Combining above lemmas, if $N = D + K$ with $\norm{K} < \varepsilon$, then 
 \begin{equation*}
 	\sigma(D) \subset \{ \lambda \colon \dist{(\lambda,\sigma(N))} \leqslant \varepsilon\}
 \end{equation*}
@@ -6857,6 +6874,71 @@ Abelian von Neuman algebras can be explicitly described as $L^{\infty}(\mu)$. Fo
 
 \subsection{Elementary Properties}
 
+\begin{prop}
+	If $\{A_i\}$ is an increasing net of self-adjoint operators on $\Hs$ s.t. $\sup_i{\norm{A_i}} < \infty$, then there is an operator $A$ s.t. the following hold.
+	\begin{enumerate}[label = \arabic*)]
+		\item $A_i \leqslant A$ for all $i$ and if $B$ is any self-adjoint operator with $A_i \leqslant B$ for all $i$, then $A \leqslant B$. Thus $A = \sup_i A_i$.
+		\item $A_i \sto A$ in $WOT$.
+		\item $A_i \sto A$ in $SOT$.
+		\item $A_i \sto A$ in $weak^{*}$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	Without loss of generality, assume all $A_i$ are positive.\\
+	For any $h \in \Hs$, $\{\langle A_i h, h \rangle\}$ is an increasing positive sequence and bounded by $\alpha \norm{h}^2$ for $\alpha = \sup_i{\norm{A_i}}$. Then
+	\begin{equation*}
+		F(h,h) = \lim_i \langle A_i h, h \rangle,~ \abs{F(h,h)} \leqslant \alpha \norm{h}^2
+	\end{equation*}
+	Clearly, $F$ is a sesquilinear and by the Polar Identity, 
+	\begin{equation*}
+		\abs{F(g,h)} \leqslant \alpha \norm{g} \norm{h}
+	\end{equation*}
+	Then there is a $A \in \oper$ s.t. 
+	\begin{equation*}
+		\langle Ag,h \rangle = F(g,h) = \lim_i \langle A_i g, h \rangle
+	\end{equation*}
+	Therefore, $A$ is positive, $A \sto A_i$ in $WOT$, $A_i \leqslant A$ and $\norm{A} \leqslant \alpha$. Then
+	\begin{equation*}
+		0 \leqslant A - A_i \leqslant A \Rightarrow (A-A_i)^{\frac{1}{2}} \leqslant A^{\frac{1}{2}},~ \forall~ i
+	\end{equation*}
+	If $h \in \Hs$, then
+	\begin{eqnarray*}
+		\norm{(A-A_i)h}^2 &\leqslant& \norm{(A-A_i)^{\frac{1}{2}}}^2 \norm{(A-A_i)^{\frac{1}{2}}h}^2 \\
+		&\leqslant& \norm{A} \norm{(A-A_i)^{\frac{1}{2}}h}^2 \\
+		&=& \norm{A} \langle (A-A_i)h,h  \rangle \sto 0
+	\end{eqnarray*}
+	Thus $A_i \sto A$ in $SOT$. \\
+	Finally, to see that $A_i \sto A$ in $weak^{*}$, consider $\{A_i^{(\infty)}\}$, and by $2)$, there is a $A^{(\infty)}$ s.t. $A_i^{(\infty)} \sto A^{(\infty)}$ in $WOT$, therefore, $A_i \sto A$ in $weak^{*}$.
+\end{proof}
+
+\begin{cor}
+	If $\A$ is a $\st{C}$-algebra contained in $\oper$ but without the identity and $\A$ is $weak^{*}$-closed, then there is a projection $P$ in $\A$ s.t.
+	\begin{equation*}
+		A = PA = AP,~ \forall~ A \in \A
+	\end{equation*}
+	Therefore, $P$ is the identity for $\A$ and $\A|_{P}$ is a von Neumann algebra.
+\end{cor}
+\begin{proof}
+	There is an approximate identity $\{A_i\}$. By above proposition, 
+	\begin{equation*}
+		P = \sup_i A_i \in \A, \text{ and } A_i \sto P \text{ in } weak^{*}
+	\end{equation*}
+	Then for any $A \in \A$, $\norm{AA_i - A} \sto 0$ and $AA_i \sto AP$ in $weak^{*}$. Thus $A = AP =PA$.
+\end{proof}
+
+\begin{prop}
+	\begin{enumerate}[label = \arabic*)]
+		\item If $\A$ is a von Neumann algebra and $\fml{E}$ is a family of projections in $\A$, then $\bigvee \fml{E}$ and $\bigwedge \fml{E}$ belong to $\A$.
+		\item If $\A$ is a von Neumann algebra and $1 \leqslant d \leqslant \infty$, then $\A^{(d)}$ is a von Neumann algebra and 
+		\begin{equation*}
+			(\A^{(d)})^{'} = \{~T=(T_{ij}) \in \fml{B}(\Hs^{(d)}) \colon T_{ij} \in \A^{'} ~\}
+		\end{equation*}
+		\item If $\A_i$ is a von Neumann algebra in $\fml{B}(\Hs_i)$ for all $i$ and $\Hs = \bigoplus_{i} \Hs_i$, then
+		\begin{equation*}
+			\A = \bigoplus_{i} \A_i = \{~ \bigoplus_i A_i \colon A_i \in \A_i,~ \sup_i{\norm{A_i}} < \infty~\}
+		\end{equation*}
+	\end{enumerate}
+\end{prop}
 
 
 \end{document}

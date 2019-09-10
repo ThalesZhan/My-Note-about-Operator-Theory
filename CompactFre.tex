@@ -1259,7 +1259,7 @@ Then, we can see one more relation between the ultraweak topology and the $WOT$.
 	Thus, $\A_1 = \A^{''} $.
 \end{proof}
 \begin{rem}
-	Therefore, we have another powerful topology to research von Neumann algebras and it is very important.
+	Conversely, an algebra $\A$ is $weak^{*}$-closed, it is trivially $WOT$-closed. Therefore, we have another powerful topology to research von Neumann algebras and it is very important.
 \end{rem}
 
 \section{Fredholm Theory}
@@ -1943,7 +1943,7 @@ In above corrolary, we cannot value the norm of $K$, but in some specitial case,
 \begin{lem}
 	Let $\A$ be a Banach algebra and $a \in \A$.
 	\begin{enumerate}[label=\arabic*)]
-		\item If $\alpha \in \rho(a)$, then $\dist{(\alpha,\rho(a))} \geqslant \norm{(a-\alpha)^{-1}}^{-1}$.
+		\item If $\alpha \in \rho(a)$, then $\dist{(\alpha,\sigma(a))} \geqslant \norm{(a-\alpha)^{-1}}^{-1}$.
 		\item If $b,k \in \A$ with $\norm{k} < \varepsilon$ for some $\varepsilon > 0$ s.t. $a = b + k$, then 
 		\begin{equation*}
 			\{~\alpha \colon \alpha \in \rho(a),~ \norm{(a-\alpha)^{-1}}^{-1} > \varepsilon~\} \subset \rho(b)
@@ -1971,7 +1971,24 @@ In above corrolary, we cannot value the norm of $K$, but in some specitial case,
  	is invertible, i.e. $\alpha \in \rho(a)$.
 \end{proof}
 
-Combining $1)$ and $2)$ in above lemma, if $N = D + K$ with $\norm{K} < \varepsilon$, then 
+\begin{lem}
+	If $A \in \oper$ is a normal operator, then for any $\lambda \in \rho(A)$
+	\begin{equation*}
+		\norm{(A-\lambda)^{-1}} = \dist{(\lambda, \sigma(A))}^{-1}
+	\end{equation*}
+\end{lem}
+\begin{proof}
+	Let $E$ be the spectral measure for $A$, then
+	\begin{equation*}
+		(A-\lambda)^{-1} = \int_{\sigma(A)} (z - \lambda)^{-1} dE(z)
+	\end{equation*}
+	Then, the norm
+	\begin{equation*}
+		\norm{(A-\lambda)^{-1}} = \sup{\{\abs{(z-\lambda)}^{-1} \colon z \in \sigma(A)\}} = \dist{(\lambda, \sigma(A))}^{-1} \qedhere
+	\end{equation*}
+\end{proof}
+
+Combining above lemmas, if $N = D + K$ with $\norm{K} < \varepsilon$, then 
 \begin{equation*}
 	\sigma(D) \subset \{ \lambda \colon \dist{(\lambda,\sigma(N))} \leqslant \varepsilon\}
 \end{equation*}

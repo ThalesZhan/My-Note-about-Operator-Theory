@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.24)  9 SEP 2019 15:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.8.24)  10 SEP 2019 15:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -714,20 +714,20 @@ Chapter 5.
 Chapter 6.
 [166
 
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 6862.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 6862.
+] [167]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 6944.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 6944.
  (./ex.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 6862.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 6862.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 6944.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 6944.
 
 Package rerunfilecheck Info: File `ex.out' has not changed.
 (rerunfilecheck)             Checksum: FC667AD0AC2572249F0CFBAC582AB2DE;5829.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 6862.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 6944.
  ) 
 Here is how much of TeX's memory you used:
- 18464 strings out of 492649
- 348661 string characters out of 6129622
+ 18475 strings out of 492649
+ 348758 string characters out of 6129622
  404648 words of memory out of 5000000
  21059 multiletter control sequences out of 15000+600000
  23576 words of font info for 94 fonts, out of 8000000 for 9000
@@ -756,10 +756,10 @@ xmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2018/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2
 018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texli
 ve/2018/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on ex.pdf (167 pages, 808060 bytes).
+Output written on ex.pdf (168 pages, 813965 bytes).
 PDF statistics:
- 2272 PDF objects out of 2487 (max. 8388607)
- 2062 compressed objects within 21 object streams
- 983 named destinations out of 1000 (max. 500000)
+ 2288 PDF objects out of 2487 (max. 8388607)
+ 2077 compressed objects within 21 object streams
+ 994 named destinations out of 1000 (max. 500000)
  629 words of extra memory for PDF output out of 10000 (max. 10000000)
 
