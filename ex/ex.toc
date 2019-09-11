@@ -75,3 +75,4 @@
 \contentsline {chapter}{\numberline {6}Von Neumann Algebras}{166}{chapter.6}
 \contentsline {section}{\numberline {6.1}General von Neumann Algebras}{166}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1}Elementary Properties}{166}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Central Cover}{169}{subsection.6.1.2}

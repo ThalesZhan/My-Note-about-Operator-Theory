@@ -69,10 +69,125 @@ Abelian von Neuman algebras can be explicitly described as $L^{\infty}(\mu)$. Fo
 		\begin{equation*}
 			\A = \bigoplus_{i} \A_i = \{~ \bigoplus_i A_i \colon A_i \in \A_i,~ \sup_i{\norm{A_i}} < \infty~\}
 		\end{equation*}
+		is a von Neumann algebra.
 	\end{enumerate}
 \end{prop}
 
-There are some results of the $WOT$
+\begin{prop}
+	Let $\{T_i\}$ and $\{S_i\}$ be nets in $\oper$.
+	\begin{enumerate}[label=\arabic*)]
+		\item If $T_i \sto 0$ in $WOT$ and $S_i \sto$ in $SOT$, then $S_iT_i,T_iS_i \sto 0$ in $SOT$.
+		\item If $T_i \sto 0$ in $SOT$ and $K \in \coper$, then $T_iK$ and $KT_i$ convergence to $0$ in norm. If $T_i \sto 0$ in $WOT$ then $T_iK \sto 0$ in norm and $KT_i \sto 0$ in $SOT$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	For $1)$, since $T_i \sto 0$ in $WOT$, by the Principle of Uniform Boundedness, $\{T_i\}$ is norm boundedness. Since for any $h \in \Hs$, $\norm{S_i h} \sto 0$,
+	\begin{equation*}
+		\norm{T_iS_i h} \leqslant \norm{T_i} \norm{S_i h} \sto 0
+	\end{equation*}
+	And $\norm{S_iT_i h} \sto 0$ clearly.
+	To prove $2)$, firstly for finite rank $K_n$ and let $h_1,\cdots,h_n$ and $g_1,\cdots,g_n$ be in $\Hs$,
+	\begin{equation*}
+		K_n = \sum_{i=1}^n h_i \otimes g_i
+	\end{equation*}
+	That means $\ran{K_n} = \spn{\{h_1, \cdots, h_n\}}$. Let $P_n$ be the projection onto $\ran{K_n}$, then $T_iK_n = T_iP_n$, 
+	\begin{equation*}
+		T_iK_n = T_iP_n \colon \ran{K_n} \longrightarrow \spn{\{T_ih_1, \cdots, T_ih_n\}}
+	\end{equation*}
+	And since the $WOT$ and the $SOT$ and the norm topology are same on a finite dimensional space, $T_iK_n \sto 0$ in norm for $T_i \sto 0$ in $WOT$ or in $SOT$. For any $K \in \coper$, there is a sequence of finite rank operators $\{K_n\}$ s.t. $K_n \sto K$ in norm. Since
+	\begin{equation*}
+		\norm{T_iK} = \norm{T_iK - T_iK_n} + \norm{T_iK_n}
+	\end{equation*}
+	$T_iK$ convergences to $0$ in norm for $T_i \sto 0$ in $WOT$ or in $SOT$.
+	\begin{equation*}
+		K_nT_i = \sum_{l=1}^{n} h_n \otimes (\st{T_i}g_n)
+	\end{equation*}
+	Thus,
+	\begin{eqnarray*}
+		\norm{K_nT_i} &\leqslant& \sum_{l=1}^{n} \norm{h_n \otimes (\st{T_i}g_n)} \\
+		&=& \sum_{l=1}^n \norm{h_n}\norm{\st{T_i} g_n}
+	\end{eqnarray*}
+	If $T_i \sto 0$ in $SOT$, then $\norm{\st{T_i} g_n} \sto 0$ for all $n$, i.e. $\norm{K_nT_i} \sto 0$. Thus for $K \in \coper$, $KT_i \sto 0$ in norm. If $T_i \sto 0$ in $WOT$, for any $x \in \Hs$,
+	\begin{eqnarray*}
+		\langle K_n T_i x, K_n T_i x \rangle &=& \langle \sum_{l=1}^n \langle T_i x, h_l \rangle g_l, \sum_{m=1}^n \langle T_i x, h_m \rangle g_m \rangle \\
+		&=& \sum_{l=1}^n \sum_{m=1}^n \langle T_i x, h_l \rangle \langle T_i x, h_m \rangle \langle g_l, g_m \rangle
+	\end{eqnarray*}
+	Therefore, if $T_i \sto 0$ in $WOT$, $\norm{KT_i x} \sto 0$ for $x \in \Hs$, i.e. $KT_i \sto 0$ in $SOT$.
+\end{proof}
+
+\subsection{Central Cover}
+
+\begin{defn}
+	For a von Neumann algebra $\A$, if $\fml{Z} = \A \cap \A^{'}$ is the center of $\A$, the central cover or central cover of $A \in \A$ is the projection
+	\begin{equation*}
+		C_A = \inf{\{~C \colon C \in \fml{Z} \text{ is a projection},~AC = A~\}}
+	\end{equation*}
+\end{defn}
+\begin{rem}
+	By above proposition, $C_A$ is definitely a projection satisfying
+	\begin{equation*}
+		AC_A = C_A = A
+	\end{equation*}
+\end{rem}
+
+\begin{prop}
+	Let $\A$ be a von Neumann algebra.
+	\begin{enumerate}[label=\arabic*)]
+		\item If $A \in \A$, $E = (\ker{A})^{\bot}$ and $F = \clo{\ran{A}}$, then
+		\begin{equation*}
+			C_A = C_{\st{A}} = C_{\st{A}A} = C_{A\st{A}} = C_E = C_F
+		\end{equation*}
+		\item If $E$ is a projection in $\A$, then
+		\begin{equation*}
+			C_E = \clo{\spn{\{Ah \colon h \in E,~ A \in \A\}}}
+		\end{equation*}
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	For $1)$, $C_A = C_{\st{A}}$ is trivial by the definition. If $C$ is a central projection s.t. $AC = A$, then $\st{A}AC = \st{A}A$. Conversely, if $\st{A}AC = \st{A}A$, then $\abs{A}C = \abs{A}$ by taking the root. By the Polar Decomposition, $AC = A$. Thus $C_A = C_{\st{A}A}$. \\
+	Firstly, $E \in \A$. If $C$ is a central projection s.t. $AC = A$, then 
+	\begin{equation*}
+		C(\ker{A}) \subset \ker{A} \Rightarrow EC = CE = E \Rightarrow E \leqslant C
+	\end{equation*}
+	Therefore, $C_E \leqslant C_A$. Conversely, if $C$ is a central projection s.t. $E \leqslant C$, then 
+	\begin{equation*}
+		AC = AEC = AE = A
+	\end{equation*}
+	Thus $C_A \leqslant C_E$. Moreover, $C_F = C_E$.
+	\item For $2)$, let
+	\begin{equation*}
+		P = \clo{\spn{\{Ah \colon h \in E,~ A \in \A\}}}
+	\end{equation*}
+	and clearly $P \in \A^{'}$. Moreover, for any $B \in \A^{'}$ and $h \in E$,
+	\begin{equation*}
+		BAh = ABh \in P \Rightarrow BP \subset P \Rightarrow P \in \A^{''} = \A
+	\end{equation*}
+	Therefore, $P$ is a central projection with $E \leqslant P$, thus $C_E \leqslant P$. Conversely, if $C$ is a central projection s.t. $EC = E$, then for $A \in \A$ and $h \in E$,
+	\begin{equation*}
+		C(Ah) = AC(Eh) = AEh = Ah \Rightarrow CP = P = PC
+	\end{equation*}
+	Thus $P \leqslant C$, then $P \leqslant C_E$.
+\end{proof}
+
+\begin{defn}
+	If $\A$ is a con Neumann algebra and $E$ is a projection, defining
+	\begin{equation*}
+		\A_{E} = \{~A_E \colon A \in \A~\}
+	\end{equation*}
+	where $A_E = EA|_E$.
+\end{defn}
+\begin{rem}
+	In general, $\A_E$ is not an algebra. However, if $E \in \A$, there is a $*$-isomorphism between $\A_E$ and $E\A E$. If $E \in \A^{'}$, there is a $*$-homomorphism between $\A_E$ and $E\A E$. $E \A E$ is clear a $\st{C}$-subalgebra of $\A$.
+\end{rem}
+
+\begin{prop}
+	Let $\A$ be a von Neumann algebra.
+	\begin{enumerate}[label=\arabic*)]
+		\item If $E \in \A^{'}$ is a projection, then $\A_E$ is a von Neumann algebra in $\fml{B}(E)$ and $(\A_E)^{'} = (\A)^{'}_E$.
+		\item If $E \in \A$ is a projection, then $\A_E$ is a von Neumann algebra in $\fml{B}(E)$ and $(\A_E)^{'} = (\A)^{'}_E$.
+		\item If $\fml{Z}$ is the center of $\A$ and $E$ is a projection in $\A$ or $\A^{'}$, then the center of $\A_E$ is $\fml{Z}_E$.
+	\end{enumerate}
+\end{prop}
 
 
 
