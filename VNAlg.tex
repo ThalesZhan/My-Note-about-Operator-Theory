@@ -188,11 +188,78 @@ Abelian von Neuman algebras can be explicitly described as $L^{\infty}(\mu)$. Fo
 		\item If $\fml{Z}$ is the center of $\A$ and $E$ is a projection in $\A$ or $\A^{'}$, then the center of $\A_E$ is $\fml{Z}_E$.
 	\end{enumerate}
 \end{prop}
+\begin{proof}
+	For $1)$, it is clear since $E$ reduces $\A$. 
+	\item Assume that $E \in \A$. $\A_E$ and $(\A^{'})_E$ are $*$-algebra clearly. If $B \in \A^{'}$ and $A \in \A$, then for $h \in E$, 
+	\begin{equation*}
+		B_E A_E h = EBEAh = EAEBh = A_E B_E h
+	\end{equation*}
+	Therefore, $(\A)^{'}_E \subset (\A_E)^{'}$.
+	\item Check: $(\A_E)^{'} \subset (\A)^{'}_E$ \\
+	Let $U \in (\A_E)^{'} \subset \fml(B)(E)$ be a unitry, $A_1,\cdots,A_n \in \A$ and $h_1,\cdots,h_n \in E$, then
+	\begin{eqnarray*}
+		\norm{\sum_{k=1}^n A_k U h_k}^2 &=& \sum_{i,j}^n \langle A_iUh_i,A_jUh_j \rangle = \sum_{i,j}^n \langle (E\st{A_j}A_iE)Uh_i, Uh_j \rangle \\
+		&=& \sum_{i,j}^n \langle U(E\st{A_j}A_iE)h_i, Uh_j \rangle = \sum_{i,j}^n \langle E\st{A_j}A_iEh_i, h_j \rangle \\
+		&=& \norm{\sum_{k=1}^n A_k h_k}^2
+	\end{eqnarray*}
+	Therefore, for $C = \clo{\spn{\{Ah \colon h \in E,~ A \in \A\}}}$, there is a partical isometry with the initial space $C$,
+	\begin{equation*}
+		W(\sum_{k=1}^n A_k h_k) = \sum_{k=1}^n A_k U h_k
+	\end{equation*}
+	and $WC^{\bot} = 0$. By above proposition $C = C_E$. Therefore, for any $A \in \A$,
+	\begin{equation*}
+		WAC^{\bot} = WC^{\bot}A = 0 = AWC^{\bot}
+	\end{equation*}
+	and on $C$,
+	\begin{equation*}
+		WA \sum_{k=1}^n A_k h_k = W \sum_{k=1}^n A A_k h_k = A \sum_{k=1}^n A_kUh_k = AW\sum_{k=1}^n A_k h_k
+	\end{equation*}
+	Therefore, $W \in \A^{'}$ with $Wh = Uh$ for $h \in E$. So $W_E = U$. Since any element in $(\A_E)^{'}$ can be the linear combination of four unitaries, $(\A_E)^{'} \subset (\A)^{'}_E$.
+	\item Check: $\A_E \subset \fml{B}(E)$ is von Neumann. \\
+	Let $T \in (\A_E)^{''}$ and extending $T$ on $\Hs$ by setting $T = 0$ on $E^{\bot}$. If $B \in \A^{'}$, then $B_E \in (\A_E)^{'}$. For $h \in E$,
+	\begin{equation*}
+		TBh = (TE)Bh = T B_E h = B_E Th = B_E Th =B Th
+	\end{equation*}
+	And on the other hand,
+	\begin{equation*}
+		TBE^{\bot} = TE^{\bot}B = 0 = BTE^{\bot}
+	\end{equation*}
+	Thus $T \in \A^{''} = \A$, and $(\A_E)^{''} = \A_E$.
+	\item For $3)$, by above mention, 
+	\begin{equation*}
+		\A_E \cap (\A_E)^{'} = \A_E \cap (\A)^{'}_E = \fml{Z}_E \qedhere
+	\end{equation*}
+\end{proof}
 
+\subsection{Kaplansky Density Theorem}
 
+For $\st{C}$-algebra $\A$, let $\mathcal{B}(\A)$ be the norm-closed unit ball in $\A$.
 
+\begin{thm}[Kaplansky Density Theorem]
+	If $\B$ is a $\st{C}$-subalgebra of $\oper$ and $\A = \clo{\B}^{SOT}$, then 
+	\begin{enumerate}[label = \arabic*)]
+		\item $\mathcal{B}(\A)$ is the $SOT$ closure of $\mathcal{B}(\B)$.
+		\item $\mathcal{B}(\Rea{\A})$ is the $SOT$ closure of $\mathcal{B}(\Rea{\B})$.
+		\item $\mathcal{B}(\A)_{+}$ is the $SOT$ closure of $\mathcal{B}(\B)_{+}$.
+		\item the $SOT$ closure of the unitaries in $\B$ contains the unitaries of $\A$.
+	\end{enumerate}
+\end{thm}
 
-
+\begin{lem}
+	If $f \in C(\R)$ with $f(0)=0$ and there are positive constants $a,b$ s.t. 
+	\begin{equation*}
+		\abs{f(t)} \leqslant a\abs{t} + b,~ \forall~ t \in \R
+	\end{equation*}
+	then for any net $\{T_i\} \subset \Rea{\A}$ with $T_i \sto T$ in $SOT$, $f(T_i) \sto f(T)$ in $SOT$.
+\end{lem}
+\begin{proof}
+	For any $g \in C(\R)$, then the map $g \colon \Rea{\oper} \sto \Rea{\oper}$ makes sence. Denote the set of all such $g$ s.t. $g$ is continuous w.r.t. the $SOT$ by $\mathcal{S}$ and let $\mathcal{S}_b$ be set of all norm bounded elements in $\mathcal{S}$. Clearly, $\mathcal{S}_b \mathcal{S} \subset \mathcal{S}$.\\
+	Let $e(t) = t / (1+t^2)$ and $A,B \in \Rea{\oper}$,
+	\begin{eqnarray*}
+		e(A)-e(B) &=& (1+A^2)^{-1}(A(1+B^2)-(1+A^2)B)(1+B^2)^{-1} \\
+		&=& (1+A^2)^{-1}(A-B)(1+B^2)^{-1} + (1+A^2)^{-1}A(B-A)B(1+B^2)^{-1}
+	\end{eqnarray*}
+\end{proof}
 
 
 
