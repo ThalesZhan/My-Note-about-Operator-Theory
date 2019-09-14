@@ -7125,8 +7125,164 @@ For $\st{C}$-algebra $\A$, let $\mathcal{B}(\A)$ be the norm-closed unit ball in
 	Let $e(t) = t / (1+t^2)$ and $A,B \in \Rea{\oper}$,
 	\begin{eqnarray*}
 		e(A)-e(B) &=& (1+A^2)^{-1}(A(1+B^2)-(1+A^2)B)(1+B^2)^{-1} \\
-		&=& (1+A^2)^{-1}(A-B)(1+B^2)^{-1} + (1+A^2)^{-1}A(B-A)B(1+B^2)^{-1}
+		&=& (1+A^2)^{-1}(A-B)(1+B^2)^{-1} \\
+		&& \negmedspace{} + (1+A^2)^{-1}A(B-A)B(1+B^2)^{-1}
 	\end{eqnarray*}
+	Then for any $h \in \Hs$,
+	\begin{equation*}
+		\norm{e(A)-e(B)} \leqslant \norm{(A-B)(1+B^2)^{-1}h} + \norm{(A-B)(1+B^2)^{-1}h}
+	\end{equation*}
+	Therefore, $e \in \mathcal{S}_b$. Put $e_{\alpha}(t) = e(\alpha)$, then $e_{\alpha}(t) \in \mathcal{S}_b$ for each $\alpha > 0$. Since $\{e_{\alpha} \colon \alpha > 0\}$ can separate the points in $\R \backslash \{0\}$ and $\mathcal{S}_b$ is closed,
+	\begin{equation*}
+		C_0(\R \backslash \{0\}) \subset \mathcal{S}_b
+	\end{equation*}
+	If $f$ satisfy above assumption, $t \sto f(t) / (1+t^2)$ belongs to $C_0(\R \backslash \{0\})$, and hence to $\mathcal{S}_b$. Since the identity funtion also belongs to $\mathcal{S}$ and the condition $f$ satisfies,
+	\begin{equation*}
+		t \longrightarrow \frac{tf(t)}{1+t^2} \in \mathcal{S}_b
+	\end{equation*}
+	And thus 
+	\begin{equation*}
+		t \longrightarrow \frac{t^2f(t)}{1+t^2} \in \mathcal{S}
+	\end{equation*}
+	Therefore,
+	\begin{equation*}
+		f(t) = \frac{t^2f(t)}{1+t^2} + \frac{f(t)}{1+t^2} \in \mathcal{S} \qedhere
+	\end{equation*}
 \end{proof}
+
+Then by using above lemma and constructing some special functions, we can easily prove the Kaplansky Theorem.
+
+\begin{proof}[proof of Kaplansky Theorem]
+	Fix a $A \in \mathcal{B}(\Rea{\A})$ and a net $\{B_i\} \subset \Rea{\B}$ s.t. $B_i \sto A$ in $SOT$.
+	\item For $2)$, if $f = (t \wedge 1) \vee (-1)$, then $f$ satisfies above lemma. Therefore,
+	\begin{equation*}
+		f(B_i) \longrightarrow f(A) =  A \text{ in } SOT
+	\end{equation*}
+	but $f(B_i) \in \mathcal{B}(\Rea{\B})$.
+	\item Similarly, $3)$ holds by constructing the function $f(t) = (t \wedge 1) \vee 0$.
+	\item Let $U \in \A$ be a unitary. Then by the functional calculus, there is a $A \in \Rea{\A}$ s.t.
+	\begin{equation*}
+		U = \exp{i A} = \cos{A} + i \sin{A}
+	\end{equation*}
+	Then let $\{B_i\} \subset \Rea{\B}$ be a net s.t. $B_i \sto A$ in $SOT$. Since both $\sin{t}$ and $\cos{t} - 1$  satisfy above lemma, 
+	\begin{equation*}
+		U_i =  \cos{B_i} + i \sin{B_i} \longrightarrow U \text{ in } SOT
+	\end{equation*}
+	and $U_i \in \B$ is a unitary.
+	\item For $1)$, fix a $A \in \mathcal{B}(\A)$ and consider the $\st{C}-$algebras $M_2(\B)$ and $M_2(\A)$, then $M_2(\A)$ is the $SOT$-closure of $M_2(\B)$.
+	\begin{equation*}
+		\left(
+			\begin{array}{cc}
+				0 & A \\
+				\st{A} & 0
+			\end{array}
+		\right)
+		\in \mathcal{B}(\Rea{M_2(\A)})
+	\end{equation*}
+	therefore, by $1)$ there is a net $\{T_i\} \subset \mathcal{B}(\Rea{M_2(\B)})$ converges to above element in $SOT$. Put
+	\begin{equation*}
+		T_i = \left(
+			\begin{array}{cc}
+				X_i & B_i \\
+				\st{B}_i & Y_i
+			\end{array}
+		\right)
+	\end{equation*}
+	Since $\norm{T_i} \leqslant 1$, $\norm{B_i} \leqslant 1$. Clearly, $B_i \sto A$  in $SOT$.
+\end{proof}
+
+\section{Normal Homomorphisms}
+
+\subsection{Pedersen Up-Down Theorem}
+
+The order of all self-adjoint operators in von Neumann algebras can provide another important property of von Neumann algebras.
+
+\begin{defn}
+	For any subset $\mathcal{S} \subset \Rea{\oper}$, define
+	\begin{eqnarray*}
+		\mathcal{S}^{\sigma} &=& \{~T \colon \exists \{S_n\} \subset \mathcal{S}  \text{  increasing sequence, } S_n \sto T \text{ in } SOT~\} \\
+		\mathcal{S}_{\sigma} &=& \{~T \colon \exists \{S_n\} \subset \mathcal{S}  \text{  decreasing sequence, } S_n \sto T \text{ in } SOT~\}
+	\end{eqnarray*}
+\end{defn}
+\begin{rem}
+	Note that $\mathcal{S}  \subset \mathcal{S}^{\sigma}$ and $\mathcal{S}_{\sigma} = -(-\mathcal{S})^{\sigma}$.
+\end{rem}
+
+\begin{lem}
+	If $A$ and $B$ are two positive operators with $A  \leqslant B$, then
+	\begin{equation*}
+		A(1+A)^{-1} \leqslant B(1+B)^{-1}
+	\end{equation*}
+\end{lem}
+\begin{proof}
+	Because of $A(1+A)^{-1} = 1  - (1+A)^{-1}$ and the fact if $0 \leqslant A \leqslant B$, $B^{-1} \leqslant A^{-1}$, the lemma holds.
+\end{proof}
+
+\begin{lem}
+	If $\B$ is a $\st{C}$-algebra and $\A = \clo{\B}^{SOT}$ and $P$ is a projection in $\A$, then for each sequence of unit $\{h_n\}$ in $\Hs$  there is a $A \in ((\mathcal{B}(\B_+))^{\sigma})_{\sigma}$ s.t.
+	\begin{equation*}
+		A(1-P)h_n = 0  = (1-A)Ph_n,~ \forall  n \geqslant 1
+	\end{equation*}
+\end{lem}
+\begin{proof}
+	By the Kaplansky Density Theorem and the sparability of $\Hs$, there is a sequence $\{C_n\}$ in $\mathcal{B}(\B_+)$ s.t. $C_n \sto P$ in $SOT$. Then it can assume that for $1 \leqslant j \leqslant  n$,
+	\begin{equation*}
+		\norm{C_n(1-P)h_j} < \frac{1}{n2^n},~ \norm{(1-C_n)Ph_j} < \frac{1}{n}
+	\end{equation*}
+	For $n < m$ define
+	\begin{equation*}
+		A_{nm} = \left(1+ \sum_{k=n}^m kC_k \right)^{-1}\sum_{k=n}^m kC_k
+	\end{equation*}
+	Then each $A_{nm} \in \mathcal{B}(\B_+)$ and $A_{nm} \leqslant \sum_{k=n}^m kC_k$. Thus for $j \leqslant n$,
+	\begin{equation*}
+		\langle A_{nm}(1-P)h_j, (1-P)h_j \rangle \leqslant \sum_{k=n}^m \frac{1}{2^k} < \frac{1}{2^{n-1}}
+	\end{equation*}
+	Since $\sum_{k=n}^m kC_k \geqslant mC_m$, by above lemma
+	\begin{equation*}
+		A_{nm} \leqslant (1+mC_m)^{-1} (mC_m) \Rightarrow 1-A_{nm} \leqslant (1+mC_m)^{-1}
+	\end{equation*}
+	By the fact for $0 \leqslant t \leqslant 1$, $(1+mt)^{-1} \leqslant (1+m)^{-1}(1+m(1-t))$ and $C_m \in \mathcal{B}(\B_+)$, 
+	\begin{equation*}
+		1- A_{nm} \leqslant (1+m)^{-1}(1+m(1-C_m))
+	\end{equation*}
+	Then it impilies that
+	\begin{eqnarray*}
+		\langle (1-A_{nm})Ph_j,Ph_j \rangle &\leqslant& \frac{1}{m} \langle (1+m(1-C_m))Ph_j,Ph_j \rangle \\
+		&\leqslant& \frac{1}{m} (\norm{Ph_j}+m\norm{(1-C_m)Ph_j}) \\
+		&\leqslant& \frac{2}{m}
+	\end{eqnarray*}
+	Fix a $n$, $\{A_{nm} \colon m > n\}$ is increasing by above lemma. Since it is bounded, there is a $A_n$  s.t. $A_{nm} \sto A_n$ fin $SOT$ and $A_n \in (\mathcal{B}(\B_+))^{\sigma}$. On the other hand, when $n+1 < m$, also by above lemma, it implies that $A_{n+1,m} \leqslant A_{nm}$, thus $A_{n+1} \leqslant A_n$. Thus there is a operator $A$ s.t. $A_n \sto A$ in $SOT$, and thus $A \in ((\mathcal{B}(\B_+))^{\sigma})_{\sigma}$. Moreover, by above
+	\begin{eqnarray*}
+		\langle A_n(1-P)h_j, (1-P)h_j \rangle &\leqslant& \frac{1}{2^{n-1}} \\
+		\langle (1-A_n)Ph_j,Ph_j \rangle &\leqslant& 0
+	\end{eqnarray*}
+	As $n \sto \infty$, $A(1-P)h_n = 0  = (1-A)Ph_n$ for all $n$.
+\end{proof}
+
+\begin{thm}[Pedersen Up-Down Theorem]
+	If $\Hs$ is a separable,  $\B$ is a \Cs contained in $\oper$, and $\A = \clo{\B}^{SOT}$, then
+	\begin{equation*}
+		\mathcal{B}(\A_+) = ((\mathcal{B}(\B_+))^{\sigma})_{\sigma} \text{ and } \Rea{\A} = (\Rea{\A})^{\sigma})_{\sigma}
+	\end{equation*}
+\end{thm}
+\begin{proof}
+	Firstly, by above lemma, for any projection $P \in \A$ and a dense subset in $\{h \in \Hs \colon \norm{h} =1\}$, there is a $A \in ((\mathcal{B}(\B_+))^{\sigma})_{\sigma}$ s.t. $A(1-P) = 0  = (1-A)P$.\\
+	For $A \in (\mathcal{B}(\A_+)$ with the spectral measure $E$ and $k \leqslant 1$,
+	\begin{equation*}
+		P_k = E \left(\bigcup_{j=1}^{2^k-1}(\frac{j}{2^k}, \frac{j+1}{2^k}] \right)
+	\end{equation*}
+	then by the integral, $A  =  \sum_{k=1}^{\infty}  2^{-k}P_k$ converging by the norm. Then for each $k$, there is a decreasing sequence $\{Z_{kn}\}$ in $(\mathcal{B}(\B_+))^{\sigma}$ s.t. $Z_{kn} \sto  P_k$ in $SOT$, define
+	\begin{equation*}
+		T_n = \sum_{k=1}^n \frac{1}{2^k} Z_{kn} + \frac{1}{2^n} \geqslant A
+	\end{equation*}
+	Since $(\mathcal{B}(\B_+))^{\sigma}$ is convex, $T_n \in (\mathcal{B}(\B_+))^{\sigma}$. Moreover, because of $Z_{+1,n+1} < 1$,
+	\begin{equation*}
+		T_{n} - T_{n+1}  = \sum_{k=1}^n \frac{1}{2^k} (Z_{kn} -  Z_{k,n+1}) + \frac{1}{2^n} (\frac{1}{2^{n+1}}Z_{n+1,n+1} + \frac{1}{2^{n+1}}) \leqslant 0
+	\end{equation*}
+	Thus $\{T_n\}$ is decreasing and there is some $T \in ((\mathcal{B}(\B_+))^{\sigma})_{\sigma}$ with $T \geqslant A$ s.t. $T_n \sto T$ in $SOT$.
+	\item Check: $A = T \in ((\mathcal{B}(\B_+))^{\sigma})_{\sigma}$ \\
+	Since $0 \leqslant Z_{kn} - P_k \leqslant 1$, the series $\sum_k 2^{-k}(Z_{kn}-P_k)$ is convergent. Then for any unit $h \in \Hs$, 
+\end{proof}
+
 
 \end{document}
