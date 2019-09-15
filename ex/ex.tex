@@ -7191,7 +7191,7 @@ Then by using above lemma and constructing some special functions, we can easily
 	Since $\norm{T_i} \leqslant 1$, $\norm{B_i} \leqslant 1$. Clearly, $B_i \sto A$  in $SOT$.
 \end{proof}
 
-\section{Normal Homomorphisms}
+\section{SOT on von Neumann Algebras}
 
 \subsection{Pedersen Up-Down Theorem}
 
@@ -7262,7 +7262,7 @@ The order of all self-adjoint operators in von Neumann algebras can provide anot
 \begin{thm}[Pedersen Up-Down Theorem]
 	If $\Hs$ is a separable,  $\B$ is a \Cs contained in $\oper$, and $\A = \clo{\B}^{SOT}$, then
 	\begin{equation*}
-		\mathcal{B}(\A_+) = ((\mathcal{B}(\B_+))^{\sigma})_{\sigma} \text{ and } \Rea{\A} = (\Rea{\A})^{\sigma})_{\sigma}
+		\mathcal{B}(\A_+) = ((\mathcal{B}(\B_+))^{\sigma})_{\sigma} \text{ and } \Rea{\A} = (\Rea{\B})^{\sigma})_{\sigma}
 	\end{equation*}
 \end{thm}
 \begin{proof}
@@ -7281,8 +7281,87 @@ The order of all self-adjoint operators in von Neumann algebras can provide anot
 	\end{equation*}
 	Thus $\{T_n\}$ is decreasing and there is some $T \in ((\mathcal{B}(\B_+))^{\sigma})_{\sigma}$ with $T \geqslant A$ s.t. $T_n \sto T$ in $SOT$.
 	\item Check: $A = T \in ((\mathcal{B}(\B_+))^{\sigma})_{\sigma}$ \\
-	Since $0 \leqslant Z_{kn} - P_k \leqslant 1$, the series $\sum_k 2^{-k}(Z_{kn}-P_k)$ is convergent. Then for any unit $h \in \Hs$, 
+	Since $0 \leqslant Z_{kn} - P_k \leqslant 1$, the series $\sum_k 2^{-k}(Z_{kn}-P_k)$ is convergent. Then for any unit $h \in \Hs$ and $\varepsilon > 0$, chose $N$ s.t. $2^{-N} < \varepsilon$, then there is an $n_0$ s.t. 
+	\begin{equation*}
+		0 \leqslant \langle (Z_{kn}-P_k) h,h \rangle < \frac{\varepsilon}{2}, \text{ for } 1 \leqslant k \leqslant N \text{ and } n \geqslant n_0
+	\end{equation*}
+	Therefore,
+	\begin{equation*}
+		\lim_{n \sto \infty} \sum_{k=1}^{\infty} \frac{1}{2^k} \langle (Z_{kn}-P_k) h,h \rangle = 0,~ \forall h \in \Hs
+	\end{equation*}
+	However,
+	\begin{equation*}
+		0 \leqslant T_n - A = T_n - \sum_{k=1}^{\infty} \frac{1}{2^k} P_k \leqslant \frac{1}{2^n} + \sum_{k=1}^{\infty} \frac{1}{2^k}(Z_{kn}-P_k)
+	\end{equation*}
+	Therefore, $T_n \sto A$ in $WOT$, but $T_n \sto T$ in $SOT$, thus $T = A$. 
+	\item Check: $\Rea{\A} = (\Rea{\A})^{\sigma})_{\sigma}$ \\
+	Fix $A \in \Rea{\A}$ and let $\alpha = -\norm{A}$.  Therefore, $A+\alpha \leqslant 0$. Let $\beta = \norm{A+\alpha}$, so $T=\beta^{-1}(A+\alpha) \in \mathcal{B}(\A_+)$ and $A = \beta T -\alpha$. But $\beta T \in ((\mathcal{B}(\B_+))^{\sigma})_{\sigma}$  and $-\alpha \in \mathcal{B}(\B)$. Thus $A  \in ((\mathcal{B}(\Rea{\B}))^{\sigma})_{\sigma}$.
 \end{proof}
+
+The Up-Down Theorem can reveal the basic property of general von Neumann algebras.
+
+\begin{thm}
+	If $\A$ is a \Cs contained in $\oper$, then $\A$ is $weak^*$-closed if and only if it contains the supremum of every bounded increasing net of self-adjoint operators in the algebra.
+\end{thm}
+\begin{proof}
+	$\A$ is $weak^*$-closed, thus $\A$ is  a von Neumann algebra. Therefore, by above proposition $\A$ has this property. Assume that $\A$ is a \Cs and if $\{A_i\}$ is an increasing net in $\Rea{\A}$ with $A_i \sto A$ in $SOT$, then $A \in \A$. Then by taking the negatives of the increasing parts, it is also true for that if $\{A_i\}$ is an decreasing net in $\Rea{\A}$ with $A_i \sto A$ in $SOT$, then $A \in \A$. Therefore, 
+	\begin{equation*}
+		\Rea{\A} = ((\mathcal{B}(\Rea{\A}))^{\sigma})_{\sigma}
+	\end{equation*}
+	Then if $\Hs$ is separable, by the Up-Down Theorem $\A$ is $weak^*$-closed. \\
+	For the general case, let $\B = \clo{\A}^{SOT}$. It is sufficient to show that any projection contained in $\B$ is contained in $\A$. Let $P$ be the projection in $\B$ and $g \in P$ and $h \in P^{\bot}$. Then by above lemma, there is an $T \in \A_+$ s.t. $Tg = g$ and $Th = 0$. Let $R$ be projection onto $\clo{\ran{T}}$ and $Rg = g$ and $Rh = 0$, moreover $R \in \A$ because of the hypothesis and the Spectral Theorem. For any $g \in P$ and $h \in P^{\bot}$, denote the $R$ by $R_{gh}$. Fix $g \in P$ and 
+	\begin{equation*}
+		\fml{F} = \{~h_1, h_2, \cdots, h_m\} \subset P^{\bot}
+	\end{equation*}
+	then $R_{\fml{F}} = R_{gh_1} \wedge R_{gh_2} \wedge \cdots \wedge R_{gh_m} \in \A$. And $\{R_{\fml{F}}\}$ is a decreasing net and thus $R_g = \lim-SOT R_{\fml{F}} \in \A$. And since $R_g P^{\bot} = 0$, $R_g \leqslant P$ for all $g \in P$. Then let
+	\begin{equation*}
+		\fml{G} = \{~g_1, g_2, \cdots, g_n\} \subset P
+	\end{equation*}
+	$R_{\fml{G}} = R_{g_1} \vee R_{g_2} \vee \cdots \vee R_{g_n} \in \A$. And $\{R_{\fml{G}}\}$ is an increasing net and thus $R = \lim-SOT R_{\fml{F}} \in \A$. Therefore, $R = P \in \A$.
+\end{proof}
+
+\subsection{Normal Homomorphisms}
+
+\begin{defn}
+	If $\A$ and $\B$ are von Neumann algebras and $\rho \colon \A \sto \B$ is a linear positive map, then $\rho$ is normal if for any increasing net $\{A_i\}$ in $\A$ with $A_i \sto A$ in $SOT$, $\rho(A_i) \sto \rho(A)$ in $SOT$.
+\end{defn}
+
+\begin{rem}
+	In fact, the normal homomorphsims are postive linear maps that is continuous with respect to the $SOT$. In particular, if $E \in \A$, $A \mapsto EAE$ is a normal homomorphism.
+\end{rem}
+
+If $\A$ is a von Neumann algebra, the $\A$ is $weak^*$-closed, therefore $\A$ is the dual space of some Banach space. Let $\A_*$ be the space of all $weak^*$-continuous fuctionals on $\A$, then $\A  = (\A_*)^*$. And also 
+\begin{equation*}
+	\A_* \cong \toper / \A_{\bot},
+\end{equation*}
+where $\A_{\bot}$ is the space of all trace class annihilating the $\A$. Therefore, for any $L \in \A_*$, there is $T \in \toper$ s.t. for all $A \in \A$, 
+\begin{equation*}
+	L(A) = \tr{(AT)}
+\end{equation*}
+In fact, if $L$ is positive, then $T$ can be chosen as a positive element.
+
+\begin{lem}
+	If $\phi$ and $\psi$ are positive functionals on a von Neumann algebra $\A$ s.t. there is an operator $A \in \A_+$ with $\phi(A)  < \psi(A)$, then there is an operator $B \in \A_+$ s.t. $B \leqslant A$ and $\phi(T) < \psi(T)$ for all $T \in \A$ with $0 <  T \leqslant  B$. If $A$ is projection, then $B$ can be chosen as a projection.
+\end{lem}
+\begin{proof}
+	Let $\mathcal{C}$ be the set of all $C \in \A_+$ s.t. $C \leqslant A$ and $\phi(C) \leqslant \psi(C)$. And give $\mathcal{C}$ with the usual order. Then if $\{C_i\}$ is the chain in $\mathcal{C}$ and let $C = \sup_i C_i \in \A_+$  and $C \leqslant A$. Since $\phi$ and $\psi$ is positive, $C \in \mathcal{C}$. Then by the Zorn's Lemma, there is a maximal element $C$ in $\mathcal{C}$. Put $B = A-C$. If $T \in \A_+$ with $0 < T \leqslant B$, by the maximality of $C$, $T \notin \mathcal{C}$, thus $\phi(T) < \psi(T)$. Moreover, if $A$ is a projection, $B \leqslant A$ implies that $\clo{\ran{B}} \leqslant A$. If $B = \int_0^1 t dP(t)$ be the spectral decomposition, then for any $\varepsilon >  0$, $P = P([\varepsilon,1])$. Then $P$ satisfies above condition.
+\end{proof}
+
+\begin{thm}
+	If $\psi$ is a positive linear functional on the von Neumann algebra $\A$, then the following statements are equvilaten.
+	\begin{enumerate}[label = \arabic*)]
+		\item $\psi$ is normal.
+		\item If $\{E_i\}$ is a pairwise orthogonal family of projections in $\A$, then 
+		\begin{equation*}
+			\psi(\sum E_i) = \sum \psi(E_i)
+		\end{equation*}
+		\item $\psi$ is $weak^*$-continous.
+		\item There is a positive trace class operator $C$ s.t. $\psi(A) = \tr{(AT)}$ for all $A \in \A$.
+	\end{enumerate}
+\end{thm}
+
+
+
 
 
 \end{document}
