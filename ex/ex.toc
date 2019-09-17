@@ -67,16 +67,16 @@
 \contentsline {section}{\numberline {5.4}Fredholm Theory}{146}{section.5.4}
 \contentsline {subsection}{\numberline {5.4.1}Fredholm Operators}{146}{subsection.5.4.1}
 \contentsline {subsection}{\numberline {5.4.2}Fredholm Index}{149}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}Essential Spectrum}{151}{subsection.5.4.3}
+\contentsline {subsection}{\numberline {5.4.3}Essential Spectrum}{152}{subsection.5.4.3}
 \contentsline {section}{\numberline {5.5}Compact Perturbations}{156}{section.5.5}
 \contentsline {subsection}{\numberline {5.5.1}Weyl-von Neumann Theorem}{156}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}Weyl-von Neumann-Berg Theorem}{158}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.2}Weyl-von Neumann-Berg Theorem}{159}{subsection.5.5.2}
 \contentsline {subsection}{\numberline {5.5.3}Approximately Unitary Equivalence}{162}{subsection.5.5.3}
-\contentsline {chapter}{\numberline {6}Von Neumann Algebras}{166}{chapter.6}
-\contentsline {section}{\numberline {6.1}General von Neumann Algebras}{166}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Elementary Properties}{166}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Central Cover}{169}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Kaplansky Density Theorem}{172}{subsection.6.1.3}
-\contentsline {section}{\numberline {6.2}SOT on von Neumann Algebras}{173}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Pedersen Up-Down Theorem}{173}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Normal Homomorphisms}{177}{subsection.6.2.2}
+\contentsline {chapter}{\numberline {6}Von Neumann Algebras}{167}{chapter.6}
+\contentsline {section}{\numberline {6.1}General von Neumann Algebras}{167}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Elementary Properties}{167}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Central Cover}{170}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Kaplansky Density Theorem}{173}{subsection.6.1.3}
+\contentsline {section}{\numberline {6.2}SOT on von Neumann Algebras}{174}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Pedersen Up-Down Theorem}{174}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Normal Homomorphisms}{178}{subsection.6.2.2}

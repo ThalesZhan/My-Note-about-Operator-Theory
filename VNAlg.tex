@@ -458,7 +458,7 @@ The Up-Down Theorem can reveal the basic property of general von Neumann algebra
 	If $\A$ and $\B$ are von Neumann algebras and $\rho \colon \A \sto \B$ is a linear positive map, then $\rho$ is normal if for any increasing net $\{A_i\}$ in $\A$ with $A_i \sto A$ in $SOT$, $\rho(A_i) \sto \rho(A)$ in $SOT$.
 \end{defn}
 \begin{rem}
-	In fact, the normal homomorphsims are postive linear maps that is continuous with respect to the $SOT$. In particular, if $E \in \A$, $A \mapsto EAE$ is a normal homomorphism.
+	In particular, if $E \in \A$, $A \mapsto EAE$ is a normal homomorphism. The normal homomorphsims should be postive linear maps that are continuous with respect to the $SOT$, but in above definition, there is an extra condition. In fact, this extra condition has an equivalent expression.
 \end{rem}
 
 If $\A$ is a von Neumann algebra, the $\A$ is $weak^*$-closed, therefore $\A$ is the dual space of some Banach space. Let $\A_*$ be the space of all $weak^*$-continuous fuctionals on $\A$, then $\A  = (\A_*)^*$. And also 
@@ -490,9 +490,72 @@ In fact, if $L$ is positive, then $T$ can be chosen as a positive element.
 		\item There is a positive trace class operator $C$ s.t. $\psi(A) = \tr{(AT)}$ for all $A \in \A$.
 	\end{enumerate}
 \end{thm}
+\begin{proof}
+	Without loss the generality, assuming that $\psi(1) = 1$.
+	\item $1) \Rightarrow 2)$: It is trivial.
+	\item $2) \Rightarrow 3)$: Since $0 \leqslant \psi(E) \leqslant 1$ for any non-zero projection $E$, for any $h \in \Hs$,
+	\begin{equation*}
+		\psi(E) \leqslant \langle Eh,h \rangle
+	\end{equation*}
+	Therefore, by preceding lemma, there is a projection $F$ with $0 \leqslant F \leqslant E$ s.t.
+	\begin{equation*}
+		\psi(T) \leqslant \langle hT,h \rangle,~ \forall 0 \leqslant  T \leqslant F
+	\end{equation*}
+	Since $FAF \leqslant \norm{A}F$, 
+	\begin{equation*}
+		\psi(FAF) \leqslant \norm{A} \langle FAFh,h \rangle
+	\end{equation*}
+	Then by the CBS inequality, for any $A \in \mathcal{B}(\A)$
+	\begin{equation*}
+		\abs{\psi(AF)}^2 \leqslant \psi(F\st{A}AF) \leqslant \norm{A}^2 \langle F\st{A}AFh,h \rangle = \norm{A}^2 \norm{AFh}^2
+	\end{equation*}
+	Therefore, $\psi(\cdot F) \colon \A \sto \C$ is $SOT$-continuous. \\
+	Let $\{E_i\}$ be the maximal family of pairwise orthogonal projections in $\A$ s.t. $\psi(\cdot E_i)$ is $SOT$-continous on $\A$. Let $E = \sum_i E_i$. Clearly, $E = 1$. If $E \neq 1$, then there is a projection $F \leqslant E^{\bot}$ s.t. $\psi(\cdot F)$ is $SOT$-continous on $\A$, which contradicts the maximality of $\{E_i\}$. Then by $2)$,
+	\begin{equation*}
+		\psi(\sum_i E_i) = \psi(1) = 1
+	\end{equation*}  
+	Therefore, for any $\varepsilon > 0$, there is a finite set $I_0$ of index s.t. for any $J$ with $I_0 \subset J$, and let $P_J = \sum_J E_j$,
+	\begin{equation*}
+		\psi{P_J^{\bot}} = 1- \psi(P_J) < \varepsilon
+	\end{equation*}
+	Then for any $A \in \mathcal{B}(\A)$, 
+	\begin{equation*}
+		\abs{\psi(AP_J^{\bot})}^2  \leqslant \psi(A\st{A})\psi(P_J) < \varepsilon
+	\end{equation*}
+	And thus for any $J$ with $I_0 \subset J$,
+	\begin{equation*}
+		\norm{\psi - \psi(\cdot P_J)} = \sup{\{~\abs{\psi(AP_J)} \colon A \in \mathcal{B}(\A)~\}} < \sqrt{\varepsilon}
+	\end{equation*}
+	Since $\psi(\cdot P_J) \in \A_*$, $\psi \in \A_*$.
+	\item $3) \Rightarrow 4)$: Firstly, assume that $\psi(A) = \langle Ag,h \rangle$ for some $g,h \in \Hs$. \\
+	Check: $\psi(A) = \langle Af, f \rangle$ for some $f \in \Hs$. \\
+	By the fact that $A \in \A_+$, $\langle Ag,h \rangle \leqslant 0$, 
+	\begin{eqnarray*}
+		4\langle Ag,h \rangle &=& \langle A(g+h),g+h \rangle - \langle A(g-h),g-h \rangle \\
+		&\leqslant& \langle A(g+h),g+h \rangle
+	\end{eqnarray*}
+	Let $\phi(A) = \frac{1}{4}\langle A(g+h),g+h \rangle$, then $\psi(A) \leqslant \phi(A)$. By the \textbf{Proposition} \ref{prop17} in the subsection \textbf{3.2.7}, there is a $T \in \A^{'}$ with $0 \leqslant T \leqslant 1$ s.t. 
+	\begin{equation*}
+		\psi(A) =  \langle AT(g+h),g+h \rangle
+	\end{equation*}
+	Let $f = T^{\frac{1}{2}}(g+h)$, then $\psi(A) = \langle Af, f \rangle =  \tr{(Af \otimes f)}$, where $f \otimes f$ is a positive trace class. \\
+	For general case, since $\psi \in \A_*$, by above mention, there is a $D \in \coper$ s.t. $\psi(A) = \tr{(AD)}$. By the \textbf{Theorem} \ref{thm15} in the subsection \textbf{5.3.3}, there are $g, h \in \Hs^{(\infty)}$  s.t.
+	\begin{equation*}
+		\psi(A)  = \tr{(AD)} = \langle A^{(\infty)}g,h \rangle = \langle A^{(\infty)}f,f \rangle
+	\end{equation*} 
+	Then there is a $C \in \coper$, s.t.
+	\begin{equation*}
+		\langle A^{(\infty)}f,f \rangle = \tr{(AC)}
+	\end{equation*}
+	And in fact, if $f = (f_i) \in \Hs^{(\infty)}$, $C = \sum_i f_i \otimes f_i \geqslant 0$.
+	\item $4) \Rightarrow 1)$: It is trivial by definition.
+\end{proof}
 
+Then by using the above theorem, the equivalent statement as the following corollary shows can make the definition of normal homomorphism more nature.
 
-
+\begin{cor}
+	If $\A$ and $\B$ are von Neumann algebras and $\rho \colon \A \sto \B$ is a positive linear map, then $\rho$ is normal if and only if it is $weak^*$-continuous. 
+\end{cor}
 
 
 
