@@ -43,7 +43,7 @@ Abelian von Neuman algebras can be explicitly described as $L^{\infty}(\mu)$. Fo
 	Finally, to see that $A_i \sto A$ in $weak^{*}$, consider $\{A_i^{(\infty)}\}$, and by $2)$, there is a $A^{(\infty)}$ s.t. $A_i^{(\infty)} \sto A^{(\infty)}$ in $WOT$, therefore, $A_i \sto A$ in $weak^{*}$.
 \end{proof}
 
-\begin{cor}
+\begin{cor} \label{cor12}
 	If $\A$ is a $\st{C}$-algebra contained in $\oper$ but without the identity and $\A$ is $weak^{*}$-closed, then there is a projection $P$ in $\A$ s.t.
 	\begin{equation*}
 		A = PA = AP,~ \forall~ A \in \A
@@ -556,6 +556,67 @@ Then by using the above theorem, the equivalent statement as the following corol
 \begin{cor}
 	If $\A$ and $\B$ are von Neumann algebras and $\rho \colon \A \sto \B$ is a positive linear map, then $\rho$ is normal if and only if it is $weak^*$-continuous. 
 \end{cor}
+\begin{proof}
+	If $\rho$ is $weak^*$-continuous, then it is clearly normal. Conversely, if $\rho$ is normal and $\phi \in \B_*$ such that $\phi$ is positive, then $\phi \circ  \rho$ is a normal functional on $\A$. By preceding theorem and the fact that all element in $\B_*$ can be linear combination of four positive elments, $\phi \circ  \rho$ is $weak^*$-continuous for all $\phi \in \B_*$. Therefore, by the Hahn-Banach Theorem, $\rho$ is $weak^*$-continuous.
+\end{proof}
+
+\begin{prop}
+	Every $*$-isomorphism between von Neumann algebras is normal.
+\end{prop}
+\begin{proor}
+	Let $\rho \colon \A \sto \B$ be $*$-isomorphism between von Neumann algebras $\A$ and $\B$. If $\{\A_i\}$ is an increasing net of self-adjoint operators in $\A$ with $A = \sup_i A_i$, then $\{\rho(\A_i)\}$ is an increasing net in $\B$ with $\rho(\A_i) \leqslant \rho(A)$ for all $A_i$. Thus 
+	\begin{equation*}
+		B = \sup_i  \rho(A_i) \leqslant \rho(A)
+	\end{equation*}
+	Conversely, $A_i = \rho^{-1}\rho(A_i)  \leqslant \rho^{-1}(B)$ for all $A_i$. That means $A \leqslant \rho^{-1}(B)$. Therefore, $A =  \rho(B)$.
+\end{proor}
+
+\subsection{Ideals}
+
+Rather than considering norm closed ideals in $\st{C}$-algebras, in von Neumann algebras, $WOT$-closed ideal should be paid more attention on, or equivalently, $weak^*$-closed ideal.
+
+\begin{thm}
+	Let $\A$ be a von Neumann algebra.
+	\begin{enumerate}[label=\arabic*)]
+		\item $\B$ is a $weak^*$-closed hereditary subalgebra of $\A$ if and only if there is a unique projection $P$ in $\A$ s.t. $\B = P \A P$.
+		\item $\I$ is a $weak^*$-closed left ideal of $\A$ if and only if there is a unique projection $P$ in $\A$ s.t. $\I = \A P$.
+		\item $\I$ is a $weak^*$-closed ideal of $\A$ if and only if there is a unique central projection $P$ in $\A$ s.t. $\I = \A P = P \A$.
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	For $1)$, if $\B = P \A P = \A P \cap P \A = \A P \cap \st{(\A P)}$, $\B$ is hereditary by the fact that $\A P$ is a norm closed left ideal and \textbf{Theorem} \ref{thm6} in the subsection \textbf{3.2.5}. And clearly, $\B$ is $weak^*$-closed subalgebra. Conversely, if $\B$ is a $weak^*$-closed hereditary subalgebra, then by the \textbf{Corollary} \ref{cor12} in the subsection \textbf{6.1.1}, there is a central projection $P \in \B$ s.t. $\B = P \B = \B P$, thus $\B \subset P \A P$. If $A \in \A_+$, then $PAP  \leqslant \norm{A} P \in \B$. Since $\B$ is hereditary, $PAP \in \B$. Therefore, $\B =  P \A P$. The uniqueness of $P$ is because any such $P$ is the identity for $\B$.
+	\item For $2)$, if $\I$ is a $weak^*$-closed left ideal of $\A$, then $\B = \I \cap \st{\I}$ is a $weak^*$-closed hereditary subalgebra. Then there is a projection $P \in \B \subset \I$ s.t. $\B =  P \A P$. Thus $\A P \subset \I$. Conversely, if $T \in \I$, then $\st{T}T \in \B_+ = \I_+$. Therefore, $\st{T}T P = \st{T}T$ and so $\abs{T}P = \abs{T}$. By the Polar Decomposition, $T = TP \in \A P$. Hence, $\I = \A P$. And the unqueness of $P$ is because the uniqueness of $P$ in $\B$.
+	\item For $3)$, That $\I$ is a $weak^*$-closed ideal of $\A$, also norm closed, implies that $\I = \st{I}$. Then by $1)$ and $2)$, there is a projection $P \in \I$ s.t. $\I = \A P = P \A$. Moreover, for any $A \in \A$,
+	\begin{equation*}
+		PA = P(PA) = P (PAP) = (PA) P = AP
+	\end{equation*}
+	Therefore, $P$ is in the center of $\A$.
+\end{proof}
+
+For the ideal in a von Neumann algebra, it is always assumed as the $weak^*$-closed ideal. Thus, there is a direct corollary of above theorem about the simple von Neumann algbras.
+
+\begin{cor}
+		A von Neumann algebra $\A$ is simple if and only if 
+		\begin{equation*}
+			\fml{Z} = \A \cap \A^{'} = \C I
+		\end{equation*}
+\end{cor}
+
+\begin{defn}
+	A von Neumann algebra $\A$ is called factor, if 
+	\begin{equation*}
+		\fml{Z} = \A \cap \A^{'} = \C I
+	\end{equation*}
+\end{defn}
+\begin{rem}
+	By above corollary, factors are simple von Neumann algebras.
+\end{rem}
+
+
+
+
+
+
 
 
 

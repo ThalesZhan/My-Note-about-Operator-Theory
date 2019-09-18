@@ -80,3 +80,4 @@
 \contentsline {section}{\numberline {6.2}SOT on von Neumann Algebras}{174}{section.6.2}
 \contentsline {subsection}{\numberline {6.2.1}Pedersen Up-Down Theorem}{174}{subsection.6.2.1}
 \contentsline {subsection}{\numberline {6.2.2}Normal Homomorphisms}{178}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Ideals}{181}{subsection.6.2.3}
