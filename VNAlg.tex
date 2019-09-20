@@ -432,7 +432,7 @@ The order of all self-adjoint operators in von Neumann algebras can provide anot
 
 The Up-Down Theorem can reveal the basic property of general von Neumann algebras.
 
-\begin{thm}
+\begin{thm} \label{thm16}
 	If $\A$ is a \Cs contained in $\oper$, then $\A$ is $weak^*$-closed if and only if it contains the supremum of every bounded increasing net of self-adjoint operators in the algebra.
 \end{thm}
 \begin{proof}
@@ -609,12 +609,43 @@ For the ideal in a von Neumann algebra, it is always assumed as the $weak^*$-clo
 	\end{equation*}
 \end{defn}
 \begin{rem}
-	By above corollary, factors are simple von Neumann algebras.
+	By above corollary, factors are simple von Neumann algebras. Moreover, for a von Neuamnn algebra $\A$,  if $P \in \fml{Z}$ is a projection, then $\A = P \A + P^{\bot} \A$, where $P \A$ and $P^{\bot} \A$ are von Neumann algebras. And by above mention, $P \A = P \A P \cong \A_P$. Therefore, any von Neumann algebra is semi-simple and since $\I = P \A$ is an ideal, $\A / \I \cong P^{\bot} \A$
 \end{rem}
 
+\begin{thm}
+	If $\A$ and $\B$ are von Neumann algebras and $\rho \colon \A \sto \B$ is a normal $*$-homomorphism, then $\ker{\rho}$ is $weak^*$-closed and $\rho(\A)$ is $weak^*$-closed in $\B$. Moreover, there is a central projection $P$ s.t. $\ker{\rho} =  P^{\bot} \A$ and $\rho$  is a $*$-isomorphism of $P \A$ onto $\ran{\rho}$.
+\end{thm}
+\begin{proof}
+	Check: $\ker{\rho}$ is $weak^*$-closed. \\
+	If $\{A_i\}$ is a bounded increasing net in $\Rea{\ker{\rho}}$, then put $A = \sup_i A_i$. Since $\rho$ is normal, $\rho(A) = \sup_i \rho(A_i) = 0$. Therefore, $A \in \ker{\rho}$. Then by \textbf{Theorem} \ref{thm16} in the subsection \textbf{6.2.1}, $\ker{\rho}$ is $weak^*$-closed.
+	\item Check: $\ran{\rho}$ is $weak^*$-closed. \\
+	Let $\{B_i\}$ is a bounded increasing net in $\Rea{\ran{\rho}}$ and $B = \sup_i B_i$. Then put
+	\begin{equation*}
+		\Gamma = \{~A \in \A_+ \colon \rho(A) \in \{B_i\}~\}
+	\end{equation*}
+	\item Claim: $\Gamma$ is directed with respect to the usual order. \\
+	Suppose $A_i, A_j \in \Gamma$ with $\rho(A_i) = B_i$ and $\rho(A_j)  = B_j$. Pick $B_k$ s.t. $B_i, B_j \leqslant B_k$. Therefore, there is a $T \in \A_+$ s.t. $\rho(T) = B_k-B_i$. If $C_i =  A_i + T$, then $C_i \geqslant A_i$ and $\rho(C_i) = B_k$. Similarly, there is a $C_j \geqslant A_j$ s.t. $\rho(C_j) = B_k$. Therefore, $C_i-C_j \in \ker{\rho}$, and if $A = C_i + \abs{C_i-C_j}$, then $\rho(A) = B_k$ and $C_i, C_j \leqslant A$. \\
+	Fix $\varepsilon > 0$, by proof of the Pedersen Up-Down Theorem, the map  $A  \sto (1+\varepsilon A)^{-1}A$ is an increasing funnction on $\oper_+$. Thus $\{(1+\varepsilon A)^{-1}A \colon A \in \Gamma\}$ is an increasing function in $\A$ with the bound $\varepsilon^{-1}$. Put
+	\begin{equation*}
+		A_{\varepsilon}  = \sup{\{(1+\varepsilon A)^{-1}A \colon A \in \Gamma\}}
+	\end{equation*}
+	and $\norm{A_{\varepsilon}} \leqslant \varepsilon^{-1}$. Since $\rho$ is normal,
+	\begin{equation*}
+		\rho(A_\varepsilon) = (1+\varepsilon B)^{-1}B \in \ran{\rho}
+	\end{equation*}
+	But $(1+\varepsilon B)^{-1}B \sto B$ in norm and $\ran{\rho}$ is norm closed, thus $B \in \ran{\rho}$.  \\
+	The rest of the theorem can be obtained by using above theorem.
+\end{proof}
 
+\section{Projections}
 
+\subsection{Equivalence}
 
+Projections in a von Neumann algebra play the role as generators, which lead to researching globle properties the von Neumann algebra is based on the properties of its projections, to some extend. Firstly, there is some equivalent relation between projections.
+
+\begin{defn}
+	Let $E$ and $F$ be two projections. $E$ and $F$ are equivalent, dennoted by $E \sim F$, if there is a pratial isometry $W$ s.t. $\st{W}W = E$ and $W\st{W} = F$. If there is a $G \leqslant F$ s.t. $E \sim F$, then denoting $E \lesssim F$.
+\end{defn}
 
 
 
