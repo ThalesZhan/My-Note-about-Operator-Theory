@@ -6873,7 +6873,7 @@ In general case, we need a definition to describe this definition.
 
 Abelian von Neuman algebras can be explicitly described as $L^{\infty}(\mu)$. For general von Neumann algebras, they have more complex structure but more interesting properties. Firstly, we have seen the relation between the $WOT$ and the ultraweak topology, therefore, the ultraweak topology can provide some different things of the von Neumann algebra. Then, since the weak closedness of von Neumann algebras, all projections in a von Neumann algebra can completely generate the whole algebra. Thus projections are fundamental elements in the von Neumann algebra. Researching the properties of them and classifying them can help us to classify general von Neumann algebras. By the properties of the projections contained in a von Neumann algebras, general von Neumann algebras can be classified as $5$ different categories and we can see that the abelian one is belong to what category.
 
-\section{General von Neumann Algebras}
+\section{General Von Neumann Algebras}
 
 \subsection{Elementary Properties}
 
@@ -7001,7 +7001,7 @@ Abelian von Neuman algebras can be explicitly described as $L^{\infty}(\mu)$. Fo
 	\end{equation*}
 \end{rem}
 
-\begin{prop}
+\begin{prop} \label{prop19}
 	Let $\A$ be a von Neumann algebra.
 	\begin{enumerate}[label=\arabic*)]
 		\item If $A \in \A$, $E = (\ker{A})^{\bot}$ and $F = \clo{\ran{A}}$, then
@@ -7051,7 +7051,7 @@ Abelian von Neuman algebras can be explicitly described as $L^{\infty}(\mu)$. Fo
 	In general, $\A_E$ is not an algebra. However, if $E \in \A$, there is a $*$-isomorphism between $\A_E$ and $E\A E$. If $E \in \A^{'}$, there is a $*$-homomorphism between $\A_E$ and $E\A E$. $E \A E$ is clear a $\st{C}$-subalgebra of $\A$.
 \end{rem}
 
-\begin{prop}
+\begin{prop} \label{prop20}
 	Let $\A$ be a von Neumann algebra.
 	\begin{enumerate}[label=\arabic*)]
 		\item If $E \in \A^{'}$ is a projection, then $\A_E$ is a von Neumann algebra in $\fml{B}(E)$ and $(\A_E)^{'} = (\A)^{'}_E$.
@@ -7194,7 +7194,7 @@ Then by using above lemma and constructing some special functions, we can easily
 	Since $\norm{T_i} \leqslant 1$, $\norm{B_i} \leqslant 1$. Clearly, $B_i \sto A$  in $SOT$.
 \end{proof}
 
-\section{SOT on von Neumann Algebras}
+\section{Topologies on Von Neumann Algebras}
 
 \subsection{Pedersen Up-Down Theorem}
 
@@ -7510,14 +7510,445 @@ For the ideal in a von Neumann algebra, it is always assumed as the $weak^*$-clo
 
 \section{Projections}
 
-\subsection{Equivalence}
+\subsection{Equivalence of Projections}
 
 Projections in a von Neumann algebra play the role as generators, which lead to researching global properties of the von Neumann algebra is based on the properties of its projections, to some extend. Firstly, there is some equivalent relation between projections.
 
 \begin{defn}
-	Let $E$ and $F$ be two projections. $E$ and $F$ are equivalent, dennoted by $E \sim F$, if there is a pratial isometry $W$ s.t. $\st{W}W = E$ and $W\st{W} = F$. If there is a $G \leqslant F$ s.t. $E \sim F$, then denoting $E \lesssim F$.
+	Let $E$ and $F$ be two projections in a von Neumann algebra $\A$. $E$ and $F$ are equivalent, denoted by $E \sim F$, if there is a partial isometry $W \in \A$ s.t. $\st{W}W = E$ and $W\st{W} = F$. If there is a $G \leqslant F$ s.t. $E \sim F$, then denoting $E \lesssim F$.
 \end{defn}
 
+There are some properties of the equivalent projections.
+
+\begin{prop}
+	\begin{enumerate}[label=\arabic*)]
+		\item In an ablien algebra, two projections are equivalent if an only if they are equal. 
+		\item Two projections in $\oper$ are equivalent if and only if they have same dimensional.
+		\item If $\A$ is a von Neumann algebra and $A \in \A$, then $\cran{A} \sim \cran{\st{A}}$.
+		\item Let $E$ be a projection in a von Neumann algebra $\A$. $E \sim 0$ if and only if $E = 0$.
+		\item If $E$ and $F$ are two projections in $\A$ with $E \sim F$, then for any central projection $Z$, $ZE \sim ZF$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	$1)$ holds trivially. For $2)$, by the proof of the Polar Decomposition, for a partial isometry $W$, $(\ker{W})^{\bot}$ and $\ran{W}$ are isometrically isomorphism. For $3)$, let $A = W\abs{A}$ the Polar Decomposition. Then
+	\begin{equation*}
+		\st{W}W = \cran{\abs{A}} = \cran{\st{A}},~ W \st{W} = \cran{A}
+	\end{equation*}
+	For $4)$, $E = \st{W}W$ and $W\st{W} = 0$. That means $W = 0$, thus $ E = 0$. \\
+	$5)$ holds since $Z = \st{Z}Z$ and $Z$ is in center.
+\end{proof}
+
+\begin{lem}
+	For projections $E$ and $F$:
+	\begin{enumerate}[label=\arabic*)]
+		\item $\cran{EF} = E \wedge (E \wedge F^{\bot})^{\bot} = E - E \wedge F^{\bot}$;
+		\item $\cran{EF^{\bot}} = E - E \wedge F$;
+		\item $\cran{F^{\bot}E} = E \vee F - F$.
+	\end{enumerate}
+\end{lem}
+\begin{proof}
+	It is sufficien to prove $1)$. \\
+	Check: $\ker{FE} = E^{\bot} + (E \vee F^{\bot})$. \\
+	If $h \in \ker{FE}$ and expressing $h = g + f$ where $g \in E^{\bot}$ and $f \in E$, then $0 = FEh = Ff$. Thus $f \in F^{\bot}$, i.e. $f \in E \vee F^{\bot}$. Therefore,
+	\begin{equation*}
+		\ker{FE} \leqslant E^{\bot} + (E \vee F^{\bot})
+	\end{equation*}
+	Conversely, if $h = g + f$ with $g \in E^{\bot}$ and $f \in E \vee F^{\bot}$, then $FEh = Ff = 0$. Thus $\ker{FE} = E^{\bot} + (E \vee F^{\bot})$. \\
+	Thus,
+	\begin{equation*}
+		\cran{EF} = (\ker{FE})^{\bot} = E \wedge (E \vee F^{\bot})^{\bot} = E - E \vee F^{\bot} \qedhere
+	\end{equation*}
+\end{proof}
+
+\begin{prop}
+	\begin{enumerate}[label = \arabic*)]
+		\item If $E$ and $F$ are projections, then
+			\begin{eqnarray*}
+				E \vee F - F &\sim& E - E \wedge F \\
+				E - E \wedge F^{\bot} &\sim& F -  E^{\bot} \wedge F 
+			\end{eqnarray*}
+		\item If $\{E_i\}$ and $\{F_i\}$ are two sets of pairwise orthogonal projections s.t. $E_i \sim_{W_i} F_i$ for all $i$, then
+		\begin{equation*}
+			E = \sum_i E_i \sim_W  F = \sum_i F_i
+		\end{equation*}
+		where $W =  \sum_i  W_i$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	For $1)$, by above proposition,
+	\begin{equation*}
+		\cran{F^{\bot}E}  \sim \cran{\st{F^{\bot}E}} = \cran{EF^{\bot}}
+	\end{equation*}
+	And by above lemma,
+	\begin{equation*}
+		\cran{F^{\bot}E} = E \vee F - F, \text{ and } \cran{EF^{\bot}} = E - E \wedge F
+	\end{equation*}
+	Therefore, the first equivalence is obtained. By $\cran{FE} \sim \cran{EF}$, the second is also true. 
+	\item For $2)$, if $h \in \Hs$,
+	\begin{eqnarray*}
+		\norm{Eh}^2 &=&  \langle Eh,h \rangle = \sum_i \langle E_ih,h \rangle  \\
+		&=& \sum_i \langle \st{W_i}W_ih,h \rangle = \sum_i \norm{W_i}^2
+	\end{eqnarray*}
+	Since $\{W_i h\}$ is an orthogonal set, $\sum_i W_i$ converges strongly. Therefore put $W = \sum_i W_i$. And by the fact that $\{E_i\}$  are pairwise orthogonal, for any finite subset $I$  of index, 
+	\begin{equation*}
+		\st{(\sum_{i \in I} W_i)}(\sum_{i \in I} W_i) = \sum_{i \in I} \st{W_i}W_i = \sum_{i \in I} E_i
+	\end{equation*}
+	Then by SOT convergence, $\sum_i \st{W_i}W_i = \sum_i E_i$, and it is also valid for $F$.
+\end{proof}
+
+\begin{prop}
+	If $E$ and $F$ are two projections in $\A$, then the following statements are equivalent.
+	\begin{enumerate}[label=\arabic*)]
+		\item There are nonzero projections $E_1$ and $F_2$ in $\A$ s.t. $E_1 \leqslant E$ and $F_1 \leqslant F$, and $E_1 \sim F_1$
+		\item $C_E C_F  \neq 0$.
+		\item $E\A F \neq \{0\}$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	$1) \Rightarrow 2)$: By above lemma, $C_{E_1} =  C_{F_1}$ and $C_{E_1} \leqslant C_{E}$ and $C_{F_1} \leqslant C_{F}$, thus $C_E C_F  \neq 0$.
+	\item $2) \Rightarrow 3)$: Since $C_E = \clo{\spn{\A E}}$ and $C_F = \clo{\spn{\A F}}$, if $E\A F = \{0\}$, $EC_F = 0$. Thus $C_E  \leqslant C_F^{bot}$, which is a contradition.
+	\item $3) \Rightarrow 2)$: If $A \in \A$ s.t. $EAF \neq 0$, let $E_1 = \cran{EAF}$ and $F_1 = \cran{\st{EAF}} = \cran{F\st{A}E}$. Therefore, $E_1 \leqslant E$ and $F_1 \leqslant F$, and $E_1 \sim F_1$.
+\end{proof}
+
+\begin{thm}[Comparison Theorem]
+	If $E$ and $F$ are two projections in $\A$, then there is a central projection $Z$ s.t.
+	\begin{equation*}
+		ZE \lesssim ZF, \text{ and } Z^{\bot}F \lesssim Z^{\bot}E
+	\end{equation*}
+\end{thm}
+\begin{proof}
+	Finding $Z$. \\
+	By Zorn's Lemma, there is a maximal family $\{(E_i,F_i)\}$ of pairs of projections in $\A$ s.t. for all $i$,
+	\begin{equation*}
+		E_i \sim F_i,~ E_i \leqslant E,~ F_i \leqslant F
+	\end{equation*}
+	and $\{E_i\}$ and $\{F_i\}$ are pairwise orthogonal. Then by above proposition,
+	\begin{equation*}
+		E^{'} = \sum_i  E_i \sim \sum_i F_i = F^{'}
+	\end{equation*}
+	Then put $E^{''} = E - E^{'}$ and $F^{''} = F - F^{'}$. Therefore by the maximality and above proposition, $C_{E^{''}}C_{F^{''}} = 0$, then put $Z = C_{F^{''}}$.\\
+	Check: $ZE \lesssim ZF$ and $Z^{\bot}F \lesssim Z^{\bot}E$. \\
+	Let $W$ be the partial iosmetry s.t. $E^{'} = \st{W}W$ and $F^{'} = W\st{W}$. Then $ZE^{'} \sim_{ZW} ZF^{'}$. Therefore,
+	\begin{equation*}
+		EZ = E^{'}Z + E^{''}Z = E^{'}Z + E^{''}C_{E^{''}}C_{F^{''}} = E^{'}Z \sim ZF^{'} \leqslant ZF
+	\end{equation*}
+	Hence, $ZE \lesssim ZF$. Similarly, $Z^{\bot}F \lesssim Z^{\bot}E$.
+\end{proof}
+
+\begin{cor}
+	If $\A$ is a factor and $E$ and $F$ are two projections in $\A$, then either $E \lesssim F$ or $F \lesssim E$.
+\end{cor}
+
+\begin{lem}
+	If $\mathcal{L}$ is a complete lattice and $\tau \colon \mathcal{L} \sto \mathcal{L}$  is an order preserving map, then there is an $x_0 \in \mathcal{L}$ s.t. $x_0 = \tau(x_0)$.
+\end{lem}
+\begin{proof}
+	Put $T = \{x \in \mathcal{L} \colon x \leqslant \tau(x)\}$ and $x_0 = \sup{T} \in \mathcal{L}$. If $x \in T$, then
+	\begin{equation*}
+		x \leqslant x_0, \text{ and } x \leqslant \tau(x) \leqslant \tau(x_0) \Rightarrow x_0 \leqslant \tau(x_0)
+	\end{equation*}
+	Conversely, above inequality implies that $\tau(x_0) \leqslant \tau(\tau(x_0))$, thus $\tau(x_0) \in T$. Therefore, $x_0 \geqslant \tau(x_0)$.
+\end{proof}
+
+\begin{thm}
+	If $E$ and $F$ are two projections in $\A$ s.t. $E \lesssim F$ and $F \lesssim E$, then $E \sim F$.
+\end{thm}
+\begin{proof}
+	Let $W$ and $V$ and two partial isometry s.t. $E = \st{W}W$ and $W\st{W} \leqslant F$ and $F = \st{V}V$ and $V\st{V} \leqslant E$. Let $\mathcal{L}$ be the set of all projection $G$ in $\A$ s.t. $G \leqslant F$. Then $\mathcal{L}$ is complete lattice. Define the map $\tau$ on $\mathcal{L}$ as
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$\tau \colon$ & $\mathcal{L}$ & $\longrightarrow$ & $\mathcal{L}$ \\
+			~ & $G$ & $\longmapsto$ & $F-\st{W}(E-\st{V}GV)W$
+		\end{tabular}
+	\end{center}
+	It is straightforward that $\tau$ is a order serving map, thus by above lemma, it has a fixed point $P$. Let $V_1 = PV$ and $W_1 = (E-\st{V}PV)W$, then
+	\begin{eqnarray*}
+		V_1\st{V_1} = P &,~& \st{V_1}V_1  = \st{V}PV \\
+		W_1\st{W_1} = F - P &,~& \st{W_1}W_1 = E - \st{V}PV
+	\end{eqnarray*}
+	Thus $P \sim \st{V}PV$ and $F - P \sim E - \st{V}PV$, and by the additivity of equivalence, $F \sim E$.
+\end{proof}
+
+\subsection{Classification of Projections}
+
+\begin{defn}
+	A projection $E$ in a von Neumann algebra $\A$ is finite if the only projection $F$ in $\A$ s.t. $F \leqslant E$ and $F \sim F$ is $F = E$. Otherwise, $E$ is infinite. A von Neumann algebra $\A$ is called finite or infinite if the identity is finite or infinite.
+\end{defn}
+\begin{rem}
+	This definition generalize the concept of finiteness. It is useful. In fact, any projection containing in an abelian von Neumann algebra $\A$ is finite. Finite von Neumann algebras have similar properties to ablian von Neumann algebras. Therefore under this classification of projections, the concept of abelian von Neuman algebras can be generalized.
+\end{rem}
+
+\begin{prop}
+	\begin{enumerate}[label=\arabic*)]
+		\item If $E$ is finite and $F \lesssim E$, then $F$ is finite.
+		\item If $\A$ is a finite von Neumann algebra and $E$ is a projection in $\A$, then $\A_E$ is finite.
+		\item If $\{E_i\}$ is a family of finite projections in $\A$ s.t. $\{C_{E_i}\}$ is pairwise orthogonal, then $\sum_i E_i$ is a finite projection.
+		\item If $\{Z_i\}$ is a family of finite central projections, then $Z = \bigwedge_i Z_i$ is a finite central projection.
+		\item If $\rho \colon \A \sto \B$ is a $*$-isomorphism and $E$ is a finite projection in $\A$, then $\rho(E)$ is a finite projection in $\B$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	For $1)$, assume that $F \leqslant E$. If $F_1 \leqslant F$ and $F_1 \sim F$, then by the addivity, 
+	\begin{equation*}
+		F_1 + (E - F) \sim E
+	\end{equation*}
+	By finiteness, $F_1 + (E - F) = E$. Therefore, $F_1 = F$, i.e. $F$ is finite. Then it is sufficient to prove that $F \sim E$ impiles that $F$ is finite. Let $W$ be the partial isometry s.t. $\st{W}W = F$ and $W\st{W} = E$. If $F_1 \leqslant F$ and $F_1 \sim F$, then $E_1 = WF_1$ satisfies
+	\begin{equation*}
+		E_1 \sim F_1 \sim F \sim E
+	\end{equation*}
+	Since $E$ is finite, $E_1 = E$. Therefore, $F = \st{W}E = \st{W}W E_1 = F_1$. Thus $F$ is finite. $2)$ holds by $1)$.
+	\item For $3)$, put $E = \sum_i E_i$. Let $F \leqslant E$ be a projection in $\A$ s.t. $F \sim_{W} E$. For any $i$, 
+	\begin{equation*}
+		E - E_i \leqslant \sum_{j \neq i} C_{E_j} \Rightarrow (E - E_i)C_{E_i} = 0
+	\end{equation*}
+	Therefore, $E_i = EC_{E_i}$. Then for $W_i = WC_{E_i}$, $FC_{E_i} \sim_{W_i} EC_{E_i} = E_i$. Since $FC_{E_i} \leqslant EC_{E_i} = E_i$, $FC_{E_i} = E_i$. Therefore,
+	\begin{equation*}
+		E = \sum_i E_i = \sum_i FC_{E_i} \leqslant F \leqslant E
+	\end{equation*}
+	So $F = E$ and $E$ is finite.
+	\item For $4)$, let $F \leqslant Z$ and $F \sim Z$, then $Z_i F \sim Z_i Z = Z_i$. Since $Z_i$ is finite, $Z_i F = Z_i$. Therefore, $F = Z$ and $Z$ is finite.
+	\item $5)$ is true by definition.
+\end{proof}
+
+\begin{cor}
+	If $\{\A_i\}$ is a collection of von Neumann algebras, then $\bigotimes \A_i$ is a finite von Neumann algebra if and only if each $\A_i$ is finite.
+\end{cor}
+
+There are some similar properties of finite von Neumann algebra as abelian von Neumann algebra.
+
+\begin{prop}
+	$\A$ is finite if and only if every left (or right) invertible element of $\A$ is invertible.
+\end{prop}
+\begin{proof}
+	Assume that every left (or right) invertible element of $\A$ is invertible. If $E \sim_W 1$. Since $W\st{W} = 1$, $\st{W}W = 1 =E$. Thus, $\A$ is finite. Conversely, if $\A$ is finite and $A, B \in \A$ s.t. $AB = 1$, then $\ran{A} = 1$. But $\cran{\st{A}} \sim \cran{A}$. Therefore, $\cran{\st{A}} = 1$ by the finiteness. So, $\ker{A} = 0$. And combining the fact $\ran{A} = 1$, i.e $A$ is surjection, $A$ is invertible.
+\end{proof}
+
+\begin{prop}
+	Let $\A$ be a finite von Neumann algebra.
+	\begin{enumerate}[label=\arabic*)]
+		\item If $E, E_1, F$ and $F_1$ are projections in $\A$ s.t. $E_1 \leqslant E$, $F_1 \leqslant F$ and $E \sim F$, $E_1 \sim F_1$, then 
+		\begin{equation*}
+			E - E_1 \sim F - F_1
+		\end{equation*}
+		\item If $E$ and $F$ are equivalent projections in $\A$, then there is a unitary  $U$ in $\A$ s.t. $\st{U}EU \sim F$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	For $1)$, by the Comparison Theorem, there is a central projection $Z$ s.t.
+	\begin{eqnarray*}
+		(E - E_1)Z &\lesssim& (F - F_1)Z \\
+		(F - F_1)Z^{\bot} &\lesssim& (E - E_1)Z^{\bot}
+	\end{eqnarray*}
+	Choosing $F_2$ s.t. $F_2 \leqslant (F - F_1)Z$ and $F_2 \sim (E - E_1)Z$. Therefore, $F_2 + F_1Z \leqslant FZ$ and by the addivity
+	\begin{equation*}
+		F_2 + F_1Z \sim (E - E_1)Z + EZ \sim EZ \sim FZ
+	\end{equation*}
+	Since $FZ$ is finite, $F_2 + F_1Z = FZ$. Therefore, $F_2 = (F-F_1)Z$. That is, $(E - E_1)Z \sim (F - F_1)Z$. And similarly, $(E - E_1)Z^{\bot} \sim (F - F_1)Z^{\bot}$.
+	\item For $2)$, by $1)$, $E \sim_W F$ implies that $E^{\bot} \sim_V F^{\bot}$. Then let $U = W + V$. $U$ is a unitary and $\st{U}EU \sim F$.
+\end{proof}
+
+\begin{defn}
+	\begin{enumerate}[label=\arabic*)]
+		\item $E$ is called an abelian projection in a von Neumann algebra if $E\A E \cong \A_E$ is an abelian von Neumann algebra.
+		\item An von Neumann algebra $\A$ is called discrete if for every nonzero central projection $Z$ there is a nonzero abelian projection with $F \leqslant E$.
+		\item An von Neumann algebra $\A$ is continuous if it contains no nonzero abelian projections.
+		\item A projection $E$ in $\A$ is called discrete or continuous if $\A_E$ is discrete or continuous.
+	\end{enumerate}
+\end{defn}
+
+\begin{prop}
+	Let $\A$ be a von Neumann algebra.
+	\begin{enumerate}[label=\arabic*)]
+		\item A projection $E$ in $\A$ is discrete if and only if for every central projection $Z$ in $\A$ with $ZE \neq 0$, there is an abelian projection $F$ in $\A$ with $F \leqslant ZE$.
+		\item A projection $E$ in $\A$ is continuous if and only if there is no nonzero abelian projection $F$ in $\A$ satifying $F \leqslant E$.
+		\item Let $\B$ be a von Neumann algebra and $\rho \colon \A \sto \B$ be a normal, surjective $*$-homomorphism, and $E$ be a projection in $\A$. If $E$ is continous (or discrete or abelian), then $\rho(E)$ is continous (or discrete or abelian).
+		\item If $E$ is continous (or discrete or abelian) in $\A$ and $F$ is a projection in $\A$ with $F \leqslant E$, then $F$ is continous (or discrete or abelian).
+		\item If $\{E_i\}$ is a family of continous (or discrete or abelian) projections in $\A$ s.t. $\{C_{E_i}\}$ is pairwise orthogonal, then $\sum_i E_i$ is a continous (or discrete or abelian) projection.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	For $1)$, it holds because that the center of $\A_E$ is $\fml{Z}_E$. Then for any $Z \in \fml{Z}$, there is an abelian projection $F \leqslant E$ in $\A$ with $FE \neq 0$ s.t. $EFE \leqslant EZE$, i.e. $F \leqslant ZE$. The converse is similar.
+	\item The proof of $2)$ is similar as $1)$.
+	\item For $3)$, it can assume $\rho$ is a $*$-isomorphism, then it follows by the definition.
+	\item If $E \sim F$, then there is a normal, surjective $*$-homomorphism from $\A_E$ to $\A_F$. Therefore, by $3)$, it sufficiently assumes $F \leqslant E$. Then since $F \A F \subset E \A E$, if $E$ is abelian or continuous, $F$ is clearly abelian or continuous. \\
+	Assume $E$ is discrete and $F \leqslant E$. Replacing $\A_E$ by $\A$, i.e. assuming $E = 1$ and $\A$ is discrete. Let $Z$ be a central projection with  $ZF \neq 0$. Thus
+	\begin{equation*}
+		ZC_F = C_{ZF} \neq 0
+	\end{equation*}
+	Then by the discreteness of $\A$, there is an abelian projection $G \leqslant ZC_F$. Therefore, 
+	\begin{equation*}
+		C_G C_{ZF} = C_{ZF} \neq 0
+	\end{equation*}
+	Then there are $G_1 \leqslant G$ and $F_1 \leqslant ZF$ s.t. $G_1 \sim F_1$. Thus $F_1 \lesssim G$, i.e. $F_1$ is abelian. Then by $1)$, $F$ is discrete. 
+	\item Let $E_i$ be abelian. Since $\{C_{E_i}\}$ is pairwise orthogonal, if $A, B \in \A$, by the  fact, $EAE = \sum_i (EAE)C_{E_i}$ because $C_E = \sum_i C_{E_i}$,
+	\begin{eqnarray*}
+		(EAE)(EAE) &=& (\sum_i E_i A E_i)(\sum_j E_j B E_j) \\
+		&=& \sum_i (E_i A E_i)(E_i B E_i) \\
+		&=& \sum_i (E_i B E_i)(E_i A E_i) \\
+		&=& (EBE)(EAE)
+	\end{eqnarray*}
+	Therefore, $E$ is abelian. \\
+	Assume $E_i$ is discrete. If $Z$ is a central projection with $ZE \neq 0$, then for some $i$, $ZE_i \neq 0$. Then let $G_i \leqslant ZE_i$ be the abelian projection. If $ZE_i = 0$, let $G_i = 0$. Put $G = \sum_i G_i$ and since $C_{G_i} \leqslant C_{E_i}$, $G$ is abelian. Therefore, $E$ is discrete. Similarly, using $2)$, if $E_i$ is continuous, $E$ is continuous.
+\end{proof}
+\begin{rem}
+	By $1)$ and $2)$, a projection in $\A$ is either discrete and continuous.
+\end{rem}
+
+\begin{cor}
+	If $\{\A_i\}$ is a collection of von Neumann algebras and $\A = \bigoplus_i \A_i$, then $\A$ is continuous (or discrete or abelian) if and only if each $A_i$ is continuous (or discrete or abelian).
+\end{cor}
+
+If two projections $E$ and $F$ satisfy $E \lesssim F$, then $C_F \leqslant C_E$. But the converse is not alway true. However, if $E$ and $F$ are abelian, the converse holds.
+
+\begin{lem}
+	If $E$ is an abelian projection and $F \leqslant E$, then $F = C_F E$.
+\end{lem}
+\begin{proof}
+	Since $E$ is abelian, $E \A E$ is abelian. In fact, $F \A (E-F) = \{0\}$. It is because that for any $A \in \A$,
+	\begin{equation*}
+		FA(E-F) = F(EAE)(E - F) = F(E - F)(EAE) = 0
+	\end{equation*}
+	Therefore, 
+	\begin{equation*}
+		C_F = \clo{\A F} \bot C_{E-F} = \clo{\A (E - F)}
+	\end{equation*}
+	In particular, $C_F(E-F) = 0$.
+\end{proof}
+
+\begin{prop}
+	If $E$ and $F$ are abelian projections, then $F \lesssim E$ if and only if $C_F \leqslant C_E$.
+\end{prop}
+\begin{proof}
+	Assume $C_F \leqslant C_E$. By Comparison Theorem, there is a central projection $Z$ s.t. $ZE \lesssim ZF$ and  $Z^{\bot}F \lesssim Z^{\bot}E$. It can assume that $ZE \leqslant ZF$ by above proposition. Since $ZF$ is abelian and by above lemma,
+	\begin{equation*}
+		ZE = ZF C_{ZE} = ZF C_E = ZF
+	\end{equation*}
+	Therefore,
+	\begin{equation*}
+		F = ZF + Z^{\bot}F = ZE + Z^{\bot}F \lesssim E  \qedhere
+	\end{equation*}
+\end{proof}
+
+\subsection{Properties of Continuous Projections}
+
+For continuous projections, there is some decomposition like Lebeshue Decomposition for general measures.
+
+\begin{lem}
+	If $E$ is not an abelian projection, then there are projections $E_1, E_2$ in $\A$ that are dominated by $E$ and s.t. $E_1 \bot E_2$ and $E_1 \sim E_2$.
+\end{lem}
+\begin{proof}
+	Since $E$ is not abelian, there is a projection $F \leqslant E$ that does not belong to the center of $E \A E$, $\fml{Z}E$.
+	\item Claim: $F \A (E-F) \neq \{0\}$. \\
+	If for any $A \in \Rea{\A}$, $F A (E-F) = 0$. Then $FAE = FAF$ and $EAF = FAF$. Therefore,
+	\begin{equation*}
+		F(EAE) = FAE = FAF = EAF = (EAE)F
+	\end{equation*}
+	That is $F$ is in the center of $E \A E$, which is a contradiction.\\
+	$F \A (E-F) \neq \{0\}$ implies that there are $E_1 \leqslant F$ and $E_2 \leqslant E-F$ s.t. $E_1 \sim E_2$.
+\end{proof}
+
+\begin{thm}
+	If $E$ is continuous, then there are projections $E_1$ and $E_2$ in $\A$ s.t. $E_1 \bot E_2$, $E_1 \sim E_2$ and $E = E_1 + E_2$.
+\end{thm}
+\begin{proof}
+	Concisder the collection of all sets of pairs $\{E_{1i},E_{2i}\}$ s.t. for all $i$,
+	\begin{equation*}
+		E_{1i} \sim E_{2i},~ E_{1i},E_{2i} \leqslant E_{ni} \bot E_{mj}
+	\end{equation*}
+	for $i \neq j$ and $m,n = 1,2$. Then by above lemma this set is not empty and then by Zorn's Lemma, there is a maximal element $\{E_{1i},E_{2i}\}$ and put
+	\begin{equation*}
+		E_1 = \sum_i E_{1i},~ E_2 = \sum_i E_{2i}
+	\end{equation*}
+	By the additivity, $E_1 \sim E_2$ and clearly, $E_1 \bot E_2$. And by the maximality and the continuity of $E$, $E = E_1 + E_2$.
+\end{proof}
+
+\begin{cor}
+	The projection $E$ is continuous if and only if for every $F \leqslant E$, there are projections $F_1$ and $F_2$ in $\A$ s.t. $F_1 \bot F_2$, $F_1 \sim F_2$ and $F = F_1 + F_2$.
+\end{cor}
+\begin{proof}
+	If $E$ is continuous, so is each its subprojection, thus by above theorem it is true. And the converse is trivial.
+\end{proof}
+
+\section{Type \texorpdfstring{\RNum{1}}{I} Von Neumann Algebras}
+
+\subsection{Classification of Von Neumann Algebras}
+
+Then by using the classifications of projections, von Neumann algebras can be classified as following categories.
+
+\begin{defn}
+	A von Neumann algebra $\A$ is:
+	\begin{enumerate}[label = \arabic*)]
+		\item Type \RNum{1}$_n$ if it is finite and discrete.
+		\item Type \RNum{1}$_{\infty}$ if it is infinite and discrete.
+		\item Type \RNum{2}$_1$ if it is finite and continuous.
+		\item Type \RNum{2}$_{\infty}$ if it is infinite and continuous and every nonzero central projection dominates a nonzero finite projections.
+		\item Type \RNum{3} if it contains no nonzero finite projections.
+	\end{enumerate}
+\end{defn}
+
+\begin{prop}
+	Let $\A$ be a von Neumann algebra and $E \in \A$ be a projection.
+	\begin{enumerate}[label = \arabic*)]
+		\item If $\A$ is Type \RNum{1} (\RNum{2}, or \RNum{3}), then $\A_E$ is Type \RNum{1} (\RNum{2}, or \RNum{3}).
+		\item If $\A$ is Type \RNum{1}$_n$, then $\A_E$ is Type \RNum{1}$_n$.
+		\item If $\A$ is Type \RNum{2}$_1$, then $\A_E$ is Type \RNum{2}$_1$.
+	\end{enumerate}
+\end{prop}
+\begin{proof}
+	Just need to prove the cases of Type \RNum{2} and Type \RNum{3}. Let $Z$ be a central projection in $\A$ s.t. $EZ \neq 0$. If $\A$ is Type \RNum{2}, then there is a nonzero finite projection $F$ with $F \leqslant Z$. Thus
+	 \begin{equation*}
+		EZF = EZ \neq 0
+	\end{equation*}
+	Then there are $E_1 \leqslant EZ$ and $F_1 \leqslant F$ s.t. $E_1 \sim F_1$. Therefore, $E_1$ is finite and thus $\A_E$ is Type \RNum{2}. If $\A$ is Type \RNum{3}, then $\A$ contains no nonzero finite projection, thus $\A_E$ contains no nonzero finite projection, and continuity of $\A_E$ is clear. Therefore, $\A_E$ is Type \RNum{3}.
+\end{proof}
+
+\begin{prop}
+	Let $\{A_i\}$ be a class of von Neumann algebras and put $\A = \bigoplus_i \A_i$.
+	\begin{enumerate}[label = \arabic*)]
+		\item $\A$ is Type \RNum{1}$_n$ if and only if each $\A_i$ is Type \RNum{1}$_n$.
+		\item $\A$ is Type \RNum{1}$_{\infty}$ if and only if each $\A_i$ is Type \RNum{1} and at least one of them is Type \RNum{1}$_{\infty}$.
+		\item $\A$ is Type \RNum{2}$_1$ if and only if each $\A_i$ is Type \RNum{2}$_1$.
+		\item $\A$ is Type \RNum{2}$_{\infty}$ if and only if each $\A_i$ is Type \RNum{2} and at least one of them is Type \RNum{2}$_{\infty}$.
+		\item $\A$ is Type \RNum{3} if and only if each $\A_i$ is Type \RNum{3}.
+	\end{enumerate}
+\end{prop}
+
+\begin{thm}
+	If $\A$ is a von Neumann algebra, then there are unique pairwise orthogonal central projections $Z_1,\cdots,Z_5$ with $\sum_{i=1}^5 Z_i = 1$ s.t.
+	\begin{enumerate}[label = \arabic*)]
+		\item $\A Z_1$ is Type \RNum{1}$_n$.
+		\item $\A Z_2$ is Type \RNum{1}$_{\infty}$.
+		\item $\A Z_3$ is Type \RNum{2}$_1$.
+		\item $\A Z_4$ is Type \RNum{2}$_{\infty}$.
+		\item $\A Z_5$ is Type \RNum{3}. 
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	Define the central projections as
+	\begin{eqnarray*}
+		H &=& \sup{\{Z \colon Z \text{ is a central projection, } \A Z \text{ is Type \RNum{1}} \}} \\
+		K &=& \sup{\{Z \colon Z \text{ is a central projection, } \A Z \text{ is Type \RNum{2}} \}}
+	\end{eqnarray*}
+	Then it is easy to see $\A H$ is Type \RNum{1} and $\A K$ is Type \RNum{2} and $HK=0$. Put
+	\begin{equation*}
+		Z_5 = 1 - (H + K)
+	\end{equation*}
+	Check: $\A Z_5$ is continuous. \\
+	Assume there is an abelian projection $P$ in $\A Z_5$. Clearly, its central cover $C_P \leqslant Z_5$. If $G$ is any nonzero central projection in $\A C_P$. Then $G$ is also a central projection in $\A$. Moreover, $GP \neq 0$, and $(GP)\A (GP) = G(P\A P)$ is abelian. That means $\A C_P$ is Type \RNum{1}. Thus $C_P \leqslant H$. Therefore, $C_P = 0$. Then $P = 0$. Since $P$ is arbitrary, $\A Z_5$ is continuous.
+	\item Check: $\A Z_5$ is Type \RNum{3}. \\
+	Suppose there is a nonzero finite projection $P$ in $\A Z_5$. Similarly, $\A C_P$ is continuous. If $G$ is any central projection of $\A C_P$, then $G \in \fml{Z}$ and $G \leqslant C_P$. Thus $GC_P \neq 0$ and $GP$ is finite. Therefore, $\A C_P$ is Type \RNum{2}. Thus $C_P \leqslant K$, then $C_P = 0$ i.e. $P=0$.\\
+	Then define $F = \sup{\{Z \colon Z \text{ is a finite central projection}}$. Put $Z_1 = HF$, $Z_2 = HF^{\bot}$, $Z_3 = KF$ and $Z_4 = KF^{\bot}$.
+\end{proof}
+
+\begin{cor}
+	If $\A$ is a factor, then $\A$ is exactly one of the Type \RNum{1}$_n$, \RNum{1}$_{\infty}$, \RNum{2}$_1$, \RNum{2}$_{\infty}$ and \RNum{3}.
+\end{cor}
+
+\subsection{The Structure of Type \texorpdfstring{\RNum{1}}{I} Algebras}
+
+\begin{defn}
+	A projection is faithful if its central cover is identity.
+\end{defn}
 
 
 
