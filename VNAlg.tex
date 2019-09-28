@@ -1084,11 +1084,232 @@ Then by using the classifications of projections, von Neumann algebras can be cl
 	If $\A$ is a factor, then $\A$ is exactly one of the Type \RNum{1}$_n$, \RNum{1}$_{\infty}$, \RNum{2}$_1$, \RNum{2}$_{\infty}$ and \RNum{3}.
 \end{cor}
 
-\subsection{The Structure of Type \texorpdfstring{\RNum{1}}{I} Algebras}
+\subsection{The Structure of Type \texorpdfstring{\RNum{1}}{I} Factors}
 
 \begin{defn}
 	A projection is faithful if its central cover is identity.
 \end{defn}
+\begin{rem}
+	In abelian von Neumann algebra, no projection is faithful other than the identity. In a factor, every nonzero projection is faithful. And by above proposition any two faithful projections are equivalent.
+\end{rem}
+
+\begin{prop}
+	A von Neumann algebra is Type \RNum{1} is if and only if it has a faithful abelian projection.
+\end{prop}
+\begin{proof}
+	If $E$ is a faithful abelian projection in $\A$ and $G$ is any nonzero central projection in $\A$, then $EG \neq 0$ because of $C_EC_G = C_G \neq 0$. And the fact that $(EG)\A (EG) = G (E\A E)$ is abelian means $EG \leqslant G$ is abelian, thus $\A$ is Type \RNum{1}.\\
+	Conversely, assume $\A$ is Type \RNum{1}. By Zorn's Lemma there is a maximal family $\{E_i\}$ of abelian projections s.t. $C_{E_i} \bot C_{E_j}$ for $i \neq j$, then set $Z = \sum_i C_{E_i}$. $\A Z^{\bot}$ is Type \RNum{1}. So if $Z^{\bot} \neq 0$, it contradicts to the maximality. Therefore, $Z = 1$. If $E = \sum_i E_i$, $E$ is abelian and $C_E = Z = 1$.
+\end{proof}
+
+\begin{lem}
+	If $\A$ is a von Neumann algebra and $E \in \A^{'}$ is a projection, then the kernel of $*$-homomorphism $A \sto A_E$ is $\A (1-C_E)$.
+\end{lem}
+This lemma is trivial but has a useful corollary.
+\begin{cor}
+	A projection $E$ is faithful if and only if the $*$-homomorphism $A^{'} \sto A_E^{'}$ from $\A^{'}$ to $\A_E^{'}$ is an isomorphism.
+\end{cor}
+
+\begin{thm}
+	The following statements are equivalent.
+	\begin{enumerate}[label=\arabic*)]
+		\item $\A$ is Type \RNum{1} von Neumann algebra.
+		\item $\A^{'}$ is Type \RNum{1} von Neumann algebra.
+		\item $\A$ is $*$-isomorphic to a von Neumann algebra with abelian commutant.
+	\end{enumerate}
+\end{thm}
+\begin{proof}
+	$1) \Rightarrow 2)$: If $\A$ is abelian, then $\A = \fml{Z}$. Let $G$ be any nonzero projection in $\A$ and pick any nonzero vector $h$ in $G$. Let $E = \clo{\spn{\A h}}$. Then $E \neq 0$, $E \in \A^{'}$, $E \leqslant G$ and $\A E$ is abelian in $\fml{B}(E)$. But $h$ is a cyclic vector for $\A_E$, thus $\A_E$ is a masa. That means
+	\begin{equation*}
+		\A_E = (\A_E)^{'} = \A_E^{'} \cong E\A^{'}E
+	\end{equation*}
+	Then $E$ is a abelian projection in $\A^{'}$, thus $\A^{'}$ is Type \RNum{1}.\\
+	In general case, there is a faithful abelian projection $F$ in $\A$. By above corrollary,
+	\begin{equation*}
+		\A^{'} \cong \A^{'}_F = (\A_F)^{'}
+	\end{equation*}
+	But $\A_F$ is abelian, thus by the mention above, $\A^{'}_F$ is Type \RNum{1}, and $\A^{'}$ is Type \RNum{1}.
+	\item $2) \Rightarrow 3)$: That $\A^{'}$ is Type \RNum{1} means there is a faithful abelian projection $Q$ and $\A \cong \A_Q$. Clearly, $(\A_Q)^{'} = \A^{'}_Q$ is abelian.
+	\item $3) \Rightarrow 1)$: If $\A \cong \B$ and $\B^{'}$ is abelian, i.e. $\B^{'}$ is Type \RNum{1}, then by that $1)$ implies $2)$, $\A$ is Type \RNum{1}.
+\end{proof}
+
+\begin{cor}
+	If $\A$ is continuous, then $\A^{'}$ is also continuous.
+\end{cor}
+
+Then the structure of Type \RNum{1} algebra has revealed to some extend. But it can be more explicit. Firstly, for a spectial case, the structure of Type \RNum{1} factor, it has a clear consequence.
+
+\begin{prop}
+	If $\A$ is abelian and $Q$ is a faithful abelian projection in $\A^{'}$, then $\A$ is isomorphic to $\A_Q$ and $\A_Q$ is a masa in $\fml{B}(Q)$.
+\end{prop}
+\begin{proof}
+	Since $\A$ is abelian, $\fml{Z}_{\A^{'}} = \A \cap \A^{'}$. Because $Q$ is faithful in $\A^{'}$, $A \mapsto AQ$ is an isomorphsim from $\A$ to $\A_Q$ by above lemma. To see the maximality, firstly since $\A_Q$ is abelian,
+	\begin{equation*}
+		\A_Q \subset (\A_Q)^{'} = \A^{'}_Q
+	\end{equation*}
+	On the other hand, since $Q$ is abelian in $\A^{'}$, $\A^{'}_Q$ is abelian,
+	\begin{equation*}
+		\A^{'}_Q \subset \A^{''}_Q = \A_Q \qedhere
+	\end{equation*}
+\end{proof}
+\begin{rem}
+	If $\Hs$ is separable, $Q$ indeed exists. Let $h$ be the separating vector for $\A$ and $Q = \clo{\spn{\A h}}$. Then $Q$ is in $\A^{'}$ and $\A_Q$ is maximal. Since $h$ is separating $\A$, it is cyclic for $\A^{'}$, i.e $C_Q = 1$.
+\end{rem}
+
+\begin{prop}
+	If $\A$ is a von Neumann algebra and $E$, then a projection $E$ in $\A$ is minimal if and only if $E \A E$ is one dimensional. Moreover, if $E$ is minimal, then $E$ is abelian, and $C_E$ is a minimal projection in the center of $\A$, and $\A_{C_E}$ is a factor, and $\A^{'}_E = \fml{B}(E)$.
+\end{prop}
+\begin{proof}
+	If $E \A E$ is one domensional, then $E\A E = \C E$, so there is no nonzero projection in $\A$ dinominated by $E$. Conversely, if $E$ is minimal, then the fact that $E\A E$ is generated by all its projections implies that $E$ is one dimensional.\\
+	By mention above, if $E$ is minimal, it is clear abelian. If $Z \leqslant C_E$ in the center of $\A$, then $ZE \leqslant E$. Therefore, either $ZE = 0$ or $ZE = E$. Thus it is easy to see $Z = 0$ or $Z = E$. 
+	\begin{equation*}
+		\A^{'}_E = (\A_E)^{'} = (\C E)^{'} = \fml{B}(E)
+	\end{equation*}
+	Applying above lemma to $\A_{C_E}$, 
+	\begin{equation*}
+		\A^{'}_{C_E} \cong \A^{'}_{EC_E} = \A^{'}_{E} = \fml{B}(E)
+	\end{equation*}
+	Therefore, $\A^{'}_{C_E}$ is a factor, so is $\A_{C_E}$.
+\end{proof}
+
+\begin{thm}
+	$\A$ is a Type \RNum{1} factor if and only if there is a Hilbert space $\fml{K}$ s.t. $\A$ is $*$-isomorphic to $\fml{B}(\fml{K})$. 
+\end{thm}
+\begin{proof}
+	Assume $\A$ is Type \RNum{1} factor. Then $\A^{'}$ is also a Type \RNum{1} factor by the mention above. Let $E$ be an abelian projection in $\A^{'}$. Since $\A^{'}_E$ is abelian, $\A^{'}_E = \fml{Z}_E = \C E$. Thus $E$ is a minimal projection in $\A^{'}$. By preceding proposition, $\A_E = \fml{B}(E)$. Also, the fact that $\A$ is a factor implies that $C_E = 1$. Therefore, $\A \cong \A_E = \fml{B}(E)$. The converse is trivial.
+\end{proof}
+
+\subsection{Homogeneous Von Neumann Algebras}
+
+\begin{defn}
+	A von Neumann algebra is homogeneous if there is a family of pairwise orthogonal abelian projections that are mutually equivalent and whose sum is identity.
+\end{defn}
+\begin{rem}
+	Any homogeneous von Neumann algebra is Type \RNum{1}, since that a projection $E$ is abelian implies that $ZE$ is abelian for any central projection $Z$. Moreover, any one of these pairwise orthogonal projections that are mutually equivalent and whose sum is identity is faithful.
+\end{rem}
+
+To get more information of homogeneous algebras, matrix is a useful method.
+
+\begin{defn}
+	If $\A$ is a von Neumann algebra and $n$ is some cardinal number, let
+	\begin{equation*}
+		M_n(\A) = \left\{ (\A^{'})^{(n)}\right\}^{'}
+	\end{equation*}
+\end{defn}
+\begin{rem}
+	Recall that if $\mathcal{S} \subset \oper$, then for $1 \leqslant n \leqslant \infty$,
+	\begin{equation*}
+		\{\mathcal{S}^{(n)}\}^{'} = \{T = [T_{ij}] \in \fml{B}(\Hs^{(n)}) \colon T_{ij} \in \mathcal{S}^{'}\} 
+	\end{equation*}
+	Therefore, the definition above actually extends $n$ from $1 \leqslant n \leqslant \infty$ to any cardinal number. In fact, if $1 \leqslant n \leqslant \infty$,
+	\begin{equation*}
+		M_n(\A) = \left\{ (\A^{'})^{(n)}\right\}^{'} = \{T = [T_{ij}] \in \fml{B}(\Hs^{(n)}) \colon T_{ij} \in \A^{''} = \A\}
+	\end{equation*}
+\end{rem}
+
+\begin{prop}
+	If $\A$ is a von Neumann algebra with the center $\fml{Z}$ and $n$ is some cardinal number, then $M_n(\A)$ is a von Neumann algebra, $M_n(\A)^{'} = (\A^{'})^{(n)}$, and its center is $\fml{Z}^{(n)}$. If $\A$ is a factor, so is $M_n(\A)$. If $\A$ is abelian and $n$ is finite, then $M_n(\A)$ is finite.
+\end{prop}
+\begin{proof}
+	First two consequences are obtained by definition. Assume $\A$ is abelian and $n$ is finite. So it suffices that there is a compact space $X$ and let $\A = C(X)$. Consider the normalized trace $\omega$ on $M_n(\C)$ and define $\tau \colon M_n(\A) \sto C(X)$ by 
+	\begin{equation*}
+		\tau([f_{ij}])(x) = \omega([f_{ij}(x)] = n^{-1}\sum_{i=1}^n f_{ij}(x)
+	\end{equation*}
+	Then $\tau$ has these properties:
+	\begin{enumerate}[label=\arabic*)]
+		\item $\tau$ is linear and $\tau(1)=1$.
+		\item $\tau$ is positive and non-degenerate.
+		\item $\tau(FG) = \tau(GF)$ for any $G,F \in M_n(\A)$.
+	\end{enumerate}
+	$1)$ is clear. $3)$ is because of the similar property of trace. For $2)$, if $F = [f_{ij}] \leqslant 0$, then $[f_{ij}(x)]$ is positive in $M_n(\C)$ for any $x \in X$. Therefore, $\tau(F)(x) = \omega([f_{ij}(x)]) \leqslant 0$ for any $x \in X$. Thus $\tau(F) \leqslant 0$, i.e. $\tau$ is positive. If $\tau(F) = 0$, i.e. $ \omega([f_{ij}(x)]) = 0$ for any $x$, then $F(x) = 0$ for all $x$.\\
+	If $E$ is any projection in  $M_n(\A)$ and $E \sim 1$, then there is some partial isometry $W$ in $M_n(\A)$ s.t. $E = W^{*}W$ and $1 = WW^{*}$. 
+	\begin{equation*}
+		\tau(E) = \tau(W^{*}W) = \tau(WW^{*}) = 1 \Rightarrow \tau(1 - E) = 0
+	\end{equation*}
+	Therefore, $E = 1$.
+\end{proof}
+\begin{rem}
+	If $\A$ is any von Neumann algebra with the center $\fml{Z}$, a map $\tau \colon \A \sto \fml{Z}$ satifing above $1)$, $2)$ and $3)$ is called a faithful, central-valued trace.
+\end{rem}
+
+\begin{cor}
+	If $\A$ is a von Neumann algebra with a faithful, central-valued trace, then $\A$ is finite.
+\end{cor}
+
+\begin{prop}
+	Let $\A$ be a von Neumann algebra and $\{E_i\}$ be a collection of pairwise orthogonal, mutually equivalent projection in $\A$ with $\sum_i E_i = 1$. If $\{E_i\}$ has cardinality $n$ and $\B = \A_{E_1}$, then $\A$ is spacially isomorphic to $M_n(\B)$.
+\end{prop}
+\begin{proof}
+	By assumption there is a collection of partial isometries $\{W_i\}$ s.t. $E_1 = \st{W_i}W_i$ and $E_i = W_i\st{W_i}$. Since for all $i,j$ and $A \in \A$,
+	\begin{equation*}
+		\st{W_i}AW_j = E_1(\st{W_i}AW_j) = (\st{W_i}AW_j)E_1
+	\end{equation*}
+	$\st{W_i}AW_j \in E_1 \A E_1$. Let $\fml{K} = E_1$ and define
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$U \colon$ & $\fml{K}^{(n)}$ & $\longrightarrow$ & $\Hs$ \\
+			~ & $(h_i)$ & $\longmapsto$ & $\sum_i W_i h_i$
+		\end{tabular}
+	\end{center}
+	Since $E_i = \st{W_i}W_i$, $U$ is an isomorphism. Moreover,
+	\begin{equation*}
+		U [\st{W_i}AW_j] U^{-1} = A
+	\end{equation*}
+	Therefore, the map
+	\begin{center}
+		\begin{tabular}{l c c l}
+			$\rho \colon$ & $\A$ & $\longrightarrow$ & $M_n(\B)$ \\
+			~ & $A$ & $\longmapsto$ & $U^{-1} AU$
+		\end{tabular}
+	\end{center}
+	is well-defined. 
+	\item Claim: $\rho$ is injective. \\
+	$[\st{W_i}AW_j] = 0$ implies that $\st{W_i}AW_j = 0$ for all $i$ and $j$. Since $\sum_i W_i \st{W_i} = 1$, for any $h,g \in \Hs$,
+	\begin{eqnarray*}
+		\langle Ah,g \rangle &=& \langle A \sum_i W_i \st{W_i} h, \sum_i W_i \st{W_i} g \rangle \\
+		&=& \sum_{i,j} \langle \st{W_j}AW_i h, \st{W_i} g \rangle \\
+		&=& 0
+	\end{eqnarray*}
+	Therefore, $A = 0$.
+	\item Claim: $\rho$ is surjective. \\
+	Fix a $T \in M_n(\B)$. Let $A^{'} \in \A^{'}$. $B^{'} = A^{'}|_{\fml{K}}$ since $A^{'}E_i = E_iA^{'}$. Then $B^{'} \in \B^{'}$. And it is know that $\st{W_i}A^{'}W_j = 0$ for $i \neq j$ since $\{E_i\}$ are pairwise orthogonal and clearly $\st{W_i}A^{'}W_i = B^{'}$. Therefore
+	\begin{equation*}
+		U^{-1} A^{'}U = [\st{W_i}A^{'}W_j] = (B^{'})^{(n)} \in M_n(\B)^{'}
+	\end{equation*}
+	Thus 
+	\begin{eqnarray*}
+		U TU^{-1} A^{'}  &=& (U TU^{-1} A^{'}) U U^{-1} = U T(U^{-1} A^{'} U) U^{-1} \\
+		&=& U (U^{-1} A^{'} U)T U^{-1} \\
+		&=& A^{'} (UT U^{-1})
+	\end{eqnarray*}
+	That means $UT U^{-1} \in \A^{''} = \A$.
+\end{proof}
+
+\begin{cor}
+	If $\A$ is a homogeneous algebra, then there is a carnical number $n$ and an algebra $\B$ that is isomorphic to the center of $\A$ s.t. $\A$ is spacially equivalent to $M_n(\B)$. If $\fml{Z}$ is the center of $\A$, then $\A$ is $*$-isomorphic to $M_n(\fml{Z})$.
+\end{cor}
+\begin{proof}
+	Let $\{E_i\}$ be the family of pairwise orthogonal abelian projections that are mutually equivalent and whose sum is identity. Then by above proposition, if $\B = \A_{E_1}$, $\A$ is spacially isomorphic to $M_n(\B)$. $\B$ is abelian since $E_1$ is abelian. Therefore,
+	\begin{equation*}
+		\fml{Z} \cong M_n(\B) \cap M_n(\B)^{'} = M_n(\B) \cap (\B^{'})^{(n)} = \B^{(n)} \cong \B
+	\end{equation*}
+	And it is easily to check that $\A$ is $*$-isomorphic to $M_n(\fml{Z})$.
+\end{proof}
+
+\begin{prop}
+	If $\A$ is a homogeneous algebra on a separable Hilbert space $\Hs$ and $\{E_i \colon i \in I\}$ and $\{F_k \colon k \in K\}$ are two collection of pairwise orthogonal, mutually equivalent abelian projections in $\A$ with $\sum_i E_i = \sum_k F_k = 1$, then $I$ and $K$ have same cardinality.
+\end{prop}
+\begin{proof}
+	If $#I = n < \infty$ and $\B = \A_{E_1}$, then $\A \cong M_n(\B)$ and thus $\A$ is finite. If $K$ is infinite, 
+	\begin{equation*}
+		1 = \sum_{k=1}^{\infty} F_k \sim \sum_{k=2}^{\infty} F_k
+	\end{equation*}
+	But since $\A$ is finite and $F_1 \neq 0$, it is  impossible. Therefore, $K$ is infinite. Thus either both $I$ and $K$ are finite or inifite.
+\end{proof}
+
+
+
+
+
 
 
 
