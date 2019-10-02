@@ -8167,4 +8167,68 @@ To get more information of homogeneous algebras, matrix is a useful method.
 	And it is easily to check that $\A$ is $*$-isomorphic to $M_n(\fml{Z})$.
 \end{proof}
 
+\begin{prop}
+	If $\A$ is a homogeneous algebra on a separable Hilbert space $\Hs$ and $\{E_i \colon i \in I\}$ and $\{F_k \colon k \in K\}$ are two collection of pairwise orthogonal, mutually equivalent abelian projections in $\A$ with $\sum_i E_i = \sum_k F_k = 1$, then $I$ and $K$ have same cardinality.
+\end{prop}
+\begin{proof}
+	If $\#I = n < \infty$ and $\B = \A_{E_1}$, then $\A \cong M_n(\B)$ and thus $\A$ is finite. If $K$ is infinite, 
+	\begin{equation*}
+		1 = \sum_{k=1}^{\infty} F_k \sim \sum_{k=2}^{\infty} F_k
+	\end{equation*}
+	But since $\A$ is finite and $F_1 \neq 0$, it is  impossible. Therefore, $K$ is infinite. Thus either both $I$ and $K$ are finite or inifite. Moreover, if they are all infinite, because of the separability of $\Hs$, they must have thee same cardinality, $\aleph_0$.\\
+	Assume $n = \#I$ and $m = \#K$. Since $C_{E_i} = C_{F_k} = 1$ for all $i \in I$ and $k \in K$ and all $E_i$ and $F_k$ are abelian, $E_i \sim F_k$. If $n < m$,
+	\begin{equation*}
+		1 = \sum_{i=1}^{n} E_i \sim \sum_{k=1}^n F_k < 1
+	\end{equation*}
+	By finiteness of $\A$, it is contradiction. Therefore, $n = m$.
+\end{proof}
+
+\subsection{Structure of Type \texorpdfstring{\RNum{1}}{I} Algebras}
+
+Every homogeneous von Numann algebra is Type \RNum{1}. Although the converse is not true, Type \RNum{1} von Neumann algebra can be decomposed into the direct of some homogeneous algebras.
+
+\begin{lem}
+	If $\A$ is Type \RNum{1} and $E$ is a nonzero projection in $\A$, then there is an abelian projection $P$ with $P \leqslant E$ and $C_P = C_E$.
+\end{lem}
+\begin{proof}
+	If $F$ is any nonzero projection in $\A$, then $\A_F$ is also Type \RNum{1}. Therefore, if $Z$ is any central projection in $\A$ with $ZF \neq 0$, then there is a nonzero abelian projection is dominated by $ZF$.\\
+	Fix a nonzero projection $E$ in $\A$ and let $\{P_i\}$ be a maximal family of abelian projections in $\A$ s.t. for all $i \neq j$, $P_i \leqslant E$ and $C_{P_i} \bot C_{P_j}$. Put $P = \sum_i P_i$, then $P$ is abelien and $P \leqslant E$, and thus $C_P \leqslant C_E$. On the other hand, if $C_P \neq C_E$, then $E(C_P - C_E) \neq 0$. Thus there is an abelian projection contained in $E(C_P - C_E)$, which contradicts to the maximality of $P$.
+\end{proof}
+
+\begin{thm}
+	If $\A$ is Type \RNum{1}, then there is a family of pairwise orthogonal central projections $\{Z_i\}$ s.t. $\sum_i Z_i = 1$ and each $\A_{Z_i}$ is homogeneous.
+\end{thm}
+\begin{proof}
+	Claim: $\A$ contains a nonzero central projection $Z$ s.t. $\A_Z$ is homogenrous. \\
+	Since $\A$ is Type \RNum{1}, there is a maximal family $\{E_i\}$ of pairwise orthogonal, faithful, abelian projections. And clearly they are mutually equivalent. Put $E = \sum_i E_i$. If $E = 1$, then $\A$ is homogeneous. Assume $E^{\bot} \neq 0$. By preceding lemma, there is a abelian projection $P$ contained in $E^{\bot}$ s.t. $C_{E^{\bot}} = C_P$. By maximality, there is no faithful abelian projection contained in $E^{\bot}$. Thus, $C_P = C_{E^{\bot}} \neq 1$. Put $Z = 1 - C_{E^{\bot}}$, then $ZE^{\bot} = 0$. So $Z = ZE = \sum_i ZE_i$. And also $ZE_i$ is abelian for each $i$. Therefore, $\{ZE_i\}$ is a family of pairwise orthogonal, mutually equivalent abelian projections with $\sum_i ZE_i = Z$, i.e. $\A_Z$ is homogeneous.\\
+	By Zorn's Lemma, there is an maximal family of pairwise orthogonal central projections $\{Z_i\}$ s.t. each $\A_{Z_i}$ is homogeneous. Put $Z = \sum_i Z_i$. if $Z^{\bot} \neq 0$. Then $\A_{Z^{\bot}}$ is Type \RNum{1}. By mention above, there is a nonzero central projection $G$ s.t. $(\A_{Z^{\bot}})_G = \A_{{Z^{\bot}}G}$ is homogeneous, which contradicts with the maximality. Therefore, $Z = 1$.
+\end{proof}
+
+Then Type \RNum{1} von Neumann algebras can be expressed more explicitly.
+\begin{cor}
+	If $\A$ is Type \RNum{1}, then there is a family of homogeneous algebras $\{\B_i\}$ and a collection of distinct cardinal numbers $\{n_i\}$ s.t. $\A$ is spatially isomorphic to
+	\begin{equation*}
+		\bigoplus_i M_{n_i}(\B_i)
+	\end{equation*}
+\end{cor}
+
+In fact, if $\fml{Z}$ is the center of $\A$, and $\{Z_i\}$ is the family mentioned in above theorem, $\A$ is $*$-isomorphic to 
+\begin{equation*}
+	\bigoplus_i M_{n_i}(\fml{Z}_{Z_i})
+\end{equation*}
+\begin{rem}
+	Using the uniqueness of the cardinal numbers in above decomposition, it can see the uniqueness of this decomposition.
+\end{rem}
+
+\begin{thebibliography}{99}
+	\bibitem{Con1} J. B. Conway: \emph{A Course Course in Functional Analysis}, Springer-Verlag, 2003.
+	\bibitem{Con2} J. B. Conway: \emph{A Course Course in Operator Theorey}, American Mathematical Society, 2000.
+	\bibitem{Davi} K. R. Davidson: \emph{$C^{*}$-Algebras by Example}, American Mathematical Society, 1996.
+	\bibitem{Kawh} D. Evans, Y. Kawahigashi: \emph{Quantum Symmetries on Operator Algebras}, Oxford University Press, 1998.
+	\bibitem{Frid} A. Fiedman: \emph{Foundations of modern analysis}, Dover, 1982.
+	\bibitem{Infu} M. Infusino: \emph{Notes on Topological Vector Spaces}, University of Konstanz, 2015.
+	\bibitem{Munk} J. R. Munkres: \emph{Topology}, Pearson, 2000.
+	\bibitem{Nels} B. Nelson: \emph{Notes on von Neumann algebras}, University of California, Berkeley, 2017.
+\end{thebibliography}
+
 \end{document}

@@ -2,12 +2,12 @@
 
 Abelian von Neuman algebras can be explicitly described as $L^{\infty}(\mu)$. For general von Neumann algebras, they have more complex structure but more interesting properties. Firstly, we have seen the relation between the $WOT$ and the ultraweak topology, therefore, the ultraweak topology can provide some different things of the von Neumann algebra. Then, since the weak closedness of von Neumann algebras, all projections in a von Neumann algebra can completely generate the whole algebra. Thus projections are fundamental elements in the von Neumann algebra. Researching the properties of them and classifying them can help us to classify general von Neumann algebras. By the properties of the projections contained in a von Neumann algebras, general von Neumann algebras can be classified as $5$ different categories and we can see that the abelian one is belong to what category.
 
-\section{General von Neumann Algebras}
+\section{General Von Neumann Algebras}
 
 \subsection{Elementary Properties}
 
 \begin{prop}
-	If $\{A_i\}$ is an incresing net of self-adjoint operators on $\Hs$ s.t. $\sup_i{\norm{A_i}} < \infty$, then there is an operator $A$ s.t. the following hold.
+	If $\{A_i\}$ is an increasing net of self-adjoint operators on $\Hs$ s.t. $\sup_i{\norm{A_i}} < \infty$, then there is an operator $A$ s.t. the following hold.
 	\begin{enumerate}[label = \arabic*)]
 		\item $A_i \leqslant A$ for all $i$ and if $B$ is any self-adjoint operator with $A_i \leqslant B$ for all $i$, then $A \leqslant B$. Thus $A = \sup_i A_i$.
 		\item $A_i \sto A$ in $WOT$.
@@ -180,7 +180,7 @@ Abelian von Neuman algebras can be explicitly described as $L^{\infty}(\mu)$. Fo
 	In general, $\A_E$ is not an algebra. However, if $E \in \A$, there is a $*$-isomorphism between $\A_E$ and $E\A E$. If $E \in \A^{'}$, there is a $*$-homomorphism between $\A_E$ and $E\A E$. $E \A E$ is clear a $\st{C}$-subalgebra of $\A$.
 \end{rem}
 
-\begin{prop}
+\begin{prop} \label{prop20}
 	Let $\A$ be a von Neumann algebra.
 	\begin{enumerate}[label=\arabic*)]
 		\item If $E \in \A^{'}$ is a projection, then $\A_E$ is a von Neumann algebra in $\fml{B}(E)$ and $(\A_E)^{'} = (\A)^{'}_E$.
@@ -323,7 +323,7 @@ Then by using above lemma and constructing some special functions, we can easily
 	Since $\norm{T_i} \leqslant 1$, $\norm{B_i} \leqslant 1$. Clearly, $B_i \sto A$  in $SOT$.
 \end{proof}
 
-\section{SOT on von Neumann Algebras}
+\section{Topologies on Von Neumann Algebras}
 
 \subsection{Pedersen Up-Down Theorem}
 
@@ -351,7 +351,7 @@ The order of all self-adjoint operators in von Neumann algebras can provide anot
 \end{proof}
 
 \begin{lem}
-	Let $\Hs$ be separable. If $\B$ is a $\st{C}$-algebra and $\A = \clo{\B}^{SOT}$ and $P$ is a projection in $\A$, then for each sequence of unit $\{h_n\}$ in $\Hs$ there is a $A \in ((\mathcal{B}(\B_+))^{\sigma})_{\sigma}$ s.t.
+	If $\B$ is a $\st{C}$-algebra and $\A = \clo{\B}^{SOT}$ and $P$ is a projection in $\A$, then for each sequence of unit $\{h_n\}$ in $\Hs$  there is a $A \in ((\mathcal{B}(\B_+))^{\sigma})_{\sigma}$ s.t.
 	\begin{equation*}
 		A(1-P)h_n = 0  = (1-A)Ph_n,~ \forall  n \geqslant 1
 	\end{equation*}
@@ -436,7 +436,7 @@ The Up-Down Theorem can reveal the basic property of general von Neumann algebra
 	If $\A$ is a \Cs contained in $\oper$, then $\A$ is $weak^*$-closed if and only if it contains the supremum of every bounded increasing net of self-adjoint operators in the algebra.
 \end{thm}
 \begin{proof}
-	$\A$ is $weak^*$-closed, thus $\A$ is  a von Neumann algebra. Therefore, by above proposition $\A$ has this property. Assume that $\A$ is a \Cs and if $\{A_i\}$ is an increasing net in $\Rea{\A}$ with $A_i \sto A$ in $SOT$, then $A \in \A$. Then by taking the nagatives of the increasing parts, it is also true for that if $\{A_i\}$ is an decreasing net in $\Rea{\A}$ with $A_i \sto A$ in $SOT$, then $A \in \A$. Therefore, 
+	$\A$ is $weak^*$-closed, thus $\A$ is  a von Neumann algebra. Therefore, by above proposition $\A$ has this property. Assume that $\A$ is a \Cs and if $\{A_i\}$ is an increasing net in $\Rea{\A}$ with $A_i \sto A$ in $SOT$, then $A \in \A$. Then by taking the negatives of the increasing parts, it is also true for that if $\{A_i\}$ is an decreasing net in $\Rea{\A}$ with $A_i \sto A$ in $SOT$, then $A \in \A$. Therefore, 
 	\begin{equation*}
 		\Rea{\A} = ((\mathcal{B}(\Rea{\A}))^{\sigma})_{\sigma}
 	\end{equation*}
@@ -461,7 +461,7 @@ The Up-Down Theorem can reveal the basic property of general von Neumann algebra
 	In particular, if $E \in \A$, $A \mapsto EAE$ is a normal homomorphism. The normal homomorphsims should be postive linear maps that are continuous with respect to the $SOT$, but in above definition, there is an extra condition. In fact, this extra condition has an equivalent expression.
 \end{rem}
 
-If $\A$ is a von Neumann algebra, the $\A$ is $weak^*$-closed, therefore $\A$ is the dual space of some Banach space. Let $\A_*$ be the space of all $weak^*$-continuous fuctionals on $\A$, then $\A  = (\A_*)^*$. And also 
+If $\A$ is a von Neumann algebra, the $\A$ is $weak^*$-closed, therefore $\A$ is the dual space of some Banach space. Let $\A_*$ be the space of all $weak^*$-continuous functionals on $\A$, then $\A  = (\A_*)^*$. And also 
 \begin{equation*}
 	\A_* \cong \toper / \A_{\bot},
 \end{equation*}
@@ -486,7 +486,7 @@ In fact, if $L$ is positive, then $T$ can be chosen as a positive element.
 		\begin{equation*}
 			\psi(\sum E_i) = \sum \psi(E_i)
 		\end{equation*}
-		\item $\psi$ is $weak^*$-continous.
+		\item $\psi$ is $weak^*$-continuous.
 		\item There is a positive trace class operator $C$ s.t. $\psi(A) = \tr{(AT)}$ for all $A \in \A$.
 	\end{enumerate}
 \end{thm}
@@ -557,19 +557,19 @@ Then by using the above theorem, the equivalent statement as the following corol
 	If $\A$ and $\B$ are von Neumann algebras and $\rho \colon \A \sto \B$ is a positive linear map, then $\rho$ is normal if and only if it is $weak^*$-continuous. 
 \end{cor}
 \begin{proof}
-	If $\rho$ is $weak^*$-continuous, then it is clearly normal. Conversely, if $\rho$ is normal and $\phi \in \B_*$ such that $\phi$ is positive, then $\phi \circ  \rho$ is a normal functional on $\A$. By preceding theorem and the fact that all element in $\B_*$ can be linear combination of four positive elments, $\phi \circ  \rho$ is $weak^*$-continuous for all $\phi \in \B_*$. Therefore, by the Hahn-Banach Theorem, $\rho$ is $weak^*$-continuous.
+	If $\rho$ is $weak^*$-continuous, then it is clearly normal. Conversely, if $\rho$ is normal and $\phi \in \B_*$ such that $\phi$ is positive, then $\phi \circ  \rho$ is a normal functional on $\A$. By preceding theorem and the fact that all element in $\B_*$ can be linear combination of four positive elements, $\phi \circ  \rho$ is $weak^*$-continuous for all $\phi \in \B_*$. Therefore, by the Hahn-Banach Theorem, $\rho$ is $weak^*$-continuous.
 \end{proof}
 
 \begin{prop}
 	Every $*$-isomorphism between von Neumann algebras is normal.
 \end{prop}
-\begin{proor}
+\begin{proof}
 	Let $\rho \colon \A \sto \B$ be $*$-isomorphism between von Neumann algebras $\A$ and $\B$. If $\{\A_i\}$ is an increasing net of self-adjoint operators in $\A$ with $A = \sup_i A_i$, then $\{\rho(\A_i)\}$ is an increasing net in $\B$ with $\rho(\A_i) \leqslant \rho(A)$ for all $A_i$. Thus 
 	\begin{equation*}
 		B = \sup_i  \rho(A_i) \leqslant \rho(A)
 	\end{equation*}
 	Conversely, $A_i = \rho^{-1}\rho(A_i)  \leqslant \rho^{-1}(B)$ for all $A_i$. That means $A \leqslant \rho^{-1}(B)$. Therefore, $A =  \rho(B)$.
-\end{proor}
+\end{proof}
 
 \subsection{Ideals}
 
@@ -593,7 +593,7 @@ Rather than considering norm closed ideals in $\st{C}$-algebras, in von Neumann 
 	Therefore, $P$ is in the center of $\A$.
 \end{proof}
 
-For the ideal in a von Neumann algebra, it is always assumed as the $weak^*$-closed ideal. Thus, there is a direct corollary of above theorem about the simple von Neumann algbras.
+For the ideal in a von Neumann algebra, it is always assumed as the $weak^*$-closed ideal. Thus, there is a direct corollary of above theorem about the simple von Neumann algebras.
 
 \begin{cor}
 		A von Neumann algebra $\A$ is simple if and only if 
@@ -639,9 +639,9 @@ For the ideal in a von Neumann algebra, it is always assumed as the $weak^*$-clo
 
 \section{Projections}
 
-\subsection{Equivalence}
+\subsection{Equivalence of Projections}
 
-Projections in a von Neumann algebra play the role as generators, which lead to researching globle properties the von Neumann algebra is based on the properties of its projections, to some extend. Firstly, there is some equivalent relation between projections.
+Projections in a von Neumann algebra play the role as generators, which lead to researching global properties of the von Neumann algebra is based on the properties of its projections, to some extend. Firstly, there is some equivalent relation between projections.
 
 \begin{defn}
 	Let $E$ and $F$ be two projections in a von Neumann algebra $\A$. $E$ and $F$ are equivalent, denoted by $E \sim F$, if there is a partial isometry $W \in \A$ s.t. $\st{W}W = E$ and $W\st{W} = F$. If there is a $G \leqslant F$ s.t. $E \sim F$, then denoting $E \lesssim F$.
@@ -810,13 +810,13 @@ There is some important connections between the equivalence of two projections a
 	Thus $P \sim \st{V}PV$ and $F - P \sim E - \st{V}PV$, and by the additivity of equivalence, $F \sim E$.
 \end{proof}
 
-\subsection{Classification}
+\subsection{Classification of Projections}
 
 \begin{defn}
 	A projection $E$ in a von Neumann algebra $\A$ is finite if the only projection $F$ in $\A$ s.t. $F \leqslant E$ and $F \sim F$ is $F = E$. Otherwise, $E$ is infinite. A von Neumann algebra $\A$ is called finite or infinite if the identity is finite or infinite.
 \end{defn}
 \begin{rem}
-	This definition generalize the concept of finity. It is useful. In fact, any projection containing in an abelian von Neumann algebra $\A$ is finite. Finite von Neumann algebras have similar properties to ablian von Neumann algebras. Therefore under this classification of projections, the concept of abelian von Neuman algebras can be generalized.
+	This definition generalize the concept of finiteness. It is useful. In fact, any projection containing in an abelian von Neumann algebra $\A$ is finite. Finite von Neumann algebras have similar properties to ablian von Neumann algebras. Therefore under this classification of projections, the concept of abelian von Neuman algebras can be generalized.
 \end{rem}
 
 \begin{prop}
@@ -882,10 +882,10 @@ There are some similar properties of finite von Neumann algebra as abelian von N
 	\end{eqnarray*}
 	Choosing $F_2$ s.t. $F_2 \leqslant (F - F_1)Z$ and $F_2 \sim (E - E_1)Z$. Therefore, $F_2 + F_1Z \leqslant FZ$ and by the addivity
 	\begin{equation*}
-		F_2 + F_1Z \sim (E - E_1)Z + E_Z \sim = EZ \sim FZ
+		F_2 + F_1Z \sim (E - E_1)Z + EZ \sim EZ \sim FZ
 	\end{equation*}
 	Since $FZ$ is finite, $F_2 + F_1Z = FZ$. Therefore, $F_2 = (F-F_1)Z$. That is, $(E - E_1)Z \sim (F - F_1)Z$. And similarly, $(E - E_1)Z^{\bot} \sim (F - F_1)Z^{\bot}$.
-	\item For $2)$, by $1)$, $E \sim_W F$ implies that $E^{\bot} \sim_V F^{\bot}$. Then let $U = W + V$. $U$ is a unitary and $\st{U}EU = F$.
+	\item For $2)$, by $1)$, $E \sim_W F$ implies that $E^{\bot} \sim_V F^{\bot}$. Then let $U = W + V$. $U$ is a unitary and $\st{U}EU \sim F$.
 \end{proof}
 
 \begin{defn}
@@ -909,7 +909,7 @@ There are some similar properties of finite von Neumann algebra as abelian von N
 \end{prop}
 \begin{proof}
 	For $1)$, it holds because that the center of $\A_E$ is $\fml{Z}_E$. Then for any $Z \in \fml{Z}$, there is an abelian projection $F \leqslant E$ in $\A$ with $FE \neq 0$ s.t. $EFE \leqslant EZE$, i.e. $F \leqslant ZE$. The converse is similar.
-	\item The proof of $2)$ is simialr as $1)$.
+	\item The proof of $2)$ is similar as $1)$.
 	\item For $3)$, it can assume $\rho$ is a $*$-isomorphism, then it follows by the definition.
 	\item If $E \sim F$, then there is a normal, surjective $*$-homomorphism from $\A_E$ to $\A_F$. Therefore, by $3)$, it sufficiently assumes $F \leqslant E$. Then since $F \A F \subset E \A E$, if $E$ is abelian or continuous, $F$ is clearly abelian or continuous. \\
 	Assume $E$ is discrete and $F \leqslant E$. Replacing $\A_E$ by $\A$, i.e. assuming $E = 1$ and $\A$ is discrete. Let $Z$ be a central projection with  $ZF \neq 0$. Thus
@@ -936,10 +936,10 @@ There are some similar properties of finite von Neumann algebra as abelian von N
 \end{rem}
 
 \begin{cor}
-	If $\{\A_i\}$ is a collection of von Neumann algebras and $\A = \bigotimes_i \A_i$, then $\A$ is continous (or discrete or abelian) if and only if each $A_i$ is continous (or discrete or abelian).
+	If $\{\A_i\}$ is a collection of von Neumann algebras and $\A = \bigoplus_i \A_i$, then $\A$ is continuous (or discrete or abelian) if and only if each $A_i$ is continuous (or discrete or abelian).
 \end{cor}
 
-If two projections $E$ and $F$ satisfy $F \lesssim E$, then $C_F \leqslant C_E$. But the converse is not alway true. However, if $E$ and $F$ are abelian, the converse holds.
+If two projections $E$ and $F$ satisfy $E \lesssim F$, then $C_F \leqslant C_E$. But the converse is not alway true. However, if $E$ and $F$ are abelian, the converse holds.
 
 \begin{lem}
 	If $E$ is an abelian projection and $F \leqslant E$, then $F = C_F E$.
@@ -1036,7 +1036,8 @@ Then by using the classifications of projections, von Neumann algebras can be cl
 	\end{enumerate}
 \end{prop}
 \begin{proof}
-	Just need to prove the cases of Type \RNum{2} and Type \RNum{3}. Let $Z$ be a central projection in $\A$ s.t. $EZ \neq 0$. If $\A$ is Type \RNum{2}, then there is a nonzero finite projection $F$ with $F \leqslant Z$. Thus \begin{equation*}
+	Just need to prove the cases of Type \RNum{2} and Type \RNum{3}. Let $Z$ be a central projection in $\A$ s.t. $EZ \neq 0$. If $\A$ is Type \RNum{2}, then there is a nonzero finite projection $F$ with $F \leqslant Z$. Thus
+	 \begin{equation*}
 		EZF = EZ \neq 0
 	\end{equation*}
 	Then there are $E_1 \leqslant EZ$ and $F_1 \leqslant F$ s.t. $E_1 \sim F_1$. Therefore, $E_1$ is finite and thus $\A_E$ is Type \RNum{2}. If $\A$ is Type \RNum{3}, then $\A$ contains no nonzero finite projection, thus $\A_E$ contains no nonzero finite projection, and continuity of $\A_E$ is clear. Therefore, $\A_E$ is Type \RNum{3}.
@@ -1136,7 +1137,7 @@ This lemma is trivial but has a useful corollary.
 	If $\A$ is continuous, then $\A^{'}$ is also continuous.
 \end{cor}
 
-Then the structure of Type \RNum{1} algebra has revealed to some extend. But it can be more explicit. Firstly, for a spectial case, the structure of Type \RNum{1} factor, it has a clear consequence.
+Then the structure of Type \RNum{1} algebra has been revealed to some extend. But it can be more explicit. Firstly, for a special case, Type \RNum{1} factor, it has a clear structure.
 
 \begin{prop}
 	If $\A$ is abelian and $Q$ is a faithful abelian projection in $\A^{'}$, then $\A$ is isomorphic to $\A_Q$ and $\A_Q$ is a masa in $\fml{B}(Q)$.
@@ -1228,7 +1229,7 @@ To get more information of homogeneous algebras, matrix is a useful method.
 	Therefore, $E = 1$.
 \end{proof}
 \begin{rem}
-	If $\A$ is any von Neumann algebra with the center $\fml{Z}$, a map $\tau \colon \A \sto \fml{Z}$ satifing above $1)$, $2)$ and $3)$ is called a faithful, central-valued trace.
+	If $\A$ is any von Neumann algebra with the center $\fml{Z}$, a map $\tau \colon \A \sto \fml{Z}$ satisfying above $1)$, $2)$ and $3)$ is called a faithful, central-valued trace.
 \end{rem}
 
 \begin{cor}
@@ -1236,7 +1237,7 @@ To get more information of homogeneous algebras, matrix is a useful method.
 \end{cor}
 
 \begin{prop}
-	Let $\A$ be a von Neumann algebra and $\{E_i\}$ be a collection of pairwise orthogonal, mutually equivalent projection in $\A$ with $\sum_i E_i = 1$. If $\{E_i\}$ has cardinality $n$ and $\B = \A_{E_1}$, then $\A$ is spacially isomorphic to $M_n(\B)$.
+	Let $\A$ be a von Neumann algebra and $\{E_i\}$ be a collection of pairwise orthogonal, mutually equivalent projection in $\A$ with $\sum_i E_i = 1$. If $\{E_i\}$ has cardinality $n$ and $\B = \A_{E_1}$, then $\A$ is spacially equivalent to $M_n(\B)$.
 \end{prop}
 \begin{proof}
 	By assumption there is a collection of partial isometries $\{W_i\}$ s.t. $E_1 = \st{W_i}W_i$ and $E_i = W_i\st{W_i}$. Since for all $i,j$ and $A \in \A$,
@@ -1299,26 +1300,51 @@ To get more information of homogeneous algebras, matrix is a useful method.
 	If $\A$ is a homogeneous algebra on a separable Hilbert space $\Hs$ and $\{E_i \colon i \in I\}$ and $\{F_k \colon k \in K\}$ are two collection of pairwise orthogonal, mutually equivalent abelian projections in $\A$ with $\sum_i E_i = \sum_k F_k = 1$, then $I$ and $K$ have same cardinality.
 \end{prop}
 \begin{proof}
-	If $#I = n < \infty$ and $\B = \A_{E_1}$, then $\A \cong M_n(\B)$ and thus $\A$ is finite. If $K$ is infinite, 
+	If $\#I = n < \infty$ and $\B = \A_{E_1}$, then $\A \cong M_n(\B)$ and thus $\A$ is finite. If $K$ is infinite, 
 	\begin{equation*}
 		1 = \sum_{k=1}^{\infty} F_k \sim \sum_{k=2}^{\infty} F_k
 	\end{equation*}
-	But since $\A$ is finite and $F_1 \neq 0$, it is  impossible. Therefore, $K$ is infinite. Thus either both $I$ and $K$ are finite or inifite.
+	But since $\A$ is finite and $F_1 \neq 0$, it is  impossible. Therefore, $K$ is infinite. Thus either both $I$ and $K$ are finite or inifite. Moreover, if they are all infinite, because of the separability of $\Hs$, they must have thee same cardinality, $\aleph_0$.\\
+	Assume $n = \#I$ and $m = \#K$. Since $C_{E_i} = C_{F_k} = 1$ for all $i \in I$ and $k \in K$ and all $E_i$ and $F_k$ are abelian, $E_i \sim F_k$. If $n < m$,
+	\begin{equation*}
+		1 = \sum_{i=1}^{n} E_i \sim \sum_{k=1}^n F_k < 1
+	\end{equation*}
+	By finiteness of $\A$, it is contradiction. Therefore, $n = m$.
 \end{proof}
 
+\subsection{Structure of Type \texorpdfstring{\RNum{1}}{I} Algebras}
 
+Every homogeneous von Numann algebra is Type \RNum{1}. Although the converse is not true, Type \RNum{1} von Neumann algebra can be decomposed into the direct of some homogeneous algebras.
 
+\begin{lem}
+	If $\A$ is Type \RNum{1} and $E$ is a nonzero projection in $\A$, then there is an abelian projection $P$ with $P \leqslant E$ and $C_P = C_E$.
+\end{lem}
+\begin{proof}
+	If $F$ is any nonzero projection in $\A$, then $\A_F$ is also Type \RNum{1}. Therefore, if $Z$ is any central projection in $\A$ with $ZF \neq 0$, then there is a nonzero abelian projection is dominated by $ZF$.\\
+	Fix a nonzero projection $E$ in $\A$ and let $\{P_i\}$ be a maximal family of abelian projections in $\A$ s.t. for all $i \neq j$, $P_i \leqslant E$ and $C_{P_i} \bot C_{P_j}$. Put $P = \sum_i P_i$, then $P$ is abelien and $P \leqslant E$, and thus $C_P \leqslant C_E$. On the other hand, if $C_P \neq C_E$, then $E(C_P - C_E) \neq 0$. Thus there is an abelian projection contained in $E(C_P - C_E)$, which contradicts to the maximality of $P$.
+\end{proof}
 
+\begin{thm}
+	If $\A$ is Type \RNum{1}, then there is a family of pairwise orthogonal central projections $\{Z_i\}$ s.t. $\sum_i Z_i = 1$ and each $\A_{Z_i}$ is homogeneous.
+\end{thm}
+\begin{proof}
+	Claim: $\A$ contains a nonzero central projection $Z$ s.t. $\A_Z$ is homogenrous. \\
+	Since $\A$ is Type \RNum{1}, there is a maximal family $\{E_i\}$ of pairwise orthogonal, faithful, abelian projections. And clearly they are mutually equivalent. Put $E = \sum_i E_i$. If $E = 1$, then $\A$ is homogeneous. Assume $E^{\bot} \neq 0$. By preceding lemma, there is a abelian projection $P$ contained in $E^{\bot}$ s.t. $C_{E^{\bot}} = C_P$. By maximality, there is no faithful abelian projection contained in $E^{\bot}$. Thus, $C_P = C_{E^{\bot}} \neq 1$. Put $Z = 1 - C_{E^{\bot}}$, then $ZE^{\bot} = 0$. So $Z = ZE = \sum_i ZE_i$. And also $ZE_i$ is abelian for each $i$. Therefore, $\{ZE_i\}$ is a family of pairwise orthogonal, mutually equivalent abelian projections with $\sum_i ZE_i = Z$, i.e. $\A_Z$ is homogeneous.\\
+	By Zorn's Lemma, there is an maximal family of pairwise orthogonal central projections $\{Z_i\}$ s.t. each $\A_{Z_i}$ is homogeneous. Put $Z = \sum_i Z_i$. if $Z^{\bot} \neq 0$. Then $\A_{Z^{\bot}}$ is Type \RNum{1}. By mention above, there is a nonzero central projection $G$ s.t. $(\A_{Z^{\bot}})_G = \A_{{Z^{\bot}}G}$ is homogeneous, which contradicts with the maximality. Therefore, $Z = 1$.
+\end{proof}
 
+Then Type \RNum{1} von Neumann algebras can be expressed more explicitly.
+\begin{cor}
+	If $\A$ is Type \RNum{1}, then there is a family of homogeneous algebras $\{\B_i\}$ and a collection of distinct cardinal numbers $\{n_i\}$ s.t. $\A$ is spatially isomorphic to
+	\begin{equation*}
+		\bigoplus_i M_{n_i}(\B_i)
+	\end{equation*}
+\end{cor}
 
-
-
-
-
-
-
-
-
-
-
-
+In fact, if $\fml{Z}$ is the center of $\A$, and $\{Z_i\}$ is the family mentioned in above theorem, $\A$ is $*$-isomorphic to 
+\begin{equation*}
+	\bigoplus_i M_{n_i}(\fml{Z}_{Z_i})
+\end{equation*}
+\begin{rem}
+	Using the uniqueness of the cardinal numbers in above decomposition, it can see the uniqueness of this decomposition.
+\end{rem}

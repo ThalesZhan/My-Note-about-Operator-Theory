@@ -89,3 +89,4 @@
 \contentsline {subsection}{\numberline {6.4.1}Classification of Von Neumann Algebras}{191}{subsection.6.4.1}
 \contentsline {subsection}{\numberline {6.4.2}The Structure of Type \uppercase {i\relax } Factors}{193}{subsection.6.4.2}
 \contentsline {subsection}{\numberline {6.4.3}Homogeneous Von Neumann Algebras}{195}{subsection.6.4.3}
+\contentsline {subsection}{\numberline {6.4.4}Structure of Type \uppercase {i\relax } Algebras}{199}{subsection.6.4.4}
