@@ -14,16 +14,16 @@
 \contentsline {section}{\numberline {2.3}The Hahn-Banach Theorem}{27}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Two Forms of Hahn-Banach Theorem}{27}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Applications}{28}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Banach Spaces}{30}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Elementary Properties}{30}{subsection.2.4.1}
+\contentsline {section}{\numberline {2.4}Banach Spaces}{29}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Elementary Properties}{29}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}Linear Transformations and Linear Functionals}{31}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Weak Topologies}{35}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.3}Weak Topologies}{34}{subsection.2.4.3}
 \contentsline {subsection}{\numberline {2.4.4}Adjoint Operators}{38}{subsection.2.4.4}
-\contentsline {section}{\numberline {2.5}Hilbert Spaces}{40}{section.2.5}
+\contentsline {section}{\numberline {2.5}Hilbert Spaces}{39}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}Projection Theorem and Riesz Theorem}{40}{subsection.2.5.1}
 \contentsline {subsection}{\numberline {2.5.2}Adjoint Operators}{43}{subsection.2.5.2}
-\contentsline {subsection}{\numberline {2.5.3}Orthonormal Sets and Schauder Basis}{45}{subsection.2.5.3}
-\contentsline {subsection}{\numberline {2.5.4}Unitaries and Projections}{47}{subsection.2.5.4}
+\contentsline {subsection}{\numberline {2.5.3}Orthonormal Sets and Schauder Basis}{44}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.4}Unitaries and Projections}{46}{subsection.2.5.4}
 \contentsline {chapter}{\numberline {3}Banach Algebras and $C^{*}$-Algebras}{50}{chapter.3}
 \contentsline {section}{\numberline {3.1}Banach Algebras}{50}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Elementary Properties}{50}{subsection.3.1.1}
@@ -53,9 +53,9 @@
 \contentsline {section}{\numberline {4.3}The structure of $W^{*}(N)$}{108}{section.4.3}
 \contentsline {section}{\numberline {4.4}Multiplicity Theory}{111}{section.4.4}
 \contentsline {chapter}{\numberline {5}Compact Operators, Fredholm Theory and Perturbations}{116}{chapter.5}
-\contentsline {section}{\numberline {5.1}Spectrums}{116}{section.5.1}
+\contentsline {section}{\numberline {5.1}Spectrum}{116}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Elementary Properties}{116}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Spectrums of Compact Operators}{118}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.2}Spectrum of Compact Operators}{118}{subsection.5.1.2}
 \contentsline {section}{\numberline {5.2}Compact Operator Algebras}{125}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Minimal Projections}{125}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}Representations of Compact Operator Algebras}{127}{subsection.5.2.2}
@@ -87,6 +87,6 @@
 \contentsline {subsection}{\numberline {6.3.3}Properties of Continuous Projections}{190}{subsection.6.3.3}
 \contentsline {section}{\numberline {6.4}Type \uppercase {i\relax } Von Neumann Algebras}{191}{section.6.4}
 \contentsline {subsection}{\numberline {6.4.1}Classification of Von Neumann Algebras}{191}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}The Structure of Type \uppercase {i\relax } Factors}{193}{subsection.6.4.2}
+\contentsline {subsection}{\numberline {6.4.2}Structure of Type \uppercase {i\relax } Factors}{193}{subsection.6.4.2}
 \contentsline {subsection}{\numberline {6.4.3}Homogeneous Von Neumann Algebras}{195}{subsection.6.4.3}
 \contentsline {subsection}{\numberline {6.4.4}Structure of Type \uppercase {i\relax } Algebras}{199}{subsection.6.4.4}

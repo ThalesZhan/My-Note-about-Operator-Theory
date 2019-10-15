@@ -1,8 +1,8 @@
 \chapter{Compact Operators, Fredholm Theory and Perturbations}
 
-The compact operator is as similar as the finite dimensional operator with respect to the spectrums, the representations and so on. In fact, all compact operators can form the unique closed ideal in $\oper$. Moreover, it contains some important classes of operators, like the trace class, which provides an extra topology on $\oper$ and this topology plays an important role in the von Neumann algebra. In fact, the topology is coincided with the $WOT$ in some cases, but it can give a new method to obtain some properties of general von Neumann algebras. For non-compact operators, there is a "weak version" of the compact operator, the Fredholm operator. By researching the Fredholm operators, it provides us an approach to find some "invariant variable" under the compact perturbations. Finally, we have known that finite dimensional normal operator can always be diagnolizable, but for infinite dimensional case, this statement is not true. But by some small compact perturbation, the normal operator can be diagonalizable, and this result has some applications of representation theory. 
+The compact operator is as similar as the finite dimensional operator with respect to the spectrum, the representations and so on. In fact, all compact operators can form the unique closed ideal in $\oper$. Moreover, it contains some important classes of operators, like the trace class, which provides an extra topology on $\oper$ and this topology plays an important role in the von Neumann algebra. In fact, the topology is coincided with the $WOT$ in some cases, but it can give a new method to obtain some properties of general von Neumann algebras. For non-compact operators, there is a "weak version" of the compact operator, the Fredholm operator. By researching the Fredholm operators, it provides us an approach to find some "invariant variable" under the compact perturbations. Finally, we have known that finite dimensional normal operator can always be diagonalizable, but for infinite dimensional case, this statement is not true. But by some small compact perturbation, the normal operator can be diagonalizable, and this result has some applications of representation theory.
 
-\section{Spectrums}
+\section{Spectrum}
 
 \subsection{Elementary Properties}
 
@@ -84,7 +84,7 @@ By above theorem, we can see the power of compact operators. Intuitively, compac
 	All projections $\{P_i\}_{i \in I}$ in $\oper$ form an approximate identity for the ideal $\coper$.
 \end{cor}
 
-\subsection{Spectrums of Compact Operators}
+\subsection{Spectrum of Compact Operators}
 
 The spectrum of a compact operator also has similar properties as a finite rank operator.
 
@@ -102,7 +102,7 @@ The spectrum of a compact operator also has similar properties as a finite rank 
 	\end{equation*}
 	Then $\norm{\frac{1}{\lambda}h_0}=1=\abs{\frac{1}{\lambda}}\norm{h_0}$, thus $\norm{h_0} \neq 0$. Since $Th_{n_k} \sto \frac{1}{\lambda}Th_0$ and $Th_{n_k} \sto h_0$,
 	\begin{equation*}
-		h_0 = \frac{1}{\lambda}Th_0, \text{ i.e. } Th_0 = \lambda h_0
+		h_0 = \frac{1}{\lambda}Th_0, \text{ i.e. } Th_0 = \lambda h_0 \qedhere
 	\end{equation*}
 \end{proof}
 
@@ -195,7 +195,7 @@ In fact, any nonzero point in $\sigma(T)$ for a compact operator $T$ is isolated
 Now, we can see any nonzero point in the spectrum of a compact operator is a eigenvalue.
 
 \begin{lem}
-	If $T \in \coper$ and a nonzero $\lambda \in \sigma(T)$, then $\ker{(T-\lambda)}$ is finite dimentional.
+	If $T \in \coper$ and a nonzero $\lambda \in \sigma(T)$, then $\ker{(T-\lambda)}$ is finite dimensional.
 \end{lem}
 \begin{proof}
 	If there is an infinite orthonormal sequence $\{e_n\}$ in $\ker{(T-\lambda)}$, then $\{Te_n\}$ has a convergent subsequence $\{Te_{n_k}\}$, thus it is Cauchy.
@@ -577,7 +577,7 @@ But we cannot just using this as the decomposition of the compact operator algeb
  	\end{equation*}
  	Since $\Hs_j$ is reducing, $\I$ is a closed ideal. Moreover, $\I|_{\Hs_i}$ is a closed ideal of $\A|_{\Hs_i} = \fml{B}_0(\Hs_i)$. By the assumption, $\I|_{\Hs_i}$ is not zero, thus $\I|_{\Hs_i} = \fml{B}_0(\Hs_i)$. Let $K_i$ and $K_j$ be arbitrary compact operators on $\Hs_i$ and $\Hs_j$. And $A \in \A$ s.t. $A|_{\Hs_j} = K_j$. Since $\I|_{\Hs_i} = \fml{B}_0(\Hs_i)$, there exists $B \in \I$ s.t. $B|_{\Hs_i} = K_i - A|_{\Hs_i}$. Thus,
  	\begin{equation*}
- 		(A+B)|_{\Hs_i} = K_i,~~\&~~ (A+B)|_{\Hs_j} = K_j
+ 		(A+B)|_{\Hs_i} = K_i,~ (A+B)|_{\Hs_j} = K_j
  	\end{equation*}
  	The converse is trivial.
  \end{proof}
@@ -610,17 +610,17 @@ Now we want to research the same properties of the dependent subspaces have, and
 \begin{thm}
 	If $\A$ is a $\st{C}$-subalgebra of compact operators, then
 	\begin{equation*}
-		\Hs \cong \Hs_0 \oplus \oplus_{d \in D} \Hs_d^{(k_d)}
+		\Hs \cong \Hs_0 \oplus \bigoplus_{d \in D} \Hs_d^{(k_d)}
 	\end{equation*}
 	and
 	\begin{equation*}
-		\A \cong \{~0 \oplus \oplus_{d \in D} K_d^{(k_d)} \colon K_d \in \fml{B}_0(\Hs_d)~\}
+		\A \cong \{~0 \oplus \bigoplus_{d \in D} K_d^{(k_d)} \colon K_d \in \fml{B}_0(\Hs_d)~\}
 	\end{equation*}
 \end{thm}
 \begin{proof}
 	Firstly, by above mention, if $\A$ is non-degenerate, there are $\{\Hs_i\}_{i \in I}$ s.t. 
 	\begin{equation*}
-		\Hs = \oplus_{i \in I} \Hs_i~,~ \A|_{\Hs_i} = \fml{B}_0(\Hs_i)
+		\Hs = \bigoplus_{i \in I} \Hs_i~,~ \A|_{\Hs_i} = \fml{B}_0(\Hs_i)
 	\end{equation*}
 	But by above theorem, we can divide $\{\Hs_i\}$ into the dependency classes, and re-labeled as 
 	\begin{equation*}
@@ -628,7 +628,7 @@ Now we want to research the same properties of the dependent subspaces have, and
 	\end{equation*}
 	Thus, for the non-degenerate $\A$,
 	\begin{equation*}
-		\Hs \cong \oplus_{d \in D} \Hs_d^{(k_d)}, \A \cong \{~\oplus_{d \in D} K_d^{(k_d)} \colon K_d \in \fml{B}_0(\Hs_d)~\}
+		\Hs \cong \bigoplus_{d \in D} \Hs_d^{(k_d)}, \A \cong \{~\oplus_{d \in D} K_d^{(k_d)} \colon K_d \in \fml{B}_0(\Hs_d)~\}
 	\end{equation*}
 	If $\A$ is degenerate, let $\Hs_0 = (\clo{\A \Hs})^{\bot}$, then this theorem holds.
 \end{proof}
@@ -642,7 +642,7 @@ Now, we can easily apply above theorem to the representation.
 \begin{thm}
 	If $\rho$ is a representation of $\A$ and $m_{\rho}$ is the multiplicity function, then
 	\begin{equation*}
-		\rho \cong \oplus \{~\rho_{\zeta}^{(m_{\rho}(\zeta))} \colon \zeta \in \hat{\A}~\}
+		\rho \cong \bigoplus \{~\rho_{\zeta}^{(m_{\rho}(\zeta))} \colon \zeta \in \hat{\A}~\}
 	\end{equation*}
 	Moreover, any two representations of $\A$ are equivalent if and only if they have same multiplicity functions.
 \end{thm}
@@ -887,7 +887,7 @@ There are more interesting properties of the trace class.
 	\begin{equation*}
 		\sum_n \langle \abs{A}e_n, e_n \rangle = \sum_n \alpha_n
 	\end{equation*}
-	By the Polar Decomposion, $A \in \toper$ is equivalent the $\abs{A} \in \toper$. Thus, $\{\alpha_n\} \in l^{1}(\C)$ is equivalent to $A \in \toper$, and $\norm{A}_1 = \sum \alpha_n$.
+	By the Polar Decomposition, $A \in \toper$ is equivalent the $\abs{A} \in \toper$. Thus, $\{\alpha_n\} \in l^{1}(\C)$ is equivalent to $A \in \toper$, and $\norm{A}_1 = \sum \alpha_n$.
 	\item For $2)$, similarly as the $\hoper$, we just need to prove that the addition is continuous and closed. Let $A \in \toper$ and $B \in \toper$, and by the Polar Decomposition,
 	\begin{equation*}
 		A = W\abs{A},~ B = V \abs{B},~ A+B = U\abs{A+B}
@@ -1097,7 +1097,7 @@ By above subsection, we know that
 \begin{equation*}
 	\oper \cong \st{(\toper, \norm{\cdot}_1)}
 \end{equation*}
-Thus, $\oper$ can be equiped with the $weak^{*}$ topology with respect to the $\st{(\toper, \norm{\cdot}_1)}$. The subbasis of a point $A \in \oper$ is like,
+Thus, $\oper$ can be equipped with the $weak^{*}$ topology with respect to the $\st{(\toper, \norm{\cdot}_1)}$. The subbasis of a point $A \in \oper$ is like,
 \begin{equation*}
 	V_{\varepsilon}(A) = \{~B \in \oper \colon \abs{\tr{T(A-B)}} < \varepsilon, \forall T \in \toper~\}
 \end{equation*}
@@ -1227,8 +1227,8 @@ Then, we can see one more relation between the ultraweak topology and the $WOT$.
 	If $\{T_i\}$ is a net in $\oper$, then the following statements are equivalent.
 	\begin{enumerate}[label = \arabic*)]
 		\item $T_i \sto 0$ in $weak^{*}$.
-		\item $T_i^{\infty} \sto 0$ in $weak^{*}$.
-		\item $T_i^{\infty} \sto 0$ in $WOT$.
+		\item $T_i^{(\infty)} \sto 0$ in $weak^{*}$.
+		\item $T_i^{(\infty)} \sto 0$ in $WOT$.
 	\end{enumerate}
 \end{thm}
 \begin{proof}
@@ -1377,7 +1377,7 @@ Above theorem provides the information of the range and the kernel of Fredholm o
 		\sum \abs{\langle h,e_n \rangle}\norm{Ae_n} &\leqslant& \left(\sum \abs{\langle h,e_n \rangle}^2\right)^{\frac{1}{2}}\left(\sum \norm{Ae_n}^2\right)^{\frac{1}{2}} \\
 		&\leqslant& C\norm{h}
 	\end{eqnarray*}
-	Thus $Kh = \sum \langle h,e_n \rangle Ae_n$ is a bounded operator and clealy it can be approximated by finite rank operators $K_nh=\sum_{k=1}^n \langle h,e_k \rangle Ae_k$, thus $K \in \coper$. But $(A-K)e_n = 0$ for all $n$, that means $\dim{\ker{(A-K)}} = \infty$.
+	Thus $Kh = \sum \langle h,e_n \rangle Ae_n$ is a bounded operator and clearly it can be approximated by finite rank operators $K_nh=\sum_{k=1}^n \langle h,e_k \rangle Ae_k$, thus $K \in \coper$. But $(A-K)e_n = 0$ for all $n$, that means $\dim{\ker{(A-K)}} = \infty$.
 \end{proof}
 
 \begin{cor}
@@ -1872,7 +1872,7 @@ Then we can prove the Weyl-von Neumann Theorem.
 
 \subsection{Weyl-von Neumann-Berg Theorem}
 
-Now, we can apply above theorem to the normal operators. But it can be more general. Since a class of commutative finite rank normal operators can be diagonalizable simutaneously, we want to see the similar result for the infinite dimensional case.
+Now, we can apply above theorem to the normal operators. But it can be more general. Since a class of commutative finite rank normal operators can be diagonalizable simultaneously, we want to see the similar result for the infinite dimensional case.
 
 By the \textbf{Theorem} \ref{thm13} in the section \textbf{4.3}, we can get a trivial corollary.
 
@@ -1893,7 +1893,7 @@ By above corollary and the Weyl-von Neumann Theorem, $A = D + K$ with $\norm{K} 
 	\end{enumerate}
 \end{lem}
 \begin{proof}
-	For $1)$, if $A = D + K$, then for any $m \geqslant 1$, $A^m = D^m + K_m$ for some compact operatr $K_m$. Therefore, for each polynomial $p$, 
+	For $1)$, if $A = D + K$, then for any $m \geqslant 1$, $A^m = D^m + K_m$ for some compact operator $K_m$. Therefore, for each polynomial $p$, 
 	\begin{equation*}
 		p(A) = p(D) + K_p, \text{ for some operator } K_p \in \coper
 	\end{equation*}
@@ -1924,17 +1924,17 @@ By above corollary and the Weyl-von Neumann Theorem, $A = D + K$ with $\norm{K} 
 	If $N$ is a normal operator on a separable Hilbert space and $\varepsilon > 0$, then there is a diagonalizable normal operator $D$ s.t. $N = D \oplus K + K_1 $ and $\sigma(D) = \sigma_e(D) = \sigma_e(N)$, where $K$ and $K_1$ are compact.
 \end{cor}
 \begin{proof}
-	By above theorem, $N = D_1 + K_1$ for the normal diagnolizable operator $D_1$ and self-adjoint compact operator $K_1$ with $\norm{K_1} < \varepsilon$. Then by the Fredholm Theory, $\sigma_e(D_1) = \sigma_e(N)$. By the \textbf{Theorem} \ref{thm14} in the subsetction \textbf{5.4.3} and the separability of the Hilbert space, 
+	By above theorem, $N = D_1 + K_1$ for the normal diagonalizable operator $D_1$ and self-adjoint compact operator $K_1$ with $\norm{K_1} < \varepsilon$. Then by the Fredholm Theory, $\sigma_e(D_1) = \sigma_e(N)$. By the \textbf{Theorem} \ref{thm14} in the subsection \textbf{5.4.3} and the separability of the Hilbert space, 
 	\begin{equation*}
 		\{\mu_j\}_{j=1}^{\infty} = \sigma(D_1) \backslash \sigma_e(D_1)
 	\end{equation*}
 	where each $\mu_j$ has finite multiplicity and is repeated as often as their multiplicity. Let $\{h_j\}$ be the coresponding eigenvectors then
 	\begin{equation*}
-		D_1 = D \oplus \sum_{j=1}^{\infty} \mu_j h_j \otimes h_j
+		D_1 = D \oplus \bigoplus_{j=1}^{\infty} \mu_j h_j \otimes h_j
 	\end{equation*}
 	where $D$ is a diagonalizable normal operator on a subspace of $\Hs$ with $\sigma(D) = \sigma_e(D) = \sigma_e(D_1)$. Put 
 	\begin{equation*}
-		K = \sum_{j=1}^{\infty} \mu_j h_j \otimes h_j
+		K = \bigoplus_{j=1}^{\infty} \mu_j h_j \otimes h_j
 	\end{equation*}
 	then $K$ is compact. Therefore,
 	\begin{equation*}
@@ -1942,7 +1942,7 @@ By above corollary and the Weyl-von Neumann Theorem, $A = D + K$ with $\norm{K} 
 	\end{equation*}	
 \end{proof}
 
-In above corrolary, we cannot value the norm of $K$, but in some specitial case, we can do this. Firstly, we need some lemmas.
+In above corollary, we cannot value the norm of $K$, but in some special case, we can do this. Firstly, we need some lemmas.
 \begin{lem}
 	Let $\A$ be a Banach algebra and $a \in \A$.
 	\begin{enumerate}[label=\arabic*)]
@@ -2001,9 +2001,9 @@ Then we can refine above corollary.
 	If $N$ is a normal operator on a separable Hilbert space with $\sigma(N) = \sigma_e(N)$ and $\varepsilon > 0$, then there is a diagonalizable normal operator $D$ s.t. $N \cong D \oplus K + K_1 $ and $\sigma(D) = \sigma_e(D) = \sigma_e(N)$, where $K$ and $K_1$ are compact with $\norm{K}, \norm{K_1} < \varepsilon$
 \end{prop}
 \begin{proof}
-	By above corollary, $N = D_1 + K_1$ for the normal diagnolizable operator $D_1$ and self-adjoint compact operator $K_1$ with $\norm{K_1} < \varepsilon$. And
+	By above corollary, $N = D_1 + K_1$ for the normal diagonalizable operator $D_1$ and self-adjoint compact operator $K_1$ with $\norm{K_1} < \varepsilon$. And
 	\begin{equation*}
-		D_1 = D_2 \oplus \sum_{j=1}^{\infty} \mu_j h_j \otimes h_j
+		D_1 = D_2 \oplus \bigoplus_{j=1}^{\infty} \mu_j h_j \otimes h_j
 	\end{equation*}
 	where $D_2$ is a diagonalizable normal operator on a subspace of $\Hs$ with $\sigma(D_2) = \sigma_e(D_2) = \sigma_e(D_1)$. Since 
 	\begin{equation*}
@@ -2017,15 +2017,15 @@ Then we can refine above corollary.
 	\end{eqnarray*}
 	Then since $D_2$ is diagonalizable, let $g_j$ be the corresponding vector  with respect to $\lambda_j$,
 	\begin{equation*}
-		D_1 = D \oplus \sum_{j=1}^{\infty} (-\lambda_j) g_j \otimes g_j \oplus \sum_{j=1}^{\infty} \mu_j h_j \otimes h_j
+		D_1 = D \oplus \bigoplus_{j=1}^{\infty} (-\lambda_j) g_j \otimes g_j \oplus \bigoplus_{j=1}^{\infty} \mu_j h_j \otimes h_j
 	\end{equation*}
 	And in fact,
 	\begin{equation*}
-		D_1 \cong D \oplus \sum_{j=1}^{\infty} (\mu_j-\lambda_j) h_j \otimes h_j
+		D_1 \cong D \oplus \bigoplus_{j=1}^{\infty} (\mu_j-\lambda_j) h_j \otimes h_j
 	\end{equation*}
 	where $D$ a diagonalizable normal operator on a subspace of $\Hs$ with $\sigma(D) = \sigma_e(D) = \sigma_e(N)$. Put 
 	\begin{equation*}
-		K = \sum_{j=1}^{\infty} (\mu_j-\lambda_j) h_j \otimes h_j
+		K = \bigoplus_{j=1}^{\infty} (\mu_j-\lambda_j) h_j \otimes h_j
 	\end{equation*}
 	then $K$ is compact with $\norm{K} < \varepsilon$. Therefore,
 	\begin{equation*}
@@ -2046,7 +2046,7 @@ For two operators $N$ and $M$, if there is a unitary $U$ s.t. $N = \st{U}MU$, $N
 \end{lem}
 \begin{proof}
 	By the condition, if $\nu$ is an isolated point of $\sigma(N)$, it must be an eigenvalue with infinite multiplicity, and thus it is an eigenvalue of $M$ with infinite multiplicity. If $\nu$ is a limit point of $\sigma(N)$, then there is a sequence in $\sigma(M)$ converging to $\nu$. \\
-	Let $\{\nu_n\}$ and $\{\mu_m\}$ be all eigenvalues of $N$ and $M$ repectively and repeated as often as their multiplicity. Since $\sigma(N) = \sigma_e(N)$, all of them have infinite multiplicity. Moreover, for any $\nu_j$, there is a sequence $\{\mu_{n_j}\}$ converging to it.
+	Let $\{\nu_n\}$ and $\{\mu_m\}$ be all eigenvalues of $N$ and $M$ respectively and repeated as often as their multiplicity. Since $\sigma(N) = \sigma_e(N)$, all of them have infinite multiplicity. Moreover, for any $\nu_j$, there is a sequence $\{\mu_{n_j}\}$ converging to it.
 	\item Claim: There is a renumbering of the two sets $\{\nu_{n_k}\}$ and $\{\mu_{m_k}\}$ s.t. 
 	\begin{equation*}
 		\abs{\nu_{n_k} - \mu_{m_k}} < \frac{\varepsilon}{2^k},~ \forall k \in \{n_1, \cdots, n_{2k}\} \cap \{m_1, \cdots, m_{2k}\}
@@ -2104,7 +2104,7 @@ then there are similar $N_1, K_1, K$ and $M_1,  K_1^{'}, K^{'}$ s.t.
 \end{equation*}
 But the differece is that the norm of $K_1$ and $K_1^{'}$ can be arbitrary small. Therefore, by above theorem, the unitary $U$ can be choosing s.t. $N - \st{U}MU$ has arbitrary small norm.
 
-In general case, we need a definition to discribe this definition.
+In general case, we need a definition to describe this definition.
 
 \begin{defn}
 	Two normal operators $A$ and $B$ are approximately unitarily equivalent, denoted by $A \cong_a B$, if there is a sequence of unitaries $\{U_n\}$ s.t. 
@@ -2143,7 +2143,7 @@ In general case, we need a definition to discribe this definition.
 \end{thm}
 \begin{proof}
 	Let $E_N$ and $E_M$ be the spectral measures for $N$ and $M$. $1)$ implies $2)$ clearly.
-	\item $2) \Rightarrow 3)$: Let $\{U_n\}$ be the unitaties s.t. $\norm{N - \st{U_n}MU_n} \sto 0$. Then by above lemma, 
+	\item $2) \Rightarrow 3)$: Let $\{U_n\}$ be the unitaries s.t. $\norm{N - \st{U_n}MU_n} \sto 0$. Then by above lemma, 
 	\begin{equation*}
 		X = \sigma(M) = \sigma(N)
 	\end{equation*}

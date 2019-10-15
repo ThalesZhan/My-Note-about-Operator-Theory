@@ -1,7 +1,7 @@
 \chapter{Banach Algebras and \texorpdfstring{$C^{*}$-Algebras}{C*-Algebras}}
 \section{Banach Algebras}
 
-Let $\fml{H}$ be a Hilbert space. Then $\oper$ is indeed a Banach space. But we have more sructure on it. Any two element $S,T \in \oper$ can do multiplication, defined as $ST = S \circ T$, then $ST \in \oper$ by the definition of norm, and moreover $\norm{ST} \leqslant \norm{S}\norm{T}$. Therefore, $\oper$ is an algebra with the extra property of the multiplication, called a Banach algebra.
+Let $\fml{H}$ be a Hilbert space. Then $\oper$ is indeed a Banach space. But we have more structure on it. Any two element $S,T \in \oper$ can do multiplication, defined as $ST = S \circ T$, then $ST \in \oper$ by the definition of norm, and moreover $\norm{ST} \leqslant \norm{S}\norm{T}$. Therefore, $\oper$ is an algebra with the extra property of the multiplication, called a Banach algebra.
 
 \subsection{Elementary Properties}
 
@@ -54,7 +54,7 @@ Then $\alg{A}$ can be isometrically imbedded into $\tilde{\alg{A}}$. Therefore, 
 	\begin{eqnarray*}
 		G_l &=& \{~a \in \alg{A} \colon a \text{ is left invertible}~\}\\
 		G_r &=& \{~a \in \alg{A} \colon a \text{ is right invertible}~\}\\
-		G &=& G_l \bigcap G_r = \{~a \in \alg{A} \colon a \text{ is invertible}~\}
+		G &=& G_l \cap G_r = \{~a \in \alg{A} \colon a \text{ is invertible}~\}
 	\end{eqnarray*}
 	Then $G_l$ and $G_r$ and $G$ are open. Moreover, the map $a \sto a^{-1}$ from $G$ to $G$ is continuous.
 \end{cor}
@@ -90,13 +90,12 @@ for any $b_1, b_2 \in \alg{B}$.
 
 \subsection{Spectrum}
 
-
 \begin{defn}
 	Let $\alg{A}$ be a Banach algebra and $a \in \alg{A}$. The spectrum of $a$, denoted by $\sigma(a)$ defined as
 	\begin{equation*}
 		\sigma(a) = \{~ \lambda \in \C \colon a-\lambda \text{ is invertible}~\}
 	\end{equation*}	
-	And the resolvents of $a$, $\rho(a) = \C \backslash \sigma(a)$.\\
+	And the resolvent of $a$, $\rho(a) = \C \backslash \sigma(a)$.\\
 	Moreover, we can define the spectral radius of $a$ as
 	\begin{equation*}
 		r(a) = \sup{\{~\abs{\lambda} \colon \lambda \in \sigma(a)~\}}
@@ -148,7 +147,7 @@ If $\alg{B} \subset \alg{A}$ is a subalgebra with the same identity of a Banach 
 		  Let $U$ be an connected component in $\tilde{K}$ and $x \in U$. For any point $x \in U$, Since any open neighbourhood of $x$ is connected, and $K$ is open, there is a open neighbourhood $V$ of $x$ s.t. $V \subset U$.
 	\item Secondly, $\C$ has just at most countable many open sets, which are pairwise disjoint.\\
 		  This result is because any open set in $\C$ contains a rational point.
-	\item For any two disjoint open sets $A$ and $B$ in $\C$, $\partial A \bigcap B = \varnothing$. Thus the boundary of some compoment of $\tilde{K}$ can not be contained in any component of $\tilde{K}$, i.e. it is contained $K$.
+	\item For any two disjoint open sets $A$ and $B$ in $\C$, $\partial A \cap B = \varnothing$. Thus the boundary of some component of $\tilde{K}$ can not be contained in any component of $\tilde{K}$, i.e. it is contained $K$.
 	\item Finally, since $K$ is bounded, there is a closed ball $B$ containing $K$. But the complement of $B$ is connected, thus there is only one component of $\tilde{K}$ containing $B$. Thus the other components of $\tilde{K}$ are bounded.
 \end{proof}
 \begin{rem}
@@ -174,20 +173,20 @@ If $\alg{B} \subset \alg{A}$ is a subalgebra with the same identity of a Banach 
 	Let $L$ be the set containing $K$ and all bounded component of $\C \backslash K$. Then by the Maximal Principle, $L \subset \hat{K}$. Conversely, if $\alpha \notin L$, then $(z-\alpha)^{-1}$ is analytic in a neighbourhood of $L$. Therefore, there is a sequence of polynomials $\{p_n\}$ s.t. $p_n \sto (z-\alpha)^{-1}$. Let $q_n=(z-\alpha)p_n$. Then $q_n \sto 1$, i.e. $\norm{q_n-1} < \frac{1}{2}$ for some $n$. But $\abs{q_n(\alpha)-1}=1$, this implies $\alpha \notin \hat{K}$, i.e. $\hat{K} \subset L$.
 \end{proof}
 
-By above results, now we can provide the relationships betweem $\sigma_{\alg{A}}(b)$ and $\sigma_{\alg{B}}(b)$.
+By above results, now we can provide the relationships between $\sigma_{\alg{A}}(b)$ and $\sigma_{\alg{B}}(b)$.
 
 \begin{thm}
 	If $\alg{A}$ and $\alg{B}$ are Banach algebras with same identity s.t. $\alg{B} \subset \alg{A}$ and $b \in \alg{B}$, then
 	\begin{enumerate}[label=\arabic*)]
 		\item $\sigma_{\alg{A}}(b) \subset \sigma_{\alg{B}}(b)$ and $\partial\sigma_{\alg{B}}(b) \subset \partial\sigma_{\alg{A}}(b)$
 		\item $\hat{\sigma_{\alg{A}}(b)} = \hat{\sigma_{\alg{B}}(b)}$
-		\item if $G$ is a hole of $\sigma_{\alg{A}}(b)$, then $G \subset \sigma_{\alg{B}}(b)$ or $G \bigcap \sigma_{\alg{B}}(b) = \varnothing$
+		\item if $G$ is a hole of $\sigma_{\alg{A}}(b)$, then $G \subset \sigma_{\alg{B}}(b)$ or $G \cap \sigma_{\alg{B}}(b) = \varnothing$
 	\end{enumerate}
 \end{thm}
 \begin{proof}
 	\item For $1)$, let $\lambda \in \partial\sigma_{\alg{B}}(b)$. Since $\inte{\sigma_{\alg{A}}(b)} \subset \inte{\sigma_{\alg{B}}(b)}$, it is sufficient to show $\lambda \in \sigma_{\alg{A}}(b)$. Suppose $\lambda \notin \sigma_{\alg{A}}(b)$, i.e. $(b-\lambda)$ is invertible in $\alg{A}$. But since $\lambda \in \partial\sigma_{\alg{B}}(b)$, there are $\lambda_n \in \C \backslash \alg{B}$ with $\lambda_n \sto \lambda$. Thus $(b-\lambda_n)^{-1} \in \alg{B}$. But $(b-\lambda_n)^{-1} \sto (b-\lambda)^{-1} \in \sigma_{\alg{B}}(b)$, contradicting to $\lambda \in \sigma_{\alg{A}}(b)$.
-	\item $2)$ holds because of the result of $1)$ and the Maxiamal Principle.
-	\item For $3)$, let $G_1 = G \bigcap \sigma_{\alg{B}}(b)$ and $G_2 = G \backslash \sigma_{\alg{B}}(b)$. Since $\partial\sigma_{\alg{B}}(b) \subset \sigma_{\alg{A}}(b)$ and $G \bigcap \sigma_{\alg{A}}(b) = \varnothing$, $G_1 = G \bigcap \inte{\sigma_{\alg{B}}(b)}$ is open. By the facts that $G_2$ is clearly open and $G = G_1 \bigcup G_2$ and $G_1 \bigcap G_2 = \varnothing$, either $G_1$ or $G_2$ is empty.
+	\item $2)$ holds because of the result of $1)$ and the Maximal Principle.
+	\item For $3)$, let $G_1 = G \cap \sigma_{\alg{B}}(b)$ and $G_2 = G \backslash \sigma_{\alg{B}}(b)$. Since $\partial\sigma_{\alg{B}}(b) \subset \sigma_{\alg{A}}(b)$ and $G \cap \sigma_{\alg{A}}(b) = \varnothing$, $G_1 = G \cap \inte{\sigma_{\alg{B}}(b)}$ is open. By the facts that $G_2$ is clearly open and $G = G_1 \bigcup G_2$ and $G_1 \cap G_2 = \varnothing$, either $G_1$ or $G_2$ is empty.
 \end{proof}
 
 Then we can have some useful corollaries.
@@ -201,7 +200,7 @@ Then we can have some useful corollaries.
 	\end{enumerate}
 \end{cor}
 \begin{proof}
-	$1)$ is clearly true since ubbouded component does not intersect $\sigma_{\alg{B}}(b)$. $2)$ is because $\C \backslash \sigma_{\alg{A}}(b)$ has no holes. $3)$ is similar as $2)$.
+	$1)$ is clearly true since unbounded component does not intersect $\sigma_{\alg{B}}(b)$. $2)$ is because $\C \backslash \sigma_{\alg{A}}(b)$ has no holes. $3)$ is similar as $2)$.
 \end{proof}
 
 \subsection{Riesz Functional Calculus}
@@ -214,7 +213,7 @@ we can define $p(a)$ for some $a \in \alg{A}$, where $\alg{A}$ is a Banach algeb
 \begin{equation*}
 	p(a) = \sum_{k=0}^{n} \alpha_k a^{k}
 \end{equation*}
-Clearly, $p(a)$ is well-defined. But we can do more. If $f$ is an analytic funcion on $A \subset \C$, then $f$ can be approximated by a sequence of polynomials
+Clearly, $p(a)$ is well-defined. But we can do more. If $f$ is an analytic function on $A \subset \C$, then $f$ can be approximated by a sequence of polynomials
 \begin{equation*}
 	f(z) = \sum_{n=0}^{\infty} \alpha_n z^{n}
 \end{equation*}
@@ -232,7 +231,7 @@ Therefore, replacing $z_0$ by $a \in \alg{A}$, then we have
 \begin{equation*}
 	f(a) = \frac{1}{2 \pi i}\int_{\gamma} f(z) (z-a)^{-1} dz
 \end{equation*}
-Clearly, by the Cauchy's Integral Formula, this definition is well-defined and is coincided with above definition. But this definition can provide us a conivient method to research the map $f \mapsto f(a)$.
+Clearly, by the Cauchy's Integral Formula, this definition is well-defined and is coincided with above definition. But this definition can provide us a convenient method to research the map $f \mapsto f(a)$.
 
 \begin{thm}[Riesz Functional Calculus]
 	Let $\alg{A}$ be a Banach algebra and $a \in \alg{A}$ and the map
@@ -248,7 +247,7 @@ Clearly, by the Cauchy's Integral Formula, this definition is well-defined and i
 		\item $\rho(1) = 1$ and $\rho(z)=a$.
 		\item If $\{f_n\} \subset \hol{(a)}$ and $f \in \alg{A}$ with $f_n \sto f$ uniformly on a compact set of $\hol{(a)}$, then $\rho(f_n) \sto \rho(f)$ in norm.
 	\end{enumerate}
-	Moreover, if any map $\tau \colon \hol{(a)} \sto \alg{A}$ satifies above conditions, then $\tau = \rho$. 
+	Moreover, if any map $\tau \colon \hol{(a)} \sto \alg{A}$ satisfies above conditions, then $\tau = \rho$. 
 \end{thm}
 \begin{proof}
 	For $1)$, $\rho$ is clearly linear. And
@@ -285,10 +284,10 @@ Clearly, by the Cauchy's Integral Formula, this definition is well-defined and i
 	\begin{equation*}
 		\norm{f_n(a)-f(a)} \sto 0
 	\end{equation*}
-	\item Finally, the uniquness is because any $f \in \hol{(a)}$ can be approximated uniformly by a sequence of polynomials. Thus, $1)$ and $2)$ means $\tau(p) = \rho(p)$ for any polynomial $p$, and $3)$ provides the fact that $\tau(f) = \rho(f)$ for any $f \in \hol{(a)}$.
+	\item Finally, the uniqueness is because any $f \in \hol{(a)}$ can be approximated uniformly by a sequence of polynomials. Thus, $1)$ and $2)$ means $\tau(p) = \rho(p)$ for any polynomial $p$, and $3)$ provides the fact that $\tau(f) = \rho(f)$ for any $f \in \hol{(a)}$.
 \end{proof}
 \begin{rem}
-	we have mentioned that the integral definition is coincided with the convergent difinition. In fact, by $2)$, this statement can be proved rigorously.
+	we have mentioned that the integral definition is coincided with the convergent definition. In fact, by $2)$, this statement can be proved rigorously.
 \end{rem}
 
 \begin{thm}[Spectral Mapping Theorem]
@@ -303,30 +302,30 @@ Clearly, by the Cauchy's Integral Formula, this definition is well-defined and i
 \end{proof}
 
 \begin{prop} \label{prop10}
-	Let $\alg{A}$ be a Banach algebra and $a \in \alg{A}$. $\sigma(a) = F_1 \bigcup F_2$, where $F_1$ and $F_2$ are disjoint nonempty closed sets. Then there is a nontrial idempotent $e$, i.e. $e^{2}=e$, s.t.
+	Let $\alg{A}$ be a Banach algebra and $a \in \alg{A}$. $\sigma(a) = F_1 \cup F_2$, where $F_1$ and $F_2$ are disjoint non-empty closed sets. Then there is a non-trial idempotent $e$, i.e. $e^{2}=e$, s.t.
 	\begin{enumerate}[label=\arabic*)]
 		\item if $ab=ba$, then $eb=be$.
 		\item if $a_1=ae$ and $a_2=a(1-e)$, then $a_1a_2=a_2a_1=0$.
-		\item $\sigma(a_1)=F_1 \bigcup \{0\}$ and $\sigma(a_2)=F_2 \bigcup \{0\}$.
+		\item $\sigma(a_1)=F_1 \cup \{0\}$ and $\sigma(a_2)=F_2 \cup \{0\}$.
 	\end{enumerate}
 \end{prop}
 \begin{proof}
 	Since $F_1$ and $F_2$ are disjoint closed set, there are two disjoint open sets $G_1$ and $G_2$ separating $F_1$ and $F_2$. Let $f$ be the characteristic function of $G_1$ and $e=f(a)$. Thus $e^{2}=e$ by $f^{2}=f$.
 	\item For $1)$, there is a more genera result, $f(a)b=bf(a)$ for any $f \in \hol{(a)}$. It is because by extending the fact $p(a)b=bp(a)$ for any polynomial $p$.
 	\item $2)$ is clearly true.
-	\item Let $f_1(z)=zf(z)$ and $f_2(z)=z(1-f(z))$. Then $a_j = f_j(a)$ for $j=1,2$. Then by the Spectral Mapping Theorem $\sigma(a_j) = f_j(\sigma(a_j)) = F_j \bigcup \{0\}$.
+	\item Let $f_1(z)=zf(z)$ and $f_2(z)=z(1-f(z))$. Then $a_j = f_j(a)$ for $j=1,2$. Then by the Spectral Mapping Theorem $\sigma(a_j) = f_j(\sigma(a_j)) = F_j \cup \{0\}$.
 \end{proof}
 
 \begin{cor}
-	Let $\Hs$ be a Hilbert space and $T \in \oper$. If $\sigma(T) = F_1 \cup F_2$, where $F_1$ and $F_2$ are disjoint nonempty closed sets, then there are closed subspaces $\Hs_1$ and $\Hs_2$ with $\Hs = \Hs_1 \oplus \Hs_2$, s.t.
+	Let $\Hs$ be a Hilbert space and $T \in \oper$. If $\sigma(T) = F_1 \cup F_2$, where $F_1$ and $F_2$ are disjoint non-empty closed sets, then there are closed subspaces $\Hs_1$ and $\Hs_2$ with $\Hs = \Hs_1 \oplus \Hs_2$, s.t.
 	\begin{enumerate}[label=\arabic*)]
 		\item $B\Hs_j \subset \Hs_j$ for $j=1,2$, whenever $BT=TB$.
 		\item If $T_j = T|_{\Hs_j} \colon \Hs_j \sto \Hs_j$, then $\sigma(T_j) = F_j$, for $j=1,2$.
 	\end{enumerate}
 \end{cor}
 \begin{proof}
-	From above proposition, $e$ is actually the propjection from $\Hs$ to $\Hs_1$. Therefore by the result in above propostion, $1)$ clearly holds.\\
-	For $2)$, since $e$ is in fact the indentity from $\Hs_1$ to $\Hs_1$, similarly, by the Spectral Mapping Theorem, $\sigma(T_j) = F_j$.
+	From above proposition, $e$ is actually the projection from $\Hs$ to $\Hs_1$. Therefore by the result in above proposition, $1)$ clearly holds.\\
+	For $2)$, since $e$ is in fact the identity from $\Hs_1$ to $\Hs_1$, similarly, by the Spectral Mapping Theorem, $\sigma(T_j) = F_j$.
 \end{proof}
 
 \subsection{Abelian Banach Algebras} \label{sec2}
@@ -498,7 +497,7 @@ If a \Cs $\A$ is without the identity, we can use same method of the Banach alge
 	\end{enumerate}
 \end{defn}
 
-Then we can see the algebraic strucuture on a \Cs completely determine its norm topology.
+Then we can see the algebraic structure on a \Cs completely determine its norm topology.
 
 \begin{thm}
 	Let $\A$ be a \Cs and $a \in \A$. If $a$ is self-adjoint, then
@@ -527,7 +526,7 @@ Then we can see the algebraic strucuture on a \Cs completely determine its norm 
 Now, we can see how the algebraic property influences the topological structure.
 
 \begin{prop} \label{prop8}
-	Let $\rho \colon \A \sto \B$ be a $*$-homomorphsim between two $C^{*}$-algebras.
+	Let $\rho \colon \A \sto \B$ be a $*$-homomorphism between two $C^{*}$-algebras.
 	\begin{enumerate}[label=\arabic*)]
 		\item $\rho$ is continuous, and moreover $\norm{\rho(a)} \leqslant \norm{a}$.
 		\item If $\rho$ is a $*$-isomorphism, then $\rho$ is an isometry.
@@ -547,7 +546,7 @@ Let $\Rea{\A}$ denote the set of all self-adjoint elements in a \Cs $\A$. Then, 
 Therefore, any element in a \Cs $\A$ can be combined by two self-adjoint elements. And the self-adjoint element play a important role in the algebraic structure of a \Cs. 
 
 \begin{prop}
-	If $h \colon \A \sto \C$ is an algebraic homomorphis on a \Cs $\A$. 
+	If $h \colon \A \sto \C$ is an algebraic homomorphism on a \Cs $\A$. 
 	\begin{enumerate}[label=\arabic*)]
 		\item If $a \in \Rea{\A}$, $h(a) \in \R$.
 		\item For any $a \in \A$, $h(\st{a})=\clo{h(a)}$.
@@ -583,7 +582,7 @@ Therefore, any element in a \Cs $\A$ can be combined by two self-adjoint element
 	\end{equation*} 
 	And by the $Corollary$ \ref{cor5} in the subsection \textbf{2.1.2},
 	\begin{equation*}
-		\sigma(a) = \sigma_{\Cg{a}}(a) \subset \R
+		\sigma(a) = \sigma_{\Cg{a}}(a) \subset \R \qedhere
 	\end{equation*}
 \end{proof}
 
@@ -607,7 +606,7 @@ The abelian \Cs is firstly an ablian Banach algebra, thus all results in the sub
 	If $\A$ is an abelian \Cs, then the Gelfand transform $\Gamma \colon \A \sto C(\Sigma(\A))$ is an isometric $*$-isomorphism.
 \end{thm}
 \begin{proof}
-	Firstly, $\Gamma$ is a $*$-homormophism, since the result in \textbf{Theorem} \ref{thm5} and
+	Firstly, $\Gamma$ is a $*$-homomorphism, since the result in \textbf{Theorem} \ref{thm5} and
 	\begin{equation*}
 		\Gamma(\st{a})(h) = h(\st{a}) = \clo{h(a)} = \clo{\Gamma(a)}(h)
 	\end{equation*}
@@ -643,7 +642,7 @@ Then, we can modify the result in the \textbf{Propostion} \ref{prop7} in subsect
 		&=& p(h(a), h(\st{a})) = p(h(a), \clo{h(a)}) \\
 		&=& p(z,\clo(z))
 	\end{eqnarray*}
-	That means that $\rho$ maps the polynomials in $\A$ to polynomails in $\sigma(a)$. Therefore, $\rho$ is unique.
+	That means that $\rho$ maps the polynomials in $\A$ to polynomials in $\sigma(a)$. Therefore, $\rho$ is unique.
 \end{proof}
 
 By the Riesz Functional Calculus, we have the map $f \mapsto f(a)$ from $\hol{(a)}$ to $\A$ for a \Cs $\A$ and any element $a \in \A$. Now, we can extend this definition a $C(\sigma(a))$ by above $\rho$, but we need $a$ is normal, then
@@ -702,7 +701,7 @@ There is an important example.
 
 \subsection{Positive Elements}
 
-We have known that self-adjoint elements play a important role in a \Cs $\A$. The self-adjoint element $a$ in $\A$ is like the real number in $\C$, and the relationship between them can be revealed by the fact $a \in \Rea{\A}$ if and only if $\sigma(a) \subset \R$. The converse is obtained by the Continuous Functional Calculus. In fact, Continuous functional calculus can provide more relation between the element in $\A$ and the elment in $\C$, like positivity.
+We have known that self-adjoint elements play a important role in a \Cs $\A$. The self-adjoint element $a$ in $\A$ is like the real number in $\C$, and the relationship between them can be revealed by the fact $a \in \Rea{\A}$ if and only if $\sigma(a) \subset \R$. The converse is obtained by the Continuous Functional Calculus. In fact, Continuous functional calculus can provide more relation between the element in $\A$ and the element in $\C$, like positivity.
 
 \begin{defn}
 	Let $\A$ be a \Cs and $a \in \Rea{\A}$. Then $a$ is called a positive element if and only if $\sigma(a) \subset \R^{+}$, denoted by $a \geqslant 0$. And let $\A_{+}$ be the set of all positive elements.
@@ -720,7 +719,7 @@ This definition is nature by above mention, but it may not be very explicit. So 
 	\end{enumerate}
 \end{thm}
 \begin{proof}
-	All of these can be done by the functional calculus. And our goal is to find some vilid functions in $C(\sigma(a))$ to complete these.
+	All of these can be done by the functional calculus. And our goal is to find some functions in $C(\sigma(a))$ to complete these.
 	\item $1) \Rightarrow 2)$ Let $f(x) = \sqrt{x}$ in $C(\sigma(a))$ and since $\sigma(a) \subset \R^{+}$, $f$ is well-defined. Let $b = f(a)$. Then, we have $a = b^{2}$. And by Spectral Theorem, $\sigma(b) = \sigma(f(a)) \subset \R{+}$.
 	\item $2) \Rightarrow 3)$ Let $f(x) = x^2$ defined on $\sigma(b)$, then $a = f(b)$ and $\norm{a} = \norm{f}_{\infty}$. By this condition, $f(x) \geqslant 0$. Thus $\sigma(a) = f(\sigma(b)) \subset \R^{+}$.
 	\item $3) \Rightarrow 4)$ It is trivial.
@@ -772,7 +771,7 @@ Then, we can build an order on $\Rea{\A}$ by defining $a \leqslant b \Leftrighta
 	\end{enumerate}
 \end{prop}
 \begin{proof}
-	For $1)$, let $f(x)= \sqrt[n]{x}$ defined on $\sigma(a) \subset \R$, then $b=f(a)$ sastisfying $ a = b^{n}$.
+	For $1)$, let $f(x)= \sqrt[n]{x}$ defined on $\sigma(a) \subset \R$, then $b=f(a)$ satisfying $ a = b^{n}$.
 	\item For $2)$, let $b = \st{a}a = b_{+} - b_{-}$ and $c = \sqrt{b_{+}}$  and $d=ac$. Since $\st{d}d = b_{-}^2 \in \A_{+}$, $\st{d}d \in \A_{-}$. Let $d = x + iy$, then $d\st{d} + \st{d}d = 2(x^2+y^2) \in \A_{+}$. Thus
 	\begin{equation*}
 		d\st{d} = d\st{d} + \st{d}d -\st{d}d \in \A_{+}
@@ -906,7 +905,7 @@ Then we can use the approximate identity to get some interesting results. First,
 
 Firstly, there are two easy results of closed ideal in a $\st{C}$-algebra.
 
-\begin{prop}
+\begin{prop} \label{prop12}
 	Let $\A$ be a $\st{C}$-algebra.
 	\begin{enumerate}[label=\arabic*)]
 		\item If $\I$ is a closed left or right ideal of $\A$, $a \in \I$ with $a=\st{a}$, then for $f \in C(\sigma(a))$ with $f(0)=0$, $f(a) \in \A$.
@@ -915,7 +914,7 @@ Firstly, there are two easy results of closed ideal in a $\st{C}$-algebra.
 \end{prop}
 \begin{proof}
 	For $1)$, if $\I$ is proper, $0 \in \sigma(a)$. Then $f(0) = 0 and \sigma(a) \subset \R$, $f$ can be approximated by a sequence of polynomials $p_n$ with $p_n(0) = 0$. Therefore, $p_n(a) \in \I$ and by the fact that $\I$ is closed, $f(a) \in \I$.
-	\item For $a \in \I$, by the corollary in above subsection, we know there is a $u \in \A$ s.t. $a=u\abs{a}^{\frac{1}{2}}$. By $1)$, $\abs{a}^{\frac{1}{2}} \in \I$. Therefor,
+	\item For $a \in \I$, by the corollary in above subsection, we know there is a $u \in \A$ s.t. $a=u\abs{a}^{\frac{1}{2}}$. By $1)$, $\abs{a}^{\frac{1}{2}} \in \I$. Therefore,
 	\begin{equation*}
 		\st{a} = \abs{a}^{\frac{1}{2}} u \in \I \qedhere
 	\end{equation*}
@@ -930,10 +929,10 @@ Now, we can give more profound properties of the closed left ideals.
 \begin{thm} \label{thm6}
 	Let $\A$ be a $\st{C}$-algebra.
 	\begin{enumerate}[label=\arabic*)]
-		\item If $\I$ is a closed left ideal of $\A$ and $\B = \I \bigcap \st{\I}$, then $\B$ is a hereditary subalgebra of $\A$.
+		\item If $\I$ is a closed left ideal of $\A$ and $\B = \I \cap \st{\I}$, then $\B$ is a hereditary subalgebra of $\A$.
 		\item If $\B$ is a hereditary subalgebra of $\A$ and $\I = \{x\in \A \colon \st{x}x \in \B\}$, then $\I$ is a closed left ideal of $\A$.
-		\item If $\I$ is a closed left ideal of $\A$ and $\B = \I \bigcap \st{\I}$, then $\I = \{x\in \A \colon \st{x}x \in \B\}$.
-		\item If $\B$ is a hereditary subalgebra of $\A$ and $\I = \{x\in \A \colon \st{x}x \in \B\}$, then $\B = \I \bigcap \st{\I}$.
+		\item If $\I$ is a closed left ideal of $\A$ and $\B = \I \cap \st{\I}$, then $\I = \{x\in \A \colon \st{x}x \in \B\}$.
+		\item If $\B$ is a hereditary subalgebra of $\A$ and $\I = \{x\in \A \colon \st{x}x \in \B\}$, then $\B = \I \cap \st{\I}$.
 	\end{enumerate}
 \end{thm}
 \begin{proof}
@@ -948,7 +947,7 @@ Now, we can give more profound properties of the closed left ideals.
 	\end{equation*}
 	Thus, $\I$ is a closed left ideal.
 	\item For $3)$, if $x \in \A$ and $\st{x}x \in \B$, $\st{x}x \in \I$. Thus $\abs{x}^{\frac{1}{2}} \in \I$ since $\I$ is a closed left ideal. Therefore, $x = u \abs{x}^{\frac{1}{2}} \in \I$. The converse is clearly true.
-	\item For $4)$, if $x \in \I_{+}$, then $x^2 \in \B$. So $x = \sqrt{x^2} \in \B_{+}$. Conversely, $x \in \B_{+}$ means $\st{(x^{\frac{1}{2}})}(x^{\frac{1}{2}}) = x \in \B$, $x^{\frac{1}{2}} \in \I_{+}$. Therefore, $\B_{+} = \I_{+}$. Thus, $\B = \I \bigcap \st{\I}$. 
+	\item For $4)$, if $x \in \I_{+}$, then $x^2 \in \B$. So $x = \sqrt{x^2} \in \B_{+}$. Conversely, $x \in \B_{+}$ means $\st{(x^{\frac{1}{2}})}(x^{\frac{1}{2}}) = x \in \B$, $x^{\frac{1}{2}} \in \I_{+}$. Therefore, $\B_{+} = \I_{+}$. Thus, $\B = \I \cap \st{\I}$. 
 \end{proof}
 
 \begin{thm}
@@ -965,7 +964,7 @@ Now, we can give more profound properties of the closed left ideals.
 		&=& \liminf_{i} \norm{(a-ae_i)}
 	\end{eqnarray*}
 	The converse is clearly true.
-	\item The involution defined on the quotient algebra is well-defined and satifies the conditions since $\I$ is self-adjoint. We just need to show the induced norm satisfies the $\st{C}$-identity. For $a \in \A$, we have $\norm{\st{a}+\I} = \norm{a+\I}$, and 
+	\item The involution defined on the quotient algebra is well-defined and satisfies the conditions since $\I$ is self-adjoint. We just need to show the induced norm satisfies the $\st{C}$-identity. For $a \in \A$, we have $\norm{\st{a}+\I} = \norm{a+\I}$, and 
 	\begin{eqnarray*}
 		\norm{a+\I}^2 &=& \norm{(\st{a}+\I)(a+\I)} \\
 		&\leqslant& \norm{\st{a}+\I}\norm{a+\I} \\
@@ -981,7 +980,7 @@ Now, we can give more profound properties of the closed left ideals.
 	Therefore, $\A / \I$ is indeed a $\st{C}$-algebra.
 \end{proof}
 
-Then it can provide a \Cs with some similar results as general rings have. These results can also show us how the algebraic structure in a \Cs affect the topological structure. In my oppion, for researching a \Cs, researching the algebraic structure may be more important.
+Then it can provide a \Cs with some similar results as general rings have. These results can also show us how the algebraic structure in a \Cs affect the topological structure. In my opinion, for researching a \Cs, researching the algebraic structure may be more important.
 
 \begin{cor}
 	Let $\A$ and $\mathfrak{C}$ be two $\st{C}$-algebras.
@@ -1098,7 +1097,7 @@ Now, we can construct the a representation of a $\st{C}$-algebra. A representati
 		\begin{equation*}
 			\langle x,y \rangle = \phi(\st{y}x),~~ \text{for}~ x,y \in \A
 		\end{equation*}
-		\item Constructing $\Hs_{\phi}$: $\langle \cdot, \cdot \rangle$ is just a semi-inner product on $\A$, thus we need to make it be nondegenerate. The nature method is constructing a equilaten relation or a closed ideal, and then inducing a quotient space. Naturally, we define
+		\item Constructing $\Hs_{\phi}$: $\langle \cdot, \cdot \rangle$ is just a semi-inner product on $\A$, thus we need to make it be non-degenerate. The nature method is constructing a equivalent relation or a closed ideal, and then inducing a quotient space. Naturally, we define
 		\begin{equation*}
 			\B = \{~x \in \A \colon \phi(x) = 0~\}
 		\end{equation*}
@@ -1188,7 +1187,7 @@ By this proposition, we can get an important corollary.
 	\end{equation*}
 \end{cor}
 \begin{rem}
-	In fact, we can easily check that $\St_{\A} \subset \st{\A}$ is a $wk^{*}$-compact convex subset. And this corollary is equivalent to saying that $\St_{}$ can seperate the points in $\A_{+}$.
+	In fact, we can easily check that $\St_{\A} \subset \st{\A}$ is a $wk^{*}$-compact convex subset. And this corollary is equivalent to saying that $\St_{}$ can separate the points in $\A_{+}$.
 \end{rem}
 
 Now, using this corollary, we can finally construct a faithful representation.
@@ -1234,7 +1233,7 @@ Now, using this corollary, we can finally construct a faithful representation.
 	\item Finally, if $\A$ is separable, then the closed unit ball in $\A^{*}$ is $wk^{*}$-compactly metrizable. Therefore, there is a countable $wk^{*}$-dense subset of $\St_{\A}$. Thus by above corollary, this subset can separate the points in $\A_{+}$
 \end{proof}
 \begin{rem}
-	Therefore, any \Cs can be isometrically imbedded in a operator algebra on some Hilbert space. Researching a abstract \Cs is actually researching the $\st{C}$-subalgebra of an operator algebra on some Hilbert space.
+	Therefore, any \Cs can be isometrically embedded in a operator algebra on some Hilbert space. Researching a abstract \Cs is actually researching the $\st{C}$-subalgebra of an operator algebra on some Hilbert space.
 \end{rem}
 
 Now, we can see the importance of states or positive funtionals. Thus, we want to find the relation between general linear functionals and the positive linear functionals. Firstly, we observe that for a positive functional $\phi$, $\phi(\st{a})=\clo{\phi(a)}$ for all $a$. 
@@ -1312,7 +1311,7 @@ By combining this and the Jordan Decomposition Theorem, we can have the followin
 	\end{enumerate}
 \end{defn}
 \begin{rem}
-	Since $\pi$ is $*$-homomorphism and $\A$ is $*$-closed, the definition of irreducibily of $\pi$ is valid. In fact, if $\pi$ is algebraically irreducible, then $\pi$ is clearly topologically irreducible. But the converse is also true. Then we have,
+	Since $\pi$ is $*$-homomorphism and $\A$ is $*$-closed, the definition of irreducibility of $\pi$ is valid. In fact, if $\pi$ is algebraically irreducible, then $\pi$ is clearly topologically irreducible. But the converse is also true. Then we have,
 	\begin{center}
 		$\pi$ irreducible $\Rightarrow$ $\pi$ cyclic $\Rightarrow$ $\pi$ is non-degenerate
 	\end{center}
@@ -1556,7 +1555,7 @@ We have similar results for pure states as general states. Firstly, we need a le
 
 \section{Operators on Hilbert Spaces}
 
-We have known that each $\st{C}$-algebra can be isometrically imbedded a $\oper$ for some Hilbert space $\Hs$. Therefore, we just research operator algebras other than $\st{C}$-algebras. Firstly, we need some general theories of operators on a Hilbert space.
+We have known that each $\st{C}$-algebra can be isometrically embedded a $\oper$ for some Hilbert space $\Hs$. Therefore, we just research operator algebras other than $\st{C}$-algebras. Firstly, we need some general theories of operators on a Hilbert space.
 
 \subsection{Spectrums for Operators}
 
@@ -1632,7 +1631,7 @@ For self-adjoint operators in $\oper$, we have some extral properties related to
 	In fact, for any $T \in \oper$ with $\langle Th,h \rangle = 0$ for any $h \in \Hs$, then $T = 0$ since any $T$ can be the linear combination of two self-adjoint operators.
 \end{rem}
 
-By above proposition, we see the spectrum of operators can be described by using another method. Firstly, we can generize the consequence in \textbf{Proposition} \ref{prop9}.
+By above proposition, we see the spectrum of operators can be described by using another method. Firstly, we can generalize the consequence in \textbf{Proposition} \ref{prop9}.
 \begin{prop} \label{prop15}
 	Let $\Hs$ be a Hilbert space and $T \in \oper$. Then let 
 	\begin{equation*}
@@ -1804,7 +1803,7 @@ In $\oper$, the norm topology may be too stronger, which means norm closed subal
 	Let $\Hs$ be a Hilbert space. 
 	\begin{enumerate}[label=\arabic*)]
 		\item The strong operator topology on $\oper$, denoted by $SOT$, is generated by a family of seminorms $\{p_x\}_{x \in \Hs}$, where $p_x(T) = \norm{Tx}$.
-		\item The weak operator topology on $\oper$, denoted by $WOT$, is denerated by a fanmily of seminorms $\{p_{gh}\}_{g,h \in \Hs}$, where $p_{gh}(T) = \abs{\langle Tg,h \rangle}$.
+		\item The weak operator topology on $\oper$, denoted by $WOT$, is generated by a family of seminorms $\{p_{gh}\}_{g,h \in \Hs}$, where $p_{gh}(T) = \abs{\langle Tg,h \rangle}$.
 	\end{enumerate}
 \end{defn}
 \begin{rem}
@@ -1903,8 +1902,3 @@ $WOT$ also have a similar property to $wk$-topology, the Alaoglu's Theorem.
 	\end{center}
 	where $\tau(T)_h = Th$. Then using similarl method, we can prove $B$ is compact.
 \end{proof}
-
-
-
-
-

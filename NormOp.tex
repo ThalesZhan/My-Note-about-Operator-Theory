@@ -153,7 +153,7 @@ We have already there is a map from $C(X)$ to $\oper$, then by combining this pr
 		\tilde{\rho}(\phi\psi) = \lim \tilde{\rho}(u_i\psi) = \lim \rho(u_i)\rho(\psi) = \tilde{\rho}(\phi)\rho(\psi)
 	\end{equation*}
 	Therefore, if $\phi,\psi \in B(X)$, $\tilde{\rho}(\phi\psi) = \tilde{\rho}(\phi)\tilde{\rho}(\psi)$.
-	\item Contructing the spectral measure: \\
+	\item Constructing the spectral measure: \\
 	Let $E(\Delta) = \rho(\chi_{\Delta}(x))$ for all Borel set $\Delta$. Clearly, $E(\Delta)$ is a projection for any $\Delta$. For disjoint Borel sets $\Delta_1, \Delta_2$,
 	\begin{equation*}
 		E(\Delta_1 \cap \Delta_2) = \tilde{\rho}(\chi_{\Delta_1 \cap \Delta_2}) = \tilde{\rho}(\chi(\Delta_1)\chi(\Delta_2)) =\tilde{\rho}(\chi(\Delta_1)) = E(\Delta_1)E(\Delta_2)
@@ -458,7 +458,7 @@ Before researching the structure of abelian von Neumann algebras, there is a typ
 \end{cor}
 
 \begin{defn}
-	An abelian subalgebra $\A \subset \oper$ is said to be a maximal abelian subalgebra if there is no abelian subalgebra in $\oper$ containing $\A$. In paticular, a maximal abelian von Neumann algebra is called a masa.
+	An abelian subalgebra $\A \subset \oper$ is said to be a maximal abelian subalgebra if there is no abelian subalgebra in $\oper$ containing $\A$. In particular, a maximal abelian von Neumann algebra is called a masa.
 \end{defn}
 
 \begin{thm}
@@ -507,7 +507,7 @@ Before researching the structure of abelian von Neumann algebras, there is a typ
 	\begin{equation*}
 		\norm{\rho(\phi)e_0}^2 = \langle \rho(\st{\phi})\rho(\phi)e_0,e_0 \rangle = \int \abs{\phi}^2 d \mu = \norm{\phi}^2
 	\end{equation*}
-	Therefore, $U$ is an isometry. Since $C(X)$ is norm densed in $\lfs{2}(\mu)$ and $\clo{\A_1 e_0} = \clo{\A e_0} = \Hs$, $U \colon \lfs{2}(\mu) \sto \Hs$ is a unitary. \\
+	Therefore, $U$ is an isometry. Since $C(X)$ is norm dense in $\lfs{2}(\mu)$ and $\clo{\A_1 e_0} = \clo{\A e_0} = \Hs$, $U \colon \lfs{2}(\mu) \sto \Hs$ is a unitary. \\
 	Let $\psi \in C(X)$ and $\phi \in C(X)$
 	\begin{equation*}
 		UM_{\psi}\phi = U(\psi\phi) = \rho(\psi\phi)e_0 = \rho(\psi) \rho(\phi)e_0 = \rho(\psi) U \phi  
@@ -730,7 +730,7 @@ Using above proposition we get one of the main result of this subsection.
 	\begin{equation*}
 		\int_{\Delta} \phi_n d\mu_h = \int_{\Delta} \phi_n \frac{d\mu_h}{d\mu_e}d\mu_e \sto \int_{\Delta} \phi_e d\mu_h
 	\end{equation*}
-	and also $\int_{\Delta} \phi_n d\mu_h \sto \int_{\Delta} \phi d\mu_h$, therefore, $\phi_h = \phi_e$ a.e. with repect to $\mu_h$, in fact, it can be with respect to any $\mu_g$. Then for $g \in \Hs_h$,
+	and also $\int_{\Delta} \phi_n d\mu_h \sto \int_{\Delta} \phi d\mu_h$, therefore, $\phi_h = \phi_e$ a.e. with respect to $\mu_h$, in fact, it can be with respect to any $\mu_g$. Then for $g \in \Hs_h$,
 	\begin{equation*}
 		\langle \phi_h(N_h)g,g \rangle = \langle \phi_h(N)g,g \rangle = \int \phi_h d\mu_g = \int \phi_e d\mu_g = \langle \phi_e(N_h)g,g \rangle
 	\end{equation*}
@@ -761,7 +761,7 @@ Now, we can see the structure of any abelian von Neumann algebra on a separable 
 		f = \sum_{n=1}^{\infty} 3^{-n}(2p_n - 1)
 	\end{equation*}
 	Claim: $\Cg{f} = C(X)$ \\
-	By the Stone-Weierstrass Theorem, we just need to show that $f$ can separate the points of $X$. Since $\{p_n\}$ generates $C(X)$, $\{p_n\}$ can separate the points in $X$. Thus, for $x \neq y \in X$, there is a $p_k$, s.t. $p_k(x) \neq p_k(y)$ and chosing the $k$ be the smallest one satifying this condition, then
+	By the Stone-Weierstrass Theorem, we just need to show that $f$ can separate the points of $X$. Since $\{p_n\}$ generates $C(X)$, $\{p_n\}$ can separate the points in $X$. Thus, for $x \neq y \in X$, there is a $p_k$, s.t. $p_k(x) \neq p_k(y)$ and chosing the $k$ be the smallest one satisfying this condition, then
 	\begin{eqnarray*}
 		\abs{f(x)-f(y)} &=& 2 \abs{\sum_{n=k}^{\infty} 3^{-n}(p_n(x) - p_n(y))} \\
 		&\geqslant& 2 3^{-k} - 2 \sum_{n=k+1}^{\infty} 3^{-n} \\
@@ -816,7 +816,7 @@ Then we can decompose normal operators as a "decreasing" sequence of cyclic oper
 \begin{proof}
 	Let $e_1$ be a separating vector for $\st{W}(N)$ and $\{f_n\}$ be the orthonormal basis of $\Hs$ s.t. $f_1 = e_1$. Put
 	\begin{equation*}
-		\Hs_1 = \clo{\st{W}(N)e_1},~~\mu_1(\Delta) = \norm{E(\Delta)}^2,~~ N_2 = N|_{\Hs_1}
+		\Hs_1 = \clo{\st{W}(N)e_1},~~\mu_1(\Delta) = \norm{E(\Delta)e_1}^2,~~ N_2 = N|_{\Hs_1}
 	\end{equation*}
 	Then for $f_2^{'} = $ the projection of $f_2$ to $\Hs_1^{\bot}$, there is a separating vector $e_2$ for $\st{W}(N_2)$ s.t. 
 	\begin{equation*}
@@ -932,7 +932,7 @@ Then we can get another formula of above theorem to help us build the Multiplici
  	then $N \cong M$ if and only if $\mu$ and $\nu$ are mutually absolutely continuous and $\mu(\Delta_n \backslash \Sigma_n) = 0 = \mu(\Sigma_n \backslash \Delta_n)$
 \end{cor}
 
-\begin{thm}
+\begin{thm} \label{thm9}
 	If $N$ is a normal operator, then there are mutually singular measures $\mu_{\infty}, \mu_1, \mu_2, \cdots$ s.t.
 	\begin{equation*}
 		N \cong N_{\infty}^{(\infty)} \oplus N_{\mu_1} \oplus N_{\mu_2}^{(2)} \oplus  N_{\mu_3}^{(3)} \oplus \cdots
@@ -964,7 +964,7 @@ Now, we can define the multiplicity function $m_N$ for a normal operator $N$ wit
 \begin{equation*}
 	N \cong N_{\infty}^{(\infty)} \oplus N_{\mu_1} \oplus N_{\mu_2}^{(2)} \oplus  N_{\mu_3}^{(3)} \oplus \cdots
 \end{equation*}
-If there are disjoint Borel sets $\Delta_{\infty},\Delta_1,\Delta_2,\cdots$ of $\C$ s.t. $\mu_n$ and $mu|_{\Delta_n}$ are mutually absolutely continuous for all $n$, then define
+If there are disjoint Borel sets $\Delta_{\infty},\Delta_1,\Delta_2,\cdots$ of $\C$ s.t. $\mu_n$ and $\mu|_{\Delta_n}$ are mutually absolutely continuous for all $n$, then define
 $m_N \colon \C \sto \N \cup \{\infty\}$ as
 \begin{equation*}
 	m_N = \infty \chi_{\Delta_{\infty}} + \chi_{\Delta_1} + 2\chi_{\Delta_2} + 3\chi_{\Delta_3} + \cdots

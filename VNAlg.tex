@@ -1,6 +1,6 @@
 \chapter{Von Neumann Algebras}
 
-Abelian von Neuman algebras can be explicitly described as $L^{\infty}(\mu)$. For general von Neumann algebras, they have more complex structure but more interesting properties. Firstly, we have seen the relation between the $WOT$ and the ultraweak topology, therefore, the ultraweak topology can provide some different things of the von Neumann algebra. Then, since the weak closedness of von Neumann algebras, all projections in a von Neumann algebra can completely generate the whole algebra. Thus projections are fundamental elements in the von Neumann algebra. Researching the properties of them and classifying them can help us to classify general von Neumann algebras. By the properties of the projections contained in a von Neumann algebras, general von Neumann algebras can be classified as $5$ different categories and we can see that the abelian one is belong to what category.
+Abelian von Neuman algebras can be explicitly described as $L^{\infty}(\mu)$. For general von Neumann algebras, they have more complex structure but more interesting properties. Firstly, we have seen the relationship between the $WOT$ and the ultraweak topology, therefore, the ultraweak topology can provide some different things of the von Neumann algebra. Then, because of the weak closedness of von Neumann algebras, all projections in a von Neumann algebra can completely generate the whole algebra. Thus projections are fundamental elements in the von Neumann algebra. Researching the properties of them and classifying them can help us to classify general von Neumann algebras. By the properties of the projections contained in a von Neumann algebras, general von Neumann algebras can be classified as $5$ different categories and we can see that the abelian one is belong to what category.
 
 \section{General Von Neumann Algebras}
 
@@ -170,7 +170,7 @@ Abelian von Neuman algebras can be explicitly described as $L^{\infty}(\mu)$. Fo
 \end{proof}
 
 \begin{defn}
-	If $\A$ is a con Neumann algebra and $E$ is a projection, defining
+	If $\A$ is a von Neumann algebra and $E$ is a projection, defining
 	\begin{equation*}
 		\A_{E} = \{~A_E \colon A \in \A~\}
 	\end{equation*}
@@ -253,7 +253,7 @@ For $\st{C}$-algebra $\A$, let $\mathcal{B}(\A)$ be the norm-closed unit ball in
 	then for any net $\{T_i\} \subset \Rea{\A}$ with $T_i \sto T$ in $SOT$, $f(T_i) \sto f(T)$ in $SOT$.
 \end{lem}
 \begin{proof}
-	For any $g \in C(\R)$, then the map $g \colon \Rea{\oper} \sto \Rea{\oper}$ makes sence. Denote the set of all such $g$ s.t. $g$ is continuous w.r.t. the $SOT$ by $\mathcal{S}$ and let $\mathcal{S}_b$ be set of all norm bounded elements in $\mathcal{S}$. Clearly, $\mathcal{S}_b \mathcal{S} \subset \mathcal{S}$.\\
+	For any $g \in C(\R)$, then the map $g \colon \Rea{\oper} \sto \Rea{\oper}$ makes sense. Denote the set of all such $g$ s.t. $g$ is continuous w.r.t. the $SOT$ by $\mathcal{S}$ and let $\mathcal{S}_b$ be set of all norm bounded elements in $\mathcal{S}$. Clearly, $\mathcal{S}_b \mathcal{S} \subset \mathcal{S}$.\\
 	Let $e(t) = t / (1+t^2)$ and $A,B \in \Rea{\oper}$,
 	\begin{eqnarray*}
 		e(A)-e(B) &=& (1+A^2)^{-1}(A(1+B^2)-(1+A^2)B)(1+B^2)^{-1} \\
@@ -268,7 +268,7 @@ For $\st{C}$-algebra $\A$, let $\mathcal{B}(\A)$ be the norm-closed unit ball in
 	\begin{equation*}
 		C_0(\R \backslash \{0\}) \subset \mathcal{S}_b
 	\end{equation*}
-	If $f$ satisfy above assumption, $t \sto f(t) / (1+t^2)$ belongs to $C_0(\R \backslash \{0\})$, and hence to $\mathcal{S}_b$. Since the identity funtion also belongs to $\mathcal{S}$ and the condition $f$ satisfies,
+	If $f$ satisfy above assumption, $t \sto f(t) / (1+t^2)$ belongs to $C_0(\R \backslash \{0\})$, and hence to $\mathcal{S}_b$. Since the identity function also belongs to $\mathcal{S}$ and the condition $f$ satisfies,
 	\begin{equation*}
 		t \longrightarrow \frac{tf(t)}{1+t^2} \in \mathcal{S}_b
 	\end{equation*}
@@ -357,7 +357,7 @@ The order of all self-adjoint operators in von Neumann algebras can provide anot
 	\end{equation*}
 \end{lem}
 \begin{proof}
-	By the Kaplansky Density Theorem and the sparability of $\Hs$, there is a sequence $\{C_n\}$ in $\mathcal{B}(\B_+)$ s.t. $C_n \sto P$ in $SOT$. Then it can assume that for $1 \leqslant j \leqslant  n$,
+	By the Kaplansky Density Theorem and the separability of $\Hs$, there is a sequence $\{C_n\}$ in $\mathcal{B}(\B_+)$ s.t. $C_n \sto P$ in $SOT$. Then it can assume that for $1 \leqslant j \leqslant  n$,
 	\begin{equation*}
 		\norm{C_n(1-P)h_j} < \frac{1}{n2^n},~ \norm{(1-C_n)Ph_j} < \frac{1}{n}
 	\end{equation*}
@@ -458,7 +458,7 @@ The Up-Down Theorem can reveal the basic property of general von Neumann algebra
 	If $\A$ and $\B$ are von Neumann algebras and $\rho \colon \A \sto \B$ is a linear positive map, then $\rho$ is normal if for any increasing net $\{A_i\}$ in $\A$ with $A_i \sto A$ in $SOT$, $\rho(A_i) \sto \rho(A)$ in $SOT$.
 \end{defn}
 \begin{rem}
-	In particular, if $E \in \A$, $A \mapsto EAE$ is a normal homomorphism. The normal homomorphsims should be postive linear maps that are continuous with respect to the $SOT$, but in above definition, there is an extra condition. In fact, this extra condition has an equivalent expression.
+	In particular, if $E \in \A$, $A \mapsto EAE$ is a normal homomorphism. The normal homomorphisms should be positive linear maps that are continuous with respect to the $SOT$, but in above definition, there is an extra condition. In fact, this extra condition has an equivalent expression.
 \end{rem}
 
 If $\A$ is a von Neumann algebra, the $\A$ is $weak^*$-closed, therefore $\A$ is the dual space of some Banach space. Let $\A_*$ be the space of all $weak^*$-continuous functionals on $\A$, then $\A  = (\A_*)^*$. And also 
@@ -901,10 +901,10 @@ There are some similar properties of finite von Neumann algebra as abelian von N
 	Let $\A$ be a von Neumann algebra.
 	\begin{enumerate}[label=\arabic*)]
 		\item A projection $E$ in $\A$ is discrete if and only if for every central projection $Z$ in $\A$ with $ZE \neq 0$, there is an abelian projection $F$ in $\A$ with $F \leqslant ZE$.
-		\item A projection $E$ in $\A$ is continuous if and only if there is no nonzero abelian projection $F$ in $\A$ satifying $F \leqslant E$.
-		\item Let $\B$ be a von Neumann algebra and $\rho \colon \A \sto \B$ be a normal, surjective $*$-homomorphism, and $E$ be a projection in $\A$. If $E$ is continous (or discrete or abelian), then $\rho(E)$ is continous (or discrete or abelian).
-		\item If $E$ is continous (or discrete or abelian) in $\A$ and $F$ is a projection in $\A$ with $F \leqslant E$, then $F$ is continous (or discrete or abelian).
-		\item If $\{E_i\}$ is a family of continous (or discrete or abelian) projections in $\A$ s.t. $\{C_{E_i}\}$ is pairwise orthogonal, then $\sum_i E_i$ is a continous (or discrete or abelian) projection.
+		\item A projection $E$ in $\A$ is continuous if and only if there is no nonzero abelian projection $F$ in $\A$ sastifying $F \leqslant E$.
+		\item Let $\B$ be a von Neumann algebra and $\rho \colon \A \sto \B$ be a normal, surjective $*$-homomorphism, and $E$ be a projection in $\A$. If $E$ is continuous (or discrete or abelian), then $\rho(E)$ is continuous (or discrete or abelian).
+		\item If $E$ is continuous (or discrete or abelian) in $\A$ and $F$ is a projection in $\A$ with $F \leqslant E$, then $F$ is continuous (or discrete or abelian).
+		\item If $\{E_i\}$ is a family of continuous (or discrete or abelian) projections in $\A$ s.t. $\{C_{E_i}\}$ is pairwise orthogonal, then $\sum_i E_i$ is a continuous (or discrete or abelian) projection.
 	\end{enumerate}
 \end{prop}
 \begin{proof}
@@ -972,7 +972,7 @@ If two projections $E$ and $F$ satisfy $E \lesssim F$, then $C_F \leqslant C_E$.
 
 \subsection{Properties of Continuous Projections}
 
-For continuous projections, there is some decomposition like Lebeshue Decomposition for general measures.
+For continuous projections, there is some decomposition like Lebesgue Decomposition for general measures.
 
 \begin{lem}
 	If $E$ is not an abelian projection, then there are projections $E_1, E_2$ in $\A$ that are dominated by $E$ and s.t. $E_1 \bot E_2$ and $E_1 \sim E_2$.
@@ -1085,7 +1085,7 @@ Then by using the classifications of projections, von Neumann algebras can be cl
 	If $\A$ is a factor, then $\A$ is exactly one of the Type \RNum{1}$_n$, \RNum{1}$_{\infty}$, \RNum{2}$_1$, \RNum{2}$_{\infty}$ and \RNum{3}.
 \end{cor}
 
-\subsection{The Structure of Type \texorpdfstring{\RNum{1}}{I} Factors}
+\subsection{Structure of Type \texorpdfstring{\RNum{1}}{I} Factors}
 
 \begin{defn}
 	A projection is faithful if its central cover is identity.
@@ -1160,7 +1160,7 @@ Then the structure of Type \RNum{1} algebra has been revealed to some extend. Bu
 	If $\A$ is a von Neumann algebra and $E$, then a projection $E$ in $\A$ is minimal if and only if $E \A E$ is one dimensional. Moreover, if $E$ is minimal, then $E$ is abelian, and $C_E$ is a minimal projection in the center of $\A$, and $\A_{C_E}$ is a factor, and $\A^{'}_E = \fml{B}(E)$.
 \end{prop}
 \begin{proof}
-	If $E \A E$ is one domensional, then $E\A E = \C E$, so there is no nonzero projection in $\A$ dinominated by $E$. Conversely, if $E$ is minimal, then the fact that $E\A E$ is generated by all its projections implies that $E$ is one dimensional.\\
+	If $E \A E$ is one dimensional, then $E\A E = \C E$, so there is no nonzero projection in $\A$ dominated by $E$. Conversely, if $E$ is minimal, then the fact that $E\A E$ is generated by all its projections implies that $E$ is one dimensional.\\
 	By mention above, if $E$ is minimal, it is clear abelian. If $Z \leqslant C_E$ in the center of $\A$, then $ZE \leqslant E$. Therefore, either $ZE = 0$ or $ZE = E$. Thus it is easy to see $Z = 0$ or $Z = E$. 
 	\begin{equation*}
 		\A^{'}_E = (\A_E)^{'} = (\C E)^{'} = \fml{B}(E)
@@ -1237,7 +1237,7 @@ To get more information of homogeneous algebras, matrix is a useful method.
 \end{cor}
 
 \begin{prop}
-	Let $\A$ be a von Neumann algebra and $\{E_i\}$ be a collection of pairwise orthogonal, mutually equivalent projection in $\A$ with $\sum_i E_i = 1$. If $\{E_i\}$ has cardinality $n$ and $\B = \A_{E_1}$, then $\A$ is spacially equivalent to $M_n(\B)$.
+	Let $\A$ be a von Neumann algebra and $\{E_i\}$ be a collection of pairwise orthogonal, mutually equivalent projection in $\A$ with $\sum_i E_i = 1$. If $\{E_i\}$ has cardinality $n$ and $\B = \A_{E_1}$, then $\A$ is spatially equivalent to $M_n(\B)$.
 \end{prop}
 \begin{proof}
 	By assumption there is a collection of partial isometries $\{W_i\}$ s.t. $E_1 = \st{W_i}W_i$ and $E_i = W_i\st{W_i}$. Since for all $i,j$ and $A \in \A$,
@@ -1286,10 +1286,10 @@ To get more information of homogeneous algebras, matrix is a useful method.
 \end{proof}
 
 \begin{cor}
-	If $\A$ is a homogeneous algebra, then there is a carnical number $n$ and an algebra $\B$ that is isomorphic to the center of $\A$ s.t. $\A$ is spacially equivalent to $M_n(\B)$. If $\fml{Z}$ is the center of $\A$, then $\A$ is $*$-isomorphic to $M_n(\fml{Z})$.
+	If $\A$ is a homogeneous algebra, then there is a cardinal number $n$ and an algebra $\B$ that is isomorphic to the center of $\A$ s.t. $\A$ is spatially equivalent to $M_n(\B)$. If $\fml{Z}$ is the center of $\A$, then $\A$ is $*$-isomorphic to $M_n(\fml{Z})$.
 \end{cor}
 \begin{proof}
-	Let $\{E_i\}$ be the family of pairwise orthogonal abelian projections that are mutually equivalent and whose sum is identity. Then by above proposition, if $\B = \A_{E_1}$, $\A$ is spacially isomorphic to $M_n(\B)$. $\B$ is abelian since $E_1$ is abelian. Therefore,
+	Let $\{E_i\}$ be the family of pairwise orthogonal abelian projections that are mutually equivalent and whose sum is identity. Then by above proposition, if $\B = \A_{E_1}$, $\A$ is spatially isomorphic to $M_n(\B)$. $\B$ is abelian since $E_1$ is abelian. Therefore,
 	\begin{equation*}
 		\fml{Z} \cong M_n(\B) \cap M_n(\B)^{'} = M_n(\B) \cap (\B^{'})^{(n)} = \B^{(n)} \cong \B
 	\end{equation*}
@@ -1304,7 +1304,7 @@ To get more information of homogeneous algebras, matrix is a useful method.
 	\begin{equation*}
 		1 = \sum_{k=1}^{\infty} F_k \sim \sum_{k=2}^{\infty} F_k
 	\end{equation*}
-	But since $\A$ is finite and $F_1 \neq 0$, it is  impossible. Therefore, $K$ is infinite. Thus either both $I$ and $K$ are finite or inifite. Moreover, if they are all infinite, because of the separability of $\Hs$, they must have thee same cardinality, $\aleph_0$.\\
+	But since $\A$ is finite and $F_1 \neq 0$, it is  impossible. Therefore, $K$ is infinite. Thus either both $I$ and $K$ are finite or infinite. Moreover, if they are all infinite, because of the separability of $\Hs$, they must have thee same cardinality, $\aleph_0$.\\
 	Assume $n = \#I$ and $m = \#K$. Since $C_{E_i} = C_{F_k} = 1$ for all $i \in I$ and $k \in K$ and all $E_i$ and $F_k$ are abelian, $E_i \sim F_k$. If $n < m$,
 	\begin{equation*}
 		1 = \sum_{i=1}^{n} E_i \sim \sum_{k=1}^n F_k < 1
@@ -1328,7 +1328,7 @@ Every homogeneous von Numann algebra is Type \RNum{1}. Although the converse is 
 	If $\A$ is Type \RNum{1}, then there is a family of pairwise orthogonal central projections $\{Z_i\}$ s.t. $\sum_i Z_i = 1$ and each $\A_{Z_i}$ is homogeneous.
 \end{thm}
 \begin{proof}
-	Claim: $\A$ contains a nonzero central projection $Z$ s.t. $\A_Z$ is homogenrous. \\
+	Claim: $\A$ contains a nonzero central projection $Z$ s.t. $\A_Z$ is homogeneous. \\
 	Since $\A$ is Type \RNum{1}, there is a maximal family $\{E_i\}$ of pairwise orthogonal, faithful, abelian projections. And clearly they are mutually equivalent. Put $E = \sum_i E_i$. If $E = 1$, then $\A$ is homogeneous. Assume $E^{\bot} \neq 0$. By preceding lemma, there is a abelian projection $P$ contained in $E^{\bot}$ s.t. $C_{E^{\bot}} = C_P$. By maximality, there is no faithful abelian projection contained in $E^{\bot}$. Thus, $C_P = C_{E^{\bot}} \neq 1$. Put $Z = 1 - C_{E^{\bot}}$, then $ZE^{\bot} = 0$. So $Z = ZE = \sum_i ZE_i$. And also $ZE_i$ is abelian for each $i$. Therefore, $\{ZE_i\}$ is a family of pairwise orthogonal, mutually equivalent abelian projections with $\sum_i ZE_i = Z$, i.e. $\A_Z$ is homogeneous.\\
 	By Zorn's Lemma, there is an maximal family of pairwise orthogonal central projections $\{Z_i\}$ s.t. each $\A_{Z_i}$ is homogeneous. Put $Z = \sum_i Z_i$. if $Z^{\bot} \neq 0$. Then $\A_{Z^{\bot}}$ is Type \RNum{1}. By mention above, there is a nonzero central projection $G$ s.t. $(\A_{Z^{\bot}})_G = \A_{{Z^{\bot}}G}$ is homogeneous, which contradicts with the maximality. Therefore, $Z = 1$.
 \end{proof}
