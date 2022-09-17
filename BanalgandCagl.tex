@@ -1026,7 +1026,7 @@ Then there are some properties of positive functionals.
 	\begin{enumerate}[label=\arabic*)]
 		\item For any $x,y \in \A$, then
 		\begin{equation*}
-			\abs{\phi(\st{y}x)} \leqslant \phi(\st{x}x)\phi(\st{y}y)
+			\abs{\phi(\st{y}x)}^2 \leqslant \phi(\st{x}x)\phi(\st{y}y)
 		\end{equation*}
 		\item $\phi$ is bounded and if $\{e_i\}$ is an approximate identity of $\A$, then
 		\begin{equation*}
@@ -1035,7 +1035,7 @@ Then there are some properties of positive functionals.
 	\end{enumerate}
 \end{prop}
 \begin{proof}
-	For $1)$, it can easily check that $<x,y> = \phi(\st{y}x)$ is a semi-inner product, thus by the CBS inequality, above inequality is true.
+	For $1)$, it can easily check that $\langle x,y \rangle = \phi(\st{y}x)$ is a semi-inner product, thus by the CBS inequality, above inequality is true.
 	\item Assume $\A$ without identity.  If $\phi$ is unbounded, then there is a sequence $\{a_k\} \in \A_{+}$ with $\norm{a_k} \leqslant 1$ s.t. $\phi(a_k) > 2^k$. Let $a = \sum_{k=1}^{\infty} 2^{-k} a_k$. Then
 	\begin{equation*}
 		\phi(a) \geqslant \phi(\sum_{k=1}^{n} 2^{-k} a_k) > n
